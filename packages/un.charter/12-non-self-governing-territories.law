@@ -1,0 +1,88 @@
+// Chapter XI: Declaration Regarding Non-Self-Governing Territories —
+// Articles 73-74, stage E7 (18.09.2026).
+//
+// ARTICLE 73 IS EXECUTABLE VIA PARAGRAPH (e) ALONE; PARAGRAPHS (a)-(d) ARE
+// UNFORMALIZED RESIDUE, THE SAME TREATMENT AS ARTICLE 33's PARAGRAPH 2 AND
+// ARTICLE 52's PARAGRAPH 1. Paragraph (a)-(d) each ask a Member
+// administering a non-self-governing territory to "ensure... advancement",
+// "develop self-government", "further international peace and security"
+// and "promote constructive measures of development" — an open-ended,
+// aspirational register with no organ named to assess compliance and no
+// determinate act a case could report as done or not done (contrast
+// paragraph (e) immediately below). Modelling any of them would repeat the
+// "some predicate could technically be written" trap this package's own
+// Article 9/32/52-paragraph-1 precedents already avoid. Paragraph (e), by
+// contrast, names a narrow, well-defined, determinate reporting DUTY: "to
+// transmit regularly to the Secretary-General... statistical and other
+// information of a technical nature relating to economic, social, and
+// educational conditions in the territories for which they are
+// respectively responsible" — a genuine `duty` with a determinate bearer
+// (the administering Member) and a determinate achievable act
+// (transmission), the same shape as Article 56's pledge
+// (10-economic-social-cooperation.law) and Article 84's duty below
+// (13-trusteeship-system.law).
+//
+// PARAGRAPH (e)'S "SUBJECT TO SUCH LIMITATION AS SECURITY AND
+// CONSTITUTIONAL CONSIDERATIONS MAY REQUIRE" IS LEFT AS UNFORMALIZED
+// RESIDUE, NOT A SEPARATE DEFEATER. The proviso narrows the CONTENT of what
+// must be transmitted (a scope-limiting clause on the information itself),
+// not whether the duty to transmit exists at all — the text never states
+// that security/constitutional considerations excuse the Member from
+// transmitting altogether, only that they may limit what is transmitted.
+// No other rule of this package's declared scope would ever consume a
+// "transmission was limited on security/constitutional grounds" fact, the
+// same "predicate nobody reads" boundary already avoided for Article 32's
+// second sentence and Article 52, paragraph 1.
+//
+// TWO DISJOINT ENTITIES ACROSS CHAPTERS XI-XIII, MIRRORING THE TEXT'S OWN
+// EXPLICIT CARVE-OUT. Paragraph (e)'s own closing words — "other than those
+// territories to which Chapters XII and XIII apply" — state directly that
+// the reporting duty's population (non-self-governing territories under
+// Chapter XI) and the trusteeship system's population (trust territories
+// under Chapters XII-XIII, `TrustTerritory`, 13-trusteeship-system.law) are
+// DISJOINT, not two views of the same object (contrast Article 52's "local
+// dispute", which the task's own precedent read as the SAME object as
+// Chapter VI's `Dispute` via a qualifying fact, because Article 52,
+// paragraph 4's savings clause said so explicitly). Modelling
+// `NonSelfGoverningTerritory` as a distinct entity, with no qualifying-fact
+// relationship to `TrustTerritory` at all, follows the text's own words
+// rather than the general "qualifying fact over parallel entity"
+// preference that applied only because Article 52's own text confirmed
+// sameness — here the text confirms the opposite.
+//
+// ARTICLE 74 IS DECLARED. "Members... also agree that their policy...
+// must be based on the general principle of good-neighbourliness, due
+// account being taken of the interests and well-being of the rest of the
+// world" names no organ to assess compliance and no determinate act a case
+// could report — an open-ended policy directive, the same register as
+// Article 52, paragraph 1's "consistent with the Purposes and Principles"
+// proviso (declared as residue there because it sits inside an otherwise
+// EXECUTABLE article; here it is Article 74's ENTIRE content, so the
+// article itself is declared, not left as residue inside another article).
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// Chapter XI's own textual object — deliberately NOT identified with
+// `TrustTerritory` (13-trusteeship-system.law): see the header comment
+// above.
+entity NonSelfGoverningTerritory { label en official "Non-self-governing territory within the meaning of Chapter XI"; }
+
+pub relation administers_non_self_governing_territory(s: State, t: NonSelfGoverningTerritory) kind empirical {
+    label en official "the Member has or assumes responsibility for the administration of the territory, whose peoples have not yet attained a full measure of self-government (Art. 73, chapeau)";
+}
+
+pub relation territorial_information_transmitted(t: NonSelfGoverningTerritory, s: State) kind empirical {
+    label en official "the administering Member has transmitted to the Secretary-General, for information purposes, statistical and other information of a technical nature relating to economic, social, and educational conditions in the territory (Art. 73, paragraph (e))";
+}
+
+@source(UNC_EN_ART73)
+rule DutyToTransmitTerritorialInformation(s: State, t: NonSelfGoverningTerritory) strict {
+    label en official "Article 73, paragraph (e). Members of the United Nations which have or assume responsibilities for the administration of territories whose peoples have not yet attained a full measure of self-government... accept as a sacred trust the obligation... to transmit regularly to the Secretary-General for information purposes... statistical and other information of a technical nature relating to economic, social, and educational conditions in the territories for which they are respectively responsible other than those territories to which Chapters XII and XIII apply.";
+    when administers_non_self_governing_territory(s, t);
+    then duty TransmitTerritorialInformation {
+        bearer s;
+        achieve territorial_information_transmitted(t, s) during [@0001-01-01, infinity);
+    };
+}

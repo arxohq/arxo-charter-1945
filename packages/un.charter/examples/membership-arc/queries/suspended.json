@@ -1,0 +1,10 @@
+{
+  "queryId": "suspended",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#membership_rights_suspended",
+    "args": [{ "kind": "entity_ref", "id": "urn:law:examples:un-charter:membership-arc:state" }]
+  }
+}

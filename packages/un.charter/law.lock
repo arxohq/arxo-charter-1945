@@ -1,0 +1,42 @@
+{
+  "dependencyEdges": [
+    {
+      "features": [],
+      "from": "un.charter",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "doctrine.iura_humana"
+    }
+  ],
+  "languageSemantics": "law.core/0.2.0",
+  "lockVersion": "0.2",
+  "packages": [
+    {
+      "contentHash": "sha256:4c18155b12e963f807655b27c01d53b2bbad207fa089a481d69fbe9e3f80ef00",
+      "features": [
+        "core-executable"
+      ],
+      "name": "doctrine.iura_humana",
+      "namespace": "urn:doctrine:clir:iura-humana",
+      "registryId": "law-dsl-dev",
+      "resolverUri": "registry://law-dsl-dev/doctrine.iura_humana/0.1.0",
+      "version": "0.1.0"
+    }
+  ],
+  "resolutionHash": "sha256:f417f2a0c7e708bd8909b177dc4407bac1373acc757a0485153cdc16ca061fd3",
+  "resources": [
+    {
+      "capability": "presentation",
+      "contentHash": "sha256:1ae1e7bc9dd02186ec302056c105801202f0417b39194eea314d74be4f1e4305",
+      "id": "i18n:fr",
+      "kind": "label-overlay",
+      "path": "i18n/fr.json"
+    }
+  ],
+  "root": {
+    "contentHash": "sha256:bc71c6883f7eb6d4c7acf8b2e6c87b103af3ae3049c64738ce94364bb44ac869",
+    "name": "un.charter",
+    "namespace": "urn:un:corpus:clir:charter",
+    "version": "0.1.0"
+  }
+}

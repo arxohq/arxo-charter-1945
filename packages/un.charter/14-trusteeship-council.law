@@ -1,0 +1,210 @@
+// Chapter XIII: The Trusteeship Council — Articles 86-91, stage E7
+// (18.09.2026).
+//
+// ARTICLE 86 — THE STAGE'S THIRD FLAGGED CENTREPIECE: COMPOSITION PARITY, A
+// GENUINE STRUCTURAL-ARITHMETIC TEST, THE SAME REGISTER AS ARTICLES 27/109's
+// VOTE-THRESHOLD RULES. Article 86, paragraph 1 lists three membership
+// classes — (a) Members administering trust territories; (b) permanent
+// members of the Security Council not administering trust territories; (c)
+// as many other Members elected by the General Assembly for three-year
+// terms "as may be necessary to ensure that the total number of members...
+// is equally divided between those... which administer trust territories
+// and those which do not" — and names an explicit computable condition
+// (equal division) on the RESULTING total, not merely a procedure for
+// reaching it. A new entity, `TrusteeshipCouncilComposition`, represents
+// one PROPOSED OR ACTUAL composition of the Council at a point in time
+// (the same "one new entity for the chapter's own object" convention as
+// `Session`, Article 20, 04-general-assembly.law) — a case reports, for a
+// given composition, which States count on the administering side and
+// which on the non-administering side, and the rule checks the two counts
+// for equality by cross-multiplication-free direct comparison (`==`), the
+// same register as Article 18/27/67/89's own vote-threshold arithmetic,
+// with NO new engine machinery. Article 86, paragraph 1's classes (a) and
+// (b) READ Chapter XII's `administers_trust_territory`
+// (13-trusteeship-system.law) and `permanent_member` (package.law)
+// directly, per CLAUDE.md's "no bridge-twins" convention — class (c)'s own
+// "elected by the General Assembly" act is not separately modelled (no
+// other rule of this package's declared scope needs to distinguish an
+// ELECTED non-administering member from one seated as of right; the
+// parity test itself is agnostic to how a member reached either side of
+// the count). Paragraph 2 ("Each member of the Trusteeship Council shall
+// designate one specially qualified person to represent it therein") is
+// left as unformalized residue inside this otherwise EXECUTABLE article —
+// the SAME natural-person/individual-representative entity gap already
+// documented for Article 9's delegation cap and Article 8's eligibility
+// clause (this package has never modelled an individual representative),
+// and no other rule of this package's declared scope reads a "duly
+// designated representative" fact.
+//
+// ARTICLE 89 REUSES THE SHARED VOTING MODEL, THE THIRD ORGAN TO DO SO
+// (AFTER ARTICLE 18's GENERAL ASSEMBLY AND ARTICLE 67's ECOSOC). "Decisions
+// of the Trusteeship Council shall be made by a majority of the members
+// present and voting" is, once again, exactly Article 18, paragraph 3's
+// ordinary-question threshold — a new binding marker,
+// `is_trusteeship_council_decision`, plays the SAME role
+// `is_ecosoc_decision` plays for Article 67 (11-ecosoc.law): the shared
+// `Decision` entity carries no organ of its own, so a case must assert
+// directly which decisions are the Trusteeship Council's. Paragraph 1
+// ("Each member... shall have one vote") is a background premise the
+// counting itself already assumes (one vote per counted member), not a
+// separate testable condition.
+//
+// ARTICLE 88 IS A DUTY ON THE ADMINISTERING AUTHORITY, MIRRORING ARTICLE
+// 84's SHAPE (13-trusteeship-system.law) — "the administering authority
+// for each trust territory... shall make an annual report to the General
+// Assembly upon the basis of such questionnaire" names the SAME determinate
+// addressee (`administers_trust_territory`) and a determinate achievable
+// act (submitting the annual report). The questionnaire-formulation clause
+// ("The Trusteeship Council shall formulate a questionnaire...") is left as
+// unformalized residue — a flat institutional act of the Council's own,
+// the same register as Article 4's "recommends"/Article 36's
+// "recommends procedures" (no addressee-conduct condition, no consumer
+// beyond providing the "basis" for the report the rule below already
+// gates on `administers_trust_territory` alone, not on a separately
+// modelled "questionnaire formulated" fact).
+//
+// ARTICLES 87 AND 91 REMAIN DECLARED. Article 90 is EXECUTABLE (rules of
+// procedure). Article 87 grants discretionary competence over subject
+// matter; Article 91 is a discretionary inter-organ assistance clause.
+
+// Article 91 (the Council availing itself of ECOSOC/specialized-agency
+// assistance "when appropriate") is a discretionary inter-organ
+// coordination clause with no addressee-conduct condition and no quantity,
+// the same register as Article 65's declared ECOSOC-assists-Security-Council
+// clause at E6 (itself declared for a no-consumer reason, not an entity
+// gap) — Article 91's own specialized-agency reference does not, by
+// itself, need the specialized-agency entity gap already logged for
+// Articles 57/63/70 (13-trusteeship-system.law's own header and
+// `sources/charter/articles.json`), because the clause states only that
+// the Council MAY avail itself of such assistance, naming no condition a
+// case could test either way.
+//
+// THE TRUSTEESHIP COUNCIL'S SUSPENSION OF OPERATIONS SINCE 1994 (the last
+// trust territory, Palau, achieved self-government) IS PRACTICE ON TOP OF
+// THE LETTER, NOT A CHARTER AMENDMENT — noted here and in README.md, built
+// as NOTHING (no `interpretation`, no rule): the same treatment already
+// given to Article 23's continuity practice and Article 27's abstention
+// practice at E1/E3 (both letter-in-base, practice noted or added only
+// through `interpretation` where a rule actually turns on it). No rule of
+// this package's declared scope reads "is the Trusteeship Council
+// currently sitting" — the base composition and voting rules above state
+// the Charter's LETTER (a functioning organ with a parity requirement and
+// a majority-voting rule), exactly as written, regardless of whether any
+// State currently administers a trust territory in the world today.
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// --- Article 86: composition, parity of administering and non-administering
+
+// One proposed or actual composition of the Trusteeship Council at a point
+// in time — Chapter XIII's own textual object, the same convention as
+// `Session` (Article 20) and `EcosocMatter` (Article 69).
+entity TrusteeshipCouncilComposition { label en official "A composition of the Trusteeship Council within the meaning of Article 86"; }
+
+// A binding marker fact, the same role `is_ecosoc_decision`/
+// `is_important_question` play elsewhere (§190 range-restriction: a
+// `count` aggregate alone does not bind its outer variable, the same
+// compiler snag already documented at E2/E6) — a case must assert directly
+// which composition is under test.
+pub relation is_trusteeship_council_composition(c: TrusteeshipCouncilComposition) kind empirical {
+    label en official "the entity denotes a composition of the Trusteeship Council under consideration (Art. 86)";
+}
+
+pub relation counted_as_administering_member_of(c: TrusteeshipCouncilComposition, s: State) kind empirical {
+    label en official "the State is counted, in this composition, as a Member administering a trust territory (Art. 86, paragraph 1, class (a))";
+}
+
+pub relation counted_as_non_administering_member_of(c: TrusteeshipCouncilComposition, s: State) kind empirical {
+    label en official "the State is counted, in this composition, as a Member of the Trusteeship Council which does not administer a trust territory — a permanent member of the Security Council under class (b), or a Member elected by the General Assembly under class (c) (Art. 86, paragraph 1)";
+}
+
+pub relation trusteeship_council_composition_parity_satisfied(c: TrusteeshipCouncilComposition) kind institutional {
+    label en unofficial "the total membership of the Trusteeship Council, in this composition, is equally divided between Members which administer trust territories and Members which do not (Art. 86, paragraph 1)";
+}
+
+@source(UNC_EN_ART86)
+rule TrusteeshipCouncilCompositionParity(c: TrusteeshipCouncilComposition) strict {
+    label en official "Article 86, paragraph 1. The Trusteeship Council shall consist of: those Members administering trust territories; such of those Members mentioned by name in Article 23 as are not administering trust territories; and as many other Members elected for three-year terms by the General Assembly as may be necessary to ensure that the total number of members of the Trusteeship Council is equally divided between those Members of the United Nations which administer trust territories and those which do not.";
+    when is_trusteeship_council_composition(c)
+        and (count distinct s: State where counted_as_administering_member_of(c, s))
+            == (count distinct s: State where counted_as_non_administering_member_of(c, s))
+        and (count distinct s: State where counted_as_administering_member_of(c, s)) > 0;
+    then trusteeship_council_composition_parity_satisfied(c);
+}
+
+// --- Article 88: annual report of the administering authority -------------
+
+pub relation annual_trusteeship_report_submitted(t: TrustTerritory, s: State) kind empirical {
+    label en official "the administering authority has made an annual report to the General Assembly upon the basis of the Trusteeship Council's questionnaire (Art. 88)";
+}
+
+@source(UNC_EN_ART88)
+rule DutyToSubmitAnnualTrusteeshipReport(s: State, t: TrustTerritory) strict {
+    label en official "Article 88. ...the administering authority for each trust territory within the competence of the General Assembly shall make an annual report to the General Assembly upon the basis of such questionnaire.";
+    when administers_trust_territory(s, t);
+    then duty SubmitAnnualTrusteeshipReport {
+        bearer s;
+        achieve annual_trusteeship_report_submitted(t, s) during [@0001-01-01, infinity);
+    };
+}
+
+// --- Article 89: voting — majority of the members present and voting ------
+
+// A binding marker fact, mirroring `is_ecosoc_decision` (Art. 67,
+// 11-ecosoc.law): the shared `Decision` entity carries no organ of its
+// own, so a case must report directly which decisions are the Trusteeship
+// Council's.
+pub relation is_trusteeship_council_decision(d: Decision) kind empirical {
+    label en official "the decision is one of the Trusteeship Council (Art. 89)";
+}
+
+pub relation trusteeship_council_decision_adopted(d: Decision) kind institutional {
+    label en unofficial "the decision of the Trusteeship Council is adopted by a majority of the members present and voting (Art. 89, paragraph 2)";
+}
+
+@source(UNC_EN_ART89)
+rule TrusteeshipCouncilDecisionAdoptedByMajorityPresentAndVoting(d: Decision) strict {
+    label en official "Article 89. Each member of the Trusteeship Council shall have one vote. Decisions of the Trusteeship Council shall be made by a majority of the members present and voting.";
+    when is_trusteeship_council_decision(d)
+        and (count distinct s: State where casts_vote_for(d, s)) * 2
+            > (count distinct s: State where casts_vote_for(d, s))
+              + (count distinct s: State where casts_vote_against(d, s));
+    then trusteeship_council_decision_adopted(d);
+}
+
+// --- Article 90: rules of procedure ----------------------------------------
+
+pub relation trusteeship_council_adopts_rules_of_procedure(d: Decision) kind empirical {
+    label en official "the Trusteeship Council adopts its own rules of procedure, including the method of selecting its President (Art. 90, para. 1)";
+}
+
+pub relation trusteeship_council_rules_of_procedure_in_force(d: Decision) kind institutional {
+    label en unofficial "the Trusteeship Council's rules of procedure are in force (Art. 90)";
+}
+
+@source(UNC_EN_ART90)
+rule TrusteeshipCouncilAdoptsOwnRulesOfProcedure(d: Decision) strict {
+    label en official "Article 90, paragraph 1. The Trusteeship Council shall adopt its own rules of procedure, including the method of selecting its President.";
+    when trusteeship_council_adopts_rules_of_procedure(d);
+    then trusteeship_council_rules_of_procedure_in_force(d);
+}
+
+// Article 86, paragraph 2: with Person now in the package, a Member of the
+// Trusteeship Council designates one specially qualified person.
+
+pub relation designates_trusteeship_representative(s: State, p: Person) kind empirical {
+    label en official "the Member of the Trusteeship Council designates this specially qualified person to represent it (Art. 86, para. 2)";
+}
+
+pub relation trusteeship_council_representative(s: State, p: Person) kind institutional {
+    label en unofficial "the person represents the Member on the Trusteeship Council (Art. 86, para. 2)";
+}
+
+@source(UNC_EN_ART86)
+rule TrusteeshipCouncilMemberDesignatesRepresentative(s: State, p: Person) strict {
+    label en official "Article 86, paragraph 2. Each member of the Trusteeship Council shall designate one specially qualified person to represent it therein.";
+    when designates_trusteeship_representative(s, p);
+    then trusteeship_council_representative(s, p);
+}

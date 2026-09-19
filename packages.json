@@ -1,0 +1,30 @@
+{
+  "format": "law.package-set/0.1",
+  "generatedAt": "2026-09-19T16:56:32+00:00",
+  "dependencyMode": "vendored",
+  "language": "en",
+  "ci": "public",
+  "ciTrigger": "manual",
+  "repository": "https://github.com/arxohq/arxo-charter-1945",
+  "externalDependencies": [],
+  "packages": [
+    {
+      "name": "doctrine.iura_humana",
+      "version": "0.1.0",
+      "contentHash": "sha256:4c18155b12e963f807655b27c01d53b2bbad207fa089a481d69fbe9e3f80ef00",
+      "dependencies": [],
+      "tests": 1,
+      "outcome": "passed"
+    },
+    {
+      "name": "un.charter",
+      "version": "0.1.0",
+      "contentHash": "sha256:b66b04b5243c7d5e2540f23da56440a993cec1c484821b697a09c79d3589b948",
+      "dependencies": [
+        "doctrine.iura_humana"
+      ],
+      "tests": 169,
+      "outcome": "passed"
+    }
+  ]
+}

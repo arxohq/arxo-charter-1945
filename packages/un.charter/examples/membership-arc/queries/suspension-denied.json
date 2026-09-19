@@ -1,0 +1,10 @@
+{
+  "queryId": "suspension-denied",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#membership_rights_suspension_denied",
+    "args": [{ "kind": "entity_ref", "id": "urn:law:examples:un-charter:membership-arc:state" }]
+  }
+}

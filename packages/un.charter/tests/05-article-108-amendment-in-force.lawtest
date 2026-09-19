@@ -1,0 +1,96 @@
+language "law.core" version "0.1";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// Article 108: the amendment is adopted by two thirds of the members of the
+// Assembly and ratified by all members, including ALL five permanent members.
+// The five seats of Article 23 are package facts (05-security-council.law),
+// so a world with the United Kingdom as the "sole" permanent member no longer
+// exists: every seat holder named by the letter must be a Member, vote and
+// ratify here, or the named lock of Article 108 keeps the amendment out.
+test "urn:query:unc-lt-05-article-108-amendment-in-force" {
+    given {
+        context {
+            decision_time @2026-01-01T12:00:00Z;
+            knowledge_time @2026-01-01T12:00:00Z;
+            legal_time @2026-01-01;
+            timezone "UTC";
+        }
+
+        assert "is-amendment": is_amendment_vote(entity_ref("urn:un:corpus:case:decision:amendment")) {
+            origin case_input;
+        }
+        assert "member-uk": member_state(UnitedKingdomState) {
+            origin case_input;
+        }
+        assert "member-china": member_state(RepublicOfChina) {
+            origin case_input;
+        }
+        assert "vote-china": casts_vote_for(entity_ref("urn:un:corpus:case:decision:amendment"),
+                              RepublicOfChina) {
+            origin case_input;
+        }
+        assert "ratified-china": ratified_by(entity_ref("urn:un:corpus:case:decision:amendment"),
+                           RepublicOfChina) {
+            origin case_input;
+        }
+        assert "member-france": member_state(FranceState) {
+            origin case_input;
+        }
+        assert "vote-france": casts_vote_for(entity_ref("urn:un:corpus:case:decision:amendment"),
+                              FranceState) {
+            origin case_input;
+        }
+        assert "ratified-france": ratified_by(entity_ref("urn:un:corpus:case:decision:amendment"),
+                           FranceState) {
+            origin case_input;
+        }
+        assert "member-us": member_state(UnitedStatesState) {
+            origin case_input;
+        }
+        assert "vote-us": casts_vote_for(entity_ref("urn:un:corpus:case:decision:amendment"),
+                              UnitedStatesState) {
+            origin case_input;
+        }
+        assert "ratified-us": ratified_by(entity_ref("urn:un:corpus:case:decision:amendment"),
+                           UnitedStatesState) {
+            origin case_input;
+        }
+        assert "member-ussr": member_state(SovietUnion) {
+            origin case_input;
+        }
+        assert "vote-ussr": casts_vote_for(entity_ref("urn:un:corpus:case:decision:amendment"),
+                              SovietUnion) {
+            origin case_input;
+        }
+        assert "ratified-ussr": ratified_by(entity_ref("urn:un:corpus:case:decision:amendment"),
+                           SovietUnion) {
+            origin case_input;
+        }
+        assert "member-other": member_state(entity_ref("urn:un:corpus:case:state:other")) {
+            origin case_input;
+        }
+        assert "vote-uk": casts_vote_for(entity_ref("urn:un:corpus:case:decision:amendment"),
+                              UnitedKingdomState) {
+            origin case_input;
+        }
+        assert "vote-other": casts_vote_for(entity_ref("urn:un:corpus:case:decision:amendment"),
+                              entity_ref("urn:un:corpus:case:state:other")) {
+            origin case_input;
+        }
+        assert "ratified-uk": ratified_by(entity_ref("urn:un:corpus:case:decision:amendment"),
+                           UnitedKingdomState) {
+            origin case_input;
+        }
+        assert "ratified-other": ratified_by(entity_ref("urn:un:corpus:case:decision:amendment"),
+                           entity_ref("urn:un:corpus:case:state:other")) {
+            origin case_input;
+        }
+    }
+
+    evaluate truth(amendment_in_force(entity_ref("urn:un:corpus:case:decision:amendment")));
+
+    expect result_kind == PROPOSITION;
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+}

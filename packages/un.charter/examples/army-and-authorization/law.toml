@@ -1,0 +1,35 @@
+# Worked cases: articles 42–47 and 106.
+[package]
+name = "examples.un.charter.army_and_authorization"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:un-charter:army-and-authorization"
+
+[dependencies]
+"un.charter" = "0.1.0"
+
+[[cases]]
+name = "DeadChain"
+path = "cases/01-dead-chain.lawcase"
+
+[[cases]]
+name = "KuwaitAuthorised"
+path = "cases/02-kuwait-authorised.lawcase"
+
+[[cases]]
+name = "ConsultActive"
+path = "cases/03-consult-active.lawcase"
+
+[[cases]]
+name = "ConsultDischarged"
+path = "cases/04-consult-discharged.lawcase"
+
+[[cases]]
+name = "ConsultGone"
+path = "cases/05-consult-gone.lawcase"
+
+[metadata]
+act = "un-charter-examples-army-and-authorization"
+title = "Worked cases: the dead chain of articles 43–47 against authorization under article 42"
+jurisdiction = "International"
+instrument = "case-collection"

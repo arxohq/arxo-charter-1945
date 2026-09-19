@@ -1,0 +1,25 @@
+language "law.core" version "0.2";
+package examples.un.charter.binding_or_not version "0.1.0";
+namespace "urn:law:examples:un-charter:binding-or-not";
+
+// UNC-31B: the same seizure as BarredWhileSeized (same Matter URN, a fresh
+// case document), with the Security Council itself requesting an Assembly
+// recommendation. Article 12, paragraph 1's proviso lifts the bar without
+// erasing it: `general_assembly_recommendation_barred` reads its own
+// `not_known(security_council_requests_general_assembly_recommendation(m))`
+// guard, which the request here defeats.
+
+case LiftedByCouncilRequest {
+    context {
+        legal_time @2026-01-01;
+        knowledge_time @2026-01-01T12:00:00Z;
+        decision_time @2026-01-01T12:00:00Z;
+        timezone "UTC";
+    }
+
+    const m: un.charter::Matter = entity_ref("urn:law:examples:un-charter:binding-or-not:seized-matter");
+
+    assert "scope": un.charter::matter_within_charter_scope(m) { origin case_input; }
+    assert "seized": un.charter::security_council_seized_of_matter(m) { origin case_input; }
+    assert "requested": un.charter::security_council_requests_general_assembly_recommendation(m) { origin case_input; }
+}

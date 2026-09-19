@@ -1,0 +1,5 @@
+language "law.core" version "0.2";
+package examples.un.charter.article_51_silence version "0.1.0";
+namespace "urn:law:examples:un-charter:article-51-silence";
+
+import un.charter version "0.1.0";

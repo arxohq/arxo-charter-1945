@@ -1,0 +1,14 @@
+{
+  "format": "law.package-info/0.1",
+  "purpose": "Iura humana: a bridge vocabulary shared by human-rights instruments and by the Charter of the United Nations — a claimed right concerning an act, its permissible limitation, an available remedy, and the referral of the question to an organ named by the instrument. It holds no norms of its own; each instrument translates its articles into these four heads (the Charter: Article 10, referral to the General Assembly).",
+  "limitations": [
+    "THIS IS DOCTRINE, NOT THE LAW OF A STATE OR OF AN ORGANIZATION: the vocabulary is a modelling device, and every conclusion stated in its terms comes from the instrument that uses it.",
+    "THE LABELS OF THE PACKAGE ARE RUSSIAN IN THE SOURCE; the English labels come from the overlay i18n/en.json."
+  ],
+  "examples": [
+    "tests/01-dictionary-silent.lawtest"
+  ],
+  "license": "Apache-2.0 (see LICENSE).",
+  "maintainer": "Rifat Dzhumagulov (hi@arxo.io)",
+  "repository": "https://github.com/arxohq/arxo-charter-1945"
+}

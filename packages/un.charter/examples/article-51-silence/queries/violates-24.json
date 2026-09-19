@@ -1,0 +1,13 @@
+{
+  "queryId": "violates-24",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#violates_article_2_paragraph_4",
+    "args": [
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:a51:attacker" },
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:a51:victim" }
+    ]
+  }
+}

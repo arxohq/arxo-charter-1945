@@ -1,0 +1,209 @@
+{
+  "editions": [
+    {
+      "document": "en.txt",
+      "scope": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51",
+        "52",
+        "53",
+        "54",
+        "55",
+        "56",
+        "57",
+        "58",
+        "59",
+        "60",
+        "61",
+        "62",
+        "63",
+        "64",
+        "65",
+        "66",
+        "67",
+        "68",
+        "69",
+        "70",
+        "71",
+        "72",
+        "73",
+        "74",
+        "75",
+        "76",
+        "77",
+        "78",
+        "79",
+        "80",
+        "81",
+        "82",
+        "83",
+        "84",
+        "85",
+        "86",
+        "87",
+        "88",
+        "89",
+        "90",
+        "91",
+        "92",
+        "93",
+        "94",
+        "95",
+        "96",
+        "97",
+        "98",
+        "99",
+        "100",
+        "101",
+        "102",
+        "103",
+        "104",
+        "105",
+        "106",
+        "107",
+        "108",
+        "109",
+        "110",
+        "111"
+      ],
+      "unit": "en_article_plain",
+      "note": "The package takes a SLICE of the Charter, not all 111 articles: Chapter I in full (Art. 1-2), Chapter II Art. 3, 5, 6 (original Members, suspension, expulsion — Art. 4 admission already in scope), Chapter III Art. 7-8 (organs, equal eligibility), Chapter IV Art. 9-17 and 19-22 (COMPOSITION/FUNCTIONS AND POWERS/VOTING/PROCEDURE of the General Assembly — Art. 18 voting already in scope), Chapter V in full (Art. 23-32: COMPOSITION/FUNCTIONS AND POWERS/VOTING/PROCEDURE of the Security Council, stage E3 closing the PROCEDURE gap, Art. 28-32), Chapter VI in full (Art. 33-38: pacific settlement of disputes, stage E4), Chapter VII in full (Art. 39-51), Chapter VIII in full (Art. 52-54: regional arrangements, stage E5), Chapter IX in full (Art. 55-60: international economic and social co-operation, stage E6), Chapter X in full (Art. 61-72: the Economic and Social Council — composition, functions and powers, voting, procedure, stage E6), Chapter XI in full (Art. 73-74: declaration regarding non-self-governing territories, stage E7), Chapter XII in full (Art. 75-85: the international trusteeship system, stage E7), Chapter XIII in full (Art. 86-91: the Trusteeship Council, stage E7), Chapter XIV in full (Art. 92-96: the International Court of Justice, stage E8 adding Art. 93-96 on top of the already-declared Art. 92), Chapter XV in full (Art. 97-101: the Secretariat, stage E8), plus 103 (priority of Charter obligations), 108 (amendments) and 111 (authentic texts, depositary) from the original slice. Stage E9 (18.09.2026) closes the scope with the remaining Chapters XVI-XIX: Art. 102 (registration of treaties, bar on invocation before a UN organ if unregistered — bridged to Art. 103's priority rule), 104 (legal capacity of the Organization), 105 (privileges and immunities of the Organization, Members' representatives and officials), 106 (transitional consultation duty pending Art. 43 special agreements), 107 (enemy-state non-preclusion clause, the same letter-only treatment already given its Art. 53, para. 2 companion), 109 (General Conference to review the Charter: convening votes with no permanent-member veto, alteration ratification reusing Art. 108's named-lock machinery, the historically spent tenth-session fallback), 110 (ratification, deposit, coming into force, original Members ratifying after entry into force). SCOPE NOW COVERS ALL 111 ARTICLES OF THE CHARTER — no chapter or article remains pinned-but-unfragmented. As of E0 (18.09.2026), the English edition is the sole pinned and fragmented edition of this package (see sources.law and docs/foundations/un-charter/DECISIONS.md); the Russian text used during earlier drafting remains on disk at sources/charter/ru.txt as evidentiary backing for the Article 111 fact that five texts are equally authentic, and is no longer tracked as a separate scope here.",
+      "declared": {
+        "1": {
+          "reason": "Article 1 states the PURPOSES of the Organization as infinitives (\"To maintain\", \"To develop\", \"To achieve\", \"To be a centre\") — the interpretive frame for Article 2 (\"for the achievement of these common ends\"), without deontic addressed to a party, condition or quantity of its own. Serves as context in the commentary of 01-purposes-and-principles.law and produces no CLIR node."
+        },
+        "7": {
+          "reason": "Article 7 enumerates the principal organs (\"There are established as principal organs... a General Assembly, a Security Council, an Economic and Social Council, a Trusteeship Council, an International Court of Justice and a Secretariat\") and permits subsidiary organs (\"may be established\") — an enumeration and an establishment, carrying no deontic marker at all, no condition and no quantity; every organ it names already appears elsewhere in the package as an ordinary noun (`GeneralAssembly`/`SecurityCouncil` as `authority` values). See 03-organs.law."
+        },
+        "13": {
+          "reason": "Article 13 directs the General Assembly to \"initiate studies and make recommendations\" for two broad purposes (international-law codification; economic/social/cultural/health co-operation and human rights) — a mandate over subject matter, not a deontic addressed to a party, condition or quantity. Contrast Article 14 immediately below, which conditions its (narrower) recommendation power on the Assembly's own evaluative judgment that a situation is likely to impair the general welfare, and is formalized as EXECUTABLE for that reason (04-general-assembly.law)."
+        },
+        "15": {
+          "reason": "Article 15 directs the General Assembly to \"receive and consider\" annual/special reports from the Security Council and reports from other organs — an internal organizational function the Assembly performs upon itself, addressing no conduct of a party and opening no test, the same register as the Security Council's own annual/special reporting duty to the Assembly under Article 24, paragraph 3 (declared under \"24\" above)."
+        },
+        "16": {
+          "reason": "Article 16 assigns the General Assembly trusteeship-system functions \"assigned to it under Chapters XII and XIII\" and approval of trusteeship agreements for non-strategic areas — Chapters XII and XIII lie entirely outside this package's declared scope (the same class of cross-reference as Article 92's International Court of Justice Statute boundary in 07-final-provisions.law), so the assigned function has no textual content this package can test without importing those chapters."
+        },
+        "22": {
+          "reason": "Article 22 permits the General Assembly to establish subsidiary organs \"as it deems necessary for the performance of its functions\" — the same permissive, organ-founding register as Article 7's principal/subsidiary organs clause (03-organs.law), carrying no deontic content addressed to a party."
+        },
+        "24": {
+          "reason": "General delegation of responsibility to the Security Council (\"its Members confer on the Security Council primary responsibility\"); the concrete powers that fill this delegation are named by Articles 39-42 (06-enforcement.law). The text distributes institutional function, it does not address conduct of a party; conditions and quantities are absent.",
+          "despite": "A deontic marker is found on \"shall\", and this is a property of the REGISTER of English drafting technique, not other content of the article: where the Russian authentic text uses a simple present tense (\"the Security Council acts\", \"submits reports\"), the English uses \"shall\" in the same descriptive function. Both editions are authentic (Art. 111) and cannot diverge on normativity; \"shall act in accordance with the Purposes and Principles\" and \"shall submit annual reports\" describe the working order of one organ before another organ of the same Organization, not a duty of a party checked against a case: no rule of the slice reads them, and they open no test."
+        },
+        "26": {
+          "reason": "An assignment to the Security Council to formulate, with the assistance of the Military Staff Committee of Article 47, plans for the regulation of armaments \"to be submitted to the Members\" — an organizational task without addressed deontic, condition or quantity; no rule of the slice reads it.",
+          "despite": "A deontic marker is found on \"shall\", and this is a property of the REGISTER of English drafting technique, not other content of the article: where the Russian authentic text uses a simple present tense (\"the Security Council is responsible for\"), the English uses \"shall\" in the same descriptive function. Both editions are authentic (Art. 111) and cannot diverge on normativity; \"shall be responsible for formulating … plans to be submitted\" names a task of the organ, not a duty addressed to anyone; it has no addressee outside the organ, no term and no quantity."
+        },
+        "46": {
+          "reason": "\"Plans for the application of armed force shall be made by the Security Council with the assistance of the Military Staff Committee\" — internal organizational order, no addressee outside the organ and no condition or quantity; Articles 43-47 are formalized as a chain dead by the history of the Charter (see 06-enforcement.law), and Article 46 carries no separate test in it.",
+          "despite": "A deontic marker is found on \"shall\", and this is a property of the REGISTER of English drafting technique, not other content of the article: where the Russian authentic text uses a simple present tense (\"plans… are drawn up by the Security Council\"), the English uses \"shall\" in the same descriptive function. Both editions are authentic (Art. 111) and cannot diverge on normativity; the English construction here is passive (\"shall be made by\"), exactly the same descriptive form as the Russian; no addressee outside the organ, no condition, no quantity."
+        },
+        "92": {
+          "reason": "\"The International Court of Justice shall be the principal judicial organ of the United Nations… and forms an integral part of the present Charter\" — definition and institutional link without deontic, condition or quantity; addresses no conduct and opens no test.",
+          "despite": "A deontic marker is found on \"shall\", and this is a property of the REGISTER of English drafting technique, not other content of the article: where the Russian authentic text uses a simple present tense (\"the International Court of Justice is the principal judicial organ\"), the English uses \"shall\" in the same descriptive function. Both editions are authentic (Art. 111) and cannot diverge on normativity; \"shall be the principal judicial organ\" is a copula (\"is\"), not a duty: the subject here is the organ, not a party, and the sentence prescribes no conduct."
+        },
+        "55": {
+          "reason": "Article 55 states, as the object of Article 56's pledge, the PURPOSES of international economic and social co-operation ('with a view to the creation of conditions of stability and well-being... the United Nations shall promote:' higher living standards; solutions of international problems; universal respect for human rights) — an enumeration of ends, not a deontic addressed to a party, condition or quantity of its own, the same register as Article 1 (declared above). Article 56 (EXECUTABLE, 10-economic-social-cooperation.law) reads Article 55 as a whole, undecomposed textual anchor of the pledge, not article-by-article: no other rule of this stage or any other needs to distinguish WHICH of Article 55's goals is at stake."
+        },
+        "60": {
+          "reason": "Article 60 allocates responsibility for the discharge of Chapter IX's own functions between the General Assembly and, under its authority, the Economic and Social Council — an institutional division of labour between two organs of the same Organization, not conduct addressed to any party; the same register as Article 24's general delegation of primary responsibility to the Security Council (declared above).",
+          "despite": "Descriptive \"shall\" (\"shall be vested in\"), the same register as Article 24: distributes institutional function between organs, addresses no party's conduct, and opens no test any rule of this stage reads."
+        },
+        "62": {
+          "reason": "Article 62 grants the Economic and Social Council four independent, entirely discretionary competences ('may make or initiate studies and reports...', 'may make recommendations... for the purpose of promoting respect for... human rights', 'may prepare draft conventions...', 'may call... international conferences...') — institutional-competence grants over subject matter, addressed to no party, conditioned on nothing the package can test, the same register as Article 13's studies-and-recommendations mandate (declared above)."
+        },
+        "65": {
+          "reason": "Article 65's first clause ('may furnish information to the Security Council') is discretionary and untestable; its second clause ('shall assist the Security Council upon its request') is passive and organ-directed, naming no State-typed bearer this package could attach a `duty` to — the same entity/register gap already logged for Article 53 (a regional arrangement, not a Member State, bears that Article's own obligation). Unlike Article 53, however, no other rule of this package reads an 'ECOSOC assisted the Security Council upon request' fact, so modelling a flat institutional conclusion with no consumer would repeat the same over-reach this package's own convention avoids for Article 9, Article 32's second sentence and Article 63 above."
+        },
+        "66": {
+          "reason": "Article 66 assigns ECOSOC functions in carrying out General Assembly recommendations, performing services at Members'/specialized agencies' request with Assembly approval, and 'such other functions as are specified elsewhere in the present Charter or as may be assigned to it by the General Assembly' — a residual institutional-competence grant with no addressee-conduct condition or quantity of its own; its own catch-all third clause explicitly routes back to functions DEFINED BY OTHER articles, not a test this article itself supplies."
+        },
+        "111": {
+          "reason": "Depositary (the Government of the United States), five equally authentic texts and the attestation formula — provenance already expressed in sources.law by the pinned edition (`officiality official`), not an operative norm: the text describes custody of the original and transmission of certified copies, addressing no conduct of parties.",
+          "despite": "A deontic marker is found on \"shall\", and this is a property of the REGISTER of English drafting technique, not other content of the article: where the Russian authentic text uses a simple present tense (\"[it] remains deposited\", \"are transmitted\"), the English uses \"shall\" in the same descriptive function. Both editions are authentic (Art. 111) and cannot diverge on normativity; \"shall remain deposited\" and \"shall be transmitted\" describe the fate of the original and the transmission of copies by the depositary — provenance, expressed by source/edition/publication nodes, not a norm checked against a case."
+        },
+        "74": {
+          "reason": "Article 74 (\"Members... also agree that their policy in respect of the territories to which this Chapter applies... must be based on the general principle of good-neighbourliness, due account being taken of the interests and well-being of the rest of the world\") names no organ to assess compliance and no determinate act a case could report as done or not done — an open-ended policy directive, the same register as Article 52, paragraph 1's \"consistent with the Purposes and Principles\" proviso (left as residue there because it sits inside an otherwise EXECUTABLE article; here it is Article 74's entire content, so the article itself is declared)."
+        },
+        "75": {
+          "reason": "Article 75 (\"The United Nations shall establish under its authority an international trusteeship system... These territories are hereinafter referred to as trust territories\") is the system's own establishment and a definitional sentence — organizational, no addressee-conduct condition, the same register as Article 7's organs clause."
+        },
+        "76": {
+          "reason": "Article 76 lists the trusteeship system's basic objectives (further peace and security; advancement of inhabitants; respect for human rights; equal treatment in economic/social/commercial matters) as infinitives with no organ assessing compliance and no determinate act any rule tests — the same register as Article 55's declared purposes list, contrasted with Article 56's own EXECUTABLE pledge in the immediately following chapter (10-economic-social-cooperation.law)."
+        },
+        "79": {
+          "reason": "Article 79 (\"The terms of trusteeship for each territory... shall be agreed upon by the states directly concerned... and shall be approved as provided for in Articles 83 and 85\") cross-references Articles 83 and 85's own approval machinery, built in full in 13-trusteeship-system.law, with no separate condition of its own — the same \"cross-reference declared, not re-tested\" treatment already given to Article 16's trusteeship cross-reference at E2."
+        },
+        "80": {
+          "reason": "Article 80 is a pure savings clause (\"nothing in this Chapter shall be construed... to alter in any manner the rights whatsoever of any states or any peoples or the terms of existing international instruments\"), stating a non-alteration of rights pending the conclusion of trusteeship agreements — addresses no party's conduct, the same register as Article 52, paragraph 4's savings clause."
+        },
+        "81": {
+          "reason": "Article 81 describes what a trusteeship agreement must specify (the terms of administration; the designation of the administering authority, which may be one or more states or the Organization itself) — organizational drafting requirement, no independent condition of its own; the administering-authority fact it describes is read directly as a case premise by Article 84's duty and Article 86's composition test (13-trusteeship-system.law, 14-trusteeship-council.law), the same convention as `member_state` itself."
+        },
+        "82": {
+          "reason": "Article 82 permits designating part or all of a trust territory as a strategic area, \"without prejudice to any special agreement or agreements made under Article 43\" — the designation act IS the case fact `is_strategic_area` read directly by Article 83's competence rule (13-trusteeship-system.law), the same register as `member_state`/`permanent_member` themselves (a base case premise, not a separately derived rule conclusion); Article 82 names no further addressee-conduct condition of its own."
+        },
+        "87": {
+          "reason": "Article 87 grants the General Assembly and the Trusteeship Council a list of institutional powers (considering reports, accepting and examining petitions, periodic visits, other actions in conformity with the terms of trusteeship agreements) — discretionary competence over subject matter, no addressee-conduct condition of its own, the same register as Article 62's declared ECOSOC powers list at E6."
+        },
+        "91": {
+          "reason": "Article 91 (\"The Trusteeship Council shall, when appropriate, avail itself of the assistance of the Economic and Social Council and of the specialized agencies in regard to matters with which they are respectively concerned\") is a discretionary inter-organ coordination clause with no addressee-conduct condition and no quantity of its own — the same register as Article 65's declared ECOSOC-assists-Security-Council clause at E6 (itself declared for a no-consumer reason, not an entity gap); the clause states only that the Council MAY avail itself of such assistance, naming no condition a case could test either way."
+        },
+        "107": {
+          "reason": "\"Nothing in the present Charter shall invalidate or preclude action... taken or authorized as a result of that war by the Governments having responsibility for such action\" is the SAME enemy-state carve-out this package already formalizes, by the letter, as a single flat case fact at its point of actual use — `enemy_state_measure_under_article_107` (09-regional-arrangements.law, Article 53, paragraph 1's exception, stage E5). Article 107 itself is the GENERAL non-preclusion clause behind that specific application: broader in principle (\"action\" at large, not only regional enforcement action), but no rule of this package's declared scope other than Article 53's own exception ever reads a general enemy-state fact, so building a second, wider carve-out here would be exactly the \"predicate nobody reads\" over-reach Article 53's own stage already declined (no WWII-enemy-state lookup chain). Alive in the text, dead in practice — the same register as Articles 43-47 (Finding 1).",
+          "despite": "A deontic marker is found on \"shall invalidate or preclude\", but its subject is the Charter's own preclusive effect, not a party's conduct: the sentence denies that the instrument invalidates certain acts, the same non-preclusion register as Article 95's `despite` note."
+        }
+      }
+    }
+  ]
+}

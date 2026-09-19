@@ -1,0 +1,13 @@
+{
+  "queryId": "conference-convened",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#general_conference_convening_decided",
+    "args": [
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:amendment:conf-convene-ga" },
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:amendment:conf-convene-sc" }
+    ]
+  }
+}

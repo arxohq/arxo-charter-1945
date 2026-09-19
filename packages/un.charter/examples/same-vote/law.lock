@@ -1,0 +1,47 @@
+{
+  "dependencyEdges": [
+    {
+      "features": [],
+      "from": "examples.un.charter.same_vote",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "un.charter"
+    },
+    {
+      "features": [],
+      "from": "un.charter",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "doctrine.iura_humana"
+    }
+  ],
+  "languageSemantics": "law.core/0.2.0",
+  "lockVersion": "0.1",
+  "packages": [
+    {
+      "contentHash": "sha256:4c18155b12e963f807655b27c01d53b2bbad207fa089a481d69fbe9e3f80ef00",
+      "features": [
+        "core-executable"
+      ],
+      "name": "doctrine.iura_humana",
+      "namespace": "urn:doctrine:clir:iura-humana",
+      "version": "0.1.0"
+    },
+    {
+      "contentHash": "sha256:b66b04b5243c7d5e2540f23da56440a993cec1c484821b697a09c79d3589b948",
+      "features": [
+        "core-executable"
+      ],
+      "name": "un.charter",
+      "namespace": "urn:un:corpus:clir:charter",
+      "version": "0.1.0"
+    }
+  ],
+  "resolutionHash": "sha256:80b84de855db1cd0d47fd35936c63228296450cdad2bcecf2f99405cf85ba5af",
+  "root": {
+    "contentHash": "sha256:462d6737d2144e808b9279ca66a06f05f1acb081703f285ef68da7fab20ebd9d",
+    "name": "examples.un.charter.same_vote",
+    "namespace": "urn:law:examples:un-charter:same-vote",
+    "version": "0.1.0"
+  }
+}

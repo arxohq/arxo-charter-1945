@@ -1,0 +1,517 @@
+// Chapter IV: The General Assembly — Articles 9-22.
+//
+// SCOPE OF THIS MODULE. COMPOSITION (Art. 9), FUNCTIONS AND POWERS
+// (Art. 10-17), VOTING (Art. 18-19) and PROCEDURE (Art. 20-22). Art. 13,
+// 15, 16, 22 remain declared (see `articles.json`); Art. 9, 10, 11, 12, 14,
+// 17, 18, 19, 20, 21 are EXECUTABLE. The Person/BudgetYear types close the
+// former entity-gap boundaries of Articles 9 and 17.
+//
+// A NEW ENTITY, `Matter`, FOR ARTICLES 10-14. Articles 10, 11, 12 and 14 all
+// speak of "any questions or any matters", "any dispute or situation" in the
+// sense of a topic the Assembly may discuss and recommend upon — a broader,
+// everyday-language object than the package's existing `Situation` (used
+// exclusively for the Article 39 "threat to the peace" determination chain
+// in 06-enforcement.law, which requires a Security Council determination
+// this Chapter IV language does not). Reusing `Situation` here would
+// conflate two different institutional concepts under one name; introducing
+// `Matter` keeps Article 12's Security-Council-seizure test (which needs no
+// Article 39 determination at all — the Council need only be "exercising...
+// the functions assigned to it", of any kind) honest to the text.
+//
+// ARTICLES 10, 11 AND 14 SHARE ONE CONCLUSION, `general_assembly_recommendation_power`.
+// All three grant the Assembly a power to make recommendations on a matter,
+// each over a different class of matter (Art. 10: anything within the
+// Charter's scope; Art. 11: general principles of peace-and-security
+// co-operation, or a specific peace-and-security question brought before
+// it; Art. 14: a situation the Assembly itself deems likely to impair the
+// general welfare or friendly relations). Article 10 explicitly says its
+// power is "except as provided in Article 12"; Article 11 repeats the same
+// proviso for both its paragraphs; Article 14 opens "Subject to the
+// provisions of Article 12". Modelling one shared conclusion, gated by one
+// shared Article 12 exception below, is not a simplification that loses
+// content — it is the text's OWN repeated cross-reference, read literally
+// three times over.
+//
+// ARTICLE 12 — A CLASSIC BASE-RULE + EXCEPTION-WITH-POSITIVE-PREDICATE
+// PATTERN. The Assembly's recommendation power is barred while the Security
+// Council "is exercising in respect of any dispute or situation the
+// functions assigned to it in the present Charter" — UNLESS the Council
+// itself "so requests". Per this package's established convention (Article
+// 4's `admission_blocked_without_recommendation`, Article 5/6's
+// `*_denied`/`*_suspension_denied`), the bar is a SEPARATE positive
+// institutional predicate, `general_assembly_recommendation_barred`, guarded
+// by `not_known(security_council_requests_general_assembly_recommendation(m))`
+// — not a negation of `general_assembly_recommendation_power` itself (which
+// would collide with the base rule's own head and, without a priority
+// declaration, produce `BOTH`). The Council's request is a plain empirical
+// fact reported by the case, not a DECISION-0194 evaluative channel: the
+// Charter names no assessment here, only an institutional act of will (the
+// Council either asks or it does not) — unlike Article 4's `peace_loving`
+// or Article 6's `persistently_violated_charter_principles`.
+//
+// ARTICLE 14'S "WHICH IT DEEMS LIKELY TO IMPAIR" — A DECISION-0194 CHANNEL-1
+// JUDGMENT, LIKE `peace_loving`/`persistently_violated_charter_principles`.
+// The text names the holder of the evaluative call explicitly ("it deems" —
+// the General Assembly), so `situation_impairs_general_welfare_or_friendly_relations`
+// is an `external judgment relation` with `authority GeneralAssembly`, the
+// same construction 02-membership.law already uses twice.
+//
+// ARTICLE 19 — THE CENTREPIECE OF THIS STAGE, FULLY COMPUTABLE WITHOUT
+// DIVISION. "Arrears... equals or exceeds the... contributions due... for
+// the preceding two full years" is a Money comparison, not a division:
+// `arrears >= annual_contribution * 2` avoids the documented engine trap
+// (`integer division yields Rational`, `docs/status/` memory) entirely,
+// since neither side of the comparison is ever divided. The "conditions
+// beyond the control of the Member" clause is a DECISION-0194 channel-1
+// judgment, again named directly by the text ("if it is satisfied") and
+// attributed to the very organ that grants the exception (the General
+// Assembly) — the same construction as Article 14 immediately above, and
+// the same base-rule + exception-with-positive-predicate-and-not_known
+// pattern as Article 12: `vote_forfeited_under_article_19` fires unless the
+// Assembly's permission is established, and `vote_retained_despite_arrears`
+// is the separate positive predicate for the granted-permission branch —
+// never a negation of the base rule's own head.
+//
+// ARTICLE 20 — SPECIAL SESSIONS AS A COMPUTED MAJORITY, NOT A FLAT FACT.
+// "a majority of the Members of the United Nations" is a majority of ALL
+// Members (the whole `member_state` population), NOT of "members present and
+// voting" as in Article 18 — a different denominator, deliberately not
+// reusing `important_question_adopted`'s machinery. Expressed the same
+// division-free way as Article 18's two-thirds test:
+// `requesting_count * 2 > member_count`. The regular-annual-sessions clause
+// of the same article carries no condition or quantity (no calendar of
+// sessions is modelled by this package) and is not separately declared —
+// per this package's convention (Article 4, 5, 6), an article with at least
+// one EXECUTABLE rule is not split into a partial `declared` entry for its
+// remaining organizational clauses.
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// --- Article 9: composition; five-representative cap ------------------------
+
+pub relation general_assembly_representative(s: State, p: Person) kind empirical {
+    label en official "the person is a representative of the Member in the General Assembly (Art. 9, para. 2)";
+}
+
+pub relation delegation_size(s: State, n: Integer) kind institutional {
+    label en unofficial "the number of representatives of the Member in the General Assembly (Art. 9, para. 2)";
+}
+
+@source(UNC_EN_ART9)
+rule DelegationSizeCounted(s: State) strict {
+    label en official "Article 9, paragraph 2. Each Member shall have not more than five representatives in the General Assembly.";
+    when member_state(s);
+    then delegation_size(s, (count distinct p: Person where general_assembly_representative(s, p)));
+}
+
+pub relation delegation_exceeds_five_representatives(s: State) kind institutional {
+    label en unofficial "the Member has more than five representatives in the General Assembly, contrary to Article 9, paragraph 2";
+}
+
+@source(UNC_EN_ART9)
+rule DelegationExceedsFiveRepresentatives(s: State, n: Integer) strict {
+    label en official "Article 9, paragraph 2. Each Member shall have not more than five representatives in the General Assembly.";
+    when delegation_size(s, n)
+        and n > ArticleNineDelegationCap;
+    then delegation_exceeds_five_representatives(s);
+}
+
+pub relation delegation_within_five_representatives(s: State) kind institutional {
+    label en unofficial "the Member's General Assembly delegation does not exceed five representatives (Art. 9, para. 2)";
+}
+
+@source(UNC_EN_ART9)
+rule DelegationWithinFiveRepresentatives(s: State, n: Integer) strict {
+    label en official "Article 9, paragraph 2. Each Member shall have not more than five representatives in the General Assembly.";
+    when delegation_size(s, n)
+        and n <= ArticleNineDelegationCap;
+    then delegation_within_five_representatives(s);
+}
+
+// --- Articles 10, 11, 14: bases of the General Assembly's recommendation power
+
+entity Matter { label en official "Question, matter, dispute or situation within the General Assembly's discussion and recommendation power (Art. 10-14)"; }
+
+pub relation matter_within_charter_scope(m: Matter) kind empirical {
+    label en official "the matter is a question or matter within the scope of the present Charter, or relating to the powers and functions of an organ provided for in the Charter (Art. 10)";
+}
+
+pub relation general_assembly_recommendation_power(m: Matter) kind institutional {
+    label en unofficial "the General Assembly has a general power to discuss and make recommendations on this matter, subject to Article 12 (Art. 10, 11, 14)";
+}
+
+@source(UNC_EN_ART10)
+rule GeneralAssemblyRecommendationPowerUnderArticle10(m: Matter) strict {
+    label en official "Article 10. The General Assembly may discuss any questions or any matters within the scope of the present Charter or relating to the powers and functions of any organs provided for in the present Charter, and, except as provided in Article 12, may make recommendations to the Members of the United Nations or to the Security Council or to both on any such questions or matters.";
+    when matter_within_charter_scope(m);
+    then general_assembly_recommendation_power(m);
+}
+
+pub relation peace_and_security_cooperation_principle_matter(m: Matter) kind empirical {
+    label en official "the matter concerns the general principles of co-operation in the maintenance of international peace and security, including disarmament and the regulation of armaments (Art. 11, para. 1)";
+}
+
+pub relation peace_and_security_question_brought_before_assembly(m: Matter) kind empirical {
+    label en official "the matter is a question relating to the maintenance of international peace and security brought before the General Assembly by a Member, by the Security Council, or by a non-Member State under Article 35, paragraph 2 (Art. 11, para. 2)";
+}
+
+@source(UNC_EN_ART11)
+rule GeneralAssemblyRecommendationPowerUnderArticle11Principles(m: Matter) strict {
+    label en official "Article 11, paragraph 1. The General Assembly may consider the general principles of co-operation in the maintenance of international peace and security... and may make recommendations with regard to such principles to the Members or to the Security Council or to both.";
+    when peace_and_security_cooperation_principle_matter(m);
+    then general_assembly_recommendation_power(m);
+}
+
+@source(UNC_EN_ART11)
+rule GeneralAssemblyRecommendationPowerUnderArticle11Question(m: Matter) strict {
+    label en official "Article 11, paragraph 2. The General Assembly may discuss any questions relating to the maintenance of international peace and security brought before it... and, except as provided in Article 12, may make recommendations with regard to any such questions...";
+    when peace_and_security_question_brought_before_assembly(m);
+    then general_assembly_recommendation_power(m);
+}
+
+pub external judgment relation situation_impairs_general_welfare_or_friendly_relations(m: Matter) {
+    authority GeneralAssembly;
+    label en official "the General Assembly deems the situation, regardless of its origin, likely to impair the general welfare or friendly relations among nations, including a situation resulting from a violation of the Purposes and Principles of the Charter (Art. 14)";
+}
+
+@source(UNC_EN_ART14)
+rule GeneralAssemblyRecommendationPowerUnderArticle14(m: Matter) strict {
+    label en official "Article 14. Subject to the provisions of Article 12, the General Assembly may recommend measures for the peaceful adjustment of any situation, regardless of origin, which it deems likely to impair the general welfare or friendly relations among nations...";
+    when situation_impairs_general_welfare_or_friendly_relations(m);
+    then general_assembly_recommendation_power(m);
+}
+
+// --- Article 12: bar while the Security Council is seized of the matter
+
+pub relation security_council_seized_of_matter(m: Matter) kind empirical {
+    label en official "the Security Council is exercising, in respect of this dispute or situation, the functions assigned to it by the present Charter (Art. 12, para. 1)";
+}
+
+pub relation security_council_requests_general_assembly_recommendation(m: Matter) kind empirical {
+    label en official "the Security Council requests that the General Assembly make a recommendation, notwithstanding its own seizure of the matter (Art. 12, para. 1, proviso)";
+}
+
+pub relation general_assembly_recommendation_barred(m: Matter) kind institutional {
+    label en unofficial "the General Assembly may not make a recommendation with regard to this dispute or situation while the Security Council is seized of it, absent a Security Council request (Art. 12, para. 1)";
+}
+
+@source(UNC_EN_ART12)
+rule GeneralAssemblyRecommendationBarredWhileSecurityCouncilSeized(m: Matter) strict {
+    label en official "Article 12, paragraph 1. While the Security Council is exercising in respect of any dispute or situation the functions assigned to it in the present Charter, the General Assembly shall not make any recommendation with regard to that dispute or situation unless the Security Council so requests.";
+    when general_assembly_recommendation_power(m)
+        and security_council_seized_of_matter(m)
+        and not_known(security_council_requests_general_assembly_recommendation(m));
+    then general_assembly_recommendation_barred(m);
+}
+
+pub relation general_assembly_recommendation_permitted_despite_seizure(m: Matter) kind institutional {
+    label en unofficial "the Security Council's request lifts the Article 12 bar: the General Assembly may make a recommendation despite the Council's seizure of the matter (Art. 12, para. 1, proviso)";
+}
+
+@source(UNC_EN_ART12)
+rule GeneralAssemblyRecommendationPermittedBySecurityCouncilRequest(m: Matter) strict {
+    label en official "Article 12, paragraph 1, proviso. ...unless the Security Council so requests.";
+    when general_assembly_recommendation_power(m)
+        and security_council_seized_of_matter(m)
+        and security_council_requests_general_assembly_recommendation(m);
+    then general_assembly_recommendation_permitted_despite_seizure(m);
+}
+
+// --- Article 18: voting in the General Assembly (pre-existing, unchanged)
+//
+// MEMBERSHIP IN THE ASSEMBLY reuses the package's `member_state`: Article 9
+// ("The General Assembly shall consist of all the Members of the United
+// Nations") is declared (see `sources/charter/articles.json`), but the link
+// itself is trivial and carries no dispute — a separate predicate for it
+// would only duplicate the fact without new meaning.
+//
+// THE LIST OF "IMPORTANT QUESTIONS" (Art. 18, para. 2) — A BOUNDARY NAMED
+// DIRECTLY. The eight listed categories (peace and security, election of
+// non-permanent members of the Security Council/ECOSOC/Trusteeship Council,
+// admission/suspension/expulsion of Members, trusteeship system questions,
+// budgetary questions) are a classification of the SUBJECT MATTER of a
+// decision, not a computable test: the package does not attempt to
+// determine WHAT a case is about — that is `is_important_question`, taken
+// as an empirical fact. The threshold of the list itself ("determination of
+// additional categories") is empirical for the same reason.
+//
+// "PRESENT AND VOTING" EXCLUDES THOSE WHO ABSTAIN. The Assembly's practice
+// (Rule 86 of the Rules of Procedure) does not count abstention as voting —
+// the denominator is built only from votes "for" and "against". The 2/3
+// fraction is expressed WITHOUT DIVISION (cross-multiplication):
+// `voted_for * 3 >= (voted_for + voted_against) * 2`.
+//
+// THE SUM OF TWO COUNTS, NOT `or` INSIDE `collect … where`. The reference
+// oracle (`lawref/evaluator/solver.py:flatten_body`) does not understand
+// `or` inside an aggregate generator at all (`ValueError`, not a silently
+// wrong answer) — the failure is caught on the FIRST run of any query
+// against the document, not only against this rule. `for`/`against` are
+// sets that a case cannot intersect (a single State does not vote both
+// "for" and "against" at once), so the sum of their counts equals the count
+// of their union without risk of double counting.
+
+pub relation is_important_question(d: Decision) kind empirical {
+    label en official "the question falls under the list of Article 18, paragraph 2, or is recognized as such under paragraph 3";
+}
+
+// A SEPARATE fact, not `not is_important_question(d)`: negating an
+// empirical classifying fact in a strict body has no established negative
+// side without an explicit case fact (the same canon as "a negative strict
+// head is dead") — classifying a question as ORDINARY is just as
+// substantive as classifying it as IMPORTANT, and the case must report it
+// explicitly rather than leave it to a default.
+pub relation is_ordinary_question(d: Decision) kind empirical {
+    label en official "the question does not fall under the list of Article 18, paragraph 2 (Art. 18, para. 3)";
+}
+
+pub relation important_question_adopted(d: Decision) kind institutional {
+    label en unofficial "the decision on an important question is adopted by a two-thirds majority (Art. 18, para. 2)";
+}
+
+@source(UNC_EN_ART18)
+rule ImportantQuestionAdoptedByTwoThirds(d: Decision) strict {
+    label en official "Article 18, paragraph 2. Decisions of the General Assembly on important questions shall be made by a two-thirds majority of the members present and voting.";
+    when is_important_question(d)
+        and (count distinct s: State where casts_vote_for(d, s)) * 3
+            >= ((count distinct s: State where casts_vote_for(d, s))
+                + (count distinct s: State where casts_vote_against(d, s))) * 2
+        and (count distinct s: State where casts_vote_for(d, s))
+            + (count distinct s: State where casts_vote_against(d, s)) > 0;
+    then important_question_adopted(d);
+}
+
+pub relation important_question_not_adopted(d: Decision) kind institutional {
+    label en unofficial "the decision on an important question fails to reach two thirds (Art. 18, para. 2)";
+}
+
+@source(UNC_EN_ART18)
+rule ImportantQuestionNotAdoptedBelowTwoThirds(d: Decision) strict {
+    label en official "Article 18, paragraph 2 — negative side of the threshold: fewer than two thirds of the votes present and voting are cast \"for\".";
+    when is_important_question(d)
+        and (count distinct s: State where casts_vote_for(d, s))
+            + (count distinct s: State where casts_vote_against(d, s)) > 0
+        and (count distinct s: State where casts_vote_for(d, s)) * 3
+            < ((count distinct s: State where casts_vote_for(d, s))
+               + (count distinct s: State where casts_vote_against(d, s))) * 2;
+    then important_question_not_adopted(d);
+}
+
+pub relation ordinary_question_adopted(d: Decision) kind institutional {
+    label en unofficial "the decision on an ordinary question is adopted by a simple majority (Art. 18, para. 3)";
+}
+
+@source(UNC_EN_ART18)
+rule OrdinaryQuestionAdoptedBySimpleMajority(d: Decision) strict {
+    label en official "Article 18, paragraph 3. Decisions on other questions… shall be made by a majority of the members present and voting.";
+    when is_ordinary_question(d)
+        and (count distinct s: State where casts_vote_for(d, s)) * 2
+            > (count distinct s: State where casts_vote_for(d, s))
+              + (count distinct s: State where casts_vote_against(d, s));
+    then ordinary_question_adopted(d);
+}
+
+// --- Article 17: budget and apportionment of expenses -----------------------
+//
+// The Assembly's approval of the budget and its apportionment of expenses
+// among the Members are institutional acts a case reports. Apportionment
+// creates a payment duty on each Member; unpaid apportionments for the
+// preceding two full years are a SECOND producer of Article 19's threshold
+// (the existing `arrears_amount`/`annual_contribution_due` path is
+// unchanged).
+
+pub relation general_assembly_approves_budget(d: Decision, y: BudgetYear) kind empirical {
+    label en official "the General Assembly has considered and approved the budget of the Organization for the financial year (Art. 17, para. 1)";
+}
+
+pub relation budget_approved_for_year(y: BudgetYear) kind institutional {
+    label en unofficial "the Organization's budget for the financial year stands approved (Art. 17, para. 1)";
+}
+
+@source(UNC_EN_ART17)
+rule GeneralAssemblyApprovesBudget(d: Decision, y: BudgetYear) strict {
+    label en official "Article 17, paragraph 1. The General Assembly shall consider and approve the budget of the Organization.";
+    when general_assembly_approves_budget(d, y);
+    then budget_approved_for_year(y);
+}
+
+pub relation expenses_apportioned_to(s: State, y: BudgetYear, amount: Money) kind empirical {
+    label en official "the expenses of the Organization have been apportioned to this Member for the financial year (Art. 17, para. 2)";
+}
+
+pub relation contribution_paid_for_year(s: State, y: BudgetYear) kind empirical {
+    label en unofficial "the Member has paid the contribution apportioned to it for the financial year (Art. 17, para. 2)";
+}
+
+@source(UNC_EN_ART17)
+rule DutyToPayApportionedContribution(s: State, y: BudgetYear, amount: Money) strict {
+    label en official "Article 17, paragraph 2. The expenses of the Organization shall be borne by the Members as apportioned by the General Assembly.";
+    when member_state(s)
+        and expenses_apportioned_to(s, y, amount);
+    then duty PayApportionedContribution {
+        bearer s;
+        achieve contribution_paid_for_year(s, y) during [@0001-01-01, infinity);
+    };
+}
+
+pub relation unpaid_apportioned_contribution(s: State, y: BudgetYear, amount: Money) kind institutional {
+    label en unofficial "the Member's apportioned contribution for the financial year remains unpaid (Art. 17, para. 2)";
+}
+
+@source(UNC_EN_ART17)
+rule UnpaidApportionedContribution(s: State, y: BudgetYear, amount: Money) strict {
+    label en official "Article 17, paragraph 2. The expenses of the Organization shall be borne by the Members as apportioned by the General Assembly.";
+    when expenses_apportioned_to(s, y, amount)
+        and not_known(contribution_paid_for_year(s, y));
+    then unpaid_apportioned_contribution(s, y, amount);
+}
+
+pub relation preceding_two_full_years(y1: BudgetYear, y2: BudgetYear) kind empirical {
+    label en unofficial "these two financial years are the preceding two full years within the meaning of Article 19";
+}
+
+// --- Article 19: loss of vote for arrears -----------------------------------
+
+pub relation arrears_amount(s: State, amount: Money) kind empirical {
+    label en official "the amount of the State's arrears in the payment of its financial contributions to the Organization (Art. 19)";
+}
+
+pub relation annual_contribution_due(s: State, amount: Money) kind empirical {
+    label en official "the amount of the State's annual financial contribution due to the Organization, used to compute the two-full-years threshold of Article 19";
+}
+
+const ArticleNineteenFullYears: Decimal = 2.0 {
+    label en official "the preceding two full years (Art. 19)";
+}
+
+pub relation arrears_reach_two_year_threshold(s: State) kind institutional {
+    label en unofficial "the State's arrears equal or exceed the contributions due from it for the preceding two full years (Art. 19, threshold test)";
+}
+
+@source(UNC_EN_ART19)
+rule ArrearsReachTwoYearThreshold(s: State, arrears: Money, annual: Money) strict {
+    label en official "Article 19, first sentence, threshold test: arrears equal or exceed the contributions due for the preceding two full years.";
+    when arrears_amount(s, arrears) and annual_contribution_due(s, annual)
+        and arrears >= annual * ArticleNineteenFullYears;
+    then arrears_reach_two_year_threshold(s);
+}
+
+@source(UNC_EN_ART19)
+rule ArrearsReachTwoYearThresholdFromUnpaidApportionments(
+    s: State, y1: BudgetYear, y2: BudgetYear, a1: Money, a2: Money
+) strict {
+    label en official "Article 19, first sentence, threshold test: two preceding full years' apportioned contributions remain unpaid, so arrears equal the contributions due for those years.";
+    when unpaid_apportioned_contribution(s, y1, a1)
+        and unpaid_apportioned_contribution(s, y2, a2)
+        and preceding_two_full_years(y1, y2);
+    then arrears_reach_two_year_threshold(s);
+}
+
+// A SEPARATE positive predicate for the negative side, not
+// `not arrears_reach_two_year_threshold(s)`: the same canon as Article
+// 18's `is_ordinary_question` and Article 5/6's `*_denied` predicates above.
+pub relation arrears_below_two_year_threshold(s: State) kind institutional {
+    label en unofficial "the State's arrears are below the contributions due from it for the preceding two full years (Art. 19, negative side of the threshold test)";
+}
+
+@source(UNC_EN_ART19)
+rule ArrearsBelowTwoYearThreshold(s: State, arrears: Money, annual: Money) strict {
+    label en official "Article 19, first sentence, negative side of the threshold test: arrears below the two-full-years threshold.";
+    when arrears_amount(s, arrears) and annual_contribution_due(s, annual)
+        and arrears < annual * ArticleNineteenFullYears;
+    then arrears_below_two_year_threshold(s);
+}
+
+pub external judgment relation general_assembly_permits_vote_despite_arrears(s: State) {
+    authority GeneralAssembly;
+    label en official "the General Assembly, satisfied that the State's failure to pay is due to conditions beyond its control, permits the State to vote notwithstanding its arrears (Art. 19, second sentence)";
+}
+
+pub relation vote_forfeited_under_article_19(s: State) kind institutional {
+    label en unofficial "the State has no vote in the General Assembly under Article 19 (arrears at or above the two-year threshold, no Assembly permission established)";
+}
+
+@source(UNC_EN_ART19)
+rule VoteForfeitedUnderArticle19(s: State) strict {
+    label en official "Article 19, first sentence. A Member of the United Nations which is in arrears in the payment of its financial contributions to the Organization shall have no vote in the General Assembly if the amount of its arrears equals or exceeds the amount of the contributions due from it for the preceding two full years.";
+    when arrears_reach_two_year_threshold(s)
+        and not_known(general_assembly_permits_vote_despite_arrears(s));
+    then vote_forfeited_under_article_19(s);
+}
+
+pub relation vote_retained_despite_arrears(s: State) kind institutional {
+    label en unofficial "the State keeps its vote despite reaching the Article 19 threshold, by permission of the General Assembly (Art. 19, second sentence)";
+}
+
+@source(UNC_EN_ART19)
+rule VoteRetainedByGeneralAssemblyPermission(s: State) strict {
+    label en official "Article 19, second sentence. The General Assembly may, nevertheless, permit such a Member to vote if it is satisfied that the failure to pay is due to conditions beyond the control of the Member.";
+    when arrears_reach_two_year_threshold(s)
+        and general_assembly_permits_vote_despite_arrears(s);
+    then vote_retained_despite_arrears(s);
+}
+
+// --- Article 20: special sessions -------------------------------------------
+
+entity Session { label en official "Session of the General Assembly (Art. 20)"; }
+
+pub relation security_council_requests_special_session(sess: Session) kind empirical {
+    label en official "the Security Council requests convocation of a special session of the General Assembly (Art. 20)";
+}
+
+pub relation requests_special_session(sess: Session, s: State) kind empirical {
+    label en official "the State requests convocation of a special session of the General Assembly (Art. 20)";
+}
+
+pub relation special_session_convened(sess: Session) kind institutional {
+    label en unofficial "a special session of the General Assembly is validly convoked, by the Secretary-General, at the request of the Security Council or of a majority of the Members (Art. 20)";
+}
+
+@source(UNC_EN_ART20)
+rule SpecialSessionConvenedBySecurityCouncilRequest(sess: Session) strict {
+    label en official "Article 20, second sentence, first branch. Special sessions shall be convoked by the Secretary-General at the request of the Security Council...";
+    when security_council_requests_special_session(sess);
+    then special_session_convened(sess);
+}
+
+@source(UNC_EN_ART20)
+rule SpecialSessionConvenedByMajorityOfMembers(sess: Session, s: State) strict {
+    label en official "Article 20, second sentence, second branch. ...or of a majority of the Members of the United Nations.";
+    when requests_special_session(sess, s)
+        and (count distinct t: State where requests_special_session(sess, t)) * 2
+            > (count distinct t: State where member_state(t));
+    then special_session_convened(sess);
+}
+
+// --- Article 21: rules of procedure and President of the session -----------
+
+pub relation general_assembly_adopts_rules_of_procedure(d: Decision) kind empirical {
+    label en official "the General Assembly adopts its own rules of procedure (Art. 21)";
+}
+
+pub relation general_assembly_rules_of_procedure_in_force(d: Decision) kind institutional {
+    label en unofficial "the General Assembly's rules of procedure are in force (Art. 21)";
+}
+
+@source(UNC_EN_ART21)
+rule GeneralAssemblyAdoptsOwnRulesOfProcedure(d: Decision) strict {
+    label en official "Article 21. The General Assembly shall adopt its own rules of procedure.";
+    when general_assembly_adopts_rules_of_procedure(d);
+    then general_assembly_rules_of_procedure_in_force(d);
+}
+
+pub relation president_elected_for_session(sess: Session, p: Person) kind empirical {
+    label en official "the General Assembly has elected this person its President for the session (Art. 21)";
+}
+
+pub relation session_has_president(sess: Session, p: Person) kind institutional {
+    label en unofficial "the person is President of the General Assembly for the session (Art. 21)";
+}
+
+@source(UNC_EN_ART21)
+rule GeneralAssemblyElectsPresidentForSession(sess: Session, p: Person) strict {
+    label en official "Article 21. It shall elect its President for each session.";
+    when president_elected_for_session(sess, p);
+    then session_has_president(sess, p);
+}

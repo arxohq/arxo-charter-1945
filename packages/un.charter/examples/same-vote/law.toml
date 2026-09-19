@@ -1,0 +1,39 @@
+# Worked cases over the pinned Charter: one Security Council vote, letter and practice.
+[package]
+name = "examples.un.charter.same_vote"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:un-charter:same-vote"
+
+[dependencies]
+"un.charter" = "0.1.0"
+
+[[cases]]
+name = "ProceduralNineFor"
+path = "cases/01-procedural-nine-for.lawcase"
+
+[[cases]]
+name = "AbstentionLetter"
+path = "cases/02-abstention-letter.lawcase"
+
+[[cases]]
+name = "AbstentionPractice"
+path = "cases/03-abstention-practice.lawcase"
+
+[[cases]]
+name = "DisputantVotes"
+path = "cases/04-disputant-votes.lawcase"
+
+[[cases]]
+name = "ContinuityLetter"
+path = "cases/05-continuity-letter.lawcase"
+
+[[cases]]
+name = "ContinuityPractice"
+path = "cases/06-continuity-practice.lawcase"
+
+[metadata]
+act = "un-charter-examples-same-vote"
+title = "Worked cases: the same Security Council vote under the letter of article 27(3) and under practice"
+jurisdiction = "International"
+instrument = "case-collection"

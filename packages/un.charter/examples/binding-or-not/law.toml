@@ -1,0 +1,51 @@
+# Worked cases over the pinned Charter: what binds a Member and what does not.
+[package]
+name = "examples.un.charter.binding_or_not"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:un-charter:binding-or-not"
+
+[dependencies]
+"un.charter" = "0.1.0"
+
+[[cases]]
+name = "CouncilDecisionBinds"
+path = "cases/01-council-decision-binds.lawcase"
+
+[[cases]]
+name = "CouncilDecisionComplied"
+path = "cases/02-council-decision-complied.lawcase"
+
+[[cases]]
+name = "AssemblyRecommendation"
+path = "cases/03-assembly-recommendation.lawcase"
+
+[[cases]]
+name = "AbstentionLetter"
+path = "cases/04-abstention-letter.lawcase"
+
+[[cases]]
+name = "AbstentionPractice"
+path = "cases/05-abstention-practice.lawcase"
+
+[[cases]]
+name = "ExactlyTwoThirds"
+path = "cases/06-exactly-two-thirds.lawcase"
+
+[[cases]]
+name = "BelowTwoThirds"
+path = "cases/07-below-two-thirds.lawcase"
+
+[[cases]]
+name = "BarredWhileSeized"
+path = "cases/08-barred-while-seized.lawcase"
+
+[[cases]]
+name = "LiftedByCouncilRequest"
+path = "cases/09-lifted-by-council-request.lawcase"
+
+[metadata]
+act = "un-charter-examples-binding-or-not"
+title = "Worked cases: what the Charter binds a Member to, and what it does not"
+jurisdiction = "International"
+instrument = "case-collection"

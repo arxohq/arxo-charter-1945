@@ -1,0 +1,36 @@
+language "law.core" version "0.1";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// Article 103, the Lockerbie motif: an obligation under another treaty
+// conflicts with an obligation under the Charter — the Charter obligations prevail.
+test "urn:query:unc-lt-04-article-103-lockerbie-motif" {
+    given {
+        context {
+            decision_time @2026-01-01T12:00:00Z;
+            knowledge_time @2026-01-01T12:00:00Z;
+            legal_time @2026-01-01;
+            timezone "UTC";
+        }
+
+        assert "member": member_state(entity_ref("urn:un:corpus:case:state:third")) {
+            origin case_input;
+        }
+        assert "treaty-obligation": treaty_obligation_of(entity_ref("urn:un:corpus:case:treaty:extradition"),
+                                    entity_ref("urn:un:corpus:case:state:third")) {
+            origin case_input;
+        }
+        assert "conflict": conflicts_with_charter_obligation(entity_ref("urn:un:corpus:case:treaty:extradition"),
+                                                 entity_ref("urn:un:corpus:case:state:third")) {
+            origin case_input;
+        }
+    }
+
+    evaluate truth(charter_obligation_prevails(
+        entity_ref("urn:un:corpus:case:treaty:extradition"),
+        entity_ref("urn:un:corpus:case:state:third")));
+
+    expect result_kind == PROPOSITION;
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+}

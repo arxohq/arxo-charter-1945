@@ -1,0 +1,101 @@
+// Chapter IX: International Economic and Social Co-operation — Articles
+// 55-60, stage E6 (18.09.2026).
+//
+// ARTICLE 56 remains the chapter's Member-addressed duty. Articles 57-59
+// are now EXECUTABLE once `SpecializedAgency` exists (relationship,
+// co-ordination recommendations, negotiations for a new agency). Articles
+// 55 and 60 remain declared (purposes list; division of labour between
+// organs). See `articles.json`.
+//
+// ARTICLE 56 IS A GENUINE, IF BROAD, DUTY ON EVERY MEMBER. "All Members
+// pledge themselves to take joint and separate action in co-operation with
+// the Organization for the achievement of the purposes set forth in Article
+// 55" names a determinate addressee (every Member) and a determinate kind of
+// conduct (joint and separate co-operative action toward Article 55's
+// purposes) — unlike Articles 57-60, which name no party's conduct at all.
+// Article 55's own list of purposes (higher living standards, economic/
+// social/health co-operation, universal respect for human rights) is read
+// as ONE UNDECOMPOSED textual anchor, folded into the single relation
+// `cooperates_for_article_55_purposes`, rather than split into three
+// separately typed goals: no rule of this stage, or any other article read
+// so far, needs to distinguish WHICH of Article 55's goals is at stake for a
+// given act of co-operation — decomposing it would be organizational
+// restatement with no separate inferential content. `duty
+// PledgeToCooperateForArticle55Purposes` mirrors the shape of Article 33's
+// `SeekPeacefulSettlementFirst` and Article 52's
+// `SeekRegionalSettlementFirst` (an open-ended achieve-duty with no fixed
+// deadline), the closest existing package idiom for a standing,
+// non-time-bounded co-operative obligation.
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// --- Article 56: the Members' pledge to co-operate for Article 55's purposes
+
+pub relation cooperates_for_article_55_purposes(s: State) kind empirical {
+    label en official "the Member has taken joint or separate action in co-operation with the Organization for the achievement of the purposes set forth in Article 55";
+}
+
+@source(UNC_EN_ART56)
+rule DutyToCooperateForArticle55Purposes(s: State) strict {
+    label en official "Article 56. All Members pledge themselves to take joint and separate action in co-operation with the Organization for the achievement of the purposes set forth in Article 55.";
+    when member_state(s);
+    then duty PledgeToCooperateForArticle55Purposes {
+        bearer s;
+        achieve cooperates_for_article_55_purposes(s) during [@0001-01-01, infinity);
+    };
+}
+
+// --- Articles 57-59: specialized agencies ----------------------------------
+
+pub relation ecosoc_relationship_agreement(a: SpecializedAgency, e: Decision) kind empirical {
+    label en official "the Economic and Social Council has entered into an agreement with the agency (Art. 63, para. 1)";
+}
+
+pub relation general_assembly_approves_agency_agreement(a: SpecializedAgency, g: Decision) kind empirical {
+    label en official "the General Assembly has approved the agreement bringing the agency into relationship with the United Nations (Art. 63, para. 1)";
+}
+
+pub relation brought_into_relationship_with_united_nations(a: SpecializedAgency) kind institutional {
+    label en official "the agency is a specialized agency brought into relationship with the United Nations (Art. 57, Art. 63)";
+}
+
+@source(UNC_EN_ART57)
+rule SpecializedAgencyBroughtIntoRelationship(a: SpecializedAgency, e: Decision, g: Decision) strict {
+    label en official "Article 57, paragraph 1. The various specialized agencies, established by intergovernmental agreement and having wide international responsibilities… shall be brought into relationship with the United Nations in accordance with the provisions of Article 63.";
+    when ecosoc_relationship_agreement(a, e)
+        and general_assembly_approves_agency_agreement(a, g);
+    then brought_into_relationship_with_united_nations(a);
+}
+
+pub relation agency_policies_coordination_recommended(a: SpecializedAgency) kind empirical {
+    label en official "the Organization has made recommendations for the co-ordination of the policies and activities of the specialized agency (Art. 58)";
+}
+
+pub relation agency_policies_subject_to_coordination(a: SpecializedAgency) kind institutional {
+    label en unofficial "the specialized agency's policies and activities are the subject of co-ordination recommendations (Art. 58)";
+}
+
+@source(UNC_EN_ART58)
+rule OrganizationRecommendsCoordinationOfAgencyPolicies(a: SpecializedAgency) strict {
+    label en official "Article 58. The Organization shall make recommendations for the co-ordination of the policies and activities of the specialized agencies.";
+    when brought_into_relationship_with_united_nations(a)
+        and agency_policies_coordination_recommended(a);
+    then agency_policies_subject_to_coordination(a);
+}
+
+pub relation negotiations_initiated_for_new_agency(a: SpecializedAgency) kind empirical {
+    label en official "the Organization has initiated negotiations among the States concerned for the creation of the new specialized agency (Art. 59)";
+}
+
+pub relation new_agency_negotiations_initiated(a: SpecializedAgency) kind institutional {
+    label en unofficial "negotiations for the creation of a new specialized agency have been initiated (Art. 59)";
+}
+
+@source(UNC_EN_ART59)
+rule OrganizationInitiatesNegotiationsForNewAgency(a: SpecializedAgency) strict {
+    label en official "Article 59. The Organization shall, where appropriate, initiate negotiations among the states concerned for the creation of any new specialized agencies required for the accomplishment of the purposes set forth in Article 55.";
+    when negotiations_initiated_for_new_agency(a);
+    then new_agency_negotiations_initiated(a);
+}

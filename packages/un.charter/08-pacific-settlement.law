@@ -1,0 +1,363 @@
+// Chapter VI: Pacific Settlement of Disputes — Articles 33-38, stage E4
+// (18.09.2026). All six articles are EXECUTABLE.
+//
+// A NEW ENTITY, `Dispute`, FOR CHAPTER VI. Articles 33-38 speak of "a
+// dispute" (Art. 33, 35, 37, 38) and, twice, "a situation" of a related
+// nature (Art. 34, 35 para. 1, 36 para. 1) as one and the same object of
+// discussion. Neither of the package's existing objects fits: `Situation`
+// (06-enforcement.law) is scoped exclusively to the Article 39 "threat to
+// the peace" determination chain, which this chapter's language never
+// requires; `Matter` (04-general-assembly.law) is scoped to the General
+// Assembly's Article 10-14 recommendation power; `SecurityCouncilMatter`
+// (05-security-council.law) is scoped to Articles 31-32's participation-
+// without-vote tests. Following the package's own established convention
+// (a new entity per chapter's own textual object — Matter at E2,
+// SecurityCouncilMatter at E3), `Dispute` is introduced here, covering both
+// "dispute" and "situation of like nature" as Chapter VI itself treats them
+// interchangeably (Art. 34's "any dispute, or any situation which might
+// lead to international friction or give rise to a dispute"; Art. 36's
+// "dispute... or... situation of like nature").
+//
+// ARTICLE 33 — THE DUTY IS UNCONDITIONAL ON THE DISPUTE'S OWN CHARACTER, NOT
+// ON A SECURITY COUNCIL DETERMINATION. Paragraph 1's duty to seek a peaceful
+// solution "first of all" falls on the parties to "any dispute, the
+// continuance of which is likely to endanger the maintenance of
+// international peace and security" — the text names NO organ making this
+// assessment for the purposes of THIS duty (contrast Article 34 immediately
+// below, and Article 37, paragraph 2, both of which explicitly delegate the
+// SAME evaluative phrase to the Security Council: "in order to determine
+// whether", "if the Security Council deems"). Per DECISION-0194 §2.1's own
+// test (a channel applies where the LAW delegates the assessment to an
+// organ), a case-reported classification without an organ named is a plain
+// `kind empirical` fact, the same convention Article 27, paragraph 2's
+// `procedural_matter` and Article 32's `party_to_dispute_before_security_council`
+// already use for organ-less classifications of a case's own facts:
+// `dispute_likely_to_endanger_peace_and_security` is deliberately NOT an
+// `external judgment relation`. Paragraph 2 ("The Security Council shall,
+// when it deems necessary, call upon the parties to settle their dispute by
+// such means") is the Council's OWN separate, supplementary power — NOT
+// itself a trigger of the paragraph 1 duty (the duty applies to any
+// qualifying dispute regardless of whether the Council ever calls upon the
+// parties) — and no other rule of this stage reads a "called upon" fact, so
+// it is left as unformalized residue inside an otherwise EXECUTABLE article,
+// the same treatment Article 32's second sentence and Article 4's ICJ
+// boundary already receive.
+//
+// ARTICLE 34 — A GENUINE DECISION-0194 CHANNEL-1 JUDGMENT, MIRRORING ARTICLE
+// 39. "The Security Council may investigate any dispute, or any situation...
+// in order to DETERMINE whether the continuance... is likely to endanger..."
+// explicitly delegates the assessment to the Council, exactly like Article
+// 39's "the Security Council SHALL DETERMINE" — `article_34_determination`
+// is `external judgment relation …, authority SecurityCouncil`, the same
+// construction as `article_39_determination` (06-enforcement.law) and
+// `security_council_considers_interests_specially_affected` (Art. 31,
+// 05-security-council.law). This produces its OWN institutional conclusion,
+// `dispute_endangerment_determined`, deliberately SEPARATE from Article 33's
+// plain case-reported `dispute_likely_to_endanger_peace_and_security`: the
+// two are the same underlying real-world question, read through two
+// different textual gates (one organ-delegated, one not) — exactly the
+// class of divergence this package already documents for Article 23/27
+// (letter against practice) and Article 12 (an institutional act of will
+// versus an evaluative assessment).
+//
+// ARTICLE 35 — TWO BASES, ONE SHARED HEAD, LIKE ARTICLES 10/11/14 AND 32. A
+// Member's right to bring any dispute (or Article 34-type situation) to the
+// Security Council's or the Assembly's attention is UNCONDITIONAL beyond
+// membership; a non-Member's parallel right is conditioned on being a party
+// to the dispute AND accepting in advance, for the purposes of that dispute,
+// the Charter's own obligations of pacific settlement — a genuine positive
+// fact (`accepts_charter_obligations_for_dispute`), reusing the "not a
+// Member" idiom E3 established (`non_member_state`, never a negation of
+// `member_state`). Both bases feed one shared institutional conclusion,
+// `entitled_to_bring_dispute_to_attention`, the same "two bases, one head"
+// shape as Article 32's `invited_to_participate_without_vote_in`. Paragraph
+// 3 ("The proceedings of the General Assembly in respect of matters brought
+// to its attention under this Article will be subject to the provisions of
+// Articles 11 and 12") cross-references machinery keyed to a DIFFERENT
+// entity (`Matter`, 04-general-assembly.law) than this chapter's `Dispute` —
+// bridging the two would manufacture a cross-reference the text states only
+// as a subjection-to-provisions, not a producer/consumer relationship this
+// package's engine can express without inventing a Dispute-to-Matter mapping
+// no other rule needs; left as unformalized residue, the same "some
+// predicate could technically be written" trap already avoided for Article
+// 9's five-representative cap and Article 32's second sentence.
+//
+// ARTICLE 36 — TWO INDEPENDENT RECOMMENDATION POWERS, ONE ARTICLE, BOTH
+// EXECUTABLE. Paragraph 1's general power to recommend "appropriate
+// procedures or methods of adjustment" is gated on the SAME Article 33
+// threshold fact as Articles 33/37 ("a dispute of the nature referred to in
+// Article 33"); paragraph 3's specific direction that "legal disputes should
+// as a general rule be referred... to the International Court of Justice"
+// is modelled as its own recommendation act, `icj_referral_recommended`,
+// gated on a plain case-reported classification (`legal_dispute`) — the
+// prompt's own §6.8 boundary applies here: the rule terminates at the
+// institutional-fact level ("the Council recommends referral to the ICJ"),
+// never reaching into the ICJ Statute's own mechanics (Art. 92's declared
+// boundary, 07-final-provisions.law). Both recommendation acts are modelled
+// the same way as Article 4's `security_council_recommends_admission` — a
+// flat `kind empirical` fact for the Council's own act of will, not a full
+// `Decision`/vote unrolling (this package's established convention against
+// formalizing history for its own sake, DECISIONS.md E1). "Should" rather
+// than "shall" in both paragraphs is read as the SAME kind of institutional
+// recommendation act this package already models with "shall recommend"
+// elsewhere (Art. 4) — the register is advisory, but the CONTENT (an actual
+// recommendation the Council makes, with a determinate document-level
+// answer) is exactly as testable as a "shall". Paragraph 2 ("The Security
+// Council should take into consideration any procedures... already been
+// adopted by the parties") is a direction on HOW to exercise the
+// recommending power, not a separate condition or duty any other rule of
+// this stage reads — left as unformalized residue.
+//
+// ARTICLE 37 — A DUTY (PARAGRAPH 1) PLUS AN INSTITUTIONAL DETERMINATION-AND-
+// CHOICE CHAIN (PARAGRAPH 2), MIRRORING ARTICLE 39'S DETERMINATION-THEN-
+// MEASURES SHAPE. Paragraph 1's "they shall refer it to the Security
+// Council" is a genuine `duty` on each party to a dispute of Article 33's
+// nature that has NOT been settled by the means that Article names — a
+// plain positive case fact (`dispute_not_settled_by_article_33_means`),
+// never a negation of a settlement fact, following this package's own
+// established exception idiom. Paragraph 2's "the Security Council... shall
+// decide whether to take action under Article 36 or to recommend such terms
+// of settlement" is READ AS TWO STEPS, exactly like Article 39/40-42's
+// determination-then-measures chain: the Council's own evaluative
+// determination ("if the Security Council deems that the continuance...
+// is... likely to endanger...") is a DECISION-0194 channel-1 judgment
+// (`security_council_deems_dispute_endangers_peace`, `authority
+// SecurityCouncil` — this time explicitly organ-delegated, unlike Article
+// 33's paragraph 1, contrast noted above), producing
+// `article_37_determination_made`; the "take action under Article 36" branch
+// needs no separate rule here (Article 36's OWN rules are reachable
+// independently, "at any stage", not exclusively via Article 37), and the
+// "recommend such terms of settlement" branch is a further recommendation
+// act gated on the determination, `settlement_terms_recommended`.
+//
+// ARTICLE 38 — A DISTINCT, REQUEST-GATED POWER, DELIBERATELY NOT GATED ON
+// ARTICLE 33'S THRESHOLD. "If ALL the parties to ANY dispute so request" is
+// its own textual condition (unanimous party request), broader than Article
+// 33's "likely to endanger" class of dispute — the rule below reads only
+// `all_parties_request_recommendation`, never
+// `dispute_likely_to_endanger_peace_and_security`, precisely because the
+// text itself says "without prejudice to the provisions of Articles 33 to
+// 37" (a SEPARATE power, not a continuation of the Article 33 chain).
+//
+// THE CHAPTER VIII BRIDGE (STAGE E5, 18.09.2026). Article 27, paragraph 3's
+// mandatory-abstention duty (`DisputantMustAbstainDuty`, 05-security-council.law)
+// reads `party_to_dispute_under_chapter_six(d: Decision, s: State)` — a
+// relation keyed to a SECURITY COUNCIL `Decision`, not to this module's
+// `Dispute` entity. E3/E4 left this predicate with no producer rule at all,
+// flagging Article 52, paragraph 3 (the second limb of the same textual
+// condition) as the place to build a bridge, if one is warranted. Stage E5
+// (09-regional-arrangements.law) adds ONE such bridge, narrowly scoped to
+// Article 52, paragraph 3's own regional-settlement machinery
+// (`RegionalDisputePartyMustAbstainViaArticle52`, 05-security-council.law):
+// a State party to a `Dispute` this module defines, qualified as `local`
+// (Art. 52) and connected to a specific Council `Decision` taken under
+// Article 52, paragraph 3, is thereby a party to a dispute for Article
+// 27(3)'s purposes — a SECOND path to the SAME premise, added without
+// touching `DisputantMustAbstainDuty` or its original bare-case-fact path.
+// The OTHER half of the same cross-reference — a Chapter VI dispute
+// referred to the Council under Article 37 (`dispute_referred_to_security_council`,
+// keyed to `(Dispute, State)`, not to a specific `Decision`) — remains
+// unbridged: inventing a Decision-level referent for it would repeat the
+// "predicate nobody reads" over-reach this package's own convention already
+// avoids elsewhere (Article 9, Article 32's second sentence, Article 52,
+// paragraph 1). `party_to_dispute` (this module) and
+// `party_to_dispute_under_chapter_six` (05-security-council.law) remain two
+// separate relations on two separate entity types, exactly as
+// `party_to_dispute_before_security_council` (Art. 32) already is a third,
+// separate relation for a third purpose — Article 52's bridge reads BOTH
+// without merging them.
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+entity Dispute { label en official "Dispute or situation within the meaning of Chapter VI (Art. 33-38)"; }
+
+pub relation party_to_dispute(d: Dispute, s: State) kind empirical {
+    label en official "the State is a party to the dispute (Ch. VI)";
+}
+
+// --- Article 33: duty to seek a peaceful solution first --------------------
+
+pub relation dispute_likely_to_endanger_peace_and_security(d: Dispute) kind empirical {
+    label en official "the continuance of the dispute is likely to endanger the maintenance of international peace and security (Art. 33, paragraph 1) — a case-reported classification, not an organ's assessment (contrast Article 34's Security-Council-delegated determination below)";
+}
+
+pub relation sought_peaceful_settlement(d: Dispute, s: State) kind empirical {
+    label en official "the party has sought a solution by negotiation, enquiry, mediation, conciliation, arbitration, judicial settlement, resort to regional agencies or arrangements, or other peaceful means of its own choice (Art. 33, paragraph 1)";
+}
+
+@source(UNC_EN_ART33)
+rule DutyToSeekPeacefulSettlementFirst(d: Dispute, s: State) strict {
+    label en official "Article 33, paragraph 1. The parties to any dispute, the continuance of which is likely to endanger the maintenance of international peace and security, shall, first of all, seek a solution by negotiation, enquiry, mediation, conciliation, arbitration, judicial settlement, resort to regional agencies or arrangements, or other peaceful means of their own choice.";
+    when dispute_likely_to_endanger_peace_and_security(d)
+        and party_to_dispute(d, s);
+    then duty SeekPeacefulSettlementFirst {
+        bearer s;
+        achieve sought_peaceful_settlement(d, s) during [@0001-01-01, infinity);
+    };
+}
+
+// --- Article 34: Security Council investigation and determination ----------
+
+pub external judgment relation article_34_determination(d: Dispute) {
+    authority SecurityCouncil;
+    label en official "the Security Council investigates the dispute or situation and determines whether its continuance is likely to endanger the maintenance of international peace and security (Art. 34)";
+}
+
+pub relation dispute_endangerment_determined(d: Dispute) kind institutional {
+    label en unofficial "the Security Council has determined, upon investigation, that the dispute or situation's continuance is likely to endanger international peace and security (Art. 34)";
+}
+
+@source(UNC_EN_ART34)
+rule Article34Determined(d: Dispute) strict {
+    label en official "Article 34. The Security Council may investigate any dispute, or any situation which might lead to international friction or give rise to a dispute, in order to determine whether the continuance of the dispute or situation is likely to endanger the maintenance of international peace and security.";
+    when article_34_determination(d);
+    then dispute_endangerment_determined(d);
+}
+
+// --- Article 35: bringing a dispute to the Council's or Assembly's attention
+
+pub relation dispute_brought_to_attention(s: State, d: Dispute) kind empirical {
+    label en official "the State brings the dispute or situation to the attention of the Security Council or the General Assembly (Art. 35)";
+}
+
+pub relation accepts_charter_obligations_for_dispute(s: State, d: Dispute) kind empirical {
+    label en official "the non-Member State accepts in advance, for the purposes of the dispute, the obligations of pacific settlement provided in the present Charter (Art. 35, paragraph 2)";
+}
+
+pub relation entitled_to_bring_dispute_to_attention(s: State, d: Dispute) kind institutional {
+    label en unofficial "the State is entitled under Article 35 to bring the dispute or situation to the attention of the Security Council or the General Assembly";
+}
+
+@source(UNC_EN_ART35)
+rule MemberEntitledToBringDisputeToAttention(s: State, d: Dispute) strict {
+    label en official "Article 35, paragraph 1. Any Member of the United Nations may bring any dispute, or any situation of the nature referred to in Article 34, to the attention of the Security Council or of the General Assembly.";
+    when member_state(s)
+        and dispute_brought_to_attention(s, d);
+    then entitled_to_bring_dispute_to_attention(s, d);
+}
+
+@source(UNC_EN_ART35)
+rule NonMemberEntitledToBringDisputeIfAcceptsObligations(s: State, d: Dispute) strict {
+    label en official "Article 35, paragraph 2. A state which is not a Member of the United Nations may bring to the attention of the Security Council or of the General Assembly any dispute to which it is a party if it accepts in advance, for the purposes of the dispute, the obligations of pacific settlement provided in the present Charter.";
+    when non_member_state(s)
+        and party_to_dispute(d, s)
+        and accepts_charter_obligations_for_dispute(s, d)
+        and dispute_brought_to_attention(s, d);
+    then entitled_to_bring_dispute_to_attention(s, d);
+}
+
+// --- Article 36: Security Council recommendation of procedures, incl. ICJ referral
+
+pub relation security_council_recommends_procedures_for_dispute(d: Dispute) kind empirical {
+    label en official "the Security Council recommends appropriate procedures or methods of adjustment for the dispute (Art. 36, paragraph 1)";
+}
+
+pub relation procedures_recommended(d: Dispute) kind institutional {
+    label en unofficial "the Security Council has recommended procedures or methods of adjustment for the dispute under Article 36, paragraph 1";
+}
+
+@source(UNC_EN_ART36)
+rule Article36ProceduresRecommended(d: Dispute) strict {
+    label en official "Article 36, paragraph 1. The Security Council may, at any stage of a dispute of the nature referred to in Article 33 or of a situation of like nature, recommend appropriate procedures or methods of adjustment.";
+    when dispute_likely_to_endanger_peace_and_security(d)
+        and security_council_recommends_procedures_for_dispute(d);
+    then procedures_recommended(d);
+}
+
+pub relation legal_dispute(d: Dispute) kind empirical {
+    label en official "the dispute is of a legal character (Art. 36, paragraph 3)";
+}
+
+pub relation security_council_recommends_icj_referral(d: Dispute) kind empirical {
+    label en official "the Security Council recommends that the parties refer their legal dispute to the International Court of Justice, in accordance with the provisions of the Statute of the Court (Art. 36, paragraph 3) — the Statute's own mechanics are outside this package's declared scope (Art. 92, 07-final-provisions.law)";
+}
+
+pub relation icj_referral_recommended(d: Dispute) kind institutional {
+    label en unofficial "the Security Council has recommended referral of the legal dispute to the International Court of Justice under Article 36, paragraph 3";
+}
+
+@source(UNC_EN_ART36)
+rule Article36IcjReferralRecommended(d: Dispute) strict {
+    label en official "Article 36, paragraph 3. In making recommendations under this Article the Security Council should also take into consideration that legal disputes should as a general rule be referred by the parties to the International Court of Justice in accordance with the provisions of the Statute of the Court.";
+    when legal_dispute(d)
+        and security_council_recommends_icj_referral(d);
+    then icj_referral_recommended(d);
+}
+
+// --- Article 37: referral on failure to settle; Council determination and choice
+
+pub relation dispute_not_settled_by_article_33_means(d: Dispute) kind empirical {
+    label en official "the parties have failed to settle the dispute by the means indicated in Article 33 (Art. 37, paragraph 1)";
+}
+
+pub relation dispute_referred_to_security_council(d: Dispute, s: State) kind empirical {
+    label en official "the party refers the dispute to the Security Council (Art. 37, paragraph 1)";
+}
+
+@source(UNC_EN_ART37)
+rule DutyToReferUnsettledDispute(d: Dispute, s: State) strict {
+    label en official "Article 37, paragraph 1. Should the parties to a dispute of the nature referred to in Article 33 fail to settle it by the means indicated in that Article, they shall refer it to the Security Council.";
+    when dispute_likely_to_endanger_peace_and_security(d)
+        and party_to_dispute(d, s)
+        and dispute_not_settled_by_article_33_means(d);
+    then duty ReferUnsettledDisputeToSecurityCouncil {
+        bearer s;
+        achieve dispute_referred_to_security_council(d, s) during [@0001-01-01, infinity);
+    };
+}
+
+pub external judgment relation security_council_deems_dispute_endangers_peace(d: Dispute) {
+    authority SecurityCouncil;
+    label en official "the Security Council deems that the continuance of the dispute is in fact likely to endanger the maintenance of international peace and security (Art. 37, paragraph 2)";
+}
+
+pub relation article_37_determination_made(d: Dispute) kind institutional {
+    label en unofficial "the Security Council has determined, under Article 37, paragraph 2, that the dispute's continuance is in fact likely to endanger international peace and security";
+}
+
+@source(UNC_EN_ART37)
+rule Article37Determined(d: Dispute) strict {
+    label en official "Article 37, paragraph 2 (determination). If the Security Council deems that the continuance of the dispute is in fact likely to endanger the maintenance of international peace and security, it shall decide whether to take action under Article 36 or to recommend such terms of settlement as it may consider appropriate.";
+    when security_council_deems_dispute_endangers_peace(d);
+    then article_37_determination_made(d);
+}
+
+pub relation security_council_recommends_settlement_terms(d: Dispute) kind empirical {
+    label en official "the Security Council recommends such terms of settlement as it may consider appropriate (Art. 37, paragraph 2)";
+}
+
+pub relation settlement_terms_recommended(d: Dispute) kind institutional {
+    label en unofficial "the Security Council has recommended terms of settlement for the dispute under Article 37, paragraph 2";
+}
+
+@source(UNC_EN_ART37)
+rule Article37SettlementTermsRecommended(d: Dispute) strict {
+    label en official "Article 37, paragraph 2 (settlement branch). ...it shall decide whether to take action under Article 36 or to recommend such terms of settlement as it may consider appropriate.";
+    when article_37_determination_made(d)
+        and security_council_recommends_settlement_terms(d);
+    then settlement_terms_recommended(d);
+}
+
+// --- Article 38: recommendation by request of all parties ------------------
+
+pub relation all_parties_request_recommendation(d: Dispute) kind empirical {
+    label en official "all the parties to the dispute request the Security Council to make recommendations (Art. 38)";
+}
+
+pub relation security_council_recommends_settlement_under_article_38(d: Dispute) kind empirical {
+    label en official "the Security Council makes recommendations to the parties with a view to a pacific settlement of the dispute (Art. 38)";
+}
+
+pub relation settlement_recommendation_made_under_article_38(d: Dispute) kind institutional {
+    label en unofficial "the Security Council has made a recommendation for pacific settlement of the dispute under Article 38";
+}
+
+@source(UNC_EN_ART38)
+rule Article38RecommendationMade(d: Dispute) strict {
+    label en official "Article 38. Without prejudice to the provisions of Articles 33 to 37, the Security Council may, if all the parties to any dispute so request, make recommendations to the parties with a view to a pacific settlement of the dispute.";
+    when all_parties_request_recommendation(d)
+        and security_council_recommends_settlement_under_article_38(d);
+    then settlement_recommendation_made_under_article_38(d);
+}

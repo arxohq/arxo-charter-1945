@@ -1,0 +1,570 @@
+// Final provisions: Art. 92 (International Court of Justice), Art. 102
+// (registration of treaties), Art. 103 (priority of Charter obligations),
+// Art. 104-105 (legal capacity, privileges and immunities), Art. 106-107
+// (transitional security arrangements), Art. 108-109 (amendments, General
+// Conference), Art. 110 (ratification and signature), Art. 111 (authentic
+// texts). Stage E9 (18.09.2026) added Art. 102, 104-107, 109-110, closing
+// the package's scope to all 111 articles of the Charter.
+//
+// ARTICLE 102 — A GENUINE BAR, BRIDGED TO ARTICLE 103 BY THE PROMPT'S OWN
+// REQUEST. Paragraph 1's registration duty and paragraph 2's bar on
+// invocation both operate on the SAME `TreatyObligation` entity Article 103
+// already reads (package.law) — no bridge twin. `invocable_before_un_organ`
+// (registered) and `barred_from_invoking_before_un_organ` (unregistered,
+// `not_known`-guarded per this package's established exception idiom) are
+// two SEPARATE positive conclusions over the same base fact,
+// `registered_with_secretariat`, never a negated head. The bridge itself is
+// deliberately loose: registration status is ORTHOGONAL to Article 103's
+// priority test — an unregistered treaty obligation can still exist, still
+// conflict with a Charter obligation, and still lose that conflict under
+// Article 103, entirely independently of whether it may be INVOKED before a
+// UN organ. Article 103's own rule is UNCHANGED by this stage (no premise on
+// registration is added to it) — this is the point of the requested
+// scenario (UNC-75B below): the bar and the priority rule are two
+// independent conclusions about the SAME `TreatyObligation`/`State` pair,
+// not one gating the other.
+//
+// ARTICLES 104-105 ARE EXECUTABLE. Article 104 yields legal capacity in
+// each Member's territory; Article 105(2) yields Hohfeld immunities for
+// representatives and officials, and Article 105(1) an institutional
+// privileges fact for the Organization. Paragraph 105(3) (Assembly
+// recommendations / conventions) remains unformalized residue inside an
+// otherwise EXECUTABLE article.
+//
+// ARTICLE 106 — THE "PENDING ARTICLE 43" DUTY, REUSING THE DEAD CHAIN
+// DIRECTLY. "Pending the coming into force of such special agreements
+// referred to in Article 43..." is the "meanwhile" clause of the SAME dead
+// chain 06-enforcement.law already formalizes (Finding 1: not one Article 43
+// agreement has ever been concluded) — this stage adds NO new fact to test
+// that pendency, reusing `special_agreement_concluded` (06-enforcement.law)
+// directly via a GLOBAL aggregate (`no State has a concluded special
+// agreement`), never a second, parallel "is the Article 43 system
+// operative" flag. The parties to the 1943 Four-Nation Declaration (China,
+// France, the USSR, the UK, the US — after France's accession, textually the
+// SAME five states Article 23 already names BY NAME as permanent members)
+// are read via `permanent_member`, the base literal fact already asserted in
+// package.law — no new entity, no bridge twin. The duty is a genuine
+// `achieve` duty gated on a real condition (a Situation in which joint
+// action is necessary), mirroring Article 54's reporting duty in shape; like
+// Articles 43-47, it is formalized by the letter and dormant in practice
+// (the Article 43 system has never come into force, so the pending clause
+// has been live, in principle, for the Charter's entire history — a
+// standing rather than one-time dormancy, noted in README.md, not built as
+// a live escalation chain).
+//
+// ARTICLE 107 — DECLARED, MIRRORING ARTICLE 53'S OWN ENEMY-STATE TREATMENT
+// EXACTLY. See `articles.json`'s `declared` entry: Article 107 is the
+// general non-preclusion clause behind the SAME carve-out Article 53,
+// paragraph 1 already formalizes at its point of actual use
+// (`enemy_state_measure_under_article_107`, 09-regional-arrangements.law,
+// stage E5) — no second, wider carve-out is built here, the identical
+// "predicate nobody reads" restraint Article 53's own stage already applied.
+//
+// ARTICLE 109 — THE CONVENING/RATIFICATION VOTE ASYMMETRY, GET IT RIGHT.
+// Paragraph 1's CONVENING vote needs "a two-thirds vote of the members of
+// the General Assembly" (the SAME all-members threshold Article 108's
+// adoption step uses, cross-multiplied to avoid Rational division) AND "a
+// vote of ANY NINE members of the Security Council" — the text names NINE
+// MEMBERS, not nine INCLUDING the five permanent members' concurrence, so
+// this rule counts `casts_vote_for` directly and reads NEITHER
+// `permanent_member_seat_held_by` NOR Article 27, paragraph 3's veto
+// machinery at all: a deliberate, textually mandated departure from every
+// other Security Council vote this package models. Paragraph 2's alteration
+// step is a SECOND PRODUCER PATH into Article 108's OWN conclusions
+// (`amendment_in_force`, `amendment_blocked_missing_permanent_ratification`)
+// — "ratified... by two thirds of the Members... including all the
+// permanent members" is the identical named-lock test, so this stage adds
+// no new predicate for the SAME effect, following the Article 27(3)/Article
+// 52(3) bridge's own precedent (E5: a second path into an existing head,
+// the base rule and its original path left untouched). Paragraph 3's
+// fallback (tenth annual session, "any seven members of the Security
+// Council") is formalized by the letter EXACTLY as the pinned text reads it
+// — the pinned publication's own colophon confirms paragraph 3 was retained
+// unamended because it was already acted upon in 1955, at the Assembly's
+// tenth regular session (README.md notes this historical exhaustion; the
+// rule itself is not disabled by it, the same "alive in the text, spent in
+// practice" register as Articles 43-47 and 106-107).
+//
+// ARTICLE 110 — MOSTLY HISTORICAL, ONE LIVE BRANCH. Paragraphs 1-3
+// (ratification by constitutional process, deposit with the US Government,
+// coming into force upon deposit by the five original permanent members and
+// a majority of other signatories, the protocol of ratifications) describe a
+// ONE-TIME historical event this package's own `law.toml` already records as
+// concluded (`legalStatus = "in_force"`, the edition's own
+// `adopted`/`in_force` dates) — no rule of this package's declared scope
+// would ever re-test whether the Charter itself has entered into force, so
+// this stage does not build a duplicate live test for a settled fact
+// (residue, not a formalization gap). Paragraph 4 IS live: "the states...
+// which ratify it after it has come into force will become original Members
+//... on the date of the deposit of their... ratifications" is a genuine
+// THIRD BASIS feeding Article 3's existing `original_member` head
+// (02-membership.law) — a state that signs and ratifies AFTER entry into
+// force is an original Member exactly as one that ratified before it, so
+// this stage extends Article 3's own two-branch idiom to a third branch
+// rather than inventing a parallel "post-entry-into-force member" concept.
+// `ratifies_charter` (02-membership.law's Article 3 premise, deliberately
+// left unwired to any Article 110 mechanics at E1 "Article 110 itself lies
+// outside the declared slice") is UNCHANGED by this addition — the new
+// branch reads its OWN premise, `ratifies_after_charter_in_force`, so
+// pre-entry-into-force scenarios built at E1 are unaffected.
+//
+// ARTICLE 92 — A BOUNDARY NAMED DIRECTLY, SOURCE_ONLY. "The International
+// Court of Justice shall be the principal judicial organ… and forms an
+// integral part of the present Charter" — a definition and an
+// institutional link, WITHOUT a deontic, condition, or quantity: the text
+// addresses no one's conduct and opens no test. Introducing a stub entity
+// for a single assert would mean formalizing a declaration for the sake of
+// a counter, not for the sake of a conclusion.
+//
+// ARTICLE 103 — A §116 METANORM, NOT A `priority_decl`. Priority between
+// NORMS OF ONE PACKAGE is expressed by `priority`/`priority_policy` — and
+// they see only rules of their own stratum (see `fiqh.taqlid`: a priority
+// CANNOT refer to a rule of the base). Article 103 speaks of priority
+// between OBLIGATIONS UNDER DIFFERENT TREATIES — the conflicting treaty
+// lies OUTSIDE this package in principle (the Lockerbie motif: Libya
+// against the Montreal Convention versus Security Council resolution 748
+// (1992) under Chapter VII). It is therefore expressed as an ordinary
+// CONCLUSION ("which prevails" — an institutional fact), not as engine
+// priority edges; the reasoning and the limitation are recorded here
+// explicitly so as not to look like an oversight.
+//
+// ARTICLE 108 — ENTRENCHMENT WITH A COUNT AND A NAMED LOCK. Two thresholds
+// of a different nature: adoption is two thirds of the MEMBERS of the
+// Assembly (not "present and voting", as in Article 18 — a textual
+// difference kept explicit); ratification is two thirds of the MEMBER
+// STATES, INCLUDING WITHOUT EXCEPTION ALL permanent members (the "named
+// lock"). Both thresholds avoid division (cross-multiplication, as in
+// 04-general-assembly.law).
+//
+// ARTICLE 111 — A BOUNDARY NAMED DIRECTLY, SOURCE_ONLY. Five authentic
+// languages, the depositary, and the attestation formula are provenance,
+// not a norm: the text describes WHERE the original is kept and WHO
+// transmits copies, addressing no conduct of parties and opening no test.
+// The dual authenticity of the Russian and English editions was formerly
+// expressed in `sources.law` (`officiality official` on BOTH editions); the
+// package now pins only the English edition (E0, 18.09.2026), and the fact
+// that five texts remain equally authentic under Article 111 is a fact
+// about the Charter itself, evidenced by `sources/charter/ru.txt` kept on
+// disk — a secondary CLIR node here would duplicate it without a new
+// conclusion.
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// --- Article 102: registration of treaties; bar on invoking an unregistered
+// treaty before a UN organ ---------------------------------------------------
+
+pub relation registered_with_secretariat(t: TreatyObligation) kind empirical {
+    label en official "the treaty or international agreement has been registered with the Secretariat (and published by it) (Art. 102, para. 1)";
+}
+
+@source(UNC_EN_ART102)
+rule DutyToRegisterTreaty(t: TreatyObligation, s: State) strict {
+    label en official "Article 102, paragraph 1. Every treaty and every international agreement entered into by any Member of the United Nations after the present Charter comes into force shall as soon as possible be registered with the Secretariat and published by it.";
+    when member_state(s)
+        and treaty_obligation_of(t, s);
+    then duty RegisterTreaty {
+        bearer s;
+        achieve registered_with_secretariat(t) during [@1945-10-24, infinity);
+    };
+}
+
+pub relation invocable_before_un_organ(t: TreatyObligation, s: State) kind institutional {
+    label en unofficial "the treaty or agreement may be invoked before an organ of the United Nations (Art. 102, para. 2, positive side — it has been registered)";
+}
+
+@source(UNC_EN_ART102)
+rule TreatyInvocableIfRegistered(t: TreatyObligation, s: State) strict {
+    label en official "Article 102, paragraph 2 (positive side). A party to a treaty or agreement registered under paragraph 1 may invoke it before any organ of the United Nations.";
+    when treaty_obligation_of(t, s)
+        and registered_with_secretariat(t);
+    then invocable_before_un_organ(t, s);
+}
+
+pub relation barred_from_invoking_before_un_organ(t: TreatyObligation, s: State) kind institutional {
+    label en unofficial "no party to this treaty or agreement may invoke it before any organ of the United Nations, because it has not been registered (Art. 102, para. 2)";
+}
+
+@source(UNC_EN_ART102)
+rule TreatyBarredIfUnregistered(t: TreatyObligation, s: State) strict {
+    label en official "Article 102, paragraph 2. No party to any such treaty or international agreement which has not been registered in accordance with the provisions of paragraph 1 of this Article may invoke that treaty or agreement before any organ of the United Nations.";
+    when treaty_obligation_of(t, s)
+        and not_known(registered_with_secretariat(t));
+    then barred_from_invoking_before_un_organ(t, s);
+}
+
+// --- Article 103: priority of Charter obligations ----------------------------
+
+pub relation treaty_obligation_of(t: TreatyObligation, s: State) kind empirical {
+    label en official "the State bears this obligation under another international agreement";
+}
+
+pub relation conflicts_with_charter_obligation(t: TreatyObligation, s: State) kind empirical {
+    label en official "this obligation conflicts with the State's obligations under the Charter (Art. 103)";
+}
+
+pub relation charter_obligation_prevails(t: TreatyObligation, s: State) kind institutional {
+    label en unofficial "the obligations under the Charter prevail over this treaty obligation (Art. 103)";
+}
+
+@source(UNC_EN_ART103)
+rule CharterObligationsPrevailOverConflictingTreaty(t: TreatyObligation, s: State) strict {
+    label en official "Article 103. In the event of a conflict between the obligations of the Members … under the present Charter and their obligations under any other international agreement, their obligations under the present Charter shall prevail.";
+    when member_state(s)
+        and treaty_obligation_of(t, s)
+        and conflicts_with_charter_obligation(t, s);
+    then charter_obligation_prevails(t, s);
+}
+
+// --- Article 106: transitional consultation duty pending Article 43 --------
+
+pub relation joint_action_on_behalf_of_organization_necessary(sit: Situation) kind empirical {
+    label en official "joint action on behalf of the Organization is necessary for the purpose of maintaining international peace and security (Art. 106)";
+}
+
+pub relation consulted_for_joint_action(p: State, sit: Situation) kind empirical {
+    label en official "the State has consulted with the other parties to the 1943 Four-Nation Declaration, and as occasion requires with other Members, with a view to joint action on behalf of the Organization (Art. 106)";
+}
+
+@source(UNC_EN_ART106)
+rule PendingArticle43DutyToConsult(p: State, sit: Situation) strict {
+    label en official "Article 106. Pending the coming into force of such special agreements referred to in Article 43... the parties to the Four-Nation Declaration... and France, shall... consult with one another and as occasion requires with other Members of the United Nations with a view to such joint action on behalf of the Organization as may be necessary for the purpose of maintaining international peace and security.";
+    when permanent_member(p)
+        and (count distinct o: State where special_agreement_concluded(o)) == 0
+        and joint_action_on_behalf_of_organization_necessary(sit);
+    then duty ConsultForJointActionPendingArticle43 {
+        bearer p;
+        achieve consulted_for_joint_action(p, sit) during [@1945-10-24, infinity);
+    };
+}
+
+// --- Article 108: amendments --------------------------------------------------
+
+pub relation is_amendment_vote(d: Decision) kind empirical {
+    label en official "the decision is a General Assembly vote on an amendment to the Charter (Art. 108)";
+}
+
+pub relation amendment_adopted_by_general_assembly(d: Decision) kind institutional {
+    label en unofficial "the amendment is adopted by a vote of two thirds of the members of the General Assembly (Art. 108) — of ALL members, not only those present and voting";
+}
+
+@source(UNC_EN_ART108)
+rule AmendmentAdoptedByGeneralAssembly(d: Decision) strict {
+    label en official "Article 108. Amendments to the present Charter shall come into force… when they have been adopted by a vote of two thirds of the members of the General Assembly…";
+    when is_amendment_vote(d)
+        and (count distinct s: State where casts_vote_for(d, s)) * 3
+            >= (count distinct s: State where member_state(s)) * 2
+        and (count distinct s: State where member_state(s)) > 0;
+    then amendment_adopted_by_general_assembly(d);
+}
+
+pub relation ratified_by(d: Decision, s: State) kind empirical {
+    label en official "the State has ratified the amendment in accordance with its constitutional processes (Art. 108)";
+}
+
+pub relation amendment_in_force(d: Decision) kind institutional {
+    label en unofficial "the amendment has come into force for all Members of the Organization (Art. 108)";
+}
+
+@source(UNC_EN_ART108)
+rule AmendmentEntersIntoForce(d: Decision) strict {
+    label en official "Article 108. …and ratified in accordance with their respective constitutional processes by two thirds of the Members of the United Nations, including all the permanent members of the Security Council.";
+    when amendment_adopted_by_general_assembly(d)
+        and (count distinct s: State where ratified_by(d, s)) * 3
+            >= (count distinct s: State where member_state(s)) * 2
+        and (count distinct s: State where monotone(permanent_member_seat_held_by(s))
+                                       and ratified_by(d, s))
+            >= (count distinct s: State where monotone(permanent_member_seat_held_by(s)));
+    then amendment_in_force(d);
+}
+
+pub relation amendment_blocked_missing_permanent_ratification(d: Decision) kind institutional {
+    label en unofficial "the amendment does not come into force: it is not ratified by ALL permanent members, even though the overall two-thirds threshold is met (Art. 108, the named lock)";
+}
+
+@source(UNC_EN_ART108)
+rule AmendmentBlockedByMissingPermanentRatification(d: Decision) strict {
+    label en official "Article 108, the named lock: the overall two-thirds threshold is not sufficient without ratification by EVERY permanent member.";
+    when amendment_adopted_by_general_assembly(d)
+        and (count distinct s: State where ratified_by(d, s)) * 3
+            >= (count distinct s: State where member_state(s)) * 2
+        and (count distinct s: State where monotone(permanent_member_seat_held_by(s))
+                                       and ratified_by(d, s))
+            < (count distinct s: State where monotone(permanent_member_seat_held_by(s)));
+    then amendment_blocked_missing_permanent_ratification(d);
+}
+
+// --- Article 109, paragraph 1: convening the General Conference ------------
+
+pub relation is_general_conference_convening_vote_in_general_assembly(d: Decision) kind empirical {
+    label en official "the decision is a General Assembly vote to fix the date and place of a General Conference for reviewing the Charter (Art. 109, para. 1)";
+}
+
+pub relation general_conference_convening_approved_by_general_assembly(d: Decision) kind institutional {
+    label en unofficial "the General Assembly has approved convening the General Conference by a two-thirds vote of its members (Art. 109, para. 1)";
+}
+
+@source(UNC_EN_ART109)
+rule GeneralConferenceConveningApprovedByGeneralAssembly(d: Decision) strict {
+    label en official "Article 109, paragraph 1. A General Conference of the Members of the United Nations for the purpose of reviewing the present Charter may be held... fixed by a two-thirds vote of the members of the General Assembly...";
+    when is_general_conference_convening_vote_in_general_assembly(d)
+        and (count distinct s: State where casts_vote_for(d, s)) * 3
+            >= (count distinct s: State where member_state(s)) * 2
+        and (count distinct s: State where member_state(s)) > 0;
+    then general_conference_convening_approved_by_general_assembly(d);
+}
+
+// A vote of ANY NINE members, deliberately NOT gated on
+// `permanent_member_seat_held_by` or Article 27, paragraph 3's concurring-
+// votes machinery: the text names "any nine members", bypassing the veto
+// that governs every other non-procedural Security Council decision this
+// package models (05-security-council.law).
+pub relation is_general_conference_convening_vote_in_security_council(d: Decision) kind empirical {
+    label en official "the decision is a Security Council vote of any nine members to fix the date and place of the General Conference (Art. 109, para. 1) — not gated by the permanent-member concurrence of Article 27, paragraph 3";
+}
+
+pub relation general_conference_convening_approved_by_security_council(d: Decision) kind institutional {
+    label en unofficial "the Security Council has approved convening the General Conference by a vote of any nine of its members (Art. 109, para. 1) — no permanent member can block this vote";
+}
+
+@source(UNC_EN_ART109)
+rule GeneralConferenceConveningApprovedBySecurityCouncil(d: Decision) strict {
+    label en official "Article 109, paragraph 1. ...and by a vote of any nine members of the Security Council.";
+    when is_general_conference_convening_vote_in_security_council(d)
+        and (count distinct s: State where casts_vote_for(d, s)) >= 9;
+    then general_conference_convening_approved_by_security_council(d);
+}
+
+pub relation general_conference_convening_decided(ga: Decision, sc: Decision) kind institutional {
+    label en unofficial "the General Conference may be held: both the General Assembly and the Security Council votes required by Article 109, paragraph 1 have been given";
+}
+
+@source(UNC_EN_ART109)
+rule GeneralConferenceConvenedByBothOrgans(ga: Decision, sc: Decision) strict {
+    label en official "Article 109, paragraph 1, combined. A General Conference... may be held at a date and place to be fixed by a two-thirds vote of the members of the General Assembly and by a vote of any nine members of the Security Council.";
+    when general_conference_convening_approved_by_general_assembly(ga)
+        and general_conference_convening_approved_by_security_council(sc);
+    then general_conference_convening_decided(ga, sc);
+}
+
+// --- Article 109, paragraph 2: alteration recommended by the Conference,
+// ratified the SAME way Article 108 already tests --------------------------
+
+pub relation is_general_conference_alteration_vote(d: Decision) kind empirical {
+    label en official "the decision is a two-thirds vote of the General Conference recommending an alteration of the Charter (Art. 109, para. 2)";
+}
+
+pub relation alteration_recommended_by_general_conference(d: Decision) kind institutional {
+    label en unofficial "the General Conference has recommended an alteration of the Charter by a two-thirds vote (Art. 109, para. 2)";
+}
+
+@source(UNC_EN_ART109)
+rule AlterationRecommendedByGeneralConference(d: Decision) strict {
+    label en official "Article 109, paragraph 2. Any alteration of the present Charter recommended by a two-thirds vote of the conference...";
+    when is_general_conference_alteration_vote(d)
+        and (count distinct s: State where casts_vote_for(d, s)) * 3
+            >= (count distinct s: State where member_state(s)) * 2
+        and (count distinct s: State where member_state(s)) > 0;
+    then alteration_recommended_by_general_conference(d);
+}
+
+// A SECOND PRODUCER PATH into Article 108's own conclusions — "ratified...
+// by two thirds of the Members... including all the permanent members" is
+// the identical named-lock test Article 108 performs for an amendment; the
+// base rules (`AmendmentEntersIntoForce`,
+// `AmendmentBlockedByMissingPermanentRatification`) and their original path
+// via `amendment_adopted_by_general_assembly` are UNCHANGED (purely
+// additive, the same shape as the Article 27(3)/Article 52(3) bridge, E5).
+@source(UNC_EN_ART109)
+rule AlterationEntersIntoForceViaArticle108Ratification(d: Decision) strict {
+    label en official "Article 109, paragraph 2. ...shall take effect when ratified in accordance with their respective constitutional processes by two thirds of the Members of the United Nations including all the permanent members of the Security Council.";
+    when alteration_recommended_by_general_conference(d)
+        and (count distinct s: State where ratified_by(d, s)) * 3
+            >= (count distinct s: State where member_state(s)) * 2
+        and (count distinct s: State where monotone(permanent_member_seat_held_by(s))
+                                       and ratified_by(d, s))
+            >= (count distinct s: State where monotone(permanent_member_seat_held_by(s)));
+    then amendment_in_force(d);
+}
+
+@source(UNC_EN_ART109)
+rule AlterationBlockedByMissingPermanentRatification(d: Decision) strict {
+    label en official "Article 109, paragraph 2, the named lock (same test as Article 108): the overall two-thirds threshold is not sufficient without ratification by EVERY permanent member.";
+    when alteration_recommended_by_general_conference(d)
+        and (count distinct s: State where ratified_by(d, s)) * 3
+            >= (count distinct s: State where member_state(s)) * 2
+        and (count distinct s: State where monotone(permanent_member_seat_held_by(s))
+                                       and ratified_by(d, s))
+            < (count distinct s: State where monotone(permanent_member_seat_held_by(s)));
+    then amendment_blocked_missing_permanent_ratification(d);
+}
+
+// --- Article 109, paragraph 3: the tenth-session fallback -------------------
+//
+// Formalized by the letter exactly as the pinned text reads it: "any seven
+// members of the Security Council" (NOT amended — the pinned publication's
+// own colophon records paragraph 3 was retained unamended because it was
+// already acted upon in 1955, at the Assembly's tenth regular session).
+
+pub relation general_assembly_reaches_tenth_session_without_conference() kind empirical {
+    label en official "no General Conference has been held before the tenth annual session of the General Assembly following the coming into force of the present Charter (Art. 109, para. 3)";
+}
+
+pub relation is_general_conference_fallback_vote_in_general_assembly(d: Decision) kind empirical {
+    label en official "the decision is a General Assembly vote, at or after its tenth annual session, to hold the General Conference under the paragraph 3 fallback (Art. 109, para. 3)";
+}
+
+pub relation general_conference_fallback_approved_by_general_assembly(d: Decision) kind institutional {
+    label en unofficial "the General Assembly has decided, by a majority vote of its members, to hold the General Conference under the paragraph 3 fallback (Art. 109, para. 3)";
+}
+
+@source(UNC_EN_ART109)
+rule GeneralConferenceFallbackApprovedByGeneralAssembly(d: Decision) strict {
+    label en official "Article 109, paragraph 3. ...the conference shall be held if so decided by a majority vote of the members of the General Assembly...";
+    when general_assembly_reaches_tenth_session_without_conference()
+        and is_general_conference_fallback_vote_in_general_assembly(d)
+        and (count distinct s: State where casts_vote_for(d, s)) * 2
+            > (count distinct s: State where member_state(s));
+    then general_conference_fallback_approved_by_general_assembly(d);
+}
+
+pub relation is_general_conference_fallback_vote_in_security_council(d: Decision) kind empirical {
+    label en official "the decision is a Security Council vote of any seven members to hold the General Conference under the paragraph 3 fallback (Art. 109, para. 3)";
+}
+
+pub relation general_conference_fallback_approved_by_security_council(d: Decision) kind institutional {
+    label en unofficial "the Security Council has approved holding the General Conference under the paragraph 3 fallback by a vote of any seven of its members (Art. 109, para. 3)";
+}
+
+@source(UNC_EN_ART109)
+rule GeneralConferenceFallbackApprovedBySecurityCouncil(d: Decision) strict {
+    label en official "Article 109, paragraph 3. ...and by a vote of any seven members of the Security Council.";
+    when general_assembly_reaches_tenth_session_without_conference()
+        and is_general_conference_fallback_vote_in_security_council(d)
+        and (count distinct s: State where casts_vote_for(d, s)) >= 7;
+    then general_conference_fallback_approved_by_security_council(d);
+}
+
+pub relation general_conference_fallback_decided(ga: Decision, sc: Decision) kind institutional {
+    label en unofficial "the General Conference shall be held under the paragraph 3 fallback: both the General Assembly and the Security Council votes it requires have been given";
+}
+
+@source(UNC_EN_ART109)
+rule GeneralConferenceFallbackDecidedByBothOrgans(ga: Decision, sc: Decision) strict {
+    label en official "Article 109, paragraph 3, combined. ...the conference shall be held if so decided by a majority vote of the members of the General Assembly and by a vote of any seven members of the Security Council.";
+    when general_conference_fallback_approved_by_general_assembly(ga)
+        and general_conference_fallback_approved_by_security_council(sc);
+    then general_conference_fallback_decided(ga, sc);
+}
+
+// --- Article 110: ratification and signature --------------------------------
+//
+// Paragraphs 1-3 (constitutional ratification, deposit with the US
+// Government, coming into force upon deposit by the five original permanent
+// members and a majority of other signatories, the protocol of
+// ratifications) are a ONE-TIME historical event this package's own
+// `law.toml`/`sources.law` already record as concluded — residue, not a
+// formalization gap (see this module's header comment). Paragraph 4 is the
+// live branch: a THIRD basis feeding Article 3's existing `original_member`
+// head (02-membership.law), alongside `OriginalMemberBySanFranciscoParticipation`
+// and `OriginalMemberByDeclarationSignature` — `ratifies_charter` (Article
+// 3's own premise) is untouched; this rule reads its OWN premise.
+
+pub relation ratifies_after_charter_in_force(s: State) kind empirical {
+    label en official "the State signs and ratifies the Charter after it has already come into force (Art. 110, para. 4)";
+}
+
+@source(UNC_EN_ART110)
+rule OriginalMemberByRatificationAfterEntryIntoForce(s: State) strict {
+    label en official "Article 110, paragraph 4. The states signatory to the present Charter which ratify it after it has come into force will become original Members of the United Nations on the date of the deposit of their respective ratifications.";
+    when signs_charter(s)
+        and ratifies_after_charter_in_force(s);
+    then original_member(s);
+}
+
+// --- Article 95: Members may use other tribunals ---------------------------
+
+pub relation difference_entrusted_to_other_tribunal(s: State, t: TreatyObligation) kind empirical {
+    label en official "the Member has entrusted the solution of a difference to another tribunal by virtue of an agreement already in existence or hereafter concluded (Art. 95)";
+}
+
+pub relation other_tribunal_not_precluded(s: State, t: TreatyObligation) kind institutional {
+    label en unofficial "nothing in the Charter prevents the Member from using that other tribunal (Art. 95)";
+}
+
+@source(UNC_EN_ART95)
+rule OtherTribunalNotPrecludedByCharter(s: State, t: TreatyObligation) strict {
+    label en official "Article 95. Nothing in the present Charter shall prevent Members of the United Nations from entrusting the solution of their differences to other tribunals by virtue of agreements already in existence or which may be concluded in the future.";
+    when member_state(s)
+        and difference_entrusted_to_other_tribunal(s, t);
+    then other_tribunal_not_precluded(s, t);
+}
+
+// --- Article 104: legal capacity of the Organization ----------------------
+
+pub relation host_territory_of_member(s: State) kind empirical {
+    label en unofficial "the territory is that of this Member, for the purpose of Article 104";
+}
+
+pub relation organization_enjoys_legal_capacity_in(s: State) kind institutional {
+    label en official "the Organization enjoys in the territory of the Member such legal capacity as may be necessary for the exercise of its functions and the fulfilment of its purposes (Art. 104)";
+}
+
+@source(UNC_EN_ART104)
+rule OrganizationEnjoysLegalCapacityInMemberTerritory(s: State) strict {
+    label en official "Article 104. The Organization shall enjoy in the territory of each of its Members such legal capacity as may be necessary for the exercise of its functions and the fulfilment of its purposes.";
+    when member_state(s)
+        and host_territory_of_member(s);
+    then organization_enjoys_legal_capacity_in(s);
+}
+
+// --- Article 105: privileges and immunities --------------------------------
+
+pub relation representative_of_member(p: Person, s: State) kind empirical {
+    label en official "the person is a representative of the Member (Art. 105, para. 2)";
+}
+
+pub relation privileges_or_immunities_interfered_with(p: Person, host: State) kind empirical {
+    label en unofficial "the host State has interfered with privileges and immunities necessary for the independent exercise of the person's functions (Art. 105, para. 2)";
+}
+
+@source(UNC_EN_ART105)
+rule RepresentativesEnjoyPrivilegesAndImmunities(
+    p: Person, sending: State, host: State
+) strict {
+    label en official "Article 105, paragraph 2. Representatives of the Members of the United Nations and officials of the Organization shall similarly enjoy such privileges and immunities as are necessary for the independent exercise of their functions in connexion with the Organization.";
+    when member_state(sending)
+        and member_state(host)
+        and representative_of_member(p, sending);
+    then immunity RepresentativeOfficialImmunity {
+        holder p;
+        protected_effect privileges_or_immunities_interfered_with(p, host);
+    };
+}
+
+@source(UNC_EN_ART105)
+rule OfficialsEnjoyPrivilegesAndImmunities(p: Person, host: State) strict {
+    label en official "Article 105, paragraph 2. Representatives of the Members of the United Nations and officials of the Organization shall similarly enjoy such privileges and immunities as are necessary for the independent exercise of their functions in connexion with the Organization.";
+    when member_state(host)
+        and member_of_secretariat_person(p);
+    then immunity OfficialImmunity {
+        holder p;
+        protected_effect privileges_or_immunities_interfered_with(p, host);
+    };
+}
+
+pub relation member_of_secretariat_person(p: Person) kind empirical {
+    label en unofficial "the person is an official of the Organization for Article 105, paragraph 2 (the Secretariat layer of Art. 97-101, reported here as a Person)";
+}
+
+pub relation organization_enjoys_privileges_and_immunities(host: State) kind institutional {
+    label en official "the Organization enjoys in the territory of the Member such privileges and immunities as are necessary for the fulfilment of its purposes (Art. 105, para. 1)";
+}
+
+@source(UNC_EN_ART105)
+rule OrganizationEnjoysPrivilegesAndImmunities(host: State) strict {
+    label en official "Article 105, paragraph 1. The Organization shall enjoy in the territory of each of its Members such privileges and immunities as are necessary for the fulfilment of its purposes.";
+    when member_state(host);
+    then organization_enjoys_privileges_and_immunities(host);
+}

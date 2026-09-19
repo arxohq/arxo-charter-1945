@@ -1,0 +1,13 @@
+{
+  "queryId": "anticipatory",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#anticipatory_self_defence_permitted",
+    "args": [
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:a51:victim" },
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:a51:attacker" }
+    ]
+  }
+}

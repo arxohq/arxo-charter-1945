@@ -1,0 +1,22 @@
+language "law.core" version "0.2";
+package examples.un.charter.same_vote version "0.1.0";
+namespace "urn:law:examples:un-charter:same-vote";
+
+// UNC-16: a party to a Chapter VI dispute votes instead of abstaining.
+// The duty in the second sentence of article 27(3) stays ACTIVE.
+
+case DisputantVotes {
+    context {
+        legal_time @2026-01-01;
+        knowledge_time @2026-01-01T12:00:00Z;
+        decision_time @2026-01-01T12:00:00Z;
+        timezone "UTC";
+    }
+
+    const d: un.charter::Decision = entity_ref("urn:law:examples:un-charter:same-vote:dispute");
+    const france: un.charter::State = entity_ref("urn:un:corpus:clir:charter#FranceState");
+
+    assert "non-proc": un.charter::is_non_procedural_matter(d) { origin case_input; }
+    assert "party": un.charter::party_to_dispute_under_chapter_six(d, france) { origin case_input; }
+    assert "votes": un.charter::casts_vote_for(d, france) { origin case_input; }
+}

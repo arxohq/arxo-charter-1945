@@ -1,0 +1,18 @@
+{
+  "$comment": "Матрица казус × инструмент (DECISION-0326). Ожидание клетки пишется по тексту до прогона.",
+  "links": {
+    "udhr_1948": {"title": "Всеобщая декларация прав человека", "legalTime": "1948-12-10", "anchor": "UDHR_ART9_EN"},
+    "echr_1950": {"title": "Европейская конвенция, ст. 34", "legalTime": "1950-11-04", "anchor": "ECHR_ART34_EN"},
+    "un_charter": {"title": "Устав ООН, ст. 10", "legalTime": "1945-10-24", "anchor": "UNC_EN_ART10"}
+  },
+  "casus": {
+    "01-expulsio-sine-iudicio": {
+      "question": "Высылка без судебной проверки: заявлено ли право, доступно ли средство, передан ли вопрос органу?",
+      "cells": {
+        "udhr_1948": {"head": "ius_declaratum", "verdict": "TRUE_ONLY", "anchor": "UDHR_ART9_EN"},
+        "echr_1950": {"head": "remedium_patet", "verdict": "TRUE_ONLY", "anchor": "ECHR_ART34_EN"},
+        "un_charter": {"head": "quaestio_organo_tradita", "verdict": "TRUE_ONLY", "anchor": "UNC_EN_ART10"}
+      }
+    }
+  }
+}

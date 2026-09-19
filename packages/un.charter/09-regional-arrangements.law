@@ -1,0 +1,274 @@
+// Chapter VIII: Regional Arrangements — Articles 52-54, stage E5
+// (18.09.2026).
+//
+// ONE ENTITY, `RegionalArrangementActivity`, FOR ARTICLES 53-54, PLUS THE
+// EXISTING `Dispute` (08-pacific-settlement.law) FOR ARTICLE 52. Article 52
+// speaks of "local disputes" — the same kind of object Chapter VI already
+// models as `Dispute` (a dispute or situation of like nature), not a
+// different textual object: paragraph 4 itself confirms this ("This Article
+// in no way impairs the application of Articles 34 and 35"), so Article 52
+// is read as narrowing Chapter VI's `Dispute` to a "local" subset, not as
+// naming a new kind of thing. Following the task's own preference for a
+// QUALIFYING FACT over a parallel entity (the same anti-duplication
+// convention CLAUDE.md states for a neighbour's `pub` type — no bridge
+// twins), `local_dispute` below is a positive qualifier ON a `Dispute`, not
+// a new `LocalDispute` entity. Articles 53-54, by contrast, speak of
+// "activities... undertaken or in contemplation" and "enforcement action"
+// under a regional arrangement — a different textual object from a dispute
+// (an ACT, not the underlying disagreement) — hence one new entity,
+// `RegionalArrangementActivity`, shared by both articles, with Article 53's
+// narrower "enforcement action" test expressed as a QUALIFYING FACT on that
+// same entity (`is_enforcement_action`) rather than a second entity, for the
+// same anti-duplication reason.
+//
+// ARTICLE 52 IS EXECUTABLE VIA PARAGRAPHS 2 AND 3; PARAGRAPHS 1 AND 4 ARE
+// UNFORMALIZED RESIDUE, THE SAME TREATMENT AS ARTICLE 33'S PARAGRAPH 2 AND
+// ARTICLE 32'S SECOND SENTENCE. Paragraph 1 ("Nothing in the present Charter
+// precludes the existence of regional arrangements... provided that... [they]
+// are consistent with the Purposes and Principles") sets an eligibility
+// condition on a regional arrangement's own existence — but names NO organ
+// to assess it (unlike Article 34's "in order to determine" or Article 37's
+// "if the Security Council deems"), and no rule of this chapter or any other
+// reads a "the arrangement is valid/consistent" fact as a gate: Article 53's
+// authorization requirement applies to enforcement action REGARDLESS of
+// paragraph 1's own consistency proviso (the text never conditions Article
+// 53 on Article 52, paragraph 1 being satisfied). Modelling it would be
+// exactly the "some predicate could technically be written" trap the
+// project's `formalize-act` skill and this package's own Article 9/32
+// precedents warn against — left as unformalized residue inside an
+// otherwise EXECUTABLE article. Paragraph 4 is a pure savings clause
+// ("This Article in no way impairs the application of Articles 34 and 35"),
+// stating a NON-relationship between two already-formalized chapters, not a
+// testable norm of its own.
+//
+// PARAGRAPH 2 IS A DUTY, THE SAME SHAPE AS ARTICLE 33's
+// `SeekPeacefulSettlementFirst`. "The Members... entering into such
+// arrangements... shall make every effort to achieve pacific settlement of
+// local disputes through such regional arrangements... before referring
+// them to the Security Council" names a determinate addressee (a Member
+// that has entered a regional arrangement), a determinate act (making every
+// effort at regional settlement), and an implicit temporal ordering
+// ("before referring... to the Security Council") — exactly Article 33's
+// "first of all, seek a solution" shape, transposed to the regional
+// register. `SeekRegionalSettlementFirst` mirrors
+// `SeekPeacefulSettlementFirst` (08-pacific-settlement.law) rule for rule.
+//
+// PARAGRAPH 3 IS THE SECURITY COUNCIL'S OWN ACT OF WILL, THE SAME
+// CONSTRUCTION AS ARTICLE 36's RECOMMENDATION ACTS, NOT A DECISION-0194
+// JUDGMENT CHANNEL. "The Security Council shall encourage the development
+// of pacific settlement of local disputes... either on the initiative of
+// the states concerned or by reference from the Security Council" names an
+// institutional act the Council performs (encouraging), not an evaluative
+// characterization the Council assesses about a State or a fact — the same
+// class as Article 36's `procedures_recommended`/Article 4's
+// `security_council_recommends_admission`: a flat `kind empirical` fact for
+// the act itself, read directly by the conclusion rule below, never an
+// `external judgment relation`.
+//
+// ARTICLE 53 — THE CHAPTER'S CENTREPIECE: A GENUINE PROHIBITION, NOT MERELY
+// A GATE. "No enforcement action shall be taken under regional arrangements
+// or by regional agencies without the authorization of the Security
+// Council" is unlike Articles 41-42's `force_authorized` (an ENABLING fact
+// that other rules read to permit further consequences, 06-enforcement.law)
+// — it is a PROHIBITION whose violation this package can state directly,
+// because the actor here (a regional arrangement or agency) is never itself
+// `State`-typed in this package (only its Member States are), so a `duty`
+// with a `bearer: State` would misattribute the obligation to a specific
+// Member rather than to the arrangement's own enforcement act. Following
+// this package's own established exception idiom (rule: a positive
+// predicate for the negative branch, never a negated head —
+// `general_assembly_recommendation_barred` at E2,
+// `vote_forfeited_under_article_19` at E2): `regional_enforcement_action_unauthorized`
+// is a SEPARATE positive institutional conclusion, guarded by
+// `not_known(...)` over BOTH the ordinary-authorization branch and the
+// enemy-state exception, never a negation of `regional_enforcement_action_authorized`
+// itself (which would collide with that predicate's own head without a
+// `priority` declaration, §116).
+//
+// THE ENEMY-STATE EXCEPTION (PARAGRAPH 1'S PROVISO, PARAGRAPH 2'S
+// DEFINITION) IS FORMALIZED BY THE LETTER, AS A SINGLE FLAT CASE FACT, NOT A
+// LIVE ESCAPE HATCH. The exception is alive in the text and dead in
+// practice — the very same class of divergence this package already
+// documents for Articles 43-47 (Finding 1, README.md: agreements under
+// Article 43 have never been concluded in the Charter's history) and for
+// the Military Staff Committee. Unlike Article 43-47's chain (formalized
+// with its full conditional structure, simply never triggered by any
+// scenario because its own premise has never been true in the world),
+// Article 53's enemy-state carve-out is given the MINIMAL literal
+// treatment the prompt's own task brief calls for: ONE flat `kind
+// empirical` relation, `enemy_state_measure_under_article_107`, that a case
+// COULD in principle assert (the letter is not deleted), but that no
+// scenario of this package's own test corpus ever asserts (the same
+// "dead letter, not exercised in practice" register) — deliberately NOT
+// built out into a full "which States count as an enemy state under the
+// Second World War definition" lookup chain (paragraph 2's own definitional
+// sentence), since no other rule of this package would ever consume such a
+// chain and building it would be exactly the same "predicate nobody
+// reads" trap already avoided elsewhere in this package (Article 9's
+// five-representative cap, Article 32's second sentence, Article 52,
+// paragraph 1 above).
+//
+// ARTICLE 54 — A DUTY ON EACH MEMBER OF THE REGIONAL ARRANGEMENT, THE SAME
+// SHAPE AS ARTICLE 51's REPORTING DUTY. "The Security Council shall at all
+// times be kept fully informed of activities undertaken or in contemplation
+// under regional arrangements... " is passive — the text names no addressee
+// directly — but Article 52, paragraph 2 already establishes that Members
+// entering a regional arrangement bear the arrangement's Charter-facing
+// obligations (the pacific-settlement-first duty above); this package reads
+// Article 54's "kept... informed" the same way, as a duty falling on each
+// Member OF the regional arrangement or agency under which the activity is
+// undertaken or in contemplation, mirroring `ReportSelfDefenceMeasuresDuty`
+// (Art. 51, second sentence, 06-enforcement.law): a duty to achieve a
+// reported-fact, keyed to the specific activity and the specific Member,
+// not to the arrangement itself (which this package never models as a
+// bearer-eligible entity).
+//
+// A NOTE FOR WHOEVER FORMALIZES CHAPTER IX ONWARD (STAGE E6). Article 27,
+// paragraph 3's mandatory-abstention duty now reads a second producer path
+// (05-security-council.law, `RegionalDisputePartyMustAbstainViaArticle52`)
+// in addition to its original bare case-fact path — both feed the SAME
+// premise, `party_to_dispute_under_chapter_six(d, s)`, and the base duty
+// rule (`DisputantMustAbstainDuty`) is UNCHANGED by this stage: this is an
+// ADDED path, not a rewrite, per the multisession prompt's rule #1 (letter
+// in the base, added paths only).
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// --- Article 52, paragraph 2: duty to seek regional settlement first -------
+
+// A QUALIFYING FACT on Chapter VI's own `Dispute` entity (08-pacific-
+// settlement.law), not a new entity — Article 52 narrows "dispute" to
+// "local dispute" without introducing a different kind of thing (paragraph
+// 4's own savings clause confirms Articles 34-35 apply just the same).
+pub relation local_dispute(d: Dispute) kind empirical {
+    label en official "the dispute is a local dispute within the meaning of Article 52 — a qualifying case fact on a Chapter VI Dispute, not a separate entity";
+}
+
+pub relation member_of_regional_arrangement(s: State) kind empirical {
+    label en official "the Member has entered into a regional arrangement, or constitutes a regional agency, for the maintenance of international peace and security (Art. 52, paragraph 2)";
+}
+
+pub relation regional_settlement_effort_made(d: Dispute, s: State) kind empirical {
+    label en official "the Member has made every effort to achieve pacific settlement of the local dispute through the regional arrangement or agency (Art. 52, paragraph 2)";
+}
+
+@source(UNC_EN_ART52)
+rule DutyToSeekRegionalSettlementFirst(d: Dispute, s: State) strict {
+    label en official "Article 52, paragraph 2. The Members of the United Nations entering into such arrangements or constituting such agencies shall make every effort to achieve pacific settlement of local disputes through such regional arrangements or by such regional agencies before referring them to the Security Council.";
+    when local_dispute(d)
+        and party_to_dispute(d, s)
+        and member_of_regional_arrangement(s);
+    then duty SeekRegionalSettlementFirst {
+        bearer s;
+        achieve regional_settlement_effort_made(d, s) during [@0001-01-01, infinity);
+    };
+}
+
+// --- Article 52, paragraph 3: Security Council encouragement --------------
+
+pub relation security_council_encourages_regional_settlement(d: Dispute) kind empirical {
+    label en official "the Security Council encourages the development of pacific settlement of the local dispute through regional arrangements or agencies, on the initiative of the states concerned or by its own reference (Art. 52, paragraph 3)";
+}
+
+pub relation regional_settlement_encouraged(d: Dispute) kind institutional {
+    label en unofficial "the Security Council has encouraged the development of pacific settlement of the local dispute under Article 52, paragraph 3";
+}
+
+@source(UNC_EN_ART52)
+rule Article52ParagraphThreeEncouragement(d: Dispute) strict {
+    label en official "Article 52, paragraph 3. The Security Council shall encourage the development of pacific settlement of local disputes through such regional arrangements or by such regional agencies either on the initiative of the states concerned or by reference from the Security Council.";
+    when local_dispute(d)
+        and security_council_encourages_regional_settlement(d);
+    then regional_settlement_encouraged(d);
+}
+
+// --- Articles 53-54: activities under a regional arrangement or agency ----
+
+// Distinct from `Dispute` (Chapter VI, 08-pacific-settlement.law): Articles
+// 53-54 speak of an ACT taken, or in contemplation, under a regional
+// arrangement, not the underlying disagreement.
+entity RegionalArrangementActivity { label en official "Activity undertaken or in contemplation under a regional arrangement or agency for the maintenance of international peace and security (Art. 53-54)"; }
+
+pub relation regional_activity_undertaken(a: RegionalArrangementActivity) kind empirical {
+    label en official "the activity has been undertaken, or is in contemplation, under a regional arrangement or agency (Art. 53, paragraph 1; Art. 54)";
+}
+
+pub relation is_enforcement_action(a: RegionalArrangementActivity) kind empirical {
+    label en official "the activity is enforcement action within the meaning of Article 53, paragraph 1 — a qualifying case fact on a RegionalArrangementActivity, not a separate entity";
+}
+
+// --- Article 53: enforcement action only with Security Council authorization
+
+pub relation security_council_authorises_regional_enforcement_action(a: RegionalArrangementActivity) kind empirical {
+    label en official "the Security Council authorizes the enforcement action taken under the regional arrangement or agency (Art. 53, paragraph 1)";
+}
+
+// Formalized by the letter, as a single flat case fact — never asserted by
+// any scenario of this package's own test corpus, the same "alive in the
+// text, dead in practice" register already documented for Articles 43-47
+// (Finding 1, README.md). No "which States count as an enemy state under
+// the Second World War definition" lookup chain is built (paragraph 2's own
+// definitional sentence) — no other rule of this package would ever read
+// such a chain.
+pub relation enemy_state_measure_under_article_107(a: RegionalArrangementActivity) kind empirical {
+    label en official "the enforcement action is a measure against an enemy state, as defined in Article 53, paragraph 2, provided for pursuant to Article 107 or directed against renewal of aggressive policy — the exception to the authorization requirement (Art. 53, paragraph 1)";
+}
+
+pub relation regional_enforcement_action_authorized(a: RegionalArrangementActivity) kind institutional {
+    label en unofficial "the enforcement action taken under the regional arrangement or agency is authorized under Article 53 — by the Security Council, or by falling within the enemy-state exception";
+}
+
+@source(UNC_EN_ART53)
+rule RegionalEnforcementActionAuthorizedBySecurityCouncil(a: RegionalArrangementActivity) strict {
+    label en official "Article 53, paragraph 1. …no enforcement action shall be taken under regional arrangements or by regional agencies without the authorization of the Security Council…";
+    when regional_activity_undertaken(a)
+        and is_enforcement_action(a)
+        and security_council_authorises_regional_enforcement_action(a);
+    then regional_enforcement_action_authorized(a);
+}
+
+@source(UNC_EN_ART53)
+rule RegionalEnforcementActionExemptAsEnemyStateMeasure(a: RegionalArrangementActivity) strict {
+    label en official "Article 53, paragraph 1 (exception). …with the exception of measures against any enemy state, as defined in paragraph 2 of this Article, provided for pursuant to Article 107 or in regional arrangements directed against renewal of aggressive policy on the part of any such state…";
+    when regional_activity_undertaken(a)
+        and is_enforcement_action(a)
+        and enemy_state_measure_under_article_107(a);
+    then regional_enforcement_action_authorized(a);
+}
+
+pub relation regional_enforcement_action_unauthorized(a: RegionalArrangementActivity) kind institutional {
+    label en unofficial "the enforcement action taken under the regional arrangement or agency violates Article 53 — it lacks Security Council authorization and does not fall within the enemy-state exception";
+}
+
+@source(UNC_EN_ART53)
+rule UnauthorizedRegionalEnforcementAction(a: RegionalArrangementActivity) strict {
+    label en official "Article 53, paragraph 1 (negative side). Enforcement action taken under a regional arrangement or agency without the authorization of the Security Council, and outside the enemy-state exception, is not authorized under this Article.";
+    when regional_activity_undertaken(a)
+        and is_enforcement_action(a)
+        and not_known(security_council_authorises_regional_enforcement_action(a))
+        and not_known(enemy_state_measure_under_article_107(a));
+    then regional_enforcement_action_unauthorized(a);
+}
+
+// --- Article 54: keeping the Security Council informed ---------------------
+
+pub relation undertaken_under_arrangement_of(a: RegionalArrangementActivity, s: State) kind empirical {
+    label en official "the State is a member of the regional arrangement or agency under which the activity is undertaken or in contemplation (Art. 54)";
+}
+
+pub relation activity_reported_to_security_council(a: RegionalArrangementActivity, s: State) kind empirical {
+    label en official "the Member has kept the Security Council fully informed of the activity undertaken or in contemplation under the regional arrangement or agency (Art. 54)";
+}
+
+@source(UNC_EN_ART54)
+rule DutyToKeepSecurityCouncilInformed(a: RegionalArrangementActivity, s: State) strict {
+    label en official "Article 54. The Security Council shall at all times be kept fully informed of activities undertaken or in contemplation under regional arrangements or by regional agencies for the maintenance of international peace and security.";
+    when regional_activity_undertaken(a)
+        and undertaken_under_arrangement_of(a, s);
+    then duty KeepSecurityCouncilInformed {
+        bearer s;
+        achieve activity_reported_to_security_council(a, s) during [@0001-01-01, infinity);
+    };
+}

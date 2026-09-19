@@ -1,0 +1,12 @@
+{
+  "queryId": "endangerment-determined",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#dispute_endangerment_determined",
+    "args": [
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:pacific-settlement:dispute" }
+    ]
+  }
+}

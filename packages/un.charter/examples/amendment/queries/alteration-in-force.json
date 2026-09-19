@@ -1,0 +1,12 @@
+{
+  "queryId": "alteration-in-force",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#amendment_in_force",
+    "args": [
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:amendment:alteration-vote" }
+    ]
+  }
+}

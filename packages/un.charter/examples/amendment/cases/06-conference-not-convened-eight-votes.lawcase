@@ -1,0 +1,87 @@
+language "law.core" version "0.2";
+package examples.un.charter.amendment version "0.1.0";
+namespace "urn:law:examples:un-charter:amendment";
+
+// UNC-79B: the same Assembly vote as ConferenceConvenedNoVeto, but the
+// Council musters only eight votes, one short of the nine Article 109,
+// paragraph 1 requires. The absence of a permanent-member veto does not
+// lower the headcount: eight is still not nine, and the Conference is not
+// convened.
+
+case ConferenceNotConvenedEightVotes {
+    context {
+        legal_time @2026-01-01;
+        knowledge_time @2026-01-01T12:00:00Z;
+        decision_time @2026-01-01T12:00:00Z;
+        timezone "UTC";
+    }
+
+    const ga: un.charter::Decision = entity_ref("urn:law:examples:un-charter:amendment:conf-convene-ga");
+    const sc: un.charter::Decision = entity_ref("urn:law:examples:un-charter:amendment:conf-convene-sc");
+
+    const china: un.charter::State = entity_ref("urn:un:corpus:clir:charter#RepublicOfChina");
+    const france: un.charter::State = entity_ref("urn:un:corpus:clir:charter#FranceState");
+    const soviet: un.charter::State = entity_ref("urn:un:corpus:clir:charter#SovietUnion");
+    const uk: un.charter::State = entity_ref("urn:un:corpus:clir:charter#UnitedKingdomState");
+    const us: un.charter::State = entity_ref("urn:un:corpus:clir:charter#UnitedStatesState");
+    const m0: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:m0");
+    const m1: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:m1");
+    const m2: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:m2");
+    const m3: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:m3");
+    const m4: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:m4");
+    const m5: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:m5");
+    const m6: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:m6");
+    const m7: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:m7");
+    const m8: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:m8");
+    const m9: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:m9");
+    const c0: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:c0");
+    const c1: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:c1");
+    const c2: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:c2");
+    const c3: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:c3");
+    const c4: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:c4");
+    const c5: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:c5");
+    const c6: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:c6");
+    const c7: un.charter::State = entity_ref("urn:law:examples:un-charter:amendment:c7");
+
+    assert "ga-vote": un.charter::is_general_conference_convening_vote_in_general_assembly(ga) { origin case_input; }
+    assert "sc-vote": un.charter::is_general_conference_convening_vote_in_security_council(sc) { origin case_input; }
+
+    assert "member-china": un.charter::member_state(china) { origin case_input; }
+    assert "member-france": un.charter::member_state(france) { origin case_input; }
+    assert "member-soviet": un.charter::member_state(soviet) { origin case_input; }
+    assert "member-uk": un.charter::member_state(uk) { origin case_input; }
+    assert "member-us": un.charter::member_state(us) { origin case_input; }
+    assert "member-m0": un.charter::member_state(m0) { origin case_input; }
+    assert "member-m1": un.charter::member_state(m1) { origin case_input; }
+    assert "member-m2": un.charter::member_state(m2) { origin case_input; }
+    assert "member-m3": un.charter::member_state(m3) { origin case_input; }
+    assert "member-m4": un.charter::member_state(m4) { origin case_input; }
+    assert "member-m5": un.charter::member_state(m5) { origin case_input; }
+    assert "member-m6": un.charter::member_state(m6) { origin case_input; }
+    assert "member-m7": un.charter::member_state(m7) { origin case_input; }
+    assert "member-m8": un.charter::member_state(m8) { origin case_input; }
+    assert "member-m9": un.charter::member_state(m9) { origin case_input; }
+
+    assert "ga-vote-china": un.charter::casts_vote_for(ga, china) { origin case_input; }
+    assert "ga-vote-france": un.charter::casts_vote_for(ga, france) { origin case_input; }
+    assert "ga-vote-soviet": un.charter::casts_vote_for(ga, soviet) { origin case_input; }
+    assert "ga-vote-uk": un.charter::casts_vote_for(ga, uk) { origin case_input; }
+    assert "ga-vote-us": un.charter::casts_vote_for(ga, us) { origin case_input; }
+    assert "ga-vote-m0": un.charter::casts_vote_for(ga, m0) { origin case_input; }
+    assert "ga-vote-m1": un.charter::casts_vote_for(ga, m1) { origin case_input; }
+    assert "ga-vote-m2": un.charter::casts_vote_for(ga, m2) { origin case_input; }
+    assert "ga-vote-m3": un.charter::casts_vote_for(ga, m3) { origin case_input; }
+    assert "ga-vote-m4": un.charter::casts_vote_for(ga, m4) { origin case_input; }
+
+    // Nine votes of the Council, none of them a permanent member: the
+    // Soviet Union, France, the United Kingdom, the United States and China
+    // cast no vote here at all, and the vote still carries.
+    assert "sc-vote-c0": un.charter::casts_vote_for(sc, c0) { origin case_input; }
+    assert "sc-vote-c1": un.charter::casts_vote_for(sc, c1) { origin case_input; }
+    assert "sc-vote-c2": un.charter::casts_vote_for(sc, c2) { origin case_input; }
+    assert "sc-vote-c3": un.charter::casts_vote_for(sc, c3) { origin case_input; }
+    assert "sc-vote-c4": un.charter::casts_vote_for(sc, c4) { origin case_input; }
+    assert "sc-vote-c5": un.charter::casts_vote_for(sc, c5) { origin case_input; }
+    assert "sc-vote-c6": un.charter::casts_vote_for(sc, c6) { origin case_input; }
+    assert "sc-vote-c7": un.charter::casts_vote_for(sc, c7) { origin case_input; }
+}

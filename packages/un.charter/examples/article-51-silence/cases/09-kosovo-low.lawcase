@@ -1,0 +1,21 @@
+language "law.core" version "0.2";
+package examples.un.charter.article_51_silence version "0.1.0";
+namespace "urn:law:examples:un-charter:article-51-silence";
+
+// UNC-12/2: the same facts under LowIntensityAttackReading.
+
+case KosovoLow {
+    context {
+        legal_time @2026-01-01;
+        knowledge_time @2026-01-01T12:00:00Z;
+        decision_time @2026-01-01T12:00:00Z;
+        timezone "UTC";
+        interpretation un.charter::LowIntensityAttackReading;
+    }
+
+    const attacker: un.charter::State = entity_ref("urn:law:examples:un-charter:a51:attacker");
+    const victim: un.charter::State = entity_ref("urn:law:examples:un-charter:a51:victim");
+
+    assert "member": un.charter::member_state(attacker) { origin case_input; }
+    assert "force": un.charter::use_of_force(attacker, victim) { origin case_input; }
+}

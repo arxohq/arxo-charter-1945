@@ -1,0 +1,12 @@
+{
+  "queryId": "recommendation-power-ga-matter",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#general_assembly_recommendation_power",
+    "args": [
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:binding-or-not:ga-matter" }
+    ]
+  }
+}

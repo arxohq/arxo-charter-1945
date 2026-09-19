@@ -1,0 +1,43 @@
+# Worked cases: admission, suspension, expulsion of a Member.
+[package]
+name = "examples.un.charter.membership_arc"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:un-charter:membership-arc"
+
+[dependencies]
+"un.charter" = "0.1.0"
+
+[[cases]]
+name = "Admitted"
+path = "cases/01-admitted.lawcase"
+
+[[cases]]
+name = "AdmissionBlocked"
+path = "cases/02-admission-blocked.lawcase"
+
+[[cases]]
+name = "Suspended"
+path = "cases/03-suspended.lawcase"
+
+[[cases]]
+name = "SuspensionDenied"
+path = "cases/04-suspension-denied.lawcase"
+
+[[cases]]
+name = "RightsRestored"
+path = "cases/05-rights-restored.lawcase"
+
+[[cases]]
+name = "Expelled"
+path = "cases/06-expelled.lawcase"
+
+[[cases]]
+name = "ExpulsionDenied"
+path = "cases/07-expulsion-denied.lawcase"
+
+[metadata]
+act = "un-charter-examples-membership-arc"
+title = "Worked cases: admission, suspension and expulsion of a Member (articles 4–6)"
+jurisdiction = "International"
+instrument = "case-collection"

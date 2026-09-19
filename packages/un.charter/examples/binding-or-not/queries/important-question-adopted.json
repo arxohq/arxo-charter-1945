@@ -1,0 +1,12 @@
+{
+  "queryId": "important-question-adopted",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#important_question_adopted",
+    "args": [
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:binding-or-not:important-question" }
+    ]
+  }
+}
