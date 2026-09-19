@@ -1,0 +1,241 @@
+// Chapter XII: International Trusteeship System — Articles 75-85, stage E7
+// (18.09.2026).
+//
+// ONE NEW ENTITY, `TrustTerritory`, DELIBERATELY DISJOINT FROM CHAPTER XI's
+// `NonSelfGoverningTerritory` (12-non-self-governing-territories.law) — see
+// that module's own header comment for the textual reason (Article 73,
+// paragraph (e)'s own closing words).
+//
+// ARTICLE 77 — CATEGORIES OF TERRITORIES PLACEABLE UNDER TRUSTEESHIP — IS
+// EXECUTABLE AS A CATEGORICAL FACT-RECOGNIZER, EVEN THOUGH NO OTHER RULE OF
+// THIS PACKAGE'S DECLARED SCOPE CONSUMES ITS CONCLUSION. Unlike Articles
+// 61/63/65 (E6), declared specifically BECAUSE no consumer exists for their
+// otherwise-genuine tests, Article 77 names three concrete, mutually
+// exclusive-in-practice categories ("territories now held under mandate";
+// "territories... detached from enemy states as a result of the Second
+// World War"; "territories voluntarily placed under the system by states
+// responsible for their administration") that the text itself treats as a
+// SHARED-HEAD, three-based classification, the same "N bases, one head"
+// shape as Articles 10/11/14 (E2) and Article 32's two subject classes
+// (E3) — a genuine categorical test worth keeping EXECUTABLE on its own
+// textual merit (three independently testable classifications feeding one
+// shared eligibility conclusion) rather than declared for want of a
+// downstream reader, per the task brief's own explicit invitation to make
+// this call either way.
+//
+// ARTICLE 78 IS A GENUINE EXCLUSION, REUSING `member_state`
+// (02-membership.law) DIRECTLY, NOT REBUILT. "The trusteeship system shall
+// not apply to territories which have become Members of the United
+// Nations" ties TWO of this package's entities together for the only time
+// in Chapters XI-XIII: a `TrustTerritory` that has, in fact, become a
+// State (and a Member) is no longer within the system's reach. A dedicated
+// bridging fact, `trust_territory_became_member_state`, lets a case report
+// this correspondence directly (the same register as Article 78's own
+// "which have become Members" — a fact about the territory's subsequent
+// history, not something any rule of this package derives) — the exclusion
+// itself is a POSITIVE institutional conclusion
+// (`trusteeship_system_inapplicable`), never a negation of a base "the
+// system applies" rule (no such base rule exists for this package to
+// defeat: unlike Article 12's or Article 19's exceptions, which negate an
+// established AFFIRMATIVE conclusion produced elsewhere in the same
+// package, nothing else in this package ever asserts "the trusteeship
+// system applies to this territory" as an institutional fact to begin
+// with, so there is no head to collide with and no `not_known`/`priority`
+// machinery is needed here).
+//
+// ARTICLES 82-83/85 — THE STAGE'S SECOND FLAGGED CENTREPIECE: THE
+// SECURITY-COUNCIL/GENERAL-ASSEMBLY COMPETENCE SPLIT OVER STRATEGIC AND
+// NON-STRATEGIC AREAS. Article 82 permits designating part or all of a
+// trust territory as a "strategic area" — declared below, since the
+// designation act IS the case fact `is_strategic_area` that Article 83
+// reads directly (the same register as `member_state` or `permanent_member`
+// themselves: a base case premise, not a separately-derived rule
+// conclusion). Article 83, paragraph 1 ("All functions of the United
+// Nations relating to strategic areas... shall be exercised by the
+// Security Council") and Article 85, paragraph 1 ("The functions of the
+// United Nations with regard to trusteeship agreements for all areas NOT
+// designated as strategic... shall be exercised by the General Assembly")
+// are the identical competence-grant sentence, mirrored across the
+// strategic/non-strategic partition — a dedicated positive relation,
+// `non_strategic_area`, follows this package's own "absence of a fact is
+// not its negation" convention (Article 32/35's `non_member_state`,
+// Article 31/32's `non_security_council_member_state`): a case must assert
+// non-strategic status directly, never infer it from the mere absence of
+// `is_strategic_area`. The two competence conclusions
+// (`trusteeship_organ_competence_is_security_council`/`…is_general_assembly`)
+// are SEPARATE predicates, not a shared head defeating one another — no
+// `priority` declaration is needed because they never collide.
+// Article 83's second sentence (objectives of Article 76 applicable to
+// strategic areas) and third sentence (Security Council availing itself of
+// Trusteeship Council assistance) and Article 85's second sentence
+// (Trusteeship Council assisting the General Assembly) are left as
+// unformalized residue, the same "executable via one sentence, residue for
+// the rest" treatment already given to Articles 33 and 52.
+//
+// ARTICLE 84 IS A DUTY ON THE ADMINISTERING AUTHORITY, MIRRORING ARTICLES
+// 33/52/54/56's OWN ACHIEVE-DUTY SHAPE. "It shall be the duty of the
+// administering authority to ensure that the trust territory shall play
+// its part in the maintenance of international peace and security" names a
+// determinate addressee and a determinate open-ended achievement — the
+// SAME shape already used for Article 54's "kept... informed" duty
+// (09-regional-arrangements.law). Article 81 states that "such authority...
+// may be one or more states or the Organization itself" — the SAME
+// State-typing gap already documented for Article 53's regional
+// arrangements/agencies (09-regional-arrangements.law): this package has
+// never modelled the Organization itself as a duty-bearer. `bearer s`
+// therefore covers only the (historically overwhelming) case where the
+// administering authority IS one or more States — `administers_trust_territory`
+// is a case-reported fact naming that State directly, the same convention
+// already used for `member_state`/`permanent_member` (a base premise, not
+// a rule-derived conclusion) — the residual "Organization itself" case is
+// simply outside what this predicate's own case facts can express, not a
+// silently mis-modelled duty.
+//
+// ARTICLES 75, 76, 79, 80, 81 ARE DECLARED, EACH FOR ITS OWN
+// TEXT-GROUNDED REASON (see `sources/charter/articles.json`): Article 75 is
+// the system's own establishment (organizational, no addressee-conduct
+// condition, the same register as Article 7's organs clause); Article 76
+// is an aspirational objectives list (the SAME register as Article 55's
+// declared purposes list, contrasted with Article 56's own EXECUTABLE
+// pledge in the immediately following chapter); Article 79 cross-references
+// Articles 83 and 85's OWN approval machinery, built above, with no
+// separate condition of its own (the same "cross-reference declared, not
+// re-tested" treatment already given to Article 16's trusteeship
+// cross-reference at E2); Article 80 is a pure savings clause (the same
+// register as Article 52, paragraph 4); Article 81 describes what a
+// trusteeship agreement must specify (terms, administering authority) —
+// the administering-authority fact it describes is read directly as a case
+// premise by Article 84's duty and Article 86's composition
+// (14-trusteeship-council.law), the same convention as `member_state`
+// itself, not a separately tested condition of Article 81's own.
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// Chapter XII's own textual object — deliberately disjoint from Chapter
+// XI's `NonSelfGoverningTerritory` (see that module's header comment).
+entity TrustTerritory { label en official "Trust territory within the meaning of Chapter XII"; }
+
+// The administering-authority fact — a base case premise, the same
+// register as `member_state`/`permanent_member`, read directly by Article
+// 84's duty here and Article 86's composition test in
+// 14-trusteeship-council.law. `pub` because the owning fact is read across
+// a chapter boundary (CLAUDE.md: a neighbour's `pub` relation is reused
+// directly, never bridge-twinned).
+pub relation administers_trust_territory(s: State, t: TrustTerritory) kind empirical {
+    label en official "the State is the administering authority (or one of the administering States) of the trust territory (Art. 81, Art. 86)";
+}
+
+// --- Article 77: categories of territories placeable under trusteeship ----
+
+pub relation territory_held_under_mandate(t: TrustTerritory) kind empirical {
+    label en official "the territory is now held under mandate (Art. 77, category (a))";
+}
+pub relation territory_detached_from_enemy_state(t: TrustTerritory) kind empirical {
+    label en official "the territory may be detached from an enemy state as a result of the Second World War (Art. 77, category (b))";
+}
+pub relation territory_voluntarily_placed_by_administering_state(t: TrustTerritory) kind empirical {
+    label en official "the territory is voluntarily placed under the system by the state responsible for its administration (Art. 77, category (c))";
+}
+
+pub relation territory_placeable_under_trusteeship_system(t: TrustTerritory) kind institutional {
+    label en unofficial "the territory falls within a category of Article 77 that may be placed under the trusteeship system by trusteeship agreement";
+}
+
+@source(UNC_EN_ART77)
+rule TerritoryPlaceableUnderTrusteeship_Mandate(t: TrustTerritory) strict {
+    label en official "Article 77, category (a). The trusteeship system shall apply to such territories in the following categories as may be placed thereunder by means of trusteeship agreements: territories now held under mandate.";
+    when territory_held_under_mandate(t);
+    then territory_placeable_under_trusteeship_system(t);
+}
+
+@source(UNC_EN_ART77)
+rule TerritoryPlaceableUnderTrusteeship_EnemyState(t: TrustTerritory) strict {
+    label en official "Article 77, category (b). ...territories which may be detached from enemy states as a result of the Second World War.";
+    when territory_detached_from_enemy_state(t);
+    then territory_placeable_under_trusteeship_system(t);
+}
+
+@source(UNC_EN_ART77)
+rule TerritoryPlaceableUnderTrusteeship_Voluntary(t: TrustTerritory) strict {
+    label en official "Article 77, category (c). ...territories voluntarily placed under the system by states responsible for their administration.";
+    when territory_voluntarily_placed_by_administering_state(t);
+    then territory_placeable_under_trusteeship_system(t);
+}
+
+// --- Article 78: inapplicability to territories that have become Members --
+
+pub relation trust_territory_became_member_state(t: TrustTerritory, s: State) kind empirical {
+    label en official "the trust territory has become the named State (Art. 78) — a fact about the territory's subsequent history, read together with `member_state`";
+}
+
+pub relation trusteeship_system_inapplicable(t: TrustTerritory) kind institutional {
+    label en unofficial "the trusteeship system does not apply to the territory, because it has become a Member of the United Nations (Art. 78)";
+}
+
+@source(UNC_EN_ART78)
+rule TrusteeshipSystemInapplicableToMemberTerritory(t: TrustTerritory, s: State) strict {
+    label en official "Article 78. The trusteeship system shall not apply to territories which have become Members of the United Nations, relationship among which shall be based on respect for the principle of sovereign equality.";
+    when trust_territory_became_member_state(t, s)
+        and member_state(s);
+    then trusteeship_system_inapplicable(t);
+}
+
+// --- Article 82: designation of a strategic area (case premise) -----------
+
+// The designation act IS the case fact read directly by Article 83 below —
+// the same register as `member_state`/`permanent_member`, not a separately
+// derived rule conclusion (see header comment).
+pub relation is_strategic_area(t: TrustTerritory) kind empirical {
+    label en official "part or all of the trust territory is designated, in the trusteeship agreement, as a strategic area (Art. 82)";
+}
+
+// A dedicated positive relation for the non-strategic branch, following
+// this package's own "absence of a fact is not its negation" convention —
+// never inferred from the mere absence of `is_strategic_area`.
+pub relation non_strategic_area(t: TrustTerritory) kind empirical {
+    label en official "the trust territory (or the relevant area of it) is not designated as strategic (Art. 85, paragraph 1)";
+}
+
+// --- Article 83: strategic areas — Security Council competence ------------
+
+pub relation trusteeship_organ_competence_is_security_council(t: TrustTerritory) kind institutional {
+    label en unofficial "all functions of the United Nations relating to this strategic area, including approval of trusteeship agreement terms and their alteration or amendment, are exercised by the Security Council (Art. 83, paragraph 1)";
+}
+
+@source(UNC_EN_ART83)
+rule SecurityCouncilCompetenceOverStrategicAreas(t: TrustTerritory) strict {
+    label en official "Article 83, paragraph 1. All functions of the United Nations relating to strategic areas, including the approval of the terms of the trusteeship agreements and of their alteration or amendment shall be exercised by the Security Council.";
+    when is_strategic_area(t);
+    then trusteeship_organ_competence_is_security_council(t);
+}
+
+// --- Article 84: duty of the administering authority -----------------------
+
+pub relation trust_territory_playing_part_in_peace_and_security(t: TrustTerritory) kind empirical {
+    label en official "the trust territory plays its part in the maintenance of international peace and security (Art. 84)";
+}
+
+@source(UNC_EN_ART84)
+rule DutyToEnsureTrustTerritoryContributesToPeaceAndSecurity(s: State, t: TrustTerritory) strict {
+    label en official "Article 84. It shall be the duty of the administering authority to ensure that the trust territory shall play its part in the maintenance of international peace and security.";
+    when administers_trust_territory(s, t);
+    then duty EnsureTrustTerritoryContributesToPeaceAndSecurity {
+        bearer s;
+        achieve trust_territory_playing_part_in_peace_and_security(t) during [@0001-01-01, infinity);
+    };
+}
+
+// --- Article 85: non-strategic areas — General Assembly competence --------
+
+pub relation trusteeship_organ_competence_is_general_assembly(t: TrustTerritory) kind institutional {
+    label en unofficial "the functions of the United Nations with regard to trusteeship agreements for this area, not designated as strategic, including approval of their terms and alteration or amendment, are exercised by the General Assembly (Art. 85, paragraph 1)";
+}
+
+@source(UNC_EN_ART85)
+rule GeneralAssemblyCompetenceOverNonStrategicAreas(t: TrustTerritory) strict {
+    label en official "Article 85, paragraph 1. The functions of the United Nations with regard to trusteeship agreements for all areas not designated as strategic, including the approval of the terms of the trusteeship agreements and of their alteration or amendment, shall be exercised by the General Assembly.";
+    when non_strategic_area(t);
+    then trusteeship_organ_competence_is_general_assembly(t);
+}

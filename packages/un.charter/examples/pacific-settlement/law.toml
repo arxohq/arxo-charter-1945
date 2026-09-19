@@ -1,0 +1,43 @@
+# Worked cases: one dispute through Chapter VI (articles 33-38) and article 52.
+[package]
+name = "examples.un.charter.pacific_settlement"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:un-charter:pacific-settlement"
+
+[dependencies]
+"un.charter" = "0.1.0"
+
+[[cases]]
+name = "DisputeArises"
+path = "cases/01-dispute-arises.lawcase"
+
+[[cases]]
+name = "SettlementSoughtFailed"
+path = "cases/02-settlement-sought-failed.lawcase"
+
+[[cases]]
+name = "ReferredToCouncil"
+path = "cases/03-referred-to-council.lawcase"
+
+[[cases]]
+name = "CouncilFindsEndangerment"
+path = "cases/04-council-finds-endangerment.lawcase"
+
+[[cases]]
+name = "LegalDisputeToCourt"
+path = "cases/05-legal-dispute-to-court.lawcase"
+
+[[cases]]
+name = "AllPartiesRequest"
+path = "cases/06-all-parties-request.lawcase"
+
+[[cases]]
+name = "RegionalRoute"
+path = "cases/07-regional-route.lawcase"
+
+[metadata]
+act = "un-charter-examples-pacific-settlement"
+title = "Worked cases: one dispute, two tracks — parties' duties and the Security Council's own powers under articles 33-38 and 52"
+jurisdiction = "International"
+instrument = "case-collection"

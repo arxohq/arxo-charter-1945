@@ -1,0 +1,89 @@
+// Chapter I: Purposes and Principles (Art. 1-2).
+//
+// ARTICLE 1 — A BOUNDARY NAMED DIRECTLY. The purposes are phrased as
+// infinitives ("to maintain", "to develop", "to achieve", "to be a centre")
+// and yield no independent legal test of their own: no deontic, no
+// condition. The article serves as the interpretive frame for Article 2
+// ("for the attainment of the common ends stated in Article 1") and for the
+// powers of the Security Council (see 06-enforcement.law), but does not by
+// itself produce a CLIR node — SOURCE_ONLY, not a lost norm.
+//
+// ARTICLE 2, PARAS. 1-3, 5-6 — THE SAME BOUNDARY FOR THE SAME REASON.
+// "Sovereign equality" (para. 1), "good faith fulfilment of obligations"
+// (para. 2), "peaceful settlement of disputes" (para. 3, substantively
+// covered by a separate Chapter VI, outside the slice), "ensuring action by
+// non-members" (paras. 5-6) — framework principles without an independent
+// test in the declared slice. SOURCE_ONLY.
+//
+// ARTICLE 2(4) — THE PROHIBITION OF FORCE, BASE. Modelled as a PRESUMPTION,
+// not a strict rule: a strict head with `and not self_defence_permitted(...)`
+// would yield NEITHER on the very first case lacking an established fact
+// about self-defence (the same class of trap as commandment 6 of
+// `eng.orwell.animal_farm` — the engine's fourth pitfall). The presumption
+// says exactly what Article 2(4) says literally: use of force VIOLATES the
+// prohibition UNTIL shown otherwise. The `unless` clause reads
+// `self_defence_permitted` from 06-enforcement.law (Article 51) — THE
+// DIRECTION OF THE DEFENCE IS CANONICAL: self-defence CARVES OUT the
+// violation, not the reverse, matching the very structure of Article 51
+// ("Nothing in the present Charter shall impair … the right of …
+// self-defence"), not a choice by the formalizer.
+//
+// ARTICLE 2(7) — NON-INTERVENTION IN DOMESTIC AFFAIRS, WITH AN EXCEPTION
+// NAMED BY THE TEXT: "but this principle shall not prejudice the application
+// of enforcement measures under Chapter VII". The exception reads
+// `threat_to_peace` from Chapter VII (06-enforcement.law) — the same
+// cross-module bridge as 2(4)/51.
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// --- Article 2(4): prohibition of the threat or use of force ----------------
+
+pub relation use_of_force(a: State, v: State) kind empirical {
+    label en official "the State uses force or threatens force against the territorial integrity or political independence of another State, or otherwise inconsistent with the Purposes of the UN (Art. 2, para. 4)";
+}
+
+pub relation violates_article_2_paragraph_4(a: State, v: State) kind institutional {
+    label en unofficial "the use of force violates Article 2(4) (not removed by lawful self-defence under Article 51)";
+}
+
+// THE CARVE-OUT READS `armed_attack_by` (a STRICT conclusion), NOT
+// `self_defence_permitted` (the 06-enforcement.law presumption) DIRECTLY.
+// Measured: an `unless` clause reading ANOTHER presumption yields `BOTH`
+// instead of `FALSE_ONLY` (a presumption nested inside a presumption does
+// not resolve cleanly in the engine — the same class of limitation as the
+// §47.3 channel through a bridge rule: a STRICT bridge is needed between two
+// defeasible layers). `armed_attack_by` is exactly the sub-premise that the
+// `IndividualSelfDefencePermitted` presumption itself reads first through a
+// strict rule, so the carve-out loses no content: it lifts the violation
+// whenever an established armed attack exists, leaving the "until the
+// Security Council has taken measures" proviso to the right of self-defence
+// itself (checked separately by scenarios UNC-04…UNC-10), not to this rule.
+@source(UNC_EN_ART2)
+presumption UseOfForceViolatesArticleTwoParagraphFour(a: State, v: State) {
+    label en official "Article 2, paragraph 4. All Members shall refrain in their international relations from the threat or use of force…";
+    when member_state(a) and use_of_force(a, v);
+    presume violates_article_2_paragraph_4(a, v);
+    unless member_state(a) and use_of_force(a, v) and armed_attack_by(v, a)
+    then not violates_article_2_paragraph_4(a, v);
+}
+
+// --- Article 2(7): non-intervention, except under Chapter VII ---------------
+
+pub relation essentially_domestic_matter(a: State, matter: Situation) kind empirical {
+    label en official "a matter essentially within the domestic jurisdiction of a State (Art. 2, para. 7)";
+}
+
+pub relation charter_may_not_intervene(a: State, matter: Situation) kind institutional {
+    label en unofficial "the Charter does not give a right to intervene in this matter (Art. 2, para. 7, base)";
+}
+
+@source(UNC_EN_ART2)
+presumption DomesticJurisdictionBarBase(a: State, matter: Situation) {
+    label en official "Article 2, paragraph 7. …but this principle shall not prejudice the application of enforcement measures under Chapter VII.";
+    when essentially_domestic_matter(a, matter);
+    presume charter_may_not_intervene(a, matter);
+    unless essentially_domestic_matter(a, matter) and threat_to_peace(matter)
+    then not charter_may_not_intervene(a, matter);
+}

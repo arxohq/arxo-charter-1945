@@ -1,0 +1,12 @@
+{
+  "queryId": "alteration-recommended",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#alteration_recommended_by_general_conference",
+    "args": [
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:amendment:alteration-vote" }
+    ]
+  }
+}

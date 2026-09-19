@@ -1,0 +1,35 @@
+language "law.core" version "0.2";
+package examples.un.charter.membership_arc version "0.1.0";
+namespace "urn:law:examples:un-charter:membership-arc";
+
+// UNC-29: persistent violation (Assembly finding), Council recommendation,
+// two-thirds of the Assembly.
+
+case Expelled {
+    context {
+        legal_time @2026-01-01;
+        knowledge_time @2026-01-01T12:00:00Z;
+        decision_time @2026-01-01T12:00:00Z;
+        timezone "UTC";
+    }
+
+    const s: un.charter::State = entity_ref("urn:law:examples:un-charter:membership-arc:state");
+    const vote: un.charter::Decision = entity_ref("urn:law:examples:un-charter:membership-arc:expulsion-vote");
+    const m0: un.charter::State = entity_ref("urn:law:examples:un-charter:membership-arc:m0");
+    const m1: un.charter::State = entity_ref("urn:law:examples:un-charter:membership-arc:m1");
+    const m2: un.charter::State = entity_ref("urn:law:examples:un-charter:membership-arc:m2");
+    const m3: un.charter::State = entity_ref("urn:law:examples:un-charter:membership-arc:m3");
+    const m4: un.charter::State = entity_ref("urn:law:examples:un-charter:membership-arc:m4");
+    const m5: un.charter::State = entity_ref("urn:law:examples:un-charter:membership-arc:m5");
+
+    assert "violated": un.charter::persistently_violated_charter_principles(s) { origin adjudicated; }
+    assert "rec": un.charter::security_council_recommends_expulsion(s) { origin case_input; }
+    assert "important": un.charter::is_important_question(vote) { origin case_input; }
+    assert "at": un.charter::directed_at(vote, s) { origin case_input; }
+    assert "m0": un.charter::casts_vote_for(vote, m0) { origin case_input; }
+    assert "m1": un.charter::casts_vote_for(vote, m1) { origin case_input; }
+    assert "m2": un.charter::casts_vote_for(vote, m2) { origin case_input; }
+    assert "m3": un.charter::casts_vote_for(vote, m3) { origin case_input; }
+    assert "m4": un.charter::casts_vote_against(vote, m4) { origin case_input; }
+    assert "m5": un.charter::casts_vote_against(vote, m5) { origin case_input; }
+}

@@ -1,0 +1,3398 @@
+{
+  "$comment": "French overlay DECISION-0070: unofficial model labels of the Charter. Where a label quotes the Charter, the wording follows the French text of the Charter, one of its five equally authentic texts (Article 111); the pinned publication of the model stays English. Not compiled into CLIR.",
+  "formatVersion": "law.i18n/0.1",
+  "package": "un.charter",
+  "language": "fr",
+  "labels": {
+    "AbstainAsDisputant": [
+      {
+        "status": "unofficial",
+        "text": "Article 27, paragraphe 3, deuxième phrase. …étant entendu que, dans les décisions prises aux termes du Chapitre VI et du paragraphe 3 de l'Article 52, une partie à un différend s'abstient de voter."
+      }
+    ],
+    "AbstentionDoesNotBlockReading": [
+      {
+        "status": "unofficial",
+        "text": "L'abstention d'un membre permanent n'est pas un veto : seul un vote CONTRE bloque une décision non procédurale (pratique depuis 1946, Namibie 1971)"
+      }
+    ],
+    "AdmissionBlockedWithoutRecommendation": [
+      {
+        "status": "unofficial",
+        "text": "Article 4, paragraphe 2, versant négatif : sans recommandation du Conseil de sécurité, une décision de l'Assemblée sur l'admission est impossible, quelle que soit la mesure dans laquelle l'État remplit les conditions du paragraphe 1."
+      }
+    ],
+    "AdmissionDecision": [
+      {
+        "status": "unofficial",
+        "text": "Article 4, paragraphe 2. L'admission comme Membres des Nations Unies de tout État remplissant ces conditions se fait par décision de l'Assemblée générale sur recommandation du Conseil de sécurité."
+      }
+    ],
+    "AdvisoryOpinionRequestByAuthorizedBody": [
+      {
+        "status": "unofficial",
+        "text": "Article 96, paragraphe 2. Tous autres organes de l'Organisation et institutions spécialisées qui peuvent, à un moment quelconque, recevoir de l'Assemblée générale une autorisation à cet effet ont également le droit de demander à la Cour des avis consultatifs sur des questions juridiques qui se poseraient dans le cadre de leur activité."
+      }
+    ],
+    "AdvisoryOpinionRequestByNamedOrgan": [
+      {
+        "status": "unofficial",
+        "text": "Article 96, paragraphe 1. L'Assemblée générale ou le Conseil de sécurité peut demander à la Cour internationale de Justice un avis consultatif sur toute question juridique."
+      }
+    ],
+    "AlterationBlockedByMissingPermanentRatification": [
+      {
+        "status": "unofficial",
+        "text": "Article 109, paragraphe 2, le verrou nommé (même critère qu'à l'Article 108) : le seuil global des deux tiers ne suffit pas sans ratification par TOUS les membres permanents."
+      }
+    ],
+    "AlterationEntersIntoForceViaArticle108Ratification": [
+      {
+        "status": "unofficial",
+        "text": "Article 109, paragraphe 2. …prendra effet lorsqu'elle aura été ratifiée, conformément à leurs règles constitutionnelles respectives, par les deux tiers des Membres des Nations Unies, y compris tous les membres permanents du Conseil de sécurité."
+      }
+    ],
+    "AlterationRecommendedByGeneralConference": [
+      {
+        "status": "unofficial",
+        "text": "Article 109, paragraphe 2. Toute modification à la présente Charte recommandée par la conférence à la majorité des deux tiers…"
+      }
+    ],
+    "AmendmentAdoptedByGeneralAssembly": [
+      {
+        "status": "unofficial",
+        "text": "Article 108. Les amendements à la présente Charte entreront en vigueur… quand ils auront été adoptés à la majorité des deux tiers des membres de l'Assemblée générale…"
+      }
+    ],
+    "AmendmentBlockedByMissingPermanentRatification": [
+      {
+        "status": "unofficial",
+        "text": "Article 108, le verrou nommé : le seuil global des deux tiers ne suffit pas sans ratification par TOUS les membres permanents."
+      }
+    ],
+    "AmendmentEntersIntoForce": [
+      {
+        "status": "unofficial",
+        "text": "Article 108. …et ratifiés, conformément à leurs règles constitutionnelles respectives, par les deux tiers des Membres de l'Organisation, y compris tous les membres permanents du Conseil de sécurité."
+      }
+    ],
+    "ArmedForcesDutyRequiresConcludedAgreement": [
+      {
+        "status": "unofficial",
+        "text": "Article 43. Tous les Membres … s'engagent à mettre à la disposition du Conseil de sécurité, sur son invitation et CONFORMÉMENT À UN ACCORD SPÉCIAL … les forces armées…"
+      }
+    ],
+    "ArrearsBelowTwoYearThreshold": [
+      {
+        "status": "unofficial",
+        "text": "Article 19, première phrase, versant négatif du critère de seuil : arriérés inférieurs au seuil des deux années complètes."
+      }
+    ],
+    "ArrearsReachTwoYearThreshold": [
+      {
+        "status": "unofficial",
+        "text": "Article 19, première phrase, critère de seuil : les arriérés égalent ou dépassent la contribution due pour les deux années complètes écoulées."
+      }
+    ],
+    "ArrearsReachTwoYearThresholdFromUnpaidApportionments": [
+      {
+        "status": "unofficial",
+        "text": "Article 19, première phrase, critère de seuil : les contributions réparties des deux années complètes précédentes demeurent impayées, de sorte que les arriérés égalent la contribution due pour ces années."
+      }
+    ],
+    "Article34Determined": [
+      {
+        "status": "unofficial",
+        "text": "Article 34. Le Conseil de sécurité peut enquêter sur tout différend ou toute situation qui pourrait entraîner un désaccord entre nations ou engendrer un différend, afin de déterminer si la prolongation de ce différend ou de cette situation semble devoir menacer le maintien de la paix et de la sécurité internationales."
+      }
+    ],
+    "Article36IcjReferralRecommended": [
+      {
+        "status": "unofficial",
+        "text": "Article 36, paragraphe 3. En faisant les recommandations prévues au présent Article, le Conseil de sécurité doit aussi tenir compte du fait que, d'une manière générale, les différends d'ordre juridique devraient être soumis par les parties à la Cour internationale de Justice conformément aux dispositions du Statut de la Cour."
+      }
+    ],
+    "Article36ProceduresRecommended": [
+      {
+        "status": "unofficial",
+        "text": "Article 36, paragraphe 1. Le Conseil de sécurité peut, à tout moment de l'évolution d'un différend de la nature mentionnée à l'Article 33 ou d'une situation analogue, recommander les procédures ou méthodes d'ajustement appropriées."
+      }
+    ],
+    "Article37Determined": [
+      {
+        "status": "unofficial",
+        "text": "Article 37, paragraphe 2 (détermination). Si le Conseil de sécurité estime que la prolongation du différend semble, en fait, menacer le maintien de la paix et de la sécurité internationales, il décide s'il doit agir en application de l'Article 36 ou recommander tels termes de règlement qu'il juge appropriés."
+      }
+    ],
+    "Article37SettlementTermsRecommended": [
+      {
+        "status": "unofficial",
+        "text": "Article 37, paragraphe 2 (volet règlement). …il décide s'il doit agir en application de l'Article 36 ou recommander tels termes de règlement qu'il juge appropriés."
+      }
+    ],
+    "Article38RecommendationMade": [
+      {
+        "status": "unofficial",
+        "text": "Article 38. Sans préjudice des dispositions des Articles 33 à 37, le Conseil de sécurité peut, si toutes les parties à un différend le demandent, faire des recommandations à celles-ci en vue d'un règlement pacifique de ce différend."
+      }
+    ],
+    "Article39Determined": [
+      {
+        "status": "unofficial",
+        "text": "Article 39. Le Conseil de sécurité constate l'existence d'une menace contre la paix, d'une rupture de la paix ou d'un acte d'agression…"
+      }
+    ],
+    "Article52ParagraphThreeEncouragement": [
+      {
+        "status": "unofficial",
+        "text": "Article 52, paragraphe 3. Le Conseil de sécurité encourage le développement du règlement pacifique des différends d'ordre local par le moyen de ces accords ou de ces organismes régionaux, soit sur l'initiative des Etats intéressés, soit sur renvoi du Conseil de sécurité."
+      }
+    ],
+    "ArticleNineDelegationCap": [
+      {
+        "status": "unofficial",
+        "text": "cinq représentants (art. 9, § 2)"
+      }
+    ],
+    "ArticleNineteenFullYears": [
+      {
+        "status": "unofficial",
+        "text": "les deux années complètes écoulées (art. 19)"
+      }
+    ],
+    "BridgeQuestionToAssembly": [
+      {
+        "status": "unofficial",
+        "text": "Le pouvoir de recommandation de l'Article 10 transmet la question à un organe"
+      }
+    ],
+    "BudgetYear": [
+      {
+        "status": "unofficial",
+        "text": "Exercice financier de l'Organisation (art. 17, 19)"
+      }
+    ],
+    "CarolineStandardPermitsAnticipatorySelfDefence": [
+      {
+        "status": "unofficial",
+        "text": "Le critère du Caroline (1837) : la nécessité de la légitime défense est instante, irrésistible, ne laissant ni le choix des moyens ni le temps de délibérer — avant même une attaque effective"
+      }
+    ],
+    "CarolineStandardReading": [
+      {
+        "status": "unofficial",
+        "text": "Légitime défense anticipée : selon le critère du Caroline, le droit naît dès une menace imminente, avant une attaque effective — à l'encontre de la lettre du texte, qui vise le cas où un Membre « est l'objet d'une agression armée »"
+      }
+    ],
+    "ChapterVIISequence/AuthoriseForce": [
+      {
+        "status": "unofficial",
+        "text": "Article 42 : la force après l'Article 41"
+      }
+    ],
+    "ChapterVIISequence/AuthoriseForceDirectly": [
+      {
+        "status": "unofficial",
+        "text": "Article 42 : la force sans Article 41 préalable (Koweït-1991, Corée-1950)"
+      }
+    ],
+    "ChapterVIISequence/CallProvisionalMeasures": [
+      {
+        "status": "unofficial",
+        "text": "Article 40 : mesures provisoires"
+      }
+    ],
+    "ChapterVIISequence/DecideNonForceMeasures": [
+      {
+        "status": "unofficial",
+        "text": "Article 41 : mesures n'impliquant pas l'emploi de la force armée"
+      }
+    ],
+    "ChapterVIISequence/DecideNonForceMeasuresWithoutProvisional": [
+      {
+        "status": "unofficial",
+        "text": "Article 41 sans Article 40 préalable"
+      }
+    ],
+    "ChapterVIISequence/Determine": [
+      {
+        "status": "unofficial",
+        "text": "Article 39 : constatation"
+      }
+    ],
+    "ChapterVIISequence/Determined": [
+      {
+        "status": "unofficial",
+        "text": "Article 39 : une constatation a été faite"
+      }
+    ],
+    "ChapterVIISequence/Force": [
+      {
+        "status": "unofficial",
+        "text": "Article 42 : l'emploi de la force a été autorisé"
+      }
+    ],
+    "ChapterVIISequence/NonForce": [
+      {
+        "status": "unofficial",
+        "text": "Article 41 : des mesures n'impliquant pas l'emploi de la force armée ont été décidées"
+      }
+    ],
+    "ChapterVIISequence/Open": [
+      {
+        "status": "unofficial",
+        "text": "la situation n'est pas qualifiée au titre de l'Article 39"
+      }
+    ],
+    "ChapterVIISequence/Provisional": [
+      {
+        "status": "unofficial",
+        "text": "Article 40 : des mesures provisoires ont été demandées"
+      }
+    ],
+    "CharterObligationsPrevailOverConflictingTreaty": [
+      {
+        "status": "unofficial",
+        "text": "Article 103. En cas de conflit entre les obligations des Membres des Nations Unies en vertu de la présente Charte et leurs obligations en vertu de tout autre accord international, les premières prévaudront."
+      }
+    ],
+    "ChinaSeatTransferReading": [
+      {
+        "status": "unofficial",
+        "text": "Le transfert du siège à la RPC : la résolution 2758 (XXVI) de l'Assemblée générale transfère le siège permanent de la République de Chine à la République populaire de Chine sans amendement au titre de l'Article 108"
+      }
+    ],
+    "CollectiveSelfDefencePermitted/R1": [
+      {
+        "status": "unofficial",
+        "text": "Article 51. …ou de légitime défense collective… — avec déclaration et demande de l'État victime (Nicaragua, § 199)"
+      }
+    ],
+    "CollectiveSelfDefencePermitted/R2": [
+      {
+        "status": "unofficial",
+        "text": "Article 51. …ou de légitime défense collective… — avec déclaration et demande de l'État victime (Nicaragua, § 199)"
+      }
+    ],
+    "CollectiveSelfDefencePermitted/priority": [
+      {
+        "status": "unofficial",
+        "text": "Article 51. …ou de légitime défense collective… — avec déclaration et demande de l'État victime (Nicaragua, § 199)"
+      }
+    ],
+    "ComplyWithIcjDecision": [
+      {
+        "status": "unofficial",
+        "text": "Article 94, paragraphe 1. Chaque Membre des Nations Unies s'engage à se conformer à la décision de la Cour internationale de Justice dans tout litige auquel il est partie."
+      }
+    ],
+    "ComplyWithSecurityCouncilDecision": [
+      {
+        "status": "unofficial",
+        "text": "Article 25. Les Membres de l'Organisation conviennent d'accepter et d'appliquer les décisions du Conseil de sécurité…"
+      }
+    ],
+    "ConsultForJointActionPendingArticle43": [
+      {
+        "status": "unofficial",
+        "text": "Article 106. En attendant l'entrée en vigueur des accords spéciaux mentionnés à l'Article 43… les parties à la Déclaration des Quatre Nations… et la France… se concerteront entre elles et, s'il y a lieu, avec d'autres Membres de l'Organisation, en vue d'entreprendre en commun, au nom de l'Organisation, toute action qui pourrait être nécessaire pour maintenir la paix et la sécurité internationales."
+      }
+    ],
+    "ConsultationRightUnderForce": [
+      {
+        "status": "unofficial",
+        "text": "Article 50 (Article 42). Si des mesures préventives ou coercitives sont prises par le Conseil de sécurité…, tout autre État… a le droit de consulter le Conseil de sécurité…"
+      }
+    ],
+    "ConsultationRightUnderNonForceMeasures": [
+      {
+        "status": "unofficial",
+        "text": "Article 50 (Article 41). Si des mesures préventives ou coercitives sont prises par le Conseil de sécurité…, tout autre État… a le droit de consulter le Conseil de sécurité…"
+      }
+    ],
+    "ContinuityPreservesPermanentSeat": [
+      {
+        "status": "unofficial",
+        "text": "La lecture de la continuité : l'État continuateur occupe le siège permanent sans amendement au titre de l'Article 108"
+      }
+    ],
+    "Decision": [
+      {
+        "status": "unofficial",
+        "text": "Décision (du Conseil de sécurité ou de l'Assemblée générale)"
+      }
+    ],
+    "DelegationExceedsFiveRepresentatives": [
+      {
+        "status": "unofficial",
+        "text": "Article 9, paragraphe 2. Chaque Membre a cinq représentants au plus à l'Assemblée générale."
+      }
+    ],
+    "DelegationSizeCounted": [
+      {
+        "status": "unofficial",
+        "text": "Article 9, paragraphe 2. Chaque Membre a cinq représentants au plus à l'Assemblée générale."
+      }
+    ],
+    "DelegationWithinFiveRepresentatives": [
+      {
+        "status": "unofficial",
+        "text": "Article 9, paragraphe 2. Chaque Membre a cinq représentants au plus à l'Assemblée générale."
+      }
+    ],
+    "DisputantMustAbstainDuty": [
+      {
+        "status": "unofficial",
+        "text": "Article 27, paragraphe 3, deuxième phrase. …étant entendu que, dans les décisions prises aux termes du Chapitre VI et du paragraphe 3 de l'Article 52, une partie à un différend s'abstient de voter."
+      }
+    ],
+    "Dispute": [
+      {
+        "status": "unofficial",
+        "text": "Différend ou situation au sens du Chapitre VI (art. 33 à 38)"
+      }
+    ],
+    "DomesticJurisdictionBarBase/R1": [
+      {
+        "status": "unofficial",
+        "text": "Article 2, paragraphe 7. …toutefois, ce principe ne porte en rien atteinte à l'application des mesures de coercition prévues au Chapitre VII."
+      }
+    ],
+    "DomesticJurisdictionBarBase/R2": [
+      {
+        "status": "unofficial",
+        "text": "Article 2, paragraphe 7. …toutefois, ce principe ne porte en rien atteinte à l'application des mesures de coercition prévues au Chapitre VII."
+      }
+    ],
+    "DomesticJurisdictionBarBase/priority": [
+      {
+        "status": "unofficial",
+        "text": "Article 2, paragraphe 7. …toutefois, ce principe ne porte en rien atteinte à l'application des mesures de coercition prévues au Chapitre VII."
+      }
+    ],
+    "DutyNotToRestrictEligibilityOnAccountOfSex": [
+      {
+        "status": "unofficial",
+        "text": "Article 8. Aucune restriction ne sera imposée par l'Organisation à l'accès des hommes et des femmes, dans des conditions égales, à toutes les fonctions, dans ses organes principaux et subsidiaires."
+      }
+    ],
+    "DutyOfIndependenceOfTheSecretariat": [
+      {
+        "status": "unofficial",
+        "text": "Article 100, paragraphe 1. Dans l'accomplissement de leurs devoirs, le Secrétaire général et le personnel ne solliciteront ni n'accepteront d'instructions d'aucun gouvernement ni d'aucune autorité extérieure à l'Organisation. Ils s'abstiendront de tout acte incompatible avec leur situation de fonctionnaires internationaux et ne sont responsables qu'envers l'Organisation."
+      }
+    ],
+    "DutyToComplyWithIcjDecision": [
+      {
+        "status": "unofficial",
+        "text": "Article 94, paragraphe 1. Chaque Membre des Nations Unies s'engage à se conformer à la décision de la Cour internationale de Justice dans tout litige auquel il est partie."
+      }
+    ],
+    "DutyToCooperateForArticle55Purposes": [
+      {
+        "status": "unofficial",
+        "text": "Article 56. Les Membres s'engagent, en vue d'atteindre les buts énoncés à l'Article 55, à agir, tant conjointement que séparément, en coopération avec l'Organisation."
+      }
+    ],
+    "DutyToEnsureTrustTerritoryContributesToPeaceAndSecurity": [
+      {
+        "status": "unofficial",
+        "text": "Article 84. L'autorité chargée de l'administration a le devoir de veiller à ce que le territoire sous tutelle apporte sa contribution au maintien de la paix et de la sécurité internationales."
+      }
+    ],
+    "DutyToKeepSecurityCouncilInformed": [
+      {
+        "status": "unofficial",
+        "text": "Article 54. Le Conseil de sécurité doit, en tout temps, être tenu pleinement au courant de toute action entreprise ou envisagée, en vertu d'accords régionaux ou par des organismes régionaux, pour le maintien de la paix et de la sécurité internationales."
+      }
+    ],
+    "DutyToMakeAnnualReportOnWorkOfOrganization": [
+      {
+        "status": "unofficial",
+        "text": "Article 98, deuxième phrase. Il présente à l'Assemblée générale un rapport annuel sur l'activité de l'Organisation."
+      }
+    ],
+    "DutyToPayApportionedContribution": [
+      {
+        "status": "unofficial",
+        "text": "Article 17, paragraphe 2. Les dépenses de l'Organisation sont supportées par les Membres selon la répartition fixée par l'Assemblée générale."
+      }
+    ],
+    "DutyToReferUnsettledDispute": [
+      {
+        "status": "unofficial",
+        "text": "Article 37, paragraphe 1. Si les parties à un différend de la nature mentionnée à l'Article 33 ne réussissent pas à le régler par les moyens indiqués audit Article, elles le soumettent au Conseil de sécurité."
+      }
+    ],
+    "DutyToRegisterTreaty": [
+      {
+        "status": "unofficial",
+        "text": "Article 102, paragraphe 1. Tout traité ou accord international conclu par un Membre des Nations Unies après l'entrée en vigueur de la présente Charte sera, le plus tôt possible, enregistré au Secrétariat et publié par lui."
+      }
+    ],
+    "DutyToRespectInternationalCharacterOfTheSecretariat": [
+      {
+        "status": "unofficial",
+        "text": "Article 100, paragraphe 2. Chaque Membre de l'Organisation s'engage à respecter le caractère exclusivement international des fonctions du Secrétaire général et du personnel et à ne pas chercher à les influencer dans l'exécution de leur tâche."
+      }
+    ],
+    "DutyToSeekPeacefulSettlementFirst": [
+      {
+        "status": "unofficial",
+        "text": "Article 33, paragraphe 1. Les parties à tout différend dont la prolongation est susceptible de menacer le maintien de la paix et de la sécurité internationales doivent en rechercher la solution, avant tout, par voie de négociation, d'enquête, de médiation, de conciliation, d'arbitrage, de règlement judiciaire, de recours aux organismes ou accords régionaux, ou par d'autres moyens pacifiques de leur choix."
+      }
+    ],
+    "DutyToSeekRegionalSettlementFirst": [
+      {
+        "status": "unofficial",
+        "text": "Article 52, paragraphe 2. Les Membres des Nations Unies qui concluent ces accords ou constituent ces organismes doivent faire tous leurs efforts pour régler d'une manière pacifique, par le moyen desdits accords ou organismes, les différends d'ordre local, avant de les soumettre au Conseil de sécurité."
+      }
+    ],
+    "DutyToSubmitAnnualTrusteeshipReport": [
+      {
+        "status": "unofficial",
+        "text": "Article 88. …l'autorité chargée de l'administration de chaque territoire sous tutelle relevant de la compétence de l'Assemblée générale adresse à celle-ci un rapport annuel fondé sur le questionnaire précité."
+      }
+    ],
+    "DutyToTransmitTerritorialInformation": [
+      {
+        "status": "unofficial",
+        "text": "Article 73, alinéa e). Les Membres des Nations Unies qui ont ou qui assument la responsabilité d'administrer des territoires dont les populations ne s'administrent pas encore complètement elles-mêmes... acceptent comme une mission sacrée l'obligation... de communiquer régulièrement au Secrétaire général, à titre d'information... des renseignements statistiques et autres de nature technique relatifs aux conditions économiques, sociales et de l'instruction dans les territoires dont ils sont respectivement responsables, autres que ceux auxquels s'appliquent les Chapitres XII et XIII."
+      }
+    ],
+    "EcosocAdoptsOwnRulesOfProcedure": [
+      {
+        "status": "unofficial",
+        "text": "Article 72, paragraphe 1. Le Conseil économique et social adopte son règlement intérieur, dans lequel il fixe le mode de désignation de son Président."
+      }
+    ],
+    "EcosocAgreementApprovedByAssemblyBringsAgencyIntoRelationship": [
+      {
+        "status": "unofficial",
+        "text": "Article 63, paragraphe 1. Le Conseil économique et social peut conclure, avec toute institution visée à l'Article 57, des accords fixant les conditions dans lesquelles cette institution sera reliée à l'Organisation. Ces accords sont soumis à l'approbation de l'Assemblée générale."
+      }
+    ],
+    "EcosocAnnualElectionOfEighteen": [
+      {
+        "status": "unofficial",
+        "text": "Article 61, paragraphe 2. …dix-huit membres du Conseil économique et social sont élus chaque année pour une période de trois ans."
+      }
+    ],
+    "EcosocAnnualElectionSize": [
+      {
+        "status": "unofficial",
+        "text": "dix-huit membres élus chaque année (art. 61, § 2)"
+      }
+    ],
+    "EcosocComposition": [
+      {
+        "status": "unofficial",
+        "text": "Composition du Conseil économique et social à un instant donné (art. 61)"
+      }
+    ],
+    "EcosocCompositionHasFiftyFourMembers": [
+      {
+        "status": "unofficial",
+        "text": "Article 61, paragraphe 1. Le Conseil économique et social se compose de cinquante-quatre Membres de l'Organisation des Nations Unies, élus par l'Assemblée générale."
+      }
+    ],
+    "EcosocDecisionAdoptedByMajorityPresentAndVoting": [
+      {
+        "status": "unofficial",
+        "text": "Article 67, paragraphe 2. Les décisions du Conseil économique et social sont prises à la majorité des membres présents et votants."
+      }
+    ],
+    "EcosocImmediateReelectionPermitted": [
+      {
+        "status": "unofficial",
+        "text": "Article 61, paragraphe 2. Les membres sortants sont immédiatement rééligibles."
+      }
+    ],
+    "EcosocInvitesMemberOfParticularConcern": [
+      {
+        "status": "unofficial",
+        "text": "Article 69. Le Conseil économique et social, lorsqu'il examine une question qui intéresse particulièrement un Membre de l'Organisation, convie celui-ci à participer, sans droit de vote, à ses délibérations."
+      }
+    ],
+    "EcosocMatter": [
+      {
+        "status": "unofficial",
+        "text": "Question dont est saisi le Conseil économique et social au sens de l'Article 69"
+      }
+    ],
+    "EcosocMeeting": [
+      {
+        "status": "unofficial",
+        "text": "Réunion du Conseil économique et social (art. 72, § 2)"
+      }
+    ],
+    "EcosocMeetingConvenedOnMajorityRequest": [
+      {
+        "status": "unofficial",
+        "text": "Article 72, paragraphe 2. Il se réunit selon les besoins, conformément à son règlement; celui-ci comportera des dispositions prévoyant la convocation du Conseil sur la demande de la majorité de ses membres."
+      }
+    ],
+    "EcosocMembershipSize": [
+      {
+        "status": "unofficial",
+        "text": "cinquante-quatre membres du Conseil économique et social (art. 61, § 1)"
+      }
+    ],
+    "EcosocObtainsReportsFromSpecializedAgency": [
+      {
+        "status": "unofficial",
+        "text": "Article 64, paragraphe 1. Le Conseil économique et social peut prendre toutes mesures utiles pour recevoir des rapports réguliers des institutions spécialisées."
+      }
+    ],
+    "EcosocSetsUpRequiredCommissions": [
+      {
+        "status": "unofficial",
+        "text": "Article 68. Le Conseil économique et social institue des commissions pour les questions économiques et sociales et le progrès des droits de l'homme ainsi que toutes autres commissions nécessaires à l'exercice de ses fonctions."
+      }
+    ],
+    "EcosocTermYears": [
+      {
+        "status": "unofficial",
+        "text": "mandat de trois ans (art. 61, § 2)"
+      }
+    ],
+    "EligibilityRestrictionOnAccountOfSexViolatesArticle8": [
+      {
+        "status": "unofficial",
+        "text": "Article 8. Aucune restriction ne sera imposée par l'Organisation à l'accès des hommes et des femmes, dans des conditions égales, à toutes les fonctions, dans ses organes principaux et subsidiaires."
+      }
+    ],
+    "EnforcementActionBindingUnderForce": [
+      {
+        "status": "unofficial",
+        "text": "Article 48 (Article 42). Les mesures nécessaires à l'exécution des décisions du Conseil de sécurité pour le maintien de la paix et de la sécurité internationales… sont prises par tous les Membres des Nations Unies ou certains d'entre eux, selon l'appréciation du Conseil."
+      }
+    ],
+    "EnforcementActionBindingUnderNonForceMeasures": [
+      {
+        "status": "unofficial",
+        "text": "Article 48 (Article 41). Les mesures nécessaires à l'exécution des décisions du Conseil de sécurité pour le maintien de la paix et de la sécurité internationales… sont prises par tous les Membres des Nations Unies ou certains d'entre eux, selon l'appréciation du Conseil."
+      }
+    ],
+    "EnsureTrustTerritoryContributesToPeaceAndSecurity": [
+      {
+        "status": "unofficial",
+        "text": "Article 84. L'autorité chargée de l'administration a le devoir de veiller à ce que le territoire sous tutelle apporte sa contribution au maintien de la paix et de la sécurité internationales."
+      }
+    ],
+    "ExpelledByGeneralAssembly": [
+      {
+        "status": "unofficial",
+        "text": "Article 6. Si un Membre de l'Organisation enfreint de manière persistante les principes énoncés dans la présente Charte, il peut être exclu de l'Organisation par l'Assemblée générale sur recommandation du Conseil de sécurité."
+      }
+    ],
+    "ExpulsionDeniedBelowThreshold": [
+      {
+        "status": "unofficial",
+        "text": "Article 6, aspect négatif : le Conseil de sécurité a recommandé l'exclusion, mais la décision de l'Assemblée générale n'atteint pas la majorité des deux tiers prévue à l'Article 18, paragraphe 2."
+      }
+    ],
+    "ForceAuthorisedRequiresDetermination": [
+      {
+        "status": "unofficial",
+        "text": "Article 42. Si le Conseil de sécurité estime que les mesures prévues à l'Article 41 seraient inadéquates…, il peut entreprendre telle action…"
+      }
+    ],
+    "FranceState": [
+      {
+        "status": "unofficial",
+        "text": "État de la France"
+      }
+    ],
+    "GA_RESOLUTION_1963_12_17": [
+      {
+        "status": "unofficial",
+        "text": "Assemblée générale, 17.12.1963 : amendements aux articles 23, 27 et 61 (Conseil de sécurité 11→15, vote 7→9, Conseil économique et social 18→27)"
+      }
+    ],
+    "GA_RESOLUTION_1965_12_20": [
+      {
+        "status": "unofficial",
+        "text": "Assemblée générale, 20.12.1965 : amendement à l'Article 109, paragraphe 1 (voix du Conseil de sécurité requises pour convoquer une conférence de révision : 7→9)"
+      }
+    ],
+    "GA_RESOLUTION_1971_12_20": [
+      {
+        "status": "unofficial",
+        "text": "Assemblée générale, 20.12.1971 : second amendement à l'Article 61 (Conseil économique et social 27→54)"
+      }
+    ],
+    "GeneralAssemblyAdoptsOwnRulesOfProcedure": [
+      {
+        "status": "unofficial",
+        "text": "Article 21. L'Assemblée générale établit son règlement intérieur."
+      }
+    ],
+    "GeneralAssemblyApprovesBudget": [
+      {
+        "status": "unofficial",
+        "text": "Article 17, paragraphe 1. L'Assemblée générale examine et approuve le budget de l'Organisation."
+      }
+    ],
+    "GeneralAssemblyBody": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale (Article 96, paragraphe 1)"
+      }
+    ],
+    "GeneralAssemblyCompetenceOverNonStrategicAreas": [
+      {
+        "status": "unofficial",
+        "text": "Article 85, paragraphe 1. En ce qui concerne les accords de tutelle relatifs à toutes les zones qui ne sont pas désignées comme zones stratégiques, les fonctions de l'Organisation, y compris l'approbation des termes des accords de tutelle et de leur modification ou amendement, sont exercées par l'Assemblée générale."
+      }
+    ],
+    "GeneralAssemblyElectsPresidentForSession": [
+      {
+        "status": "unofficial",
+        "text": "Article 21. Elle désigne son Président pour chaque session."
+      }
+    ],
+    "GeneralAssemblyRecommendationBarredWhileSecurityCouncilSeized": [
+      {
+        "status": "unofficial",
+        "text": "Article 12, paragraphe 1. Tant que le Conseil de sécurité remplit, à l'égard d'un différend ou d'une situation quelconque, les fonctions qui lui sont attribuées par la présente Charte, l'Assemblée générale ne doit faire aucune recommandation sur ce différend ou cette situation, à moins que le Conseil de sécurité ne le lui demande."
+      }
+    ],
+    "GeneralAssemblyRecommendationPermittedBySecurityCouncilRequest": [
+      {
+        "status": "unofficial",
+        "text": "Article 12, paragraphe 1, réserve. …à moins que le Conseil de sécurité ne le lui demande."
+      }
+    ],
+    "GeneralAssemblyRecommendationPowerUnderArticle10": [
+      {
+        "status": "unofficial",
+        "text": "Article 10. L'Assemblée générale peut discuter toutes questions ou affaires rentrant dans le cadre de la présente Charte ou se rapportant aux pouvoirs et fonctions de l'un quelconque des organes prévus dans la présente Charte, et, sous réserve des dispositions de l'Article 12, formuler sur ces questions ou affaires des recommandations aux Membres de l'Organisation des Nations Unies, au Conseil de sécurité, ou aux Membres de l'Organisation et au Conseil de sécurité."
+      }
+    ],
+    "GeneralAssemblyRecommendationPowerUnderArticle11Principles": [
+      {
+        "status": "unofficial",
+        "text": "Article 11, paragraphe 1. L'Assemblée générale peut étudier les principes généraux de coopération pour le maintien de la paix et de la sécurité internationales… et faire, sur ces principes, des recommandations aux Membres ou au Conseil de sécurité, ou aux deux."
+      }
+    ],
+    "GeneralAssemblyRecommendationPowerUnderArticle11Question": [
+      {
+        "status": "unofficial",
+        "text": "Article 11, paragraphe 2. L'Assemblée générale peut discuter toutes questions se rattachant au maintien de la paix et de la sécurité internationales dont elle aura été saisie… et, sous réserve de l'Article 12, faire sur toutes questions de ce genre des recommandations…"
+      }
+    ],
+    "GeneralAssemblyRecommendationPowerUnderArticle14": [
+      {
+        "status": "unofficial",
+        "text": "Article 14. Sous réserve des dispositions de l'Article 12, l'Assemblée générale peut recommander les mesures propres à assurer l'ajustement pacifique de toute situation, quelle qu'en soit l'origine, qui lui semble de nature à nuire au bien général ou à compromettre les relations amicales entre nations…"
+      }
+    ],
+    "GeneralConferenceConvenedByBothOrgans": [
+      {
+        "status": "unofficial",
+        "text": "Article 109, paragraphe 1, combiné. Une conférence générale… pourra être réunie aux lieu et date qui seront fixés par un vote de l'Assemblée générale à la majorité des deux tiers et par un vote de neuf quelconques des membres du Conseil de sécurité."
+      }
+    ],
+    "GeneralConferenceConveningApprovedByGeneralAssembly": [
+      {
+        "status": "unofficial",
+        "text": "Article 109, paragraphe 1. Une conférence générale des Membres des Nations Unies, aux fins d'une révision de la présente Charte, pourra être réunie… fixée par un vote de l'Assemblée générale à la majorité des deux tiers…"
+      }
+    ],
+    "GeneralConferenceConveningApprovedBySecurityCouncil": [
+      {
+        "status": "unofficial",
+        "text": "Article 109, paragraphe 1. …et par un vote de neuf quelconques des membres du Conseil de sécurité."
+      }
+    ],
+    "GeneralConferenceFallbackApprovedByGeneralAssembly": [
+      {
+        "status": "unofficial",
+        "text": "Article 109, paragraphe 3. …la conférence sera réunie, s'il en est ainsi décidé par un vote de la majorité de l'Assemblée générale…"
+      }
+    ],
+    "GeneralConferenceFallbackApprovedBySecurityCouncil": [
+      {
+        "status": "unofficial",
+        "text": "Article 109, paragraphe 3. …et par un vote de sept quelconques des membres du Conseil de sécurité."
+      }
+    ],
+    "GeneralConferenceFallbackDecidedByBothOrgans": [
+      {
+        "status": "unofficial",
+        "text": "Article 109, paragraphe 3, combiné. …la conférence sera réunie, s'il en est ainsi décidé par un vote de la majorité de l'Assemblée générale et par un vote de sept quelconques des membres du Conseil de sécurité."
+      }
+    ],
+    "GraveArmedAttackIsArmedAttack": [
+      {
+        "status": "unofficial",
+        "text": "Article 51 : une forme grave de l'emploi de la force constitue une agression armée selon toute lecture (arrêt Nicaragua, § 191)."
+      }
+    ],
+    "IcjCase": [
+      {
+        "status": "unofficial",
+        "text": "Affaire portée devant la Cour internationale de Justice (Article 94)"
+      }
+    ],
+    "ImmediateReadinessRequiresConcludedAgreement": [
+      {
+        "status": "unofficial",
+        "text": "Article 45. …des Membres des Nations Unies maintiendront des contingents nationaux de forces aériennes immédiatement utilisables… dans les limites prévues par l'accord spécial… mentionné à l'Article 43…"
+      }
+    ],
+    "ImportantQuestionAdoptedByTwoThirds": [
+      {
+        "status": "unofficial",
+        "text": "Article 18, paragraphe 2. Les décisions de l'Assemblée générale sur les questions importantes sont prises à la majorité des deux tiers des membres présents et votants."
+      }
+    ],
+    "ImportantQuestionNotAdoptedBelowTwoThirds": [
+      {
+        "status": "unofficial",
+        "text": "Article 18, paragraphe 2 — aspect négatif du seuil : moins des deux tiers des voix des membres présents et votants sont exprimées « pour »."
+      }
+    ],
+    "IndividualSelfDefencePermitted/R1": [
+      {
+        "status": "unofficial",
+        "text": "Article 51. Aucune disposition de la présente Charte ne porte atteinte au droit naturel de légitime défense, individuelle…, dans le cas où un Membre des Nations Unies est l'objet d'une agression armée, jusqu'à ce que le Conseil de sécurité ait pris les mesures nécessaires…"
+      }
+    ],
+    "IndividualSelfDefencePermitted/R2": [
+      {
+        "status": "unofficial",
+        "text": "Article 51. Aucune disposition de la présente Charte ne porte atteinte au droit naturel de légitime défense, individuelle…, dans le cas où un Membre des Nations Unies est l'objet d'une agression armée, jusqu'à ce que le Conseil de sécurité ait pris les mesures nécessaires…"
+      }
+    ],
+    "IndividualSelfDefencePermitted/priority": [
+      {
+        "status": "unofficial",
+        "text": "Article 51. Aucune disposition de la présente Charte ne porte atteinte au droit naturel de légitime défense, individuelle…, dans le cas où un Membre des Nations Unies est l'objet d'une agression armée, jusqu'à ce que le Conseil de sécurité ait pris les mesures nécessaires…"
+      }
+    ],
+    "KeepSecurityCouncilInformed": [
+      {
+        "status": "unofficial",
+        "text": "Article 54. Le Conseil de sécurité doit, en tout temps, être tenu pleinement au courant de toute action entreprise ou envisagée, en vertu d'accords régionaux ou par des organismes régionaux, pour le maintien de la paix et de la sécurité internationales."
+      }
+    ],
+    "LegalQuestion": [
+      {
+        "status": "unofficial",
+        "text": "Question juridique sur laquelle un avis consultatif de la Cour peut être demandé (Article 96)"
+      }
+    ],
+    "LiteralPermanentMemberHoldsSeat": [
+      {
+        "status": "unofficial",
+        "text": "La lettre de l'Article 23 : les cinq États nommément désignés occupent un siège permanent."
+      }
+    ],
+    "LowIntensityAttackIsArmedAttack": [
+      {
+        "status": "unofficial",
+        "text": "Lecture large : un incident frontalier de faible intensité suffit également à ouvrir le droit de légitime défense."
+      }
+    ],
+    "LowIntensityAttackReading": [
+      {
+        "status": "unofficial",
+        "text": "Lecture large du seuil : un emploi de la force de faible intensité constitue également une agression armée."
+      }
+    ],
+    "MaintainIndependenceOfOffice": [
+      {
+        "status": "unofficial",
+        "text": "Article 100, paragraphe 1. Dans l'accomplissement de leurs devoirs, le Secrétaire général et le personnel ne solliciteront ni n'accepteront d'instructions d'aucun gouvernement ni d'aucune autorité extérieure à l'Organisation. Ils s'abstiendront de tout acte incompatible avec leur situation de fonctionnaires internationaux et ne sont responsables qu'envers l'Organisation."
+      }
+    ],
+    "MakeAnnualReportOnWorkOfOrganization": [
+      {
+        "status": "unofficial",
+        "text": "Article 98, deuxième phrase. Il présente à l'Assemblée générale un rapport annuel sur l'activité de l'Organisation."
+      }
+    ],
+    "Matter": [
+      {
+        "status": "unofficial",
+        "text": "Question, affaire, différend ou situation relevant du pouvoir de discussion et de recommandation de l'Assemblée générale (Articles 10 à 14)"
+      }
+    ],
+    "MemberEntitledToBringDisputeToAttention": [
+      {
+        "status": "unofficial",
+        "text": "Article 35, paragraphe 1. Tout Membre de l'Organisation peut attirer l'attention du Conseil de sécurité ou de l'Assemblée générale sur un différend ou une situation de la nature visée dans l'Article 34."
+      }
+    ],
+    "MemberParticipatesWithoutVoteWhenSpeciallyAffected": [
+      {
+        "status": "unofficial",
+        "text": "Article 31. Tout Membre de l'Organisation qui n'est pas membre du Conseil de sécurité peut participer, sans droit de vote, à la discussion de toute question soumise au Conseil de sécurité, chaque fois que celui-ci estime que les intérêts de ce Membre sont particulièrement affectés."
+      }
+    ],
+    "MemberPartyToDisputeInvitedWithoutVote": [
+      {
+        "status": "unofficial",
+        "text": "Article 32, première branche. Tout Membre des Nations Unies qui n'est pas membre du Conseil de sécurité… s'il est partie à un différend examiné par le Conseil de sécurité, est convié à participer, sans droit de vote, aux discussions relatives à ce différend."
+      }
+    ],
+    "MembersArePartiesToIcjStatuteIpsoFacto": [
+      {
+        "status": "unofficial",
+        "text": "Article 93, paragraphe 1. Tous les Membres des Nations Unies sont ipso facto parties au Statut de la Cour internationale de Justice."
+      }
+    ],
+    "MembershipRightsRestoredBySecurityCouncilAlone": [
+      {
+        "status": "unofficial",
+        "text": "Article 5, deuxième phrase. L'exercice de ces droits et privilèges peut être rétabli par le Conseil de sécurité."
+      }
+    ],
+    "MembershipRightsSuspendedByGeneralAssembly": [
+      {
+        "status": "unofficial",
+        "text": "Article 5, première phrase. Un Membre de l'Organisation contre lequel une action préventive ou coercitive a été entreprise par le Conseil de sécurité peut être suspendu par l'Assemblée générale, sur recommandation du Conseil de sécurité, de l'exercice des droits et privilèges inhérents à la qualité de Membre."
+      }
+    ],
+    "MembershipRightsSuspensionDeniedBelowThreshold": [
+      {
+        "status": "unofficial",
+        "text": "Article 5, aspect négatif : le Conseil de sécurité a recommandé la suspension, mais la décision de l'Assemblée générale n'atteint pas la majorité des deux tiers prévue à l'Article 18, paragraphe 2."
+      }
+    ],
+    "MilitaryStaffCommitteeComposition": [
+      {
+        "status": "unofficial",
+        "text": "Article 47, paragraphe 2. Le Comité d'état-major se compose des chefs d'état-major des membres permanents du Conseil de sécurité ou de leurs représentants."
+      }
+    ],
+    "MutualAssistanceDutyUnderForce": [
+      {
+        "status": "unofficial",
+        "text": "Article 49 (Article 42). Les Membres des Nations Unies s'associent pour se prêter mutuellement assistance dans l'exécution des mesures arrêtées par le Conseil de sécurité."
+      }
+    ],
+    "MutualAssistanceDutyUnderNonForceMeasures": [
+      {
+        "status": "unofficial",
+        "text": "Article 49 (Article 41). Les Membres des Nations Unies s'associent pour se prêter mutuellement assistance dans l'exécution des mesures arrêtées par le Conseil de sécurité."
+      }
+    ],
+    "NgoConsultativeStatusGranted": [
+      {
+        "status": "unofficial",
+        "text": "Article 71. Le Conseil économique et social peut prendre toutes dispositions utiles pour consulter les organisations non gouvernementales qui s'occupent de questions relevant de sa compétence."
+      }
+    ],
+    "NicaraguaThresholdReading": [
+      {
+        "status": "unofficial",
+        "text": "Lecture stricte du seuil (arrêt Nicaragua, § 191) : seules les formes graves de l'emploi de la force constituent une agression armée ; un incident frontalier n'en constitue pas une."
+      }
+    ],
+    "NonForceMeasuresRequireDetermination": [
+      {
+        "status": "unofficial",
+        "text": "Article 41. Le Conseil de sécurité peut décider quelles mesures n'impliquant pas l'emploi de la force armée doivent être prises pour donner effet à ses décisions…"
+      }
+    ],
+    "NonGovernmentalOrganization": [
+      {
+        "status": "unofficial",
+        "text": "Organisation non gouvernementale (Article 71)"
+      }
+    ],
+    "NonMemberBecomesPartyToIcjStatuteOnDeterminedConditions": [
+      {
+        "status": "unofficial",
+        "text": "Article 93, paragraphe 2. Les conditions dans lesquelles les États qui ne sont pas Membres de l'Organisation peuvent devenir parties au Statut de la Cour internationale de Justice sont déterminées, dans chaque cas, par l'Assemblée générale sur recommandation du Conseil de sécurité."
+      }
+    ],
+    "NonMemberEntitledToBringDisputeIfAcceptsObligations": [
+      {
+        "status": "unofficial",
+        "text": "Article 35, paragraphe 2. Un État qui n'est pas Membre de l'Organisation peut attirer l'attention du Conseil de sécurité ou de l'Assemblée générale sur tout différend auquel il est partie, pourvu qu'il accepte préalablement, aux fins de ce différend, les obligations de règlement pacifique prévues dans la présente Charte."
+      }
+    ],
+    "NonMemberStatePartyToDisputeInvitedWithoutVote": [
+      {
+        "status": "unofficial",
+        "text": "Article 32, seconde branche. …ou tout État qui n'est pas Membre des Nations Unies, s'il est partie à un différend examiné par le Conseil de sécurité, est convié à participer, sans droit de vote, aux discussions relatives à ce différend."
+      }
+    ],
+    "NonProceduralDecisionAdoptedDespiteAbstention": [
+      {
+        "status": "unofficial",
+        "text": "Pratique du Conseil (depuis 1946), consacrée par la Cour internationale de Justice (avis consultatif Namibie, 1971, § 22) : l'abstention d'un membre permanent ne fait pas obstacle à la décision."
+      }
+    ],
+    "NonProceduralDecisionAdoptedLetter": [
+      {
+        "status": "unofficial",
+        "text": "Article 27, paragraphe 3 (la lettre). …dans lequel sont comprises les voix de TOUS les membres permanents du Conseil — l'abstention d'un membre permanent n'est pas une voix concordante."
+      }
+    ],
+    "NonProceduralDecisionBlockedByPermanentMemberLetter": [
+      {
+        "status": "unofficial",
+        "text": "Article 27, paragraphe 3 (la lettre, aspect négatif). Un membre permanent qui vote contre ou s'abstient ne donne pas une voix concordante."
+      }
+    ],
+    "NonSelfGoverningTerritory": [
+      {
+        "status": "unofficial",
+        "text": "Territoire non autonome au sens du Chapitre XI"
+      }
+    ],
+    "NonStateActor": [
+      {
+        "status": "unofficial",
+        "text": "Groupe armé non étatique"
+      }
+    ],
+    "NonStateActorAttackImputedToHarbouringState": [
+      {
+        "status": "unofficial",
+        "text": "Pratique postérieure au 11.09.2001 (résolutions 1368 et 1373 du Conseil de sécurité) : une attaque commise par un groupe armé non étatique ouvre le droit de légitime défense contre l'État qui l'abrite."
+      }
+    ],
+    "NonStateActorSelfDefenceReading": [
+      {
+        "status": "unofficial",
+        "text": "Légitime défense contre des acteurs non étatiques : une attaque d'un groupe armé, imputée à l'État qui l'abrite, constitue elle aussi une agression armée — contre la lettre de l'« agression contre un Membre », alors que le sujet de l'agression n'y est pas nommé."
+      }
+    ],
+    "OfficialImmunity": [
+      {
+        "status": "unofficial",
+        "text": "Article 105, paragraphe 2. Les représentants des Membres des Nations Unies et les fonctionnaires de l'Organisation jouissent également des privilèges et immunités qui leur sont nécessaires pour exercer en toute indépendance leurs fonctions en rapport avec l'Organisation."
+      }
+    ],
+    "OfficialsEnjoyPrivilegesAndImmunities": [
+      {
+        "status": "unofficial",
+        "text": "Article 105, paragraphe 2. Les représentants des Membres des Nations Unies et les fonctionnaires de l'Organisation jouissent également des privilèges et immunités qui leur sont nécessaires pour exercer en toute indépendance leurs fonctions en rapport avec l'Organisation."
+      }
+    ],
+    "OrdinaryQuestionAdoptedBySimpleMajority": [
+      {
+        "status": "unofficial",
+        "text": "Article 18, paragraphe 3. Les décisions sur d'autres questions… sont prises à la majorité des membres présents et votants."
+      }
+    ],
+    "Organ": [
+      {
+        "status": "unofficial",
+        "text": "Organe principal ou subsidiaire des Nations Unies (Articles 7 et 8)"
+      }
+    ],
+    "Organization": [
+      {
+        "status": "unofficial",
+        "text": "L'Organisation (les Nations Unies) en tant que destinataire des obligations de la Charte (Articles 8, 104, 105)"
+      }
+    ],
+    "OrganizationEnjoysLegalCapacityInMemberTerritory": [
+      {
+        "status": "unofficial",
+        "text": "Article 104. L'Organisation jouit, sur le territoire de chacun de ses Membres, de la capacité juridique qui lui est nécessaire pour exercer ses fonctions et atteindre ses buts."
+      }
+    ],
+    "OrganizationEnjoysPrivilegesAndImmunities": [
+      {
+        "status": "unofficial",
+        "text": "Article 105, paragraphe 1. L'Organisation jouit, sur le territoire de chacun de ses Membres, des privilèges et immunités qui lui sont nécessaires pour atteindre ses buts."
+      }
+    ],
+    "OrganizationInitiatesNegotiationsForNewAgency": [
+      {
+        "status": "unofficial",
+        "text": "Article 59. L'Organisation provoque, lorsqu'il y a lieu, des négociations entre les États intéressés en vue de la création de toutes nouvelles institutions spécialisées nécessaires pour atteindre les buts énoncés à l'Article 55."
+      }
+    ],
+    "OrganizationRecommendsCoordinationOfAgencyPolicies": [
+      {
+        "status": "unofficial",
+        "text": "Article 58. L'Organisation fait des recommandations en vue de coordonner les programmes et activités des institutions spécialisées."
+      }
+    ],
+    "OriginalMemberByDeclarationSignature": [
+      {
+        "status": "unofficial",
+        "text": "Article 3, seconde branche. …ou ayant antérieurement signé la Déclaration des Nations Unies, en date du 1er janvier 1942, signent la présente Charte et la ratifient conformément à l'Article 110."
+      }
+    ],
+    "OriginalMemberByRatificationAfterEntryIntoForce": [
+      {
+        "status": "unofficial",
+        "text": "Article 110, paragraphe 4. Les États signataires de la présente Charte qui la ratifieront après son entrée en vigueur deviendront Membres originaires des Nations Unies à la date du dépôt de leurs ratifications respectives."
+      }
+    ],
+    "OriginalMemberBySanFranciscoParticipation": [
+      {
+        "status": "unofficial",
+        "text": "Article 3, première branche. Sont Membres originaires des Nations Unies les États qui, ayant participé à la Conférence des Nations Unies pour l'Organisation internationale à San Francisco… signent la présente Charte et la ratifient conformément à l'Article 110."
+      }
+    ],
+    "OtherPartyMayHaveRecourseToSecurityCouncil": [
+      {
+        "status": "unofficial",
+        "text": "Article 94, paragraphe 2, premier membre de phrase. Si une partie à un litige ne satisfait pas aux obligations qui lui incombent en vertu d'un arrêt rendu par la Cour, l'autre partie peut recourir au Conseil de sécurité."
+      }
+    ],
+    "OtherTribunalNotPrecludedByCharter": [
+      {
+        "status": "unofficial",
+        "text": "Article 95. Aucune disposition de la présente Charte n'empêche les Membres de l'Organisation de confier la solution de leurs différends à d'autres tribunaux en vertu d'accords déjà existants ou qui pourront être conclus à l'avenir."
+      }
+    ],
+    "ParticipationRightRequiresInvitation": [
+      {
+        "status": "unofficial",
+        "text": "Article 44. Lorsque le Conseil de sécurité a décidé de recourir à la force… il convie ledit Membre… à participer aux décisions du Conseil de sécurité touchant l'emploi de contingents des forces armées de ce Membre."
+      }
+    ],
+    "PayApportionedContribution": [
+      {
+        "status": "unofficial",
+        "text": "Article 17, paragraphe 2. Les dépenses de l'Organisation sont supportées par les Membres selon la répartition fixée par l'Assemblée générale."
+      }
+    ],
+    "PendingArticle43DutyToConsult": [
+      {
+        "status": "unofficial",
+        "text": "Article 106. En attendant l'entrée en vigueur des accords spéciaux mentionnés à l'Article 43… les parties à la Déclaration des Quatre Nations… et la France se concerteront entre elles et, s'il y a lieu, avec d'autres Membres de l'Organisation, en vue d'entreprendre en commun toute action qui pourrait être nécessaire pour maintenir la paix et la sécurité internationales."
+      }
+    ],
+    "PeoplesRepublicOfChina": [
+      {
+        "status": "unofficial",
+        "text": "République populaire de Chine"
+      }
+    ],
+    "Person": [
+      {
+        "status": "unofficial",
+        "text": "Personne physique habilitée à participer à un organe, à représenter un Membre ou à servir l'Organisation (Articles 8, 9, 105)"
+      }
+    ],
+    "PlaceNoSexBasedEligibilityRestriction": [
+      {
+        "status": "unofficial",
+        "text": "Article 8. Aucune restriction ne sera imposée par l'Organisation à l'accès des hommes et des femmes, dans des conditions égales, à toutes les fonctions, dans ses organes principaux et subsidiaires."
+      }
+    ],
+    "PledgeToCooperateForArticle55Purposes": [
+      {
+        "status": "unofficial",
+        "text": "Article 56. Les Membres s'engagent, en vue d'atteindre les buts énoncés à l'Article 55, à agir, tant conjointement que séparément, en coopération avec l'Organisation."
+      }
+    ],
+    "ProceduralDecisionAdopted": [
+      {
+        "status": "unofficial",
+        "text": "Article 27, paragraphe 2. Les décisions du Conseil de sécurité sur des questions de procédure sont prises par un vote affirmatif de neuf membres."
+      }
+    ],
+    "ProvideArmedForcesUnderArticle43": [
+      {
+        "status": "unofficial",
+        "text": "Article 43. Tous les Membres des Nations Unies… s'engagent à mettre à la disposition du Conseil de sécurité, sur son invitation et CONFORMÉMENT À UN ACCORD SPÉCIAL… les forces armées…"
+      }
+    ],
+    "ProvisionalMeasuresRequireDetermination": [
+      {
+        "status": "unofficial",
+        "text": "Article 40. Afin d'empêcher la situation de s'aggraver, le Conseil de sécurité peut… inviter les parties intéressées à se conformer aux mesures provisoires…"
+      }
+    ],
+    "QualifiesForMembershipBridge": [
+      {
+        "status": "unofficial",
+        "text": "Article 4, paragraphe 1. Peuvent devenir Membres des Nations Unies tous autres États pacifiques qui acceptent les obligations de la présente Charte et, au jugement de l'Organisation, sont capables de les remplir et disposés à le faire."
+      }
+    ],
+    "ReferUnsettledDisputeToSecurityCouncil": [
+      {
+        "status": "unofficial",
+        "text": "Article 37, paragraphe 1. Si les parties à un différend de la nature mentionnée à l'Article 33 ne réussissent pas à le régler par les moyens indiqués audit Article, elles le soumettent au Conseil de sécurité."
+      }
+    ],
+    "RegionalArrangementActivity": [
+      {
+        "status": "unofficial",
+        "text": "Action entreprise ou envisagée en vertu d'un accord régional ou par un organisme régional pour le maintien de la paix et de la sécurité internationales (Articles 53-54)"
+      }
+    ],
+    "RegionalDisputePartyMustAbstainViaArticle52": [
+      {
+        "status": "unofficial",
+        "text": "Article 27, paragraphe 3, renvoi au paragraphe 3 de l'Article 52. Un État partie à un différend d'ordre local relevant du mécanisme de règlement régional visé à l'Article 52, paragraphe 3, est partie à un différend aux fins de l'obligation d'abstention prévue à l'Article 27, paragraphe 3."
+      }
+    ],
+    "RegionalEnforcementActionAuthorizedBySecurityCouncil": [
+      {
+        "status": "unofficial",
+        "text": "Article 53, paragraphe 1. …aucune action coercitive ne sera entreprise en vertu d'accords régionaux ou par des organismes régionaux sans l'autorisation du Conseil de sécurité…"
+      }
+    ],
+    "RegionalEnforcementActionExemptAsEnemyStateMeasure": [
+      {
+        "status": "unofficial",
+        "text": "Article 53, paragraphe 1 (exception). …sont exceptées les mesures contre tout État ennemi au sens de la définition donnée au paragraphe 2 du présent Article, prévues en application de l'Article 107 ou dans les accords régionaux dirigés contre la reprise, par un tel État, d'une politique d'agression…"
+      }
+    ],
+    "RegisterTreaty": [
+      {
+        "status": "unofficial",
+        "text": "Article 102, paragraphe 1. Tout traité ou accord international conclu par un Membre des Nations Unies après l'entrée en vigueur de la présente Charte sera, le plus tôt possible, enregistré au Secrétariat et publié par lui."
+      }
+    ],
+    "RenderMutualAssistanceUnderForce": [
+      {
+        "status": "unofficial",
+        "text": "Article 49 (Article 42). Les Membres des Nations Unies s'associent pour se prêter mutuellement assistance dans l'exécution des mesures arrêtées par le Conseil de sécurité."
+      }
+    ],
+    "RenderMutualAssistanceUnderNonForceMeasures": [
+      {
+        "status": "unofficial",
+        "text": "Article 49 (Article 41). Les Membres des Nations Unies s'associent pour se prêter mutuellement assistance dans l'exécution des mesures arrêtées par le Conseil de sécurité."
+      }
+    ],
+    "ReportSelfDefenceMeasures": [
+      {
+        "status": "unofficial",
+        "text": "Article 51, deuxième phrase. Les mesures prises par des Membres dans l'exercice de ce droit de légitime défense sont immédiatement portées à la connaissance du Conseil de sécurité…"
+      }
+    ],
+    "ReportSelfDefenceMeasuresDuty": [
+      {
+        "status": "unofficial",
+        "text": "Article 51, deuxième phrase. Les mesures prises par des Membres dans l'exercice de ce droit de légitime défense sont immédiatement portées à la connaissance du Conseil de sécurité…"
+      }
+    ],
+    "RepresentativeOfficialImmunity": [
+      {
+        "status": "unofficial",
+        "text": "Article 105, paragraphe 2. Les représentants des Membres des Nations Unies et les fonctionnaires de l'Organisation jouissent également des privilèges et immunités qui leur sont nécessaires pour exercer en toute indépendance leurs fonctions en rapport avec l'Organisation."
+      }
+    ],
+    "RepresentativesEnjoyPrivilegesAndImmunities": [
+      {
+        "status": "unofficial",
+        "text": "Article 105, paragraphe 2. Les représentants des Membres des Nations Unies et les fonctionnaires de l'Organisation jouissent également des privilèges et immunités qui leur sont nécessaires pour exercer en toute indépendance leurs fonctions en rapport avec l'Organisation."
+      }
+    ],
+    "RepublicOfChina": [
+      {
+        "status": "unofficial",
+        "text": "République de Chine"
+      }
+    ],
+    "RequestingBody": [
+      {
+        "status": "unofficial",
+        "text": "Organe habilité à demander un avis consultatif à la Cour : un organe de l'Organisation des Nations Unies ou une institution spécialisée (art. 96)"
+      }
+    ],
+    "RespectInternationalCharacterOfTheSecretariat": [
+      {
+        "status": "unofficial",
+        "text": "Article 100, paragraphe 2. Chaque Membre de l'Organisation s'engage à respecter le caractère exclusivement international des fonctions du Secrétaire général et du personnel et à ne pas chercher à les influencer dans l'exécution de leur tâche."
+      }
+    ],
+    "RussianContinuityReading": [
+      {
+        "status": "unofficial",
+        "text": "Continuité de la Russie : la Fédération de Russie succède à l'URSS en tant que membre permanent sans amendement au titre de l'Article 108 (acceptation sans objection, 1991-1992)"
+      }
+    ],
+    "RussianFederation": [
+      {
+        "status": "unofficial",
+        "text": "Fédération de Russie"
+      }
+    ],
+    "SeatTransferPreservesPermanentSeat": [
+      {
+        "status": "unofficial",
+        "text": "La lecture du transfert de siège : un État auquel le siège est transféré par une résolution de l'Assemblée l'occupe sans amendement au titre de l'Article 108"
+      }
+    ],
+    "SecretariatComprisesTheSecretaryGeneral": [
+      {
+        "status": "unofficial",
+        "text": "Article 97, première phrase, première branche. Le Secrétariat comprend un Secrétaire général…"
+      }
+    ],
+    "SecretariatComprisesTheStaff": [
+      {
+        "status": "unofficial",
+        "text": "Article 97, première phrase, seconde branche. …et le personnel que peut exiger l'Organisation."
+      }
+    ],
+    "SecretariatOfficial": [
+      {
+        "status": "unofficial",
+        "text": "Le Secrétaire général ou un membre du personnel du Secrétariat (chap. XV)"
+      }
+    ],
+    "SecretaryGeneralAppointedByGeneralAssemblyOnCouncilRecommendation": [
+      {
+        "status": "unofficial",
+        "text": "Article 97, deuxième phrase. Le Secrétaire général est nommé par l'Assemblée générale sur recommandation du Conseil de sécurité."
+      }
+    ],
+    "SecretaryGeneralAppointmentBlockedWithoutRecommendation": [
+      {
+        "status": "unofficial",
+        "text": "Article 97, deuxième phrase, aspect négatif : sans recommandation du Conseil de sécurité, il n'y a pas de nomination que l'Assemblée générale puisse faire."
+      }
+    ],
+    "SecretaryGeneralMayBringMatterToSecurityCouncilAttention": [
+      {
+        "status": "unofficial",
+        "text": "Article 99. Le Secrétaire général peut attirer l'attention du Conseil de sécurité sur toute affaire qui, à son avis, pourrait mettre en danger le maintien de la paix et de la sécurité internationales."
+      }
+    ],
+    "SecurityCouncilAdoptsOwnRulesOfProcedure": [
+      {
+        "status": "unofficial",
+        "text": "Article 30. Le Conseil de sécurité établit son règlement intérieur, dans lequel il fixe le mode de désignation de son Président."
+      }
+    ],
+    "SecurityCouncilBody": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité (art. 96, par. 1)"
+      }
+    ],
+    "SecurityCouncilCompetenceOverStrategicAreas": [
+      {
+        "status": "unofficial",
+        "text": "Article 83, paragraphe 1. En ce qui concerne les zones stratégiques, toutes les fonctions dévolues à l'Organisation, y compris l'approbation des termes des accords de tutelle ainsi que de la modification ou de l'amendement éventuels de ceux-ci, sont exercées par le Conseil de sécurité."
+      }
+    ],
+    "SecurityCouncilDecisionBinding": [
+      {
+        "status": "unofficial",
+        "text": "Article 25. Les Membres de l'Organisation conviennent d'accepter et d'appliquer les décisions du Conseil de sécurité…"
+      }
+    ],
+    "SecurityCouncilEstablishesSubsidiaryOrgan": [
+      {
+        "status": "unofficial",
+        "text": "Article 29. Le Conseil de sécurité peut créer les organes subsidiaires qu'il juge nécessaires à l'exercice de ses fonctions."
+      }
+    ],
+    "SecurityCouncilMatter": [
+      {
+        "status": "unofficial",
+        "text": "Question ou différend dont est saisi le Conseil de sécurité (art. 31-32)"
+      }
+    ],
+    "SecurityCouncilMayGiveEffectToIcjJudgment": [
+      {
+        "status": "unofficial",
+        "text": "Article 94, paragraphe 2, second membre de phrase. …l'autre partie peut recourir au Conseil de sécurité et celui-ci, s'il le juge nécessaire, peut faire des recommandations ou décider des mesures à prendre pour faire exécuter l'arrêt."
+      }
+    ],
+    "SecurityCouncilOrganizedToFunctionContinuously": [
+      {
+        "status": "unofficial",
+        "text": "Article 28, paragraphe 1. Le Conseil de sécurité est organisé de manière à pouvoir exercer ses fonctions en permanence. À cet effet, chaque membre du Conseil de sécurité doit avoir en tout temps un représentant au Siège de l'Organisation."
+      }
+    ],
+    "SeekPeacefulSettlementFirst": [
+      {
+        "status": "unofficial",
+        "text": "Article 33, paragraphe 1. Les parties à tout différend dont la prolongation est susceptible de menacer le maintien de la paix et de la sécurité internationales doivent en rechercher la solution, avant tout, par voie de négociation, d'enquête, de médiation, de conciliation, d'arbitrage, de règlement judiciaire, de recours aux organismes ou accords régionaux, ou par d'autres moyens pacifiques de leur choix."
+      }
+    ],
+    "SeekRegionalSettlementFirst": [
+      {
+        "status": "unofficial",
+        "text": "Article 52, paragraphe 2. Les Membres des Nations Unies qui concluent ces accords ou constituent ces organismes doivent faire tous leurs efforts pour régler d'une manière pacifique, par le moyen desdits accords ou organismes, les différends d'ordre local, avant de les soumettre au Conseil de sécurité."
+      }
+    ],
+    "Session": [
+      {
+        "status": "unofficial",
+        "text": "Session de l'Assemblée générale (art. 20)"
+      }
+    ],
+    "Sex": [
+      {
+        "status": "unofficial",
+        "text": "hommes et femmes (art. 8)"
+      }
+    ],
+    "Situation": [
+      {
+        "status": "unofficial",
+        "text": "Situation au sens de l'Article 39"
+      }
+    ],
+    "SovietUnion": [
+      {
+        "status": "unofficial",
+        "text": "Union soviétique"
+      }
+    ],
+    "SpecialSessionConvenedByMajorityOfMembers": [
+      {
+        "status": "unofficial",
+        "text": "Article 20, deuxième phrase, seconde branche. …ou de la majorité des Membres des Nations Unies."
+      }
+    ],
+    "SpecialSessionConvenedBySecurityCouncilRequest": [
+      {
+        "status": "unofficial",
+        "text": "Article 20, deuxième phrase, première branche. Celles-ci sont convoquées par le Secrétaire général sur la demande du Conseil de sécurité…"
+      }
+    ],
+    "SpecializedAgency": [
+      {
+        "status": "unofficial",
+        "text": "Institution spécialisée reliée à l'Organisation des Nations Unies (art. 57, 63)"
+      }
+    ],
+    "SpecializedAgencyBroughtIntoRelationship": [
+      {
+        "status": "unofficial",
+        "text": "Article 57, paragraphe 1. Les diverses institutions spécialisées créées par accords intergouvernementaux et pourvues d'attributions internationales étendues… sont reliées à l'Organisation conformément aux dispositions de l'Article 63."
+      }
+    ],
+    "SpecializedAgencyParticipatesWithoutVote": [
+      {
+        "status": "unofficial",
+        "text": "Article 70. Le Conseil économique et social peut prendre toutes dispositions pour que des représentants des institutions spécialisées participent, sans droit de vote, à ses délibérations et à celles des commissions instituées par lui, et pour que ses propres représentants participent aux délibérations des institutions spécialisées."
+      }
+    ],
+    "SpecializedAgencyVoteInEcosocInvalid": [
+      {
+        "status": "unofficial",
+        "text": "Article 70. …participent, sans droit de vote, à ses délibérations…"
+      }
+    ],
+    "StaffAppointedBySecretaryGeneralUnderAssemblyRegulations": [
+      {
+        "status": "unofficial",
+        "text": "Article 101, paragraphe 1. Le personnel est nommé par le Secrétaire général conformément aux règles fixées par l'Assemblée générale."
+      }
+    ],
+    "State": [
+      {
+        "status": "unofficial",
+        "text": "État"
+      }
+    ],
+    "SubmitAnnualTrusteeshipReport": [
+      {
+        "status": "unofficial",
+        "text": "Article 88. …l'autorité chargée de l'administration de chaque territoire sous tutelle relevant de la compétence de l'Assemblée générale adresse à celle-ci un rapport annuel fondé sur le questionnaire précité."
+      }
+    ],
+    "TerritoryPlaceableUnderTrusteeship_EnemyState": [
+      {
+        "status": "unofficial",
+        "text": "Article 77, catégorie b). …territoires qui peuvent être détachés d'États ennemis par suite de la seconde guerre mondiale;"
+      }
+    ],
+    "TerritoryPlaceableUnderTrusteeship_Mandate": [
+      {
+        "status": "unofficial",
+        "text": "Article 77, catégorie a). Le régime de tutelle s'appliquera aux territoires entrant dans les catégories ci-dessous et qui viendraient à être placés sous ce régime en vertu d'accords de tutelle : territoires actuellement sous mandat;"
+      }
+    ],
+    "TerritoryPlaceableUnderTrusteeship_Voluntary": [
+      {
+        "status": "unofficial",
+        "text": "Article 77, catégorie c). …territoires volontairement placés sous ce régime par les États responsables de leur administration."
+      }
+    ],
+    "TransmitTerritorialInformation": [
+      {
+        "status": "unofficial",
+        "text": "Article 73, alinéa e). Les Membres des Nations Unies qui ont ou qui assument la responsabilité d'administrer des territoires dont les populations ne s'administrent pas encore complètement elles-mêmes… acceptent comme une mission sacrée l'obligation… de communiquer régulièrement au Secrétaire général, à titre d'information… des renseignements statistiques et autres de nature technique relatifs aux conditions économiques, sociales et de l'instruction dans les territoires dont ils sont respectivement responsables, autres que ceux auxquels s'appliquent les Chapitres XII et XIII."
+      }
+    ],
+    "TreatyBarredIfUnregistered": [
+      {
+        "status": "unofficial",
+        "text": "Article 102, paragraphe 2. Aucune partie à un traité ou accord international qui n'aura pas été enregistré conformément aux dispositions du paragraphe 1 du présent Article ne pourra invoquer ledit traité ou accord devant un organe de l'Organisation."
+      }
+    ],
+    "TreatyInvocableIfRegistered": [
+      {
+        "status": "unofficial",
+        "text": "Article 102, paragraphe 2 (aspect positif). Une partie à un traité ou accord enregistré conformément au paragraphe 1 peut l'invoquer devant tout organe de l'Organisation des Nations Unies."
+      }
+    ],
+    "TreatyObligation": [
+      {
+        "status": "unofficial",
+        "text": "Obligation résultant d'un autre accord international (art. 103)"
+      }
+    ],
+    "TrustTerritory": [
+      {
+        "status": "unofficial",
+        "text": "Territoire sous tutelle au sens du Chapitre XII"
+      }
+    ],
+    "TrusteeshipCouncilAdoptsOwnRulesOfProcedure": [
+      {
+        "status": "unofficial",
+        "text": "Article 90, paragraphe 1. Le Conseil de tutelle adopte son règlement intérieur, dans lequel il fixe le mode de désignation de son Président."
+      }
+    ],
+    "TrusteeshipCouncilComposition": [
+      {
+        "status": "unofficial",
+        "text": "Composition du Conseil de tutelle au sens de l'Article 86"
+      }
+    ],
+    "TrusteeshipCouncilCompositionParity": [
+      {
+        "status": "unofficial",
+        "text": "Article 86, paragraphe 1. Le Conseil de tutelle se compose des Membres suivants des Nations Unies : les Membres chargés d'administrer des territoires sous tutelle; ceux des Membres désignés nommément à l'Article 23 qui n'administrent pas de territoires sous tutelle; et autant d'autres Membres élus pour trois ans par l'Assemblée générale qu'il sera nécessaire pour que le nombre total des membres du Conseil de tutelle se partage également entre les Membres des Nations Unies qui administrent des territoires sous tutelle et ceux qui n'en administrent pas."
+      }
+    ],
+    "TrusteeshipCouncilDecisionAdoptedByMajorityPresentAndVoting": [
+      {
+        "status": "unofficial",
+        "text": "Article 89. Chaque membre du Conseil de tutelle dispose d'une voix. Les décisions du Conseil de tutelle sont prises à la majorité des membres présents et votants."
+      }
+    ],
+    "TrusteeshipCouncilMemberDesignatesRepresentative": [
+      {
+        "status": "unofficial",
+        "text": "Article 86, paragraphe 2. Chaque membre du Conseil de tutelle désigne une personne particulièrement qualifiée pour le représenter au Conseil."
+      }
+    ],
+    "TrusteeshipSystemInapplicableToMemberTerritory": [
+      {
+        "status": "unofficial",
+        "text": "Article 78. Le régime de tutelle ne s'appliquera pas aux pays devenus Membres des Nations Unies, les relations entre celles-ci devant être fondées sur le respect du principe de l'égalité souveraine."
+      }
+    ],
+    "UN_CHARTER": [
+      {
+        "status": "unofficial",
+        "text": "Charte des Nations Unies"
+      }
+    ],
+    "UN_CHARTER_1945_ORIGINAL": [
+      {
+        "status": "unofficial",
+        "text": "édition originale (San Francisco, 1945)"
+      }
+    ],
+    "UN_CHARTER_EN": [
+      {
+        "status": "unofficial",
+        "text": "édition actuelle (texte également authentique en vertu de l'art. 111)"
+      }
+    ],
+    "UnauthorizedRegionalEnforcementAction": [
+      {
+        "status": "unofficial",
+        "text": "Article 53, paragraphe 1 (aspect négatif). Une action coercitive entreprise en vertu d'un accord régional ou par un organisme régional sans l'autorisation du Conseil de sécurité, et en dehors de l'exception relative à l'État ennemi, n'est pas autorisée au titre du présent Article."
+      }
+    ],
+    "UnitedKingdomState": [
+      {
+        "status": "unofficial",
+        "text": "État du Royaume-Uni"
+      }
+    ],
+    "UnitedNations": [
+      {
+        "status": "unofficial",
+        "text": "les Nations Unies"
+      }
+    ],
+    "UnitedStatesState": [
+      {
+        "status": "unofficial",
+        "text": "État des États-Unis"
+      }
+    ],
+    "UnpaidApportionedContribution": [
+      {
+        "status": "unofficial",
+        "text": "Article 17, paragraphe 2. Les dépenses de l'Organisation sont supportées par les Membres selon la répartition fixée par l'Assemblée générale."
+      }
+    ],
+    "UseOfForceViolatesArticleTwoParagraphFour/R1": [
+      {
+        "status": "unofficial",
+        "text": "Article 2, paragraphe 4. Les Membres de l'Organisation s'abstiennent, dans leurs relations internationales, de recourir à la menace ou à l'emploi de la force…"
+      }
+    ],
+    "UseOfForceViolatesArticleTwoParagraphFour/R2": [
+      {
+        "status": "unofficial",
+        "text": "Article 2, paragraphe 4. Les Membres de l'Organisation s'abstiennent, dans leurs relations internationales, de recourir à la menace ou à l'emploi de la force…"
+      }
+    ],
+    "UseOfForceViolatesArticleTwoParagraphFour/priority": [
+      {
+        "status": "unofficial",
+        "text": "Article 2, paragraphe 4. Les Membres de l'Organisation s'abstiennent, dans leurs relations internationales, de recourir à la menace ou à l'emploi de la force…"
+      }
+    ],
+    "VoteForfeitedUnderArticle19": [
+      {
+        "status": "unofficial",
+        "text": "Article 19, première phrase. Un Membre des Nations Unies en retard dans le paiement de sa contribution aux dépenses de l'Organisation ne peut participer au vote à l'Assemblée générale si le montant de ses arriérés est égal ou supérieur à la contribution due par lui pour les deux années complètes écoulées."
+      }
+    ],
+    "VoteRetainedByGeneralAssemblyPermission": [
+      {
+        "status": "unofficial",
+        "text": "Article 19, deuxième phrase. L'Assemblée générale peut néanmoins autoriser ce Membre à participer au vote si elle constate que le manquement est dû à des circonstances indépendantes de sa volonté."
+      }
+    ],
+    "abstains": [
+      {
+        "status": "unofficial",
+        "text": "l'État s'abstient de voter (art. 27, par. 3)"
+      }
+    ],
+    "accepts_charter_obligations": [
+      {
+        "status": "unofficial",
+        "text": "l'État accepte les obligations de la présente Charte (art. 4, par. 1)"
+      }
+    ],
+    "accepts_charter_obligations_for_dispute": [
+      {
+        "status": "unofficial",
+        "text": "l'État non membre accepte par avance, aux fins du différend, les obligations de règlement pacifique prévues dans la présente Charte (art. 35, paragraphe 2)"
+      }
+    ],
+    "accepts_icj_statute_conditions": [
+      {
+        "status": "unofficial",
+        "text": "l'État non membre accepte les conditions ainsi déterminées (art. 93, par. 2 — « peut devenir partie… à des conditions » : ces conditions sont à la charge de l'État lui-même)"
+      }
+    ],
+    "activity_reported_to_security_council": [
+      {
+        "status": "unofficial",
+        "text": "le Membre a tenu le Conseil de sécurité pleinement informé de l'activité entreprise ou envisagée en vertu de l'accord régional ou par l'organisme régional (art. 54)"
+      }
+    ],
+    "administers_non_self_governing_territory": [
+      {
+        "status": "unofficial",
+        "text": "le Membre a ou assume la responsabilité d'administrer le territoire, dont les populations ne s'administrent pas encore complètement elles-mêmes (art. 73, chapeau)"
+      }
+    ],
+    "administers_trust_territory": [
+      {
+        "status": "unofficial",
+        "text": "l'État est l'autorité chargée de l'administration (ou l'un des États chargés de l'administration) du territoire sous tutelle (art. 81, art. 86)"
+      }
+    ],
+    "admission_blocked_without_recommendation": [
+      {
+        "status": "unofficial",
+        "text": "l'admission est impossible sans recommandation du Conseil de sécurité, même si l'État satisfait pleinement aux conditions de l'Article 4, paragraphe 1 (aspect négatif de la procédure de l'art. 4, par. 2)"
+      }
+    ],
+    "admitted_to_membership": [
+      {
+        "status": "unofficial",
+        "text": "l'État est admis comme Membre de l'Organisation (art. 4, par. 2)"
+      }
+    ],
+    "agency_casts_vote_in_ecosoc": [
+      {
+        "status": "unofficial",
+        "text": "l'institution spécialisée a exprimé un vote dans les délibérations du Conseil économique et social, en contradiction avec l'Article 70"
+      }
+    ],
+    "agency_invited_without_vote": [
+      {
+        "status": "unofficial",
+        "text": "des dispositions ont été prises pour que des représentants de l'institution spécialisée participent, sans droit de vote, aux délibérations du Conseil économique et social (art. 70)"
+      }
+    ],
+    "agency_participates_without_vote": [
+      {
+        "status": "unofficial",
+        "text": "l'institution spécialisée participe sans droit de vote aux délibérations (art. 70)"
+      }
+    ],
+    "agency_policies_coordination_recommended": [
+      {
+        "status": "unofficial",
+        "text": "l'Organisation a fait des recommandations en vue de coordonner les programmes et activités de l'institution spécialisée (art. 58)"
+      }
+    ],
+    "agency_policies_subject_to_coordination": [
+      {
+        "status": "unofficial",
+        "text": "les programmes et activités de l'institution spécialisée font l'objet de recommandations de coordination (art. 58)"
+      }
+    ],
+    "agency_reports_obtained": [
+      {
+        "status": "unofficial",
+        "text": "des rapports de l'institution spécialisée ont été obtenus par le Conseil économique et social (art. 64)"
+      }
+    ],
+    "agency_vote_in_ecosoc_invalid": [
+      {
+        "status": "unofficial",
+        "text": "un vote exprimé par une institution spécialisée au sein du Conseil économique et social est nul (art. 70 : la participation se fait sans droit de vote)"
+      }
+    ],
+    "all_parties_request_recommendation": [
+      {
+        "status": "unofficial",
+        "text": "toutes les parties au différend demandent au Conseil de sécurité de faire des recommandations (art. 38)"
+      }
+    ],
+    "alteration_recommended_by_general_conference": [
+      {
+        "status": "unofficial",
+        "text": "la conférence générale a recommandé une modification de la Charte par un vote à la majorité des deux tiers (art. 109, par. 2)"
+      }
+    ],
+    "amendment_adopted_by_general_assembly": [
+      {
+        "status": "unofficial",
+        "text": "l'amendement est adopté par un vote des deux tiers des membres de l'Assemblée générale (art. 108) — de TOUS les membres, et non des seuls membres présents et votants"
+      }
+    ],
+    "amendment_blocked_missing_permanent_ratification": [
+      {
+        "status": "unofficial",
+        "text": "l'amendement n'entre pas en vigueur : il n'est pas ratifié par TOUS les membres permanents, alors même que le seuil global des deux tiers est atteint (art. 108, le verrou nominatif)"
+      }
+    ],
+    "amendment_in_force": [
+      {
+        "status": "unofficial",
+        "text": "l'amendement est entré en vigueur pour tous les Membres de l'Organisation (art. 108)"
+      }
+    ],
+    "annual_contribution_due": [
+      {
+        "status": "unofficial",
+        "text": "le montant de la contribution financière annuelle due par l'État à l'Organisation, utilisé pour calculer le seuil des deux années complètes de l'Article 19"
+      }
+    ],
+    "annual_report_on_work_of_organization_made": [
+      {
+        "status": "unofficial",
+        "text": "le Secrétaire général a présenté à l'Assemblée générale son rapport annuel sur l'activité de l'Organisation (art. 98, deuxième phrase)"
+      }
+    ],
+    "annual_trusteeship_report_submitted": [
+      {
+        "status": "unofficial",
+        "text": "l'autorité chargée de l'administration a présenté un rapport annuel à l'Assemblée générale sur la base du questionnaire du Conseil de tutelle (art. 88)"
+      }
+    ],
+    "anticipatory_self_defence_permitted": [
+      {
+        "status": "unofficial",
+        "text": "le droit de légitime défense préventive selon le critère de l'affaire du Caroline"
+      }
+    ],
+    "appointed_to_staff_by_secretary_general": [
+      {
+        "status": "unofficial",
+        "text": "la personne a été nommée au personnel par le Secrétaire général (art. 101, par. 1)"
+      }
+    ],
+    "appointment_under_general_assembly_staff_regulations": [
+      {
+        "status": "unofficial",
+        "text": "la nomination est faite conformément au règlement du personnel établi par l'Assemblée générale (Art. 101, paragraphe 1)"
+      }
+    ],
+    "armed_attack_by": [
+      {
+        "status": "unofficial",
+        "text": "une agression armée au sens de l'Article 51 est établie"
+      }
+    ],
+    "armed_attack_by_non_state_actor": [
+      {
+        "status": "unofficial",
+        "text": "une agression armée commise par un groupe armé non étatique contre un État"
+      }
+    ],
+    "arrears_amount": [
+      {
+        "status": "unofficial",
+        "text": "le montant des arriérés de l'État dans le paiement de ses contributions financières à l'Organisation (Art. 19)"
+      }
+    ],
+    "arrears_below_two_year_threshold": [
+      {
+        "status": "unofficial",
+        "text": "les arriérés de l'État sont inférieurs à la contribution due par lui pour les deux années complètes écoulées (Art. 19, versant négatif du critère du seuil)"
+      }
+    ],
+    "arrears_reach_two_year_threshold": [
+      {
+        "status": "unofficial",
+        "text": "les arriérés de l'État sont égaux ou supérieurs à la contribution due par lui pour les deux années complètes écoulées (Art. 19, critère du seuil)"
+      }
+    ],
+    "article_34_determination": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité enquête sur le différend ou la situation et détermine si la prolongation de celui-ci ou de celle-ci semble devoir menacer le maintien de la paix et de la sécurité internationales (Art. 34)"
+      }
+    ],
+    "article_34_determination/external": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité enquête sur le différend ou la situation et détermine si la prolongation de celui-ci ou de celle-ci semble devoir menacer le maintien de la paix et de la sécurité internationales (Art. 34)"
+      }
+    ],
+    "article_37_determination_made": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité a déterminé, en application de l'Article 37, paragraphe 2, que la prolongation du différend semble, en fait, menacer la paix et la sécurité internationales"
+      }
+    ],
+    "article_39_determination": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité constate l'existence d'une menace contre la paix, d'une rupture de la paix ou d'un acte d'agression (Art. 39)"
+      }
+    ],
+    "article_39_determination/external": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité constate l'existence d'une menace contre la paix, d'une rupture de la paix ou d'un acte d'agression (Art. 39)"
+      }
+    ],
+    "authorized_by_general_assembly_to_request_advisory_opinion": [
+      {
+        "status": "unofficial",
+        "text": "l'organe a été autorisé par l'Assemblée générale à demander des avis consultatifs à la Cour (Art. 96, paragraphe 2)"
+      }
+    ],
+    "barred_from_invoking_before_un_organ": [
+      {
+        "status": "unofficial",
+        "text": "aucune partie à ce traité ou accord ne peut l'invoquer devant un organe de l'Organisation des Nations Unies, faute d'enregistrement (Art. 102, paragraphe 2)"
+      }
+    ],
+    "bound_to_carry_out_enforcement_action": [
+      {
+        "status": "unofficial",
+        "text": "le Membre est tenu de prendre des mesures pour exécuter les décisions du Conseil de sécurité (Art. 48)"
+      }
+    ],
+    "brought_into_relationship_with_united_nations": [
+      {
+        "status": "unofficial",
+        "text": "l'institution est une institution spécialisée reliée à l'Organisation des Nations Unies (Art. 57, Art. 63)"
+      }
+    ],
+    "budget_approved_for_year": [
+      {
+        "status": "unofficial",
+        "text": "le budget de l'Organisation pour l'exercice financier est approuvé (Art. 17, paragraphe 1)"
+      }
+    ],
+    "casts_vote_against": [
+      {
+        "status": "unofficial",
+        "text": "l'État vote contre (Art. 18, Art. 27)"
+      }
+    ],
+    "casts_vote_for": [
+      {
+        "status": "unofficial",
+        "text": "l'État vote pour (Art. 18, Art. 27)"
+      }
+    ],
+    "charter_may_not_intervene": [
+      {
+        "status": "unofficial",
+        "text": "la Charte ne confère aucun droit d'intervenir en cette matière (Art. 2, paragraphe 7, base)"
+      }
+    ],
+    "charter_obligation_prevails": [
+      {
+        "status": "unofficial",
+        "text": "les obligations découlant de la Charte l'emportent sur cette obligation conventionnelle (Art. 103)"
+      }
+    ],
+    "chief_of_staff_of": [
+      {
+        "status": "unofficial",
+        "text": "le représentant est le chef d'état-major de ce membre permanent (Art. 47, paragraphe 2)"
+      }
+    ],
+    "complied_with": [
+      {
+        "status": "unofficial",
+        "text": "le Membre s'est conformé à la décision du Conseil de sécurité (Art. 25)"
+      }
+    ],
+    "complied_with_icj_decision": [
+      {
+        "status": "unofficial",
+        "text": "le Membre s'est conformé à la décision de la Cour dans l'affaire (Art. 94, paragraphe 1)"
+      }
+    ],
+    "conflicts_with_charter_obligation": [
+      {
+        "status": "unofficial",
+        "text": "cette obligation entre en conflit avec les obligations de l'État en vertu de la Charte (Art. 103)"
+      }
+    ],
+    "consultative_arrangement_made": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil économique et social a conclu des arrangements consultatifs avec l'organisation non gouvernementale (Art. 71)"
+      }
+    ],
+    "consulted_for_joint_action": [
+      {
+        "status": "unofficial",
+        "text": "l'État s'est concerté avec les autres parties à la Déclaration des Quatre Nations de 1943 et, s'il y a lieu, avec d'autres Membres, en vue d'une action commune au nom de l'Organisation (Art. 106)"
+      }
+    ],
+    "continuity_of": [
+      {
+        "status": "unofficial",
+        "text": "l'État poursuit la personnalité juridique internationale de son prédécesseur (continuité)"
+      }
+    ],
+    "contribution_paid_for_year": [
+      {
+        "status": "unofficial",
+        "text": "le Membre a acquitté la contribution qui lui a été répartie pour l'exercice financier (Art. 17, paragraphe 2)"
+      }
+    ],
+    "cooperates_for_article_55_purposes": [
+      {
+        "status": "unofficial",
+        "text": "le Membre a agi, conjointement ou séparément, en coopération avec l'Organisation, en vue d'atteindre les buts énoncés à l'Article 55"
+      }
+    ],
+    "counted_as_administering_member_of": [
+      {
+        "status": "unofficial",
+        "text": "l'État est compté, dans cette composition, comme Membre administrant un territoire sous tutelle (Art. 86, paragraphe 1, catégorie a))"
+      }
+    ],
+    "counted_as_non_administering_member_of": [
+      {
+        "status": "unofficial",
+        "text": "l'État est compté, dans cette composition, comme Membre du Conseil de tutelle n'administrant pas de territoire sous tutelle — membre permanent du Conseil de sécurité au titre de la catégorie b), ou Membre élu par l'Assemblée générale au titre de la catégorie c) (Art. 86, paragraphe 1)"
+      }
+    ],
+    "decision_adopted": [
+      {
+        "status": "unofficial",
+        "text": "la décision du Conseil de sécurité est adoptée"
+      }
+    ],
+    "decision_blocked_by_permanent_member": [
+      {
+        "status": "unofficial",
+        "text": "la décision est bloquée par un membre permanent — par un vote contre ou, selon la lettre du texte, par une abstention (Art. 27, paragraphe 3)"
+      }
+    ],
+    "delegation_exceeds_five_representatives": [
+      {
+        "status": "unofficial",
+        "text": "le Membre compte plus de cinq représentants à l'Assemblée générale, contrairement à l'Article 9, paragraphe 2"
+      }
+    ],
+    "delegation_size": [
+      {
+        "status": "unofficial",
+        "text": "le nombre de représentants du Membre à l'Assemblée générale (Art. 9, paragraphe 2)"
+      }
+    ],
+    "delegation_within_five_representatives": [
+      {
+        "status": "unofficial",
+        "text": "la délégation du Membre à l'Assemblée générale ne compte pas plus de cinq représentants (Art. 9, paragraphe 2)"
+      }
+    ],
+    "designates_trusteeship_representative": [
+      {
+        "status": "unofficial",
+        "text": "le Membre du Conseil de tutelle désigne cette personne particulièrement qualifiée pour le représenter au Conseil (Art. 86, paragraphe 2)"
+      }
+    ],
+    "difference_entrusted_to_other_tribunal": [
+      {
+        "status": "unofficial",
+        "text": "le Membre a confié la solution d'un différend à un autre tribunal en vertu d'un accord déjà existant ou qui pourra être conclu à l'avenir (Art. 95)"
+      }
+    ],
+    "directed_at": [
+      {
+        "status": "unofficial",
+        "text": "la décision est adressée à ce Membre de l'Organisation (Art. 25)"
+      }
+    ],
+    "dispute_brought_to_attention": [
+      {
+        "status": "unofficial",
+        "text": "l'État porte le différend ou la situation à l'attention du Conseil de sécurité ou de l'Assemblée générale (Art. 35)"
+      }
+    ],
+    "dispute_endangerment_determined": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité a déterminé, après enquête, que la prolongation du différend ou de la situation semble devoir menacer la paix et la sécurité internationales (Art. 34)"
+      }
+    ],
+    "dispute_likely_to_endanger_peace_and_security": [
+      {
+        "status": "unofficial",
+        "text": "la prolongation du différend est susceptible de menacer le maintien de la paix et de la sécurité internationales (Art. 33, paragraphe 1) — une qualification tirée des faits du dossier, non une appréciation d'un organe (à distinguer de la détermination déléguée au Conseil de sécurité au titre de l'Article 34, ci-dessous)"
+      }
+    ],
+    "dispute_not_settled_by_article_33_means": [
+      {
+        "status": "unofficial",
+        "text": "les parties n'ont pas réussi à régler le différend par les moyens indiqués à l'Article 33 (Art. 37, paragraphe 1)"
+      }
+    ],
+    "dispute_referred_to_security_council": [
+      {
+        "status": "unofficial",
+        "text": "la partie soumet le différend au Conseil de sécurité (Art. 37, paragraphe 1)"
+      }
+    ],
+    "ecosoc_adopts_rules_of_procedure": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil économique et social adopte son règlement intérieur, dans lequel il fixe le mode de désignation de son Président (Art. 72, paragraphe 1)"
+      }
+    ],
+    "ecosoc_annual_election_of_eighteen": [
+      {
+        "status": "unofficial",
+        "text": "dix-huit Membres sont élus chaque année (Art. 61, paragraphe 2)"
+      }
+    ],
+    "ecosoc_commissions_established": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil économique et social a institué les commissions requises par l'Article 68"
+      }
+    ],
+    "ecosoc_composition_has_fifty_four_members": [
+      {
+        "status": "unofficial",
+        "text": "la composition compte cinquante-quatre Membres (Art. 61, paragraphe 1)"
+      }
+    ],
+    "ecosoc_decision_adopted": [
+      {
+        "status": "unofficial",
+        "text": "la décision du Conseil économique et social est adoptée à la majorité des membres présents et votants (Art. 67, paragraphe 2)"
+      }
+    ],
+    "ecosoc_economic_or_social_commission_established": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil économique et social a institué une commission dans le domaine économique ou social (Art. 68)"
+      }
+    ],
+    "ecosoc_elected_this_year": [
+      {
+        "status": "unofficial",
+        "text": "le Membre figure parmi ceux élus cette année au Conseil économique et social (Art. 61, paragraphe 2)"
+      }
+    ],
+    "ecosoc_human_rights_commission_established": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil économique et social a institué une commission pour la promotion des droits de l'homme (Art. 68)"
+      }
+    ],
+    "ecosoc_immediate_reelection_permitted": [
+      {
+        "status": "unofficial",
+        "text": "la réélection immédiate du membre sortant est permise (Art. 61, paragraphe 2)"
+      }
+    ],
+    "ecosoc_meeting_convened_on_majority_request": [
+      {
+        "status": "unofficial",
+        "text": "la réunion est convoquée à la demande de la majorité des membres du Conseil économique et social (Art. 72, paragraphe 2)"
+      }
+    ],
+    "ecosoc_obtains_reports_from": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil économique et social a obtenu des rapports de l'institution spécialisée (Art. 64, paragraphe 1)"
+      }
+    ],
+    "ecosoc_relationship_agreement": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil économique et social a conclu un accord avec l'institution (Art. 63, paragraphe 1)"
+      }
+    ],
+    "ecosoc_rules_of_procedure_in_force": [
+      {
+        "status": "unofficial",
+        "text": "le règlement intérieur du Conseil économique et social est en vigueur (Art. 72, paragraphe 1)"
+      }
+    ],
+    "ecosoc_seat": [
+      {
+        "status": "unofficial",
+        "text": "le Membre occupe un siège au Conseil économique et social dans cette composition (Art. 61)"
+      }
+    ],
+    "eligibility_restricted_on_account_of_sex": [
+      {
+        "status": "unofficial",
+        "text": "une restriction a été imposée à l'éligibilité de la personne à participer à l'organe en raison de son sexe (Art. 8)"
+      }
+    ],
+    "eligibility_restriction_violates_article_8": [
+      {
+        "status": "unofficial",
+        "text": "la restriction d'éligibilité fondée sur le sexe viole l'Article 8"
+      }
+    ],
+    "enemy_state_measure_under_article_107": [
+      {
+        "status": "unofficial",
+        "text": "l'action coercitive constitue une mesure contre un État ennemi, au sens de la définition donnée au paragraphe 2 de l'Article 53, prévue en application de l'Article 107 ou dirigée contre la reprise, par cet État, d'une politique d'agression — l'exception à l'exigence d'autorisation (Art. 53, paragraphe 1)"
+      }
+    ],
+    "entitled_to_bring_dispute_to_attention": [
+      {
+        "status": "unofficial",
+        "text": "l'État a le droit, en vertu de l'Article 35, de porter le différend ou la situation à l'attention du Conseil de sécurité ou de l'Assemblée générale"
+      }
+    ],
+    "entitled_to_bring_matter_to_security_council_attention": [
+      {
+        "status": "unofficial",
+        "text": "le Secrétaire général peut porter l'affaire à l'attention du Conseil de sécurité (Art. 99)"
+      }
+    ],
+    "entitled_to_consult_security_council": [
+      {
+        "status": "unofficial",
+        "text": "le droit de consulter le Conseil de sécurité sur la solution de problèmes économiques particuliers (Art. 50)"
+      }
+    ],
+    "entitled_to_participate_in_use_decisions": [
+      {
+        "status": "unofficial",
+        "text": "le droit de participer aux décisions du Conseil de sécurité relatives à l'emploi des contingents de ce Membre (Art. 44)"
+      }
+    ],
+    "entitled_to_recourse_to_security_council": [
+      {
+        "status": "unofficial",
+        "text": "l'autre partie à l'affaire peut recourir au Conseil de sécurité en cas d'inexécution de l'arrêt (Art. 94, paragraphe 2)"
+      }
+    ],
+    "entitled_to_request_advisory_opinion": [
+      {
+        "status": "unofficial",
+        "text": "l'organe peut demander à la Cour internationale de Justice de donner un avis consultatif sur la question (Art. 96)"
+      }
+    ],
+    "essentially_domestic_matter": [
+      {
+        "status": "unofficial",
+        "text": "une affaire relevant essentiellement de la compétence nationale d'un État (Art. 2, paragraphe 7)"
+      }
+    ],
+    "expelled_from_organization": [
+      {
+        "status": "unofficial",
+        "text": "l'État est exclu de l'Organisation (Art. 6)"
+      }
+    ],
+    "expenses_apportioned_to": [
+      {
+        "status": "unofficial",
+        "text": "les dépenses de l'Organisation ont été réparties à ce Membre pour l'exercice financier (Art. 17, paragraphe 2)"
+      }
+    ],
+    "expulsion_denied": [
+      {
+        "status": "unofficial",
+        "text": "le vote de l'Assemblée sur l'exclusion n'atteint pas la majorité des deux tiers requise par l'Article 18, paragraphe 2 (Art. 6, versant négatif)"
+      }
+    ],
+    "faces_special_economic_problems": [
+      {
+        "status": "unofficial",
+        "text": "l'État est confronté à des problèmes économiques particuliers résultant de l'exécution de mesures (Art. 50)"
+      }
+    ],
+    "fails_to_perform_icj_judgment": [
+      {
+        "status": "unofficial",
+        "text": "la partie n'a pas exécuté les obligations qui lui incombent en vertu d'un arrêt rendu par la Cour (Art. 94, paragraphe 2)"
+      }
+    ],
+    "force_authorized": [
+      {
+        "status": "unofficial",
+        "text": "l'emploi de la force au titre de l'Article 42 a été autorisé"
+      }
+    ],
+    "forces_made_available": [
+      {
+        "status": "unofficial",
+        "text": "le Membre a mis des forces armées à la disposition du Conseil de sécurité"
+      }
+    ],
+    "general_assembly_adopts_rules_of_procedure": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale adopte son règlement intérieur (Art. 21)"
+      }
+    ],
+    "general_assembly_appoints_secretary_general": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale nomme la personne au poste de Secrétaire général (Art. 97)"
+      }
+    ],
+    "general_assembly_approves_agency_agreement": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale a approuvé l'accord reliant l'institution à l'Organisation des Nations Unies (Art. 63, paragraphe 1)"
+      }
+    ],
+    "general_assembly_approves_budget": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale a examiné et approuvé le budget de l'Organisation pour l'exercice financier (Art. 17, paragraphe 1)"
+      }
+    ],
+    "general_assembly_decides_admission": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale décide de l'admission (Art. 4, paragraphe 2 ; selon la lettre de l'Article 18, paragraphe 2 — une « question importante », majorité des deux tiers)"
+      }
+    ],
+    "general_assembly_determines_icj_statute_conditions": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale détermine, en l'espèce, les conditions dans lesquelles l'État non membre devient partie au Statut (Art. 93, paragraphe 2)"
+      }
+    ],
+    "general_assembly_permits_vote_despite_arrears": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale, convaincue que le manquement de l'État est dû à des circonstances indépendantes de sa volonté, autorise cet État à participer au vote malgré ses arriérés (Art. 19, deuxième phrase)"
+      }
+    ],
+    "general_assembly_permits_vote_despite_arrears/external": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale, convaincue que le manquement de l'État est dû à des circonstances indépendantes de sa volonté, autorise cet État à participer au vote malgré ses arriérés (Art. 19, deuxième phrase)"
+      }
+    ],
+    "general_assembly_reaches_tenth_session_without_conference": [
+      {
+        "status": "unofficial",
+        "text": "aucune conférence générale n'a été réunie avant la dixième session annuelle de l'Assemblée générale suivant l'entrée en vigueur de la présente Charte (Art. 109, paragraphe 3)"
+      }
+    ],
+    "general_assembly_recommendation_barred": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale ne peut faire de recommandation sur ce différend ou cette situation tant que le Conseil de sécurité en est saisi, sauf demande de ce dernier (Art. 12, paragraphe 1)"
+      }
+    ],
+    "general_assembly_recommendation_permitted_despite_seizure": [
+      {
+        "status": "unofficial",
+        "text": "la demande du Conseil de sécurité lève l'interdiction de l'Article 12 : l'Assemblée générale peut faire une recommandation malgré la saisine du Conseil de la question (Art. 12, paragraphe 1, dernière clause)"
+      }
+    ],
+    "general_assembly_recommendation_power": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale dispose d'un pouvoir général de discuter de cette question et de formuler des recommandations à son sujet, sous réserve de l'Article 12 (Art. 10, 11, 14)"
+      }
+    ],
+    "general_assembly_representative": [
+      {
+        "status": "unofficial",
+        "text": "la personne est un représentant du Membre à l'Assemblée générale (Art. 9, paragraphe 2)"
+      }
+    ],
+    "general_assembly_rules_of_procedure_in_force": [
+      {
+        "status": "unofficial",
+        "text": "le règlement intérieur de l'Assemblée générale est en vigueur (Art. 21)"
+      }
+    ],
+    "general_conference_convening_approved_by_general_assembly": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale a approuvé la convocation de la conférence générale par un vote à la majorité des deux tiers de ses membres (Art. 109, paragraphe 1)"
+      }
+    ],
+    "general_conference_convening_approved_by_security_council": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité a approuvé la convocation de la conférence générale par un vote de neuf quelconques de ses membres (Art. 109, paragraphe 1) — aucun membre permanent ne peut bloquer ce vote"
+      }
+    ],
+    "general_conference_convening_decided": [
+      {
+        "status": "unofficial",
+        "text": "la conférence générale peut être réunie : les votes de l'Assemblée générale et du Conseil de sécurité requis par l'Article 109, paragraphe 1, ont tous deux été acquis"
+      }
+    ],
+    "general_conference_fallback_approved_by_general_assembly": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale a décidé, à la majorité de ses membres, de réunir la conférence générale au titre de la clause de repli du paragraphe 3 (Art. 109, paragraphe 3)"
+      }
+    ],
+    "general_conference_fallback_approved_by_security_council": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité a approuvé la réunion de la conférence générale au titre de la clause de repli du paragraphe 3, par un vote de sept quelconques de ses membres (Art. 109, paragraphe 3)"
+      }
+    ],
+    "general_conference_fallback_decided": [
+      {
+        "status": "unofficial",
+        "text": "la conférence générale sera réunie au titre de la clause de repli du paragraphe 3 : les votes requis de l'Assemblée générale et du Conseil de sécurité ont tous deux été acquis"
+      }
+    ],
+    "grave_armed_attack": [
+      {
+        "status": "unofficial",
+        "text": "une forme grave de l'emploi de la force armée par un État contre un État (le noyau incontesté de la notion d'« agression armée »)"
+      }
+    ],
+    "harbors_or_fails_to_prevent": [
+      {
+        "status": "unofficial",
+        "text": "l'État héberge le groupe ou ne parvient pas à réprimer ses agissements depuis son territoire (résolutions du Conseil de sécurité 1368 (2001) et 1373 (2001))"
+      }
+    ],
+    "has_recourse_to_security_council": [
+      {
+        "status": "unofficial",
+        "text": "l'autre partie a effectivement eu recours au Conseil de sécurité au sujet de l'arrêt (Art. 94, par. 2)"
+      }
+    ],
+    "host_territory_of_member": [
+      {
+        "status": "unofficial",
+        "text": "le territoire est celui de ce Membre, aux fins de l'Article 104"
+      }
+    ],
+    "icj_decision_rendered": [
+      {
+        "status": "unofficial",
+        "text": "la Cour internationale de Justice a rendu sa décision (son arrêt) dans l'affaire (Art. 94)"
+      }
+    ],
+    "icj_referral_recommended": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité a recommandé le renvoi du différend d'ordre juridique à la Cour internationale de Justice en vertu du paragraphe 3 de l'Article 36"
+      }
+    ],
+    "immediate_readiness_contingent_held": [
+      {
+        "status": "unofficial",
+        "text": "le Membre maintient des contingents nationaux de forces aériennes immédiatement utilisables (Art. 45)"
+      }
+    ],
+    "immediate_readiness_duty_discharged": [
+      {
+        "status": "unofficial",
+        "text": "l'obligation de tenir des contingents immédiatement utilisables au titre de l'Article 45 est remplie (sous condition de l'Article 43)"
+      }
+    ],
+    "immediately_re_elected_to_ecosoc": [
+      {
+        "status": "unofficial",
+        "text": "le membre sortant a été immédiatement réélu (Art. 61, par. 2)"
+      }
+    ],
+    "imminent_attack_under_caroline_standard": [
+      {
+        "status": "unofficial",
+        "text": "une menace imminente d'attaque répondant au critère Caroline : une nécessité immédiate, extrême, ne laissant ni choix des moyens ni le temps de délibérer"
+      }
+    ],
+    "important_question_adopted": [
+      {
+        "status": "unofficial",
+        "text": "la décision sur une question importante est adoptée à la majorité des deux tiers (Art. 18, par. 2)"
+      }
+    ],
+    "important_question_not_adopted": [
+      {
+        "status": "unofficial",
+        "text": "la décision sur une question importante n'atteint pas la majorité des deux tiers (Art. 18, par. 2)"
+      }
+    ],
+    "independence_of_office_maintained": [
+      {
+        "status": "unofficial",
+        "text": "le fonctionnaire n'a sollicité ni accepté d'instructions d'aucun gouvernement ni d'aucune autorité extérieure à l'Organisation, et s'est abstenu de tout acte incompatible avec sa situation de fonctionnaire international (Art. 100, par. 1)"
+      }
+    ],
+    "invited_to_participate_in_decisions": [
+      {
+        "status": "unofficial",
+        "text": "un Membre non représenté au Conseil est convié à participer aux décisions relatives à l'emploi de ses contingents (Art. 44)"
+      }
+    ],
+    "invited_to_participate_without_vote_in": [
+      {
+        "status": "unofficial",
+        "text": "l'État sera convié à participer, sans droit de vote, à la discussion du différend par le Conseil de sécurité (Art. 32)"
+      }
+    ],
+    "invited_to_participate_without_vote_in_ecosoc": [
+      {
+        "status": "unofficial",
+        "text": "le Membre est convié à participer, sans droit de vote, aux délibérations du Conseil économique et social sur la question (Art. 69)"
+      }
+    ],
+    "invocable_before_un_organ": [
+      {
+        "status": "unofficial",
+        "text": "le traité ou l'accord peut être invoqué devant un organe de l'Organisation des Nations Unies (Art. 102, par. 2, volet positif — il a été enregistré)"
+      }
+    ],
+    "is_amendment_vote": [
+      {
+        "status": "unofficial",
+        "text": "la décision est un vote de l'Assemblée générale sur un amendement à la Charte (Art. 108)"
+      }
+    ],
+    "is_ecosoc_decision": [
+      {
+        "status": "unofficial",
+        "text": "la décision est celle du Conseil économique et social (Art. 67)"
+      }
+    ],
+    "is_enforcement_action": [
+      {
+        "status": "unofficial",
+        "text": "l'activité constitue une action coercitive au sens du paragraphe 1 de l'Article 53 — un fait qualifiant une RegionalArrangementActivity, non une entité distincte"
+      }
+    ],
+    "is_general_conference_alteration_vote": [
+      {
+        "status": "unofficial",
+        "text": "la décision est un vote à la majorité des deux tiers de la conférence générale recommandant une modification de la Charte (Art. 109, par. 2)"
+      }
+    ],
+    "is_general_conference_convening_vote_in_general_assembly": [
+      {
+        "status": "unofficial",
+        "text": "la décision est un vote de l'Assemblée générale fixant la date et le lieu d'une conférence générale de révision de la Charte (Art. 109, par. 1)"
+      }
+    ],
+    "is_general_conference_convening_vote_in_security_council": [
+      {
+        "status": "unofficial",
+        "text": "la décision est un vote de neuf quelconques des membres du Conseil de sécurité fixant la date et le lieu de la conférence générale (Art. 109, par. 1) — non subordonné à l'accord des membres permanents prévu au paragraphe 3 de l'Article 27"
+      }
+    ],
+    "is_general_conference_fallback_vote_in_general_assembly": [
+      {
+        "status": "unofficial",
+        "text": "la décision est un vote de l'Assemblée générale, à sa dixième session annuelle ou après celle-ci, tendant à réunir la conférence générale au titre de la clause de repli du paragraphe 3 (Art. 109, par. 3)"
+      }
+    ],
+    "is_general_conference_fallback_vote_in_security_council": [
+      {
+        "status": "unofficial",
+        "text": "la décision est un vote de sept quelconques des membres du Conseil de sécurité tendant à réunir la conférence générale au titre de la clause de repli du paragraphe 3 (Art. 109, par. 3)"
+      }
+    ],
+    "is_important_question": [
+      {
+        "status": "unofficial",
+        "text": "la question relève de l'énumération du paragraphe 2 de l'Article 18, ou est reconnue comme telle en vertu du paragraphe 3"
+      }
+    ],
+    "is_legal_question": [
+      {
+        "status": "unofficial",
+        "text": "la question posée à la Cour est une question juridique (Art. 96, par. 1 et 2)"
+      }
+    ],
+    "is_non_procedural_matter": [
+      {
+        "status": "unofficial",
+        "text": "la décision ne porte pas sur une question de procédure (Art. 27, par. 3)"
+      }
+    ],
+    "is_ordinary_question": [
+      {
+        "status": "unofficial",
+        "text": "la question ne relève pas de l'énumération du paragraphe 2 de l'Article 18 (Art. 18, par. 3)"
+      }
+    ],
+    "is_strategic_area": [
+      {
+        "status": "unofficial",
+        "text": "tout ou partie du territoire sous tutelle est désigné, dans l'accord de tutelle, comme zone stratégique (Art. 82)"
+      }
+    ],
+    "is_trusteeship_council_composition": [
+      {
+        "status": "unofficial",
+        "text": "l'entité désigne une composition du Conseil de tutelle à l'examen (Art. 86)"
+      }
+    ],
+    "is_trusteeship_council_decision": [
+      {
+        "status": "unofficial",
+        "text": "la décision est celle du Conseil de tutelle (Art. 89)"
+      }
+    ],
+    "is_united_nations_organ": [
+      {
+        "status": "unofficial",
+        "text": "l'organe est un organe principal ou subsidiaire de l'Organisation des Nations Unies (Art. 7, 8)"
+      }
+    ],
+    "joint_action_on_behalf_of_organization_necessary": [
+      {
+        "status": "unofficial",
+        "text": "une action commune au nom de l'Organisation est nécessaire aux fins du maintien de la paix et de la sécurité internationales (Art. 106)"
+      }
+    ],
+    "legal_dispute": [
+      {
+        "status": "unofficial",
+        "text": "le différend est de caractère juridique (Art. 36, paragraphe 3)"
+      }
+    ],
+    "local_dispute": [
+      {
+        "status": "unofficial",
+        "text": "le différend est un différend d'ordre local au sens de l'Article 52 — un fait qualifiant un Chapter VI Dispute, non une entité distincte"
+      }
+    ],
+    "low_intensity_attack": [
+      {
+        "status": "unofficial",
+        "text": "un emploi de la force de faible intensité (un incident de frontière)"
+      }
+    ],
+    "matter_is": [
+      {
+        "status": "unofficial",
+        "text": "la question soumise à l'Assemblée est cet acte du cas comparé"
+      }
+    ],
+    "matter_may_threaten_peace_in_opinion_of_secretary_general": [
+      {
+        "status": "unofficial",
+        "text": "l'affaire peut, de l'avis du Secrétaire général, mettre en danger le maintien de la paix et de la sécurité internationales (Art. 99)"
+      }
+    ],
+    "matter_may_threaten_peace_in_opinion_of_secretary_general/external": [
+      {
+        "status": "unofficial",
+        "text": "l'affaire peut, de l'avis du Secrétaire général, mettre en danger le maintien de la paix et de la sécurité internationales (Art. 99)"
+      }
+    ],
+    "matter_of_particular_concern_to": [
+      {
+        "status": "unofficial",
+        "text": "la question soumise au Conseil économique et social intéresse particulièrement ce Membre de l'Organisation des Nations Unies (Art. 69)"
+      }
+    ],
+    "matter_within_charter_scope": [
+      {
+        "status": "unofficial",
+        "text": "la question ou l'affaire rentre dans le cadre de la présente Charte, ou se rapporte aux pouvoirs et fonctions d'un organe prévu par la Charte (Art. 10)"
+      }
+    ],
+    "member_of_regional_arrangement": [
+      {
+        "status": "unofficial",
+        "text": "le Membre a conclu un accord régional, ou constitue un organisme régional, pour le maintien de la paix et de la sécurité internationales (Art. 52, paragraphe 2)"
+      }
+    ],
+    "member_of_secretariat": [
+      {
+        "status": "unofficial",
+        "text": "la personne relève du Secrétariat : le Secrétaire général ou un membre du personnel (Art. 97, première phrase)"
+      }
+    ],
+    "member_of_secretariat_person": [
+      {
+        "status": "unofficial",
+        "text": "la personne est un fonctionnaire de l'Organisation aux fins du paragraphe 2 de l'Article 105 (le volet Secrétariat des Articles 97 à 101, ici représenté comme une Person)"
+      }
+    ],
+    "member_state": [
+      {
+        "status": "unofficial",
+        "text": "l'État est Membre de l'Organisation (Art. 3-6, retenu ici comme prémisse du cas)"
+      }
+    ],
+    "membership_rights_restored": [
+      {
+        "status": "unofficial",
+        "text": "l'exercice des droits et privilèges de Membre de l'État est rétabli par le seul Conseil de sécurité (Art. 5, seconde phrase)"
+      }
+    ],
+    "membership_rights_suspended": [
+      {
+        "status": "unofficial",
+        "text": "l'exercice des droits et privilèges de Membre de l'État est suspendu (Art. 5, première phrase)"
+      }
+    ],
+    "membership_rights_suspension_denied": [
+      {
+        "status": "unofficial",
+        "text": "le vote de l'Assemblée sur la suspension n'atteint pas le seuil des deux tiers prévu au paragraphe 2 de l'Article 18 (Art. 5, volet négatif)"
+      }
+    ],
+    "military_staff_committee_member": [
+      {
+        "status": "unofficial",
+        "text": "membre du Comité d'état-major (Art. 47, par. 2)"
+      }
+    ],
+    "mutual_assistance_rendered": [
+      {
+        "status": "unofficial",
+        "text": "le Membre s'associe pour prêter mutuellement assistance dans l'exécution des mesures arrêtées par le Conseil de sécurité (Art. 49)"
+      }
+    ],
+    "named_by_article_96_paragraph_1": [
+      {
+        "status": "unofficial",
+        "text": "l'organe est l'Assemblée générale ou le Conseil de sécurité, désigné par le paragraphe 1 de l'Article 96"
+      }
+    ],
+    "negotiations_initiated_for_new_agency": [
+      {
+        "status": "unofficial",
+        "text": "l'Organisation a engagé des négociations entre les États intéressés en vue de la création de la nouvelle institution spécialisée (Art. 59)"
+      }
+    ],
+    "new_agency_negotiations_initiated": [
+      {
+        "status": "unofficial",
+        "text": "des négociations en vue de la création d'une nouvelle institution spécialisée ont été engagées (Art. 59)"
+      }
+    ],
+    "ngo_consultative_status": [
+      {
+        "status": "unofficial",
+        "text": "l'organisation non gouvernementale a le statut consultatif sur la question (Art. 71)"
+      }
+    ],
+    "non_force_measures_decided": [
+      {
+        "status": "unofficial",
+        "text": "des mesures n'impliquant pas l'emploi de la force armée au titre de l'Article 41 ont été décidées"
+      }
+    ],
+    "non_member_state": [
+      {
+        "status": "unofficial",
+        "text": "l'État n'est pas Membre de l'Organisation des Nations Unies (Art. 32, second membre de phrase) — un fait du cas affirmé directement, non la simple absence de member_state"
+      }
+    ],
+    "non_security_council_member_state": [
+      {
+        "status": "unofficial",
+        "text": "l'État est Membre de l'Organisation des Nations Unies mais n'est pas membre du Conseil de sécurité (Art. 31, Art. 32, premier membre de phrase) — un fait du cas affirmé directement, non la simple absence d'un fait d'appartenance au Conseil de sécurité"
+      }
+    ],
+    "non_strategic_area": [
+      {
+        "status": "unofficial",
+        "text": "le territoire sous tutelle (ou la zone concernée) n'est pas désigné comme stratégique (Art. 85, paragraphe 1)"
+      }
+    ],
+    "ordinary_question_adopted": [
+      {
+        "status": "unofficial",
+        "text": "la décision sur une question ordinaire est adoptée à la majorité simple (Art. 18, par. 3)"
+      }
+    ],
+    "organization_enjoys_legal_capacity_in": [
+      {
+        "status": "unofficial",
+        "text": "l'Organisation jouit, sur le territoire du Membre, de la capacité juridique qui lui est nécessaire pour exercer ses fonctions et atteindre ses buts (Art. 104)"
+      }
+    ],
+    "organization_enjoys_privileges_and_immunities": [
+      {
+        "status": "unofficial",
+        "text": "l'Organisation jouit, sur le territoire du Membre, des privilèges et immunités qui lui sont nécessaires pour atteindre ses buts (Art. 105, par. 1)"
+      }
+    ],
+    "original_member": [
+      {
+        "status": "unofficial",
+        "text": "l'État est Membre originaire de l'Organisation des Nations Unies (Art. 3)"
+      }
+    ],
+    "other_organ_or_specialized_agency": [
+      {
+        "status": "unofficial",
+        "text": "l'organe est un autre organe de l'Organisation des Nations Unies ou une institution spécialisée (Art. 96, par. 2)"
+      }
+    ],
+    "other_tribunal_not_precluded": [
+      {
+        "status": "unofficial",
+        "text": "aucune disposition de la Charte n'empêche le Membre de recourir à cet autre tribunal (Art. 95)"
+      }
+    ],
+    "participated_in_san_francisco_conference": [
+      {
+        "status": "unofficial",
+        "text": "l'État a participé à la Conférence des Nations Unies pour l'Organisation internationale à San Francisco (Art. 3)"
+      }
+    ],
+    "participates_without_vote_in": [
+      {
+        "status": "unofficial",
+        "text": "le Membre peut participer, sans droit de vote, à la discussion de la question par le Conseil de sécurité (Art. 31)"
+      }
+    ],
+    "party_to_dispute": [
+      {
+        "status": "unofficial",
+        "text": "l'État est partie au différend (Ch. VI)"
+      }
+    ],
+    "party_to_dispute_before_security_council": [
+      {
+        "status": "unofficial",
+        "text": "l'État est partie à un différend examiné par le Conseil de sécurité (Art. 32) — une constatation factuelle rapportée par le cas, non une appréciation portée par le Conseil"
+      }
+    ],
+    "party_to_dispute_under_chapter_six": [
+      {
+        "status": "unofficial",
+        "text": "l'État est partie à un différend examiné au titre du Chapitre VI ou du paragraphe 3 de l'Article 52 (Art. 27, par. 3, seconde phrase)"
+      }
+    ],
+    "party_to_icj_case": [
+      {
+        "status": "unofficial",
+        "text": "l'État est partie à l'affaire portée devant la Cour (Art. 94)"
+      }
+    ],
+    "party_to_icj_statute": [
+      {
+        "status": "unofficial",
+        "text": "l'État est partie au Statut de la Cour internationale de Justice (Art. 93)"
+      }
+    ],
+    "peace_and_security_cooperation_principle_matter": [
+      {
+        "status": "unofficial",
+        "text": "la question concerne les principes généraux de coopération pour le maintien de la paix et de la sécurité internationales, y compris le désarmement et la réglementation des armements (Art. 11, par. 1)"
+      }
+    ],
+    "peace_and_security_question_brought_before_assembly": [
+      {
+        "status": "unofficial",
+        "text": "la question relative au maintien de la paix et de la sécurité internationales est portée devant l'Assemblée générale par un Membre, par le Conseil de sécurité, ou par un État non Membre en vertu du paragraphe 2 de l'Article 35 (Art. 11, par. 2)"
+      }
+    ],
+    "peace_loving": [
+      {
+        "status": "unofficial",
+        "text": "l'État est pacifique et, au jugement de l'Organisation, capable de remplir les obligations de la Charte et disposé à le faire (Art. 4, par. 1)"
+      }
+    ],
+    "peace_loving/external": [
+      {
+        "status": "unofficial",
+        "text": "l'État est pacifique et, au jugement de l'Organisation, capable de remplir les obligations de la Charte et disposé à le faire (Art. 4, par. 1)"
+      }
+    ],
+    "permanent_member": [
+      {
+        "status": "unofficial",
+        "text": "membre permanent du Conseil de sécurité (Art. 23, par. 1)"
+      }
+    ],
+    "permanent_member_seat_held_by": [
+      {
+        "status": "unofficial",
+        "text": "l'État détient un siège permanent aux fins du vote (à la lettre de l'Article 23, ou par continuité/transfert de siège)"
+      }
+    ],
+    "persistently_violated_charter_principles": [
+      {
+        "status": "unofficial",
+        "text": "l'État a enfreint de manière persistante les principes énoncés dans la présente Charte — au jugement de l'Organisation (Art. 6)"
+      }
+    ],
+    "persistently_violated_charter_principles/external": [
+      {
+        "status": "unofficial",
+        "text": "l'État a enfreint de manière persistante les principes énoncés dans la présente Charte — au jugement de l'Organisation (Art. 6)"
+      }
+    ],
+    "person_sex": [
+      {
+        "status": "unofficial",
+        "text": "le sexe de la personne (Art. 8 : hommes et femmes)"
+      }
+    ],
+    "preceding_two_full_years": [
+      {
+        "status": "unofficial",
+        "text": "ces deux exercices financiers sont les deux années complètes écoulées au sens de l'Article 19"
+      }
+    ],
+    "president_elected_for_session": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale a élu cette personne Président de la session (Art. 21)"
+      }
+    ],
+    "preventive_or_enforcement_action_taken_against": [
+      {
+        "status": "unofficial",
+        "text": "une action préventive ou coercitive a été entreprise contre l'État par le Conseil de sécurité (Art. 5)"
+      }
+    ],
+    "privileges_or_immunities_interfered_with": [
+      {
+        "status": "unofficial",
+        "text": "l'État hôte a porté atteinte aux privilèges et immunités nécessaires à l'exercice indépendant des fonctions de la personne (Art. 105, par. 2)"
+      }
+    ],
+    "procedural_matter": [
+      {
+        "status": "unofficial",
+        "text": "la décision porte sur une question de procédure (Art. 27, par. 2)"
+      }
+    ],
+    "procedures_recommended": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité a recommandé des procédures ou méthodes d'ajustement pour le différend en vertu du paragraphe 1 de l'Article 36"
+      }
+    ],
+    "provisional_measures_called": [
+      {
+        "status": "unofficial",
+        "text": "des mesures provisoires prévues à l'Article 40 ont été demandées"
+      }
+    ],
+    "qualifies_for_membership": [
+      {
+        "status": "unofficial",
+        "text": "l'État remplit les conditions du paragraphe 1 de l'Article 4 (passerelle vers le canal du jugement)"
+      }
+    ],
+    "question_brought_before_security_council": [
+      {
+        "status": "unofficial",
+        "text": "une question a été portée devant le Conseil de sécurité pour discussion (Art. 31)"
+      }
+    ],
+    "question_within_scope_of_activities": [
+      {
+        "status": "unofficial",
+        "text": "la question juridique se pose dans le cadre de l'activité de l'organe (Art. 96, par. 2)"
+      }
+    ],
+    "ratified_by": [
+      {
+        "status": "unofficial",
+        "text": "l'État a ratifié l'amendement conformément à ses règles constitutionnelles (Art. 108)"
+      }
+    ],
+    "ratifies_after_charter_in_force": [
+      {
+        "status": "unofficial",
+        "text": "l'État signe et ratifie la Charte après son entrée en vigueur (Art. 110, par. 4)"
+      }
+    ],
+    "ratifies_charter": [
+      {
+        "status": "unofficial",
+        "text": "l'État ratifie la Charte conformément à l'Article 110 (Art. 3 — l'Article 110 lui-même se situe hors du périmètre déclaré et est retenu ici comme prémisse du cas)"
+      }
+    ],
+    "regional_activity_undertaken": [
+      {
+        "status": "unofficial",
+        "text": "l'activité a été entreprise, ou est envisagée, dans le cadre d'un accord ou d'un organisme régional (Art. 53, paragraphe 1 ; Art. 54)"
+      }
+    ],
+    "regional_enforcement_action_authorized": [
+      {
+        "status": "unofficial",
+        "text": "l'action coercitive entreprise en vertu de l'accord ou par l'organisme régional est autorisée au titre de l'Article 53 — par le Conseil de sécurité, ou parce qu'elle relève de l'exception relative à l'État ennemi"
+      }
+    ],
+    "regional_enforcement_action_unauthorized": [
+      {
+        "status": "unofficial",
+        "text": "l'action coercitive entreprise en vertu de l'accord ou par l'organisme régional viole l'Article 53 — elle est dépourvue de l'autorisation du Conseil de sécurité et ne relève pas de l'exception relative à l'État ennemi"
+      }
+    ],
+    "regional_settlement_effort_made": [
+      {
+        "status": "unofficial",
+        "text": "le Membre a fait tous ses efforts pour régler d'une manière pacifique le différend d'ordre local par le moyen de l'accord ou de l'organisme régional (Article 52, paragraphe 2)"
+      }
+    ],
+    "regional_settlement_encouraged": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité a encouragé le développement du règlement pacifique du différend d'ordre local au titre de l'Article 52, paragraphe 3"
+      }
+    ],
+    "registered_with_secretariat": [
+      {
+        "status": "unofficial",
+        "text": "le traité ou l'accord international a été enregistré au Secrétariat (et publié par lui) (Article 102, paragraphe 1)"
+      }
+    ],
+    "representative_of_member": [
+      {
+        "status": "unofficial",
+        "text": "la personne est un représentant du Membre (Article 105, paragraphe 2)"
+      }
+    ],
+    "requests_collective_self_defence": [
+      {
+        "status": "unofficial",
+        "text": "l'État victime demande la légitime défense collective à un allié"
+      }
+    ],
+    "requests_ecosoc_meeting": [
+      {
+        "status": "unofficial",
+        "text": "le Membre du Conseil économique et social demande la convocation d'une réunion (Article 72, paragraphe 2)"
+      }
+    ],
+    "requests_special_session": [
+      {
+        "status": "unofficial",
+        "text": "l'État demande la convocation d'une session extraordinaire de l'Assemblée générale (Article 20)"
+      }
+    ],
+    "respects_international_character_of_secretariat": [
+      {
+        "status": "unofficial",
+        "text": "le Membre a respecté le caractère exclusivement international des fonctions du fonctionnaire et n'a pas cherché à l'influencer dans l'exécution de sa tâche (Article 100, paragraphe 2)"
+      }
+    ],
+    "retiring_ecosoc_member": [
+      {
+        "status": "unofficial",
+        "text": "le Membre est un membre sortant du Conseil économique et social (Article 61, paragraphe 2)"
+      }
+    ],
+    "seat_transferred_by": [
+      {
+        "status": "unofficial",
+        "text": "le siège est transféré au successeur par une décision de l'Assemblée générale (résolution 2758 (XXVI), 25.10.1971)"
+      }
+    ],
+    "secretary_general": [
+      {
+        "status": "unofficial",
+        "text": "la personne est le Secrétaire général de l'Organisation (Article 97)"
+      }
+    ],
+    "secretary_general_appointment_blocked": [
+      {
+        "status": "unofficial",
+        "text": "la nomination est impossible sans recommandation du Conseil de sécurité, quelle que soit la volonté de l'Assemblée générale (Article 97, versant négatif)"
+      }
+    ],
+    "security_council_adopts_rules_of_procedure": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité établit son règlement intérieur, dans lequel il fixe le mode de désignation de son Président (Article 30)"
+      }
+    ],
+    "security_council_authorises_force": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité entreprend, ou autorise, une action au moyen de forces aériennes, navales ou terrestres (Article 42)"
+      }
+    ],
+    "security_council_authorises_regional_enforcement_action": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité autorise l'action coercitive entreprise en vertu de l'accord ou par l'organisme régional (Article 53, paragraphe 1)"
+      }
+    ],
+    "security_council_calls_for_forces": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité invite un Membre à fournir des forces en vertu de son accord spécial (Article 43, paragraphe 1)"
+      }
+    ],
+    "security_council_calls_provisional_measures": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité invite les parties intéressées à se conformer à des mesures provisoires (Article 40)"
+      }
+    ],
+    "security_council_considers_interests_specially_affected": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité estime que les intérêts du Membre sont particulièrement affectés (Article 31)"
+      }
+    ],
+    "security_council_considers_interests_specially_affected/external": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité estime que les intérêts du Membre sont particulièrement affectés (Article 31)"
+      }
+    ],
+    "security_council_decides_non_force_measures": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité décide quelles mesures n'impliquant pas l'emploi de la force armée doivent être prises (Article 41)"
+      }
+    ],
+    "security_council_decision_under_article_52_paragraph_3": [
+      {
+        "status": "unofficial",
+        "text": "la décision du Conseil de sécurité est prise en encourageant, ou par renvoi au titre de, le développement du règlement pacifique du différend d'ordre local en vertu de l'Article 52, paragraphe 3, concernant ce différend"
+      }
+    ],
+    "security_council_deems_dispute_endangers_peace": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité estime que la prolongation du différend semble, en fait, menacer le maintien de la paix et de la sécurité internationales (Article 37, paragraphe 2)"
+      }
+    ],
+    "security_council_deems_dispute_endangers_peace/external": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité estime que la prolongation du différend semble, en fait, menacer le maintien de la paix et de la sécurité internationales (Article 37, paragraphe 2)"
+      }
+    ],
+    "security_council_deems_measures_necessary": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité juge nécessaire d'agir pour faire exécuter l'arrêt (Article 94, paragraphe 2 — « s'il le juge nécessaire »)"
+      }
+    ],
+    "security_council_deems_measures_necessary/external": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité juge nécessaire d'agir pour faire exécuter l'arrêt (Article 94, paragraphe 2 — « s'il le juge nécessaire »)"
+      }
+    ],
+    "security_council_designates_for_action": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité a déterminé que ce Membre prend les mesures nécessaires à l'exécution de ses décisions (Article 48)"
+      }
+    ],
+    "security_council_encourages_regional_settlement": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité encourage le développement du règlement pacifique du différend d'ordre local par le moyen des accords ou des organismes régionaux, soit sur l'initiative des États intéressés, soit sur renvoi du Conseil de sécurité (Article 52, paragraphe 3)"
+      }
+    ],
+    "security_council_establishes_subsidiary_organ": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité a créé l'organe subsidiaire qu'il a jugé nécessaire à l'exercice de ses fonctions (Article 29)"
+      }
+    ],
+    "security_council_functions_continuously": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité est organisé de manière à pouvoir exercer ses fonctions en permanence (Article 28, paragraphe 1)"
+      }
+    ],
+    "security_council_has_acted_on": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité a pris les mesures nécessaires au maintien de la paix à l'égard de cette situation (Article 51, clause finale)"
+      }
+    ],
+    "security_council_may_give_effect_to_judgment": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité peut faire des recommandations ou décider des mesures à prendre pour faire exécuter l'arrêt (Article 94, paragraphe 2, second membre de phrase)"
+      }
+    ],
+    "security_council_organized_to_function_continuously": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité satisfait à l'exigence de fonctionnement permanent de l'Article 28, paragraphe 1"
+      }
+    ],
+    "security_council_recommendation_blocked": [
+      {
+        "status": "unofficial",
+        "text": "la recommandation du Conseil de sécurité relative à l'admission est bloquée par un membre permanent (Article 4, paragraphe 2 — veto au titre de l'Article 27, paragraphe 3)"
+      }
+    ],
+    "security_council_recommendation_for_secretary_general_blocked": [
+      {
+        "status": "unofficial",
+        "text": "la recommandation du Conseil de sécurité désignant la personne comme Secrétaire général est bloquée par un membre permanent (Article 97 — veto au titre de l'Article 27, paragraphe 3)"
+      }
+    ],
+    "security_council_recommends_admission": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité recommande l'admission de l'État (Article 4, paragraphe 2) — décision elle-même soumise à l'Article 27, paragraphe 3 : le vote négatif d'un seul membre permanent bloque la recommandation"
+      }
+    ],
+    "security_council_recommends_expulsion": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité recommande l'exclusion de l'État (Article 6) — décision elle-même soumise à l'Article 27, paragraphe 3 : le vote négatif d'un seul membre permanent bloque la recommandation"
+      }
+    ],
+    "security_council_recommends_icj_referral": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité recommande que les parties soumettent leur différend d'ordre juridique à la Cour internationale de Justice, conformément aux dispositions du Statut de la Cour (Article 36, paragraphe 3) — les mécanismes propres au Statut sont hors du périmètre déclaré de ce paquet (Article 92, 07-final-provisions.law)"
+      }
+    ],
+    "security_council_recommends_icj_statute_conditions": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité recommande les conditions dans lesquelles l'État non membre peut devenir partie au Statut (Article 93, paragraphe 2) — décision elle-même soumise à l'Article 27, paragraphe 3 : le vote négatif d'un seul membre permanent bloque la recommandation"
+      }
+    ],
+    "security_council_recommends_procedures_for_dispute": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité recommande les procédures ou méthodes d'ajustement appropriées pour le différend (Article 36, paragraphe 1)"
+      }
+    ],
+    "security_council_recommends_secretary_general": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité recommande la nomination de la personne comme Secrétaire général (Article 97) — décision elle-même soumise à l'Article 27, paragraphe 3 : le vote négatif d'un seul membre permanent bloque la recommandation"
+      }
+    ],
+    "security_council_recommends_settlement_terms": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité recommande les termes de règlement qu'il juge appropriés (Article 37, paragraphe 2)"
+      }
+    ],
+    "security_council_recommends_settlement_under_article_38": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité fait des recommandations aux parties en vue d'un règlement pacifique du différend (Article 38)"
+      }
+    ],
+    "security_council_recommends_suspension": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité recommande la suspension des droits et privilèges de Membre de l'État (Article 5) — décision elle-même soumise à l'Article 27, paragraphe 3 : le vote négatif d'un seul membre permanent bloque la recommandation"
+      }
+    ],
+    "security_council_requests_general_assembly_recommendation": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité demande que l'Assemblée générale fasse une recommandation, nonobstant sa propre saisine de l'affaire (Article 12, paragraphe 1, clause conditionnelle)"
+      }
+    ],
+    "security_council_requests_special_session": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité demande la convocation d'une session extraordinaire de l'Assemblée générale (Article 20)"
+      }
+    ],
+    "security_council_restores_rights": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité rétablit l'exercice des droits et privilèges de Membre de l'État (Article 5, deuxième phrase)"
+      }
+    ],
+    "security_council_rules_of_procedure_in_force": [
+      {
+        "status": "unofficial",
+        "text": "le règlement intérieur du Conseil de sécurité est en vigueur (Article 30)"
+      }
+    ],
+    "security_council_seized_of_matter": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité remplit, à l'égard de ce différend ou de cette situation, les fonctions qui lui sont attribuées par la présente Charte (Article 12, paragraphe 1)"
+      }
+    ],
+    "security_council_subsidiary_organ": [
+      {
+        "status": "unofficial",
+        "text": "l'organe est un organe subsidiaire du Conseil de sécurité (Article 29)"
+      }
+    ],
+    "self_defence_measures_reported": [
+      {
+        "status": "unofficial",
+        "text": "les mesures prises dans l'exercice de la légitime défense ont été portées à la connaissance du Conseil de sécurité"
+      }
+    ],
+    "self_defence_measures_taken": [
+      {
+        "status": "unofficial",
+        "text": "le Membre a pris des mesures dans l'exercice du droit de légitime défense (Article 51, deuxième phrase)"
+      }
+    ],
+    "self_defence_permitted": [
+      {
+        "status": "unofficial",
+        "text": "le droit de légitime défense au titre de l'Article 51 n'est pas supprimé"
+      }
+    ],
+    "session_has_president": [
+      {
+        "status": "unofficial",
+        "text": "la personne est Président de l'Assemblée générale pour la session (Article 21)"
+      }
+    ],
+    "settlement_recommendation_made_under_article_38": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité a fait une recommandation en vue d'un règlement pacifique du différend au titre de l'Article 38"
+      }
+    ],
+    "settlement_terms_recommended": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de sécurité a recommandé des termes de règlement pour le différend au titre de l'Article 37, paragraphe 2"
+      }
+    ],
+    "signed_declaration_by_united_nations_1942": [
+      {
+        "status": "unofficial",
+        "text": "l'État a antérieurement signé la Déclaration des Nations Unies du 1er janvier 1942 (Article 3)"
+      }
+    ],
+    "signs_charter": [
+      {
+        "status": "unofficial",
+        "text": "l'État signe la présente Charte (Article 3)"
+      }
+    ],
+    "situation_impairs_general_welfare_or_friendly_relations": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale estime que la situation, quelle qu'en soit l'origine, est de nature à nuire au bien général ou à compromettre les relations amicales entre nations, y compris une situation résultant d'une infraction aux buts et principes de la Charte (Article 14)"
+      }
+    ],
+    "situation_impairs_general_welfare_or_friendly_relations/external": [
+      {
+        "status": "unofficial",
+        "text": "l'Assemblée générale estime que la situation, quelle qu'en soit l'origine, est de nature à nuire au bien général ou à compromettre les relations amicales entre nations, y compris une situation résultant d'une infraction aux buts et principes de la Charte (Article 14)"
+      }
+    ],
+    "sought_peaceful_settlement": [
+      {
+        "status": "unofficial",
+        "text": "la partie a recherché une solution par voie de négociation, d'enquête, de médiation, de conciliation, d'arbitrage, de règlement judiciaire, de recours aux organismes ou accords régionaux, ou par d'autres moyens pacifiques de son choix (Article 33, paragraphe 1)"
+      }
+    ],
+    "special_agreement_concluded": [
+      {
+        "status": "unofficial",
+        "text": "un accord spécial relatif à la fourniture de forces armées a été conclu (Article 43) — cela ne s'est jamais produit dans l'histoire de la Charte"
+      }
+    ],
+    "special_session_convened": [
+      {
+        "status": "unofficial",
+        "text": "une session extraordinaire de l'Assemblée générale est valablement convoquée, par le Secrétaire général, à la demande du Conseil de sécurité ou de la majorité des Membres (Article 20)"
+      }
+    ],
+    "staff_member": [
+      {
+        "status": "unofficial",
+        "text": "la personne est membre du personnel du Secrétariat (Article 101, paragraphe 1)"
+      }
+    ],
+    "state_is": [
+      {
+        "status": "unofficial",
+        "text": "l'État-Charte désigne cette entité politique du cas comparatif"
+      }
+    ],
+    "territorial_information_transmitted": [
+      {
+        "status": "unofficial",
+        "text": "le Membre administrant a communiqué au Secrétaire général, à titre d'information, des renseignements statistiques et autres de nature technique relatifs aux conditions économiques, sociales et de l'instruction dans le territoire (Article 73, alinéa e)"
+      }
+    ],
+    "territory_detached_from_enemy_state": [
+      {
+        "status": "unofficial",
+        "text": "le territoire peut être détaché d'un État ennemi par suite de la seconde guerre mondiale (Article 77, catégorie b)"
+      }
+    ],
+    "territory_held_under_mandate": [
+      {
+        "status": "unofficial",
+        "text": "le territoire est actuellement sous mandat (Article 77, catégorie a)"
+      }
+    ],
+    "territory_placeable_under_trusteeship_system": [
+      {
+        "status": "unofficial",
+        "text": "le territoire relève d'une catégorie de l'Article 77 pouvant être placée sous le régime de tutelle par accord de tutelle"
+      }
+    ],
+    "territory_voluntarily_placed_by_administering_state": [
+      {
+        "status": "unofficial",
+        "text": "le territoire est volontairement placé sous le régime par l'État responsable de son administration (Article 77, catégorie c)"
+      }
+    ],
+    "threat_to_peace": [
+      {
+        "status": "unofficial",
+        "text": "une menace contre la paix, une rupture de la paix ou un acte d'agression est constaté au titre de l'Article 39"
+      }
+    ],
+    "treaty_obligation_of": [
+      {
+        "status": "unofficial",
+        "text": "l'État est tenu de cette obligation en vertu d'un autre accord international"
+      }
+    ],
+    "trust_territory_became_member_state": [
+      {
+        "status": "unofficial",
+        "text": "le territoire sous tutelle est devenu l'État désigné (Article 78) — un fait relatif à l'histoire ultérieure du territoire, à lire conjointement avec `member_state`"
+      }
+    ],
+    "trust_territory_playing_part_in_peace_and_security": [
+      {
+        "status": "unofficial",
+        "text": "le territoire sous tutelle apporte sa contribution au maintien de la paix et de la sécurité internationales (Article 84)"
+      }
+    ],
+    "trusteeship_council_adopts_rules_of_procedure": [
+      {
+        "status": "unofficial",
+        "text": "le Conseil de tutelle adopte son règlement intérieur, dans lequel il fixe le mode de désignation de son Président (Article 90, paragraphe 1)"
+      }
+    ],
+    "trusteeship_council_composition_parity_satisfied": [
+      {
+        "status": "unofficial",
+        "text": "le nombre total des membres du Conseil de tutelle, dans cette composition, se partage également entre les Membres qui administrent des territoires sous tutelle et ceux qui n'en administrent pas (Article 86, paragraphe 1)"
+      }
+    ],
+    "trusteeship_council_decision_adopted": [
+      {
+        "status": "unofficial",
+        "text": "la décision du Conseil de tutelle est adoptée à la majorité des membres présents et votants (Article 89, paragraphe 2)"
+      }
+    ],
+    "trusteeship_council_representative": [
+      {
+        "status": "unofficial",
+        "text": "la personne représente le Membre au Conseil de tutelle (Article 86, paragraphe 2)"
+      }
+    ],
+    "trusteeship_council_rules_of_procedure_in_force": [
+      {
+        "status": "unofficial",
+        "text": "le règlement intérieur du Conseil de tutelle est en vigueur (Article 90)"
+      }
+    ],
+    "trusteeship_organ_competence_is_general_assembly": [
+      {
+        "status": "unofficial",
+        "text": "les fonctions de l'Organisation relatives aux accords de tutelle pour cette zone, non désignée comme stratégique, y compris l'approbation de leurs termes et leur modification ou amendement, sont exercées par l'Assemblée générale (Article 85, paragraphe 1)"
+      }
+    ],
+    "trusteeship_organ_competence_is_security_council": [
+      {
+        "status": "unofficial",
+        "text": "toutes les fonctions de l'Organisation relatives à cette zone stratégique, y compris l'approbation des termes des accords de tutelle et leur modification ou amendement, sont exercées par le Conseil de sécurité (Article 83, paragraphe 1)"
+      }
+    ],
+    "trusteeship_system_inapplicable": [
+      {
+        "status": "unofficial",
+        "text": "le régime de tutelle ne s'applique pas au territoire, celui-ci étant devenu Membre des Nations Unies (Article 78)"
+      }
+    ],
+    "undertaken_under_arrangement_of": [
+      {
+        "status": "unofficial",
+        "text": "l'État est membre de l'accord ou de l'organisme régional en vertu duquel l'activité est entreprise ou envisagée (Article 54)"
+      }
+    ],
+    "unpaid_apportioned_contribution": [
+      {
+        "status": "unofficial",
+        "text": "la contribution répartie du Membre pour l'exercice financier demeure impayée (Article 17, paragraphe 2)"
+      }
+    ],
+    "use_of_force": [
+      {
+        "status": "unofficial",
+        "text": "l'État recourt à la force ou à la menace de la force contre l'intégrité territoriale ou l'indépendance politique d'un autre État, ou de toute autre manière incompatible avec les buts des Nations Unies (Article 2, paragraphe 4)"
+      }
+    ],
+    "victim_declares_armed_attack": [
+      {
+        "status": "unofficial",
+        "text": "l'État victime déclare avoir subi une agression armée"
+      }
+    ],
+    "violates_article_2_paragraph_4": [
+      {
+        "status": "unofficial",
+        "text": "l'emploi de la force viole l'Article 2, paragraphe 4 (non écarté par la légitime défense licite au titre de l'Article 51)"
+      }
+    ],
+    "vote_forfeited_under_article_19": [
+      {
+        "status": "unofficial",
+        "text": "l'État est privé de son droit de vote à l'Assemblée générale au titre de l'Article 19 (arriérés atteignant ou dépassant le seuil de deux ans, aucune autorisation de l'Assemblée n'étant établie)"
+      }
+    ],
+    "vote_retained_despite_arrears": [
+      {
+        "status": "unofficial",
+        "text": "l'État conserve son droit de vote malgré l'atteinte du seuil de l'Article 19, par autorisation de l'Assemblée générale (Article 19, deuxième phrase)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "queryId": "ga-vote-approved",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#general_conference_convening_approved_by_general_assembly",
+    "args": [
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:amendment:conf-convene-ga" }
+    ]
+  }
+}

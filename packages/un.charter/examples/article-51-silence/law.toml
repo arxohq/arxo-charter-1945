@@ -1,0 +1,59 @@
+# Worked cases: article 51 silence and three disputed axes.
+[package]
+name = "examples.un.charter.article_51_silence"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:un-charter:article-51-silence"
+
+[dependencies]
+"un.charter" = "0.1.0"
+
+[[cases]]
+name = "UnreportedDuty"
+path = "cases/01-unreported.lawcase"
+
+[[cases]]
+name = "LowSilent"
+path = "cases/02-low-silent.lawcase"
+
+[[cases]]
+name = "LowPermits"
+path = "cases/03-low-permits.lawcase"
+
+[[cases]]
+name = "BeforeAttack"
+path = "cases/04-before-attack.lawcase"
+
+[[cases]]
+name = "CarolinePermits"
+path = "cases/05-caroline.lawcase"
+
+[[cases]]
+name = "NonStateSilent"
+path = "cases/06-nonstate-silent.lawcase"
+
+[[cases]]
+name = "NonStatePermits"
+path = "cases/07-nonstate-permits.lawcase"
+
+[[cases]]
+name = "Kosovo"
+path = "cases/08-kosovo.lawcase"
+
+[[cases]]
+name = "KosovoLow"
+path = "cases/09-kosovo-low.lawcase"
+
+[[cases]]
+name = "KosovoCaroline"
+path = "cases/10-kosovo-caroline.lawcase"
+
+[[cases]]
+name = "KosovoNonState"
+path = "cases/11-kosovo-nonstate.lawcase"
+
+[metadata]
+act = "un-charter-examples-article-51-silence"
+title = "Worked cases: where article 51 is silent, and the three disputed axes"
+jurisdiction = "International"
+instrument = "case-collection"

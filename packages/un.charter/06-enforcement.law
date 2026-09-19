@@ -1,0 +1,568 @@
+// Chapter VII: Action with Respect to Threats to the Peace, Breaches of the
+// Peace, and Acts of Aggression (Art. 39-51) — the only chapter of the
+// slice taken IN FULL.
+//
+// ARTICLE 39 — THE REFERENCE §47.3 JUDGMENT CHANNEL. The text gives NO
+// criterion at all by which a "threat to the peace", a "breach of the
+// peace", or an "act of aggression" qualifies itself — this is a
+// CONSTRUCTION of the Charter (the power is named directly: "the Security
+// Council shall determine"), not a formalization gap. The three categories
+// of Article 39 are functionally equivalent in the text as the trigger for
+// Chapter VII (all three open the way to Art. 40-42), so the channel is
+// ONE (`article_39_determination`), not three: splitting into separate
+// categories would change no conclusion within the declared slice and would
+// be a formalizer's invention.
+//
+// THE BRIDGE IS MANDATORY AND STRICT (the same canon as csto-treaty-1992,
+// rome-statute-1998, un.ilc.nuremberg_principles): a judgment head is by
+// itself invisible to the defeasible layer and to `duty`/`power` heads, so
+// a strict rule, `Article39Determined`, sits between the judgment and its
+// consumers with an ordinary literal in the head.
+//
+// CHAPTER VII AS A PROCESS (§160): `procedure ChapterVIISequence` —
+// determination (39) → provisional measures (40) → non-force measures (41)
+// → force (42). The escalation is NOT strictly linear: the text of Article
+// 42 itself allows a move to force bypassing Article 41, "should the
+// Security Council consider that measures provided for in Article 41 WOULD
+// BE inadequate" (not only "have proved to be") — hence the direct
+// transitions Determined→Force and Determined→NonForce bypassing
+// Provisional; the Charter does NOT require provisional measures as a
+// mandatory step (Kuwait-1991, Korea-1950 — both bypassed Article 40 within
+// the declared case slice).
+//
+// ARTICLES 43-47 — A STUB CHAPTER, THE PACKAGE'S MAIN FINDING. Agreements
+// for the provision of armed forces under Article 43 have NOT BEEN
+// CONCLUDED, not a single one, in the entire history of the Charter — a
+// well-known and undisputed fact of the Organization's history. Formalized
+// LITERALLY (the duty to provide forces is conditioned on a concluded
+// agreement, exactly as required by the text of Article 43, paragraph 1
+// itself: "on its call and IN ACCORDANCE WITH THE SPECIAL AGREEMENT"), and
+// no scenario of the package asserts such an agreement as concluded: the
+// duties of Articles 43 and 45, and with them a standing UN army along this
+// branch, are a DEAD CHAIN BY THE TEXT, not an omission of formalization.
+// The Military Staff Committee (Art. 46-47) is decorative for the SAME
+// reason: the plans for the application of force it is tasked with
+// preparing pertain to forces provided under Article 43 — which do not
+// exist. The Committee's composition (Art. 47, para. 2) is formalized as an
+// organizational fact WITHOUT an independent legal test; Art. 46 and
+// Art. 47 paras. 3-4 are SOURCE_ONLY (an internal order with no addressee
+// outside the organ). Real practice goes around this through
+// AUTHORIZATION of States ("all necessary measures") — a reading of Article
+// 42, not the letter: see below.
+//
+// ARTICLE 51 — THREE DISPUTED AXES, THE BASE STAYS SILENT WHERE THERE IS NO
+// CONSENSUS (§152, the method of `fiqh.taqlid`/`intl.csto.tashkent_treaty`:
+// interpretation only ADDS a rule to the theory, never overrides another):
+//   • THE THRESHOLD. The text does not define "armed attack" at all. A
+//     grave form of the use of force (`grave_armed_attack`) suffices under
+//     ANY reading — this is an undisputed core (Nicaragua, para. 191, both
+//     camps agree). The dispute is about MINOR incidents:
+//     `NicaraguaThresholdReading` (narrow, only grave forms — the
+//     International Court of Justice's own conclusion) versus
+//     `LowIntensityAttackReading` (broad — a border incident suffices too).
+//     Both are an ADDITION to an empty base (without an interpretation, no
+//     reading of a minor incident gives the right), not an override of each
+//     other.
+//   • ANTICIPATORY SELF-DEFENCE. The letter requires that an attack has
+//     ALREADY occurred ("if an armed attack occurs"); `CarolineStandardReading`
+//     ADDS the right in the face of an imminent threat meeting the Caroline
+//     standard (1837): a necessity that is "instant, overwhelming, leaving
+//     no choice of means, and no moment for deliberation".
+//   • NON-STATE ACTORS. The letter speaks of an attack against a Member,
+//     but the subject of the attack is NOT NAMED — under a literal reading
+//     the right reads only `armed_attack_by(attacker: State, …)`, and an
+//     attack by an armed group WITHOUT imputation to a harbouring State does
+//     not open self-defence. `NonStateActorSelfDefenceReading` (practice
+//     after Security Council resolutions 1368/1373, 2001) ADDS a bridge
+//     from an attack by a non-State armed group to the right of
+//     self-defence against the harbouring State.
+//
+// THE DUTY TO IMMEDIATELY REPORT TO THE SECURITY COUNCIL (Art. 51, second
+// sentence) IS A DUTY SEPARATE FROM THE RIGHT OF SELF-DEFENCE, famously
+// breached in practice (Kuwait-1991, Iran-Iraq — Article 51 reports were
+// filed late or not filed at all). It arises not from the existence of the
+// RIGHT but from the ACTUAL TAKING of measures: a scenario for a case where
+// the right exists, measures are taken, and the report is missing must give
+// VIOLATED, not silence.
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// --- Article 39: determination and bridge ------------------------------------
+
+pub external judgment relation article_39_determination(s: Situation) {
+    authority SecurityCouncil;
+    label en official "the Security Council determines the existence of any threat to the peace, breach of the peace, or act of aggression (Art. 39)";
+}
+
+pub relation threat_to_peace(s: Situation) kind institutional {
+    label en unofficial "a threat to the peace, breach of the peace, or act of aggression is established under Article 39";
+}
+
+@source(UNC_EN_ART39)
+rule Article39Determined(s: Situation) strict {
+    label en official "Article 39. The Security Council shall determine the existence of any threat to the peace, breach of the peace, or act of aggression…";
+    when article_39_determination(s);
+    then threat_to_peace(s);
+}
+
+// --- Chapter VII as a process (§160) -----------------------------------------
+
+procedure ChapterVIISequence(s: Situation) {
+    state Open initial {
+        label en unofficial "the situation is not qualified under Article 39";
+    }
+    state Determined {
+        label en unofficial "Article 39: a determination has been made";
+    }
+    state Provisional {
+        label en unofficial "Article 40: provisional measures have been called for";
+    }
+    state NonForce {
+        label en unofficial "Article 41: measures not involving armed force have been decided";
+    }
+    state Force terminal {
+        label en unofficial "Article 42: the use of force has been authorized";
+    }
+
+    transition Determine {
+        label en official "Article 39: determination";
+        from Open;
+        to Determined;
+        when threat_to_peace(s);
+    }
+    transition CallProvisionalMeasures {
+        label en official "Article 40: provisional measures";
+        from Determined;
+        to Provisional;
+        when provisional_measures_called(s);
+    }
+    transition DecideNonForceMeasures {
+        label en official "Article 41: measures not involving armed force";
+        from Provisional;
+        to NonForce;
+        when non_force_measures_decided(s);
+    }
+    // Article 41 is an optional step: Article 42 allows a move to force even
+    // WITHOUT provisional measures ("should the Security Council consider
+    // that measures provided for in Article 41 WOULD BE inadequate").
+    transition DecideNonForceMeasuresWithoutProvisional {
+        label en official "Article 41 without a preceding Article 40";
+        from Determined;
+        to NonForce;
+        when non_force_measures_decided(s);
+    }
+    transition AuthoriseForce {
+        label en official "Article 42: force after Article 41";
+        from NonForce;
+        to Force;
+        when force_authorized(s);
+    }
+    transition AuthoriseForceDirectly {
+        label en official "Article 42: force without a preceding Article 41 (Kuwait-1991, Korea-1950)";
+        from Determined;
+        to Force;
+        when force_authorized(s);
+    }
+}
+
+// --- Article 40: provisional measures ----------------------------------------
+
+pub relation security_council_calls_provisional_measures(s: Situation) kind empirical {
+    label en official "the Security Council calls upon the parties concerned for provisional measures (Art. 40)";
+}
+
+pub relation provisional_measures_called(s: Situation) kind institutional {
+    label en unofficial "provisional measures under Article 40 have been called for";
+}
+
+@source(UNC_EN_ART40)
+rule ProvisionalMeasuresRequireDetermination(s: Situation) strict {
+    label en official "Article 40. In order to prevent an aggravation of the situation, the Security Council may … call upon … provisional measures…";
+    when threat_to_peace(s) and security_council_calls_provisional_measures(s);
+    then provisional_measures_called(s);
+}
+
+// --- Article 41: measures not involving the use of armed force --------------
+
+pub relation security_council_decides_non_force_measures(s: Situation) kind empirical {
+    label en official "the Security Council decides what measures not involving the use of armed force are to be employed (Art. 41)";
+}
+
+pub relation non_force_measures_decided(s: Situation) kind institutional {
+    label en unofficial "measures not involving armed force under Article 41 have been decided";
+}
+
+@source(UNC_EN_ART41)
+rule NonForceMeasuresRequireDetermination(s: Situation) strict {
+    label en official "Article 41. The Security Council may decide what measures not involving the use of armed force are to be employed…";
+    when threat_to_peace(s) and security_council_decides_non_force_measures(s);
+    then non_force_measures_decided(s);
+}
+
+// --- Article 42: use of force ------------------------------------------------
+
+pub relation security_council_authorises_force(s: Situation) kind empirical {
+    label en official "the Security Council takes action, or authorizes action, by air, sea, or land forces (Art. 42)";
+}
+
+pub relation force_authorized(s: Situation) kind institutional {
+    label en unofficial "the use of force under Article 42 has been authorized";
+}
+
+@source(UNC_EN_ART42)
+rule ForceAuthorisedRequiresDetermination(s: Situation) strict {
+    label en official "Article 42. Should the Security Council consider that measures provided for in Article 41 would be inadequate…, it may take such action…";
+    when threat_to_peace(s) and security_council_authorises_force(s);
+    then force_authorized(s);
+}
+
+// --- Articles 43-47: a stub chapter (not a single agreement concluded) ------
+
+pub relation special_agreement_concluded(o: State) kind empirical {
+    label en official "a special agreement for the provision of armed forces has been concluded (Art. 43) — not once in the history of the Charter";
+}
+
+pub relation security_council_calls_for_forces(o: State, s: Situation) kind empirical {
+    label en official "the Security Council calls upon a Member to provide forces under its special agreement (Art. 43, para. 1)";
+}
+
+@source(UNC_EN_ART43)
+rule ArmedForcesDutyRequiresConcludedAgreement(o: State, s: Situation) strict {
+    label en official "Article 43. All Members … undertake to make available to the Security Council, on its call and IN ACCORDANCE WITH A SPECIAL AGREEMENT … armed forces…";
+    when member_state(o)
+        and force_authorized(s)
+        and security_council_calls_for_forces(o, s)
+        and special_agreement_concluded(o);
+    then duty ProvideArmedForcesUnderArticle43 {
+        bearer o;
+        achieve forces_made_available(o, s) during [@0001-01-01, infinity);
+    };
+}
+
+pub relation forces_made_available(o: State, s: Situation) kind empirical {
+    label en official "the Member has made armed forces available to the Security Council";
+}
+
+// Article 44: invitation to participate in decisions — the same
+// conditioning on Article 43, by the text ("in fulfilment of its
+// obligations under Article 43").
+pub relation invited_to_participate_in_decisions(o: State, s: Situation) kind empirical {
+    label en official "a Member not represented on the Council is invited to participate in decisions on the use of its contingents (Art. 44)";
+}
+
+pub relation entitled_to_participate_in_use_decisions(o: State, s: Situation) kind institutional {
+    label en unofficial "the right to participate in Security Council decisions on the use of this Member's contingents (Art. 44)";
+}
+
+@source(UNC_EN_ART44)
+rule ParticipationRightRequiresInvitation(o: State, s: Situation) strict {
+    label en official "Article 44. When the Security Council has decided to use force… the Security Council shall invite that Member… to participate in the decisions…";
+    when member_state(o)
+        and security_council_calls_for_forces(o, s)
+        and special_agreement_concluded(o)
+        and invited_to_participate_in_decisions(o, s);
+    then entitled_to_participate_in_use_decisions(o, s);
+}
+
+// Article 45: immediately available contingents — the same dead chain.
+pub relation immediate_readiness_contingent_held(o: State) kind empirical {
+    label en official "the Member holds national air-force contingents immediately available (Art. 45)";
+}
+
+pub relation immediate_readiness_duty_discharged(o: State) kind institutional {
+    label en unofficial "the immediate-readiness duty under Article 45 is discharged (conditioned on Article 43)";
+}
+
+@source(UNC_EN_ART45)
+rule ImmediateReadinessRequiresConcludedAgreement(o: State) strict {
+    label en official "Article 45. …Members shall hold immediately available … air-force contingents … within the limits laid down in the special agreement… referred to in Article 43…";
+    when member_state(o)
+        and special_agreement_concluded(o)
+        and immediate_readiness_contingent_held(o);
+    then immediate_readiness_duty_discharged(o);
+}
+
+// Article 47, paragraph 2: composition of the Military Staff Committee — an
+// organizational fact without an independent legal test (the plans it is
+// tasked with preparing under Art. 46-47 paras. 1, 3-4 pertain to forces
+// under Article 43 — which do not exist).
+pub relation chief_of_staff_of(p: State, s: State) kind empirical {
+    label en official "the representative is the Chief of Staff of this permanent member (Art. 47, para. 2)";
+}
+
+pub relation military_staff_committee_member(p: State) kind institutional {
+    label en unofficial "member of the Military Staff Committee (Art. 47, para. 2)";
+}
+
+@source(UNC_EN_ART47)
+rule MilitaryStaffCommitteeComposition(p: State, s: State) strict {
+    label en official "Article 47, paragraph 2. The Military Staff Committee shall consist of the Chiefs of Staff of the permanent members of the Security Council or their representatives.";
+    when permanent_member(s) and chief_of_staff_of(p, s);
+    then military_staff_committee_member(p);
+}
+
+// --- Article 48: carrying out Security Council decisions ---------------------
+
+pub relation security_council_designates_for_action(o: State, s: Situation) kind empirical {
+    label en official "the Security Council has determined that this Member takes action to carry out its decisions (Art. 48)";
+}
+
+pub relation bound_to_carry_out_enforcement_action(o: State, s: Situation) kind institutional {
+    label en unofficial "the Member is bound to take action to carry out Security Council decisions (Art. 48)";
+}
+
+// Splitting per §206: `or` in the body is a v1 lowering limitation
+// (LDC-E1305, outside the L0 slice), not a language boundary; the two
+// grounds of Article 48 (non-force measures under Article 41 or use of
+// force under Article 42) are two rules sharing one head.
+@source(UNC_EN_ART48)
+rule EnforcementActionBindingUnderNonForceMeasures(o: State, s: Situation) strict {
+    label en official "Article 48. The action required to carry out the decisions of the Security Council for the maintenance of international peace and security (Article 41)… shall be taken by all the Members … or by some of them, as the Security Council may determine.";
+    when member_state(o)
+        and non_force_measures_decided(s)
+        and security_council_designates_for_action(o, s);
+    then bound_to_carry_out_enforcement_action(o, s);
+}
+
+@source(UNC_EN_ART48)
+rule EnforcementActionBindingUnderForce(o: State, s: Situation) strict {
+    label en official "Article 48. The action required to carry out the decisions of the Security Council for the maintenance of international peace and security (Article 42)… shall be taken by all the Members … or by some of them, as the Security Council may determine.";
+    when member_state(o)
+        and force_authorized(s)
+        and security_council_designates_for_action(o, s);
+    then bound_to_carry_out_enforcement_action(o, s);
+}
+
+// --- Article 49: mutual assistance -------------------------------------------
+
+pub relation mutual_assistance_rendered(o: State, s: Situation) kind empirical {
+    label en official "the Member joins in affording mutual assistance in carrying out measures decided upon by the Security Council (Art. 49)";
+}
+
+// Splitting per §206 (same reasoning as Article 48 above).
+@source(UNC_EN_ART49)
+rule MutualAssistanceDutyUnderNonForceMeasures(o: State, s: Situation) strict {
+    label en official "Article 49 (Article 41). The Members shall join in affording mutual assistance in carrying out the measures decided upon by the Security Council.";
+    when member_state(o) and non_force_measures_decided(s);
+    then duty RenderMutualAssistanceUnderNonForceMeasures {
+        bearer o;
+        achieve mutual_assistance_rendered(o, s) during [@0001-01-01, infinity);
+    };
+}
+
+@source(UNC_EN_ART49)
+rule MutualAssistanceDutyUnderForce(o: State, s: Situation) strict {
+    label en official "Article 49 (Article 42). The Members shall join in affording mutual assistance in carrying out the measures decided upon by the Security Council.";
+    when member_state(o) and force_authorized(s);
+    then duty RenderMutualAssistanceUnderForce {
+        bearer o;
+        achieve mutual_assistance_rendered(o, s) during [@0001-01-01, infinity);
+    };
+}
+
+// --- Article 50: consultation on special economic problems ------------------
+
+pub relation faces_special_economic_problems(o: State, s: Situation) kind empirical {
+    label en official "the State is confronted with special economic problems arising from the carrying out of measures (Art. 50)";
+}
+
+pub relation entitled_to_consult_security_council(o: State, s: Situation) kind institutional {
+    label en unofficial "the right to consult the Security Council on the solution of special economic problems (Art. 50)";
+}
+
+// Splitting per §206 (same reasoning as Articles 48-49 above).
+@source(UNC_EN_ART50)
+rule ConsultationRightUnderNonForceMeasures(o: State, s: Situation) strict {
+    label en official "Article 50 (Article 41). If preventive or enforcement measures are taken by the Security Council…, any other State… shall have the right to consult the Security Council…";
+    when non_force_measures_decided(s)
+        and faces_special_economic_problems(o, s);
+    then entitled_to_consult_security_council(o, s);
+}
+
+@source(UNC_EN_ART50)
+rule ConsultationRightUnderForce(o: State, s: Situation) strict {
+    label en official "Article 50 (Article 42). If preventive or enforcement measures are taken by the Security Council…, any other State… shall have the right to consult the Security Council…";
+    when force_authorized(s)
+        and faces_special_economic_problems(o, s);
+    then entitled_to_consult_security_council(o, s);
+}
+
+// --- Article 51: self-defence ------------------------------------------------
+
+// The undisputed common part: a grave form of the use of force by a State
+// is an armed attack under any reading (Nicaragua, para. 191).
+pub relation grave_armed_attack(attacker: State, victim: State) kind empirical {
+    label en official "a grave form of the use of armed force by a State against a State (the undisputed core of the concept of an \"armed attack\")";
+}
+
+pub relation armed_attack_by(attacker: State, victim: State) kind institutional {
+    label en unofficial "an armed attack within the meaning of Article 51 is established";
+}
+
+@source(UNC_EN_ART51)
+rule GraveArmedAttackIsArmedAttack(attacker: State, victim: State) strict {
+    label en official "Article 51: a grave form of the use of force is an armed attack under any reading (Nicaragua, para. 191)";
+    when grave_armed_attack(attacker, victim);
+    then armed_attack_by(attacker, victim);
+}
+
+// Whether the right survives "until the Security Council has taken measures".
+pub relation security_council_has_acted_on(v: State) kind empirical {
+    label en official "the Security Council has taken measures necessary to maintain peace with respect to this situation (Art. 51, proviso)";
+}
+
+pub relation self_defence_permitted(defender: State, attacker: State) kind institutional {
+    label en unofficial "the right of self-defence under Article 51 is not removed";
+}
+
+@source(UNC_EN_ART51)
+presumption IndividualSelfDefencePermitted(victim: State, attacker: State) {
+    label en official "Article 51. Nothing in the present Charter shall impair the inherent right of individual … self-defence if an armed attack occurs against a Member of the United Nations, until the Security Council has taken measures…";
+    when member_state(victim) and armed_attack_by(attacker, victim);
+    presume self_defence_permitted(victim, attacker);
+    unless member_state(victim) and armed_attack_by(attacker, victim)
+        and security_council_has_acted_on(victim)
+    then not self_defence_permitted(victim, attacker);
+}
+
+// Collective self-defence: practice and Nicaragua (para. 199) require a
+// DECLARATION by the victim State that it has been attacked and its REQUEST
+// to an ally — the Charter's text does not spell this out, but without this
+// element there is nothing to distinguish the right from unilateral
+// intervention; included in the BASE, not in a disputed interpretation
+// (asserted as a checked requirement, not as an axis of disagreement).
+pub relation victim_declares_armed_attack(victim: State) kind empirical {
+    label en official "the victim State declares that it has suffered an armed attack";
+}
+
+pub relation requests_collective_self_defence(victim: State, ally: State) kind empirical {
+    label en official "the victim State requests collective self-defence from an ally";
+}
+
+@source(UNC_EN_ART51)
+presumption CollectiveSelfDefencePermitted(victim: State, ally: State, attacker: State) {
+    label en official "Article 51. …or collective self-defence… — with a declaration and request by the victim State (Nicaragua, para. 199)";
+    when member_state(victim) and armed_attack_by(attacker, victim)
+        and victim_declares_armed_attack(victim)
+        and requests_collective_self_defence(victim, ally);
+    presume self_defence_permitted(ally, attacker);
+    unless member_state(victim) and armed_attack_by(attacker, victim)
+        and victim_declares_armed_attack(victim)
+        and requests_collective_self_defence(victim, ally)
+        and security_council_has_acted_on(victim)
+    then not self_defence_permitted(ally, attacker);
+}
+
+// --- Article 51, reading 1: the THRESHOLD of an armed attack ----------------
+
+pub relation low_intensity_attack(attacker: State, victim: State) kind empirical {
+    label en official "a low-intensity use of force (a border incident)";
+}
+
+@source(UNC_EN_ART51)
+rule LowIntensityAttackIsArmedAttack(attacker: State, victim: State) strict {
+    label en official "Broad reading: a low-intensity border incident also suffices for the right of self-defence";
+    when low_intensity_attack(attacker, victim);
+    then armed_attack_by(attacker, victim);
+}
+
+pub interpretation LowIntensityAttackReading of UNC_EN_ART51 {
+    status disputed;
+    include LowIntensityAttackIsArmedAttack;
+    label en unofficial "Broad reading of the threshold: a low-intensity use of force is also an armed attack";
+}
+
+interpretation NicaraguaThresholdReading of UNC_EN_ART51 {
+    status disputed;
+    label en unofficial "Narrow reading of the threshold (Nicaragua, para. 191): only grave forms of the use of force are an armed attack; a border incident is not";
+}
+
+interpretation_group ArmedAttackThreshold {
+    alternatives NicaraguaThresholdReading, LowIntensityAttackReading;
+    selection any_of;
+}
+
+// --- Article 51, reading 2: ANTICIPATORY SELF-DEFENCE ------------------------
+
+pub relation imminent_attack_under_caroline_standard(attacker: State, victim: State) kind empirical {
+    label en official "an imminent threat of attack meeting the Caroline standard: a necessity that is instant, overwhelming, leaving no choice of means and no moment for deliberation";
+}
+
+pub relation anticipatory_self_defence_permitted(defender: State, attacker: State) kind institutional {
+    label en unofficial "the right of anticipatory self-defence under the Caroline standard";
+}
+
+// A STRICT rule, NOT a presumption: measured that `interpretation … {
+// include …; }` does NOT gate a `presumption` — it fires regardless of the
+// chosen reading (presumptions live outside this engine's §152 selection
+// mechanism), whereas a `strict rule` is gated correctly (as seen with
+// `LowIntensityAttackIsArmedAttack`/`NonStateActorAttackImputedToHarbouringState`
+// above — both strict and both gated). The Charter's own carve-out "until
+// the Security Council has taken measures" carries the same reason: it is
+// not repeated here as a separate condition — the proviso about Security
+// Council measures is carried by `self_defence_permitted` (the presumption),
+// not by this specific Caroline-standard head derived from it.
+@source(UNC_EN_ART51)
+rule CarolineStandardPermitsAnticipatorySelfDefence(victim: State, attacker: State) strict {
+    label en official "The Caroline standard (1837): the necessity of self-defence is instant, overwhelming, leaving no choice of means and no moment for deliberation — before an actual attack";
+    when member_state(victim)
+        and imminent_attack_under_caroline_standard(attacker, victim);
+    then anticipatory_self_defence_permitted(victim, attacker);
+}
+
+pub interpretation CarolineStandardReading of UNC_EN_ART51 {
+    status disputed;
+    include CarolineStandardPermitsAnticipatorySelfDefence;
+    label en unofficial "Anticipatory self-defence: the right arises already at an imminent threat under the Caroline standard, before an actual attack — against the letter's \"if [an attack] occurs\"";
+}
+
+// --- Article 51, reading 3: NON-STATE ACTORS ---------------------------------
+
+pub relation armed_attack_by_non_state_actor(group: NonStateActor, victim: State) kind empirical {
+    label en official "an armed attack by a non-State armed group against a State";
+}
+
+pub relation harbors_or_fails_to_prevent(harboring: State, group: NonStateActor) kind empirical {
+    label en official "the State harbours the group or fails to suppress its actions from its territory (Security Council resolutions 1368 (2001), 1373 (2001))";
+}
+
+@source(UNC_EN_ART51)
+rule NonStateActorAttackImputedToHarbouringState(
+    group: NonStateActor,
+    victim: State,
+    harboring: State,
+) strict {
+    label en official "Practice after 11.09.2001 (Security Council resolutions 1368, 1373): an attack by a non-State armed group opens self-defence against the harbouring State";
+    when armed_attack_by_non_state_actor(group, victim)
+        and harbors_or_fails_to_prevent(harboring, group);
+    then armed_attack_by(harboring, victim);
+}
+
+pub interpretation NonStateActorSelfDefenceReading of UNC_EN_ART51 {
+    status disputed;
+    include NonStateActorAttackImputedToHarbouringState;
+    label en unofficial "Self-defence against non-State actors: an attack by an armed group, imputed to a harbouring State, is also an armed attack — against the letter's \"attack against a Member\", where the subject of the attack is not named";
+}
+
+// --- Article 51, second sentence: immediate report to the Security Council --
+
+pub relation self_defence_measures_taken(defender: State, attacker: State) kind empirical {
+    label en official "the Member has taken measures in the exercise of the right of self-defence (Art. 51, second sentence)";
+}
+
+pub relation self_defence_measures_reported(defender: State) kind empirical {
+    label en official "measures taken in the exercise of self-defence have been reported to the Security Council";
+}
+
+@source(UNC_EN_ART51)
+rule ReportSelfDefenceMeasuresDuty(defender: State, attacker: State) strict {
+    label en official "Article 51, second sentence. Measures taken by Members in the exercise of this right of self-defence shall be immediately reported to the Security Council…";
+    when self_defence_permitted(defender, attacker)
+        and self_defence_measures_taken(defender, attacker);
+    then duty ReportSelfDefenceMeasures {
+        bearer defender;
+        achieve self_defence_measures_reported(defender) during [@0001-01-01, infinity);
+    };
+}

@@ -1,0 +1,47 @@
+{
+  "dependencyEdges": [
+    {
+      "features": [],
+      "from": "examples.un.charter.article_51_silence",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "un.charter"
+    },
+    {
+      "features": [],
+      "from": "un.charter",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "doctrine.iura_humana"
+    }
+  ],
+  "languageSemantics": "law.core/0.2.0",
+  "lockVersion": "0.1",
+  "packages": [
+    {
+      "contentHash": "sha256:4c18155b12e963f807655b27c01d53b2bbad207fa089a481d69fbe9e3f80ef00",
+      "features": [
+        "core-executable"
+      ],
+      "name": "doctrine.iura_humana",
+      "namespace": "urn:doctrine:clir:iura-humana",
+      "version": "0.1.0"
+    },
+    {
+      "contentHash": "sha256:b66b04b5243c7d5e2540f23da56440a993cec1c484821b697a09c79d3589b948",
+      "features": [
+        "core-executable"
+      ],
+      "name": "un.charter",
+      "namespace": "urn:un:corpus:clir:charter",
+      "version": "0.1.0"
+    }
+  ],
+  "resolutionHash": "sha256:60a5de05d01e9908effd5af7bbc238ce026767f1322e685c4518aa1226a1c44d",
+  "root": {
+    "contentHash": "sha256:2e2cd80d65bc5a8622ad326b3a8223f598567e84022d934c331cc8334cf1a06e",
+    "name": "examples.un.charter.article_51_silence",
+    "namespace": "urn:law:examples:un-charter:article-51-silence",
+    "version": "0.1.0"
+  }
+}

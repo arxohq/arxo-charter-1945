@@ -1,0 +1,47 @@
+// МОСТОВОЙ СЛОВАРЬ ЧЕЛОВЕЧЕСКИХ ПРАВ — одна форма для Всеобщей декларации,
+// Европейской конвенции и Устава ООН (DECISION-0326).
+//
+// Словарь нейтрален: он не знает ни декларации, ни договора. Предметные
+// пакеты наполняют pub-головы модулями-переводами. Один казус получает
+// три ответа с тремя якорями.
+//
+// Типы через границу пакета алиасируются (errata E-0098): предметный пакет
+// пишет `type Homo = doctrine.iura_humana::Homo`. Наследование
+// `entity X : чужой::Y` по-прежнему отвергается парсером.
+//
+// Хартия основных прав ЕС в первую волну не входит: у владельца ноль pub.
+
+language "law.core" version "0.2";
+package doctrine.iura_humana version "0.1.0";
+namespace "urn:doctrine:clir:iura-humana";
+
+source IURA_HUMANA_MODEL {
+    kind doctrine;
+    jurisdiction "none";
+    number "IURA-HUMANA-MODEL-1";
+    label ru unofficial "Мостовой словарь человеческих прав (iura humana)";
+}
+
+edition IURA_HUMANA_MODEL_ABSTRACT of IURA_HUMANA_MODEL {
+    language ru;
+    officiality unofficial;
+    materialization_status ABSTRACT_ONLY;
+    applicability timeless;
+}
+
+pub entity Homo { label ru unofficial "человек как носитель заявленного права"; }
+pub entity Actus { label ru unofficial "оспариваемый акт государства, группы или лица"; }
+pub entity Civitas { label ru unofficial "государство или иная политическая общность"; }
+
+pub relation ius_declaratum(h: Homo, a: Actus) kind institutional {
+    label ru unofficial "право человека по поводу этого акта заявлено инструментом";
+}
+pub relation limitatio_admissa(h: Homo, a: Actus) kind institutional {
+    label ru unofficial "ограничение права человека по поводу акта допущено инструментом";
+}
+pub relation remedium_patet(h: Homo, a: Actus) kind institutional {
+    label ru unofficial "средство защиты по поводу акта доступно человеку";
+}
+pub relation quaestio_organo_tradita(a: Actus, c: Civitas) kind institutional {
+    label ru unofficial "вопрос об акте передан органу, названному инструментом";
+}

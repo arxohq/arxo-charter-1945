@@ -1,0 +1,24 @@
+# Мостовой словарь человеческих прав: нейтральные головы для ВДПЧ, ЕКПЧ и Устава ООН.
+[package]
+name = "doctrine.iura_humana"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:doctrine:clir:iura-humana"
+
+[metadata]
+act = "doctrine-iura-humana"
+title = "Iura humana: bridge vocabulary of a claimed right, its permissible limitation, the remedy and the referral to an organ"
+primarySource = "IURA_HUMANA_MODEL"
+jurisdiction = "none"
+instrument = "doctrine"
+sourceFidelity = "abstract_only"
+legalStatus = "doctrine"
+issuer = "law-dsl corpus (сравнительная цепь правозащитных инструментов, 18.09.2026)"
+verifiedAgainstSource = false
+
+[[tests]]
+family = "doctrine.iura_humana#authored"
+regression = false
+suites = ["tests/01-dictionary-silent.lawtest"]
+world = ["doctrine.iura_humana"]
+

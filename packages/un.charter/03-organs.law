@@ -1,0 +1,46 @@
+// Chapter III: Organs — Article 7 (principal and subsidiary organs), Article 8
+// (equal eligibility of men and women).
+//
+// ARTICLE 7 remains SOURCE_ONLY: an enumeration and an establishment, not a
+// deontic addressed to a party. See `articles.json`.
+//
+// ARTICLE 8 — the entity gap is closed. `Person` and `Organ` (package.law)
+// let the prohibition address the Organization itself: it shall place no
+// restrictions on the eligibility of men and women to participate in any
+// capacity and under conditions of equality in its principal and subsidiary
+// organs. A case that reports a sex-based eligibility restriction yields
+// `eligibility_restriction_violates_article_8`; the prohibition's action is
+// that same restriction. No evaluation of "merit" is invented — only the
+// Charter's negative duty.
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+pub relation eligibility_restricted_on_account_of_sex(p: Person, o: Organ) kind empirical {
+    label en official "a restriction has been placed on the person's eligibility to participate in the organ on account of sex (Art. 8)";
+}
+
+pub relation eligibility_restriction_violates_article_8(p: Person, o: Organ) kind institutional {
+    label en unofficial "the restriction on eligibility on account of sex violates Article 8";
+}
+
+@source(UNC_EN_ART8)
+rule EligibilityRestrictionOnAccountOfSexViolatesArticle8(p: Person, o: Organ) strict {
+    label en official "Article 8. The United Nations shall place no restrictions on the eligibility of men and women to participate in any capacity and under conditions of equality in its principal and subsidiary organs.";
+    when is_united_nations_organ(o)
+        and eligibility_restricted_on_account_of_sex(p, o);
+    then eligibility_restriction_violates_article_8(p, o);
+}
+
+@source(UNC_EN_ART8)
+rule DutyNotToRestrictEligibilityOnAccountOfSex(p: Person, o: Organ, x: Sex) strict {
+    label en official "Article 8. The United Nations shall place no restrictions on the eligibility of men and women to participate in any capacity and under conditions of equality in its principal and subsidiary organs.";
+    when is_united_nations_organ(o)
+        and person_sex(p, x);
+    then prohibition PlaceNoSexBasedEligibilityRestriction {
+        bearer UnitedNations;
+        action eligibility_restricted_on_account_of_sex(p, o);
+        window [@0001-01-01, infinity);
+    };
+}

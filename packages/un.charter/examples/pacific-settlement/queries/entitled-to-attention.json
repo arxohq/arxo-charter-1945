@@ -1,0 +1,13 @@
+{
+  "queryId": "entitled-to-attention",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#entitled_to_bring_dispute_to_attention",
+    "args": [
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:pacific-settlement:state-a" },
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:pacific-settlement:dispute" }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "format": "law.package-info/0.1",
+  "purpose": "Execution of the Charter of the United Nations (San Francisco, 26 June 1945, current edition as amended in 1965, 1968 and 1973), article by article from 1 to 111: purposes and principles, membership, the organs, the General Assembly, the Security Council and its voting, pacific settlement of disputes, action with respect to threats to the peace, regional arrangements, international economic and social co-operation, non-self-governing territories, the trusteeship system, the International Court of Justice, the Secretariat, and the final provisions on amendment and ratification. Every article is either a rule of the model or a declared boundary with its reason (sources/charter/articles.json). The worked case collections in examples/ show the Council's voting under the letter of Article 27(3) and under later practice, membership, what binds a Member, amendment, Chapter VI and Article 51.",
+  "limitations": [
+    "FINDINGS THE CHARTER GIVES TO AN ORGAN ARE NOT MADE BY THE MODEL. The determination of a threat to the peace (Article 39), whether a dispute endangers peace (Articles 34 and 37(2)), whether a State is peace-loving (Article 4) or has persistently violated the Principles (Article 6), and the other findings named by the text go through the §47.3 judgment channel with the Security Council, the General Assembly or the Secretary-General as the organ. Without the organ's finding the answer is \"left to the organ\", not \"no\".",
+    "THE LETTER AND LATER PRACTICE ARE KEPT APART. The five permanent members are the seats as Article 23 names them. The practice of abstention (Article 27(3)) and the continuity of the seats of the Russian Federation and the People's Republic of China are interpretations that a case selects; an interpretation adds a path to the answer and does not repeal the letter.",
+    "THE TEXT IS SILENT WHERE IT IS SILENT. The model does not define the threshold of an \"armed attack\" (Article 51) beyond the text; doctrinal readings on low-intensity attacks, anticipatory self-defence and non-State actors are interpretations a case selects. There is no rule of humanitarian intervention.",
+    "ARTICLES 43 TO 47 ARE MODELLED LITERALLY: the duty to make armed forces available arises only under a concluded special agreement, and no such agreement has ever been concluded. The model does not treat authorisations under Article 42 as agreements under Article 43.",
+    "THE PINNED TEXT IS AN UNOFFICIAL COPY: the English text as republished by the United Nations Secretariat, not the depositary original held by the Government of the United States (Article 111). The Russian text in sources/charter/ru.txt is kept as evidence that the five texts are equally authentic, not as a second pinned publication.",
+    "THE MODEL IS NOT AN OPINION ON ANY CURRENT SITUATION. Every case in the repository is illustrative; the states in examples/ are invented, except the permanent members named by Article 23.",
+    "THIS REPOSITORY IS NOT AFFILIATED WITH THE UNITED NATIONS."
+  ],
+  "examples": [
+    "tests/01-use-of-force-violates-article-2-4.lawtest",
+    "tests/03-kuwait-1991-force-authorised.lawtest",
+    "tests/05-article-108-amendment-in-force.lawtest"
+  ],
+  "license": "The model, the scenarios and the case collections are Apache-2.0 (see LICENSE). THE PINNED TEXT OF THE CHARTER is the English text as republished by the United Nations Secretariat on un.org; it is reproduced with acknowledgement of the source, and the United Nations terms of use apply to it. The repository is not affiliated with the United Nations and uses no emblem of the Organization.",
+  "maintainer": "Rifat Dzhumagulov (hi@arxo.io)",
+  "repository": "https://github.com/arxohq/arxo-charter-1945"
+}

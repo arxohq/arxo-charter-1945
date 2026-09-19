@@ -1,0 +1,450 @@
+// Chapter V: the Security Council — the WHOLE chapter, Articles 23-32
+// (COMPOSITION, FUNCTIONS AND POWERS, VOTING, PROCEDURE), stage E3
+// (18.09.2026) closing the PROCEDURE gap (Art. 28-32) left open by the
+// original slice.
+//
+// ARTICLES 28-30 ARE EXECUTABLE institutional facts: continuous function,
+// subsidiary organs, and the Council's own rules of procedure. They remain
+// organ-internal (no duty on a Member State). See `articles.json` for the
+// still-declared Articles 24 and 26.
+//
+// ARTICLES 31-32 — PARTICIPATION WITHOUT VOTE, TWO DIFFERENT TESTS. Article
+// 31 is a PERMISSION of the non-member-of-the-Council State ("may
+// participate"), gated by a DECISION-0194 channel-1 judgment named by the
+// text itself ("whenever the latter CONSIDERS that the interests of that
+// Member are specially affected") — `authority SecurityCouncil`, the same
+// construction as Article 39's `article_39_determination`. Article 32 is a
+// MANDATORY institutional entitlement ("shall be invited"), gated instead by
+// a plain FACTUAL test — being a party to a dispute under Council
+// consideration is something a case reports, not an assessment the Council
+// makes (the same class as Article 27, paragraph 3's
+// `party_to_dispute_under_chapter_six`, `kind empirical`, not a judgment
+// channel) — for TWO alternative subject classes sharing one conclusion
+// (a UN Member not on the Council, or a state outside the UN altogether),
+// the same "two bases, one shared head" shape stage E2 used for Articles
+// 10/11/14. Article 32's second sentence ("the Security Council shall lay
+// down such conditions as it deems just for the participation of a
+// [non-Member] state") sets no further test any other rule of the slice
+// reads — the Council's own discretion over WHICH conditions to impose, not
+// a gate on whether participation is invited at all; formalizing it would
+// add a judgment-channel bridge to nowhere, the trap the prompt itself warns
+// against (cf. Article 9's declared five-representative cap) — left as
+// unformalized residue inside an otherwise EXECUTABLE article, the same
+// treatment Article 4 gives the 1948 ICJ advisory opinion boundary.
+//
+// A NEW STATE OF AFFAIRS THIS PACKAGE HAS NOT MODELLED BEFORE: "NOT A
+// MEMBER" AS A POSITIVE CASE FACT, NOT AN ABSENCE. `member_state` is used
+// throughout the package as a background case premise a scenario asserts
+// only for the States it cares about (Article 4's own header comment above
+// makes the same point about `security_council_recommendation_blocked`
+// versus a bare negation). A case that never bothers to assert
+// `member_state(s)` for some incidental third State does NOT thereby
+// establish that the State is outside the UN — the absence of an assertion
+// is not its denial (§6.6 of the multisession prompt; Art. 2, para. 6, 35,
+// para. 2, 93, para. 2 read the same way once formalized). Article 32's "any
+// state which is not a Member of the United Nations" and Article 31/32's
+// "not a member of the Security Council" are therefore each given their OWN
+// positive `kind empirical` relation a scenario must assert directly
+// (`non_member_state`, `non_security_council_member_state`), never
+// `not member_state(s)` nor `not_known(member_state(s))`.
+//
+// ARTICLE 23 — LETTER AGAINST PRACTICE, FIRST AXIS. The five permanent
+// members are named IN THE PACKAGE (package.law) BY THE NAMES OF THE
+// ARTICLE ITSELF: `RepublicOfChina`, `FranceState`, `SovietUnion`,
+// `UnitedKingdomState`, `UnitedStatesState`. Russia's continuity (as
+// successor to the USSR, the Russian permanent representative's letter of
+// 24.12.1991, accepted without objection) and the transfer of the PRC's
+// seat (GA resolution 2758 (XXVI), 25.10.1971) are both UNDISPUTED
+// HISTORICAL FACTS, asserted BELOW as package facts (not case facts: no
+// scenario should be able to deny them). What IS disputed is whether the
+// LETTER of Article 23 carries permanent-member status over to them WITHOUT
+// an Article 108 amendment: the text does not say so, and this is the only
+// thing placed into `interpretation`.
+//
+// ARTICLE 27 — LETTER AGAINST PRACTICE, SECOND AXIS, MORE SUBSTANTIAL THAN
+// THE FIRST. "The concurring votes of ALL the permanent members" literally
+// means a vote "for" from every permanent member that votes. Abstention is
+// NOT a vote "for", and by the letter blocks a decision just as a vote
+// "against" does (`NonProceduralDecisionBlockedByPermanentMemberLetter` —
+// the BASE, always in effect). Practice, blessed by the International Court
+// of Justice (Namibia, 1971, advisory opinion, para. 22: "a proposal … has
+// been consistently and uniformly interpreted as not constituting a bar to
+// the adoption of resolutions by the Security Council"), does not treat
+// abstention as blocking — `interpretation AbstentionDoesNotBlockReading`
+// ADDS a rule with the SAME conclusion `decision_adopted(d)`, without
+// overriding the base `decision_blocked_by_permanent_member(d)`: on one case
+// with a permanent member's abstention, both predicates hold AT ONCE — that
+// is precisely the divergence between letter and practice, not a bug in the
+// package.
+//
+// A PROCEDURAL MATTER — UNDISPUTED. The "nine votes" threshold (with no
+// requirement of concurring permanent members) reads unambiguously from the
+// text and carries no options: `ProceduralDecisionAdopted` is the only rule
+// for `procedural_matter`, outside any interpretation.
+//
+// ARTICLE 27(3), SECOND SENTENCE — MANDATORY ABSTENTION OF A PARTY TO A
+// DISPUTE, LIVING LETTER / DEAD PRACTICE. Modelled as a `duty`: a party to a
+// dispute under Chapter VI (or under Art. 52, para. 3) MUST abstain. Not
+// once in the Council's history has a permanent member voluntarily
+// abstained while being a party to a dispute — the divergence is shown by a
+// VIOLATED scenario, not by silence (the same class as KZ-ELECT-20 — a
+// failing sentinel, not an exception).
+//
+// STAGE E5 (18.09.2026) ADDS A SECOND PRODUCER PATH TO
+// `party_to_dispute_under_chapter_six`, PER ARTICLE 52(3)'S OWN TEXTUAL
+// CROSS-REFERENCE. Until this stage, `party_to_dispute_under_chapter_six`
+// had no producer rule at all — a case had to assert it directly. E3 and E4
+// both flagged this predicate's Decision-typed key and Chapter VI's own
+// Dispute-typed `party_to_dispute` (08-pacific-settlement.law) as two
+// separate relations on two separate entity types, with no rule mapping one
+// to the other; closing that gap for the SECOND limb of Article 27(3)'s own
+// condition ("in decisions under Chapter VI, and under PARAGRAPH 3 OF
+// ARTICLE 52") is this stage's job. `RegionalDisputePartyMustAbstainViaArticle52`
+// below reads a NEW empirical bridge fact, `security_council_decision_under_article_52_paragraph_3`
+// (this Decision is one the Council takes in encouraging, or by reference
+// under, Article 52, paragraph 3's regional-settlement machinery, concerning
+// this Dispute) together with `local_dispute` and `party_to_dispute`
+// (09-regional-arrangements.law, 08-pacific-settlement.law) to derive
+// `party_to_dispute_under_chapter_six(d, s)` — a SECOND path to the SAME
+// premise `DisputantMustAbstainDuty` already reads, added WITHOUT touching
+// that rule or its own bare-case-fact path at all (per the multisession
+// prompt's rule #1: letter in the base, added paths only). The Chapter VI
+// half of the SAME cross-reference (a dispute referred to the Council under
+// Article 37, 08-pacific-settlement.law) remains, deliberately, a bridge
+// NOT built at this stage: `dispute_referred_to_security_council` is keyed
+// to `(Dispute, State)`, not to a specific `Decision`, and inventing a
+// Decision-level referent for it would be the same "predicate nobody reads"
+// over-reach this package's own convention (Article 9, Article 32's second
+// sentence, Article 52, paragraph 1) already avoids elsewhere — left for a
+// later stage if a scenario ever needs it.
+//
+// ARTICLE 25 — POWER OVER MEMBERS, UNLIKE ASSEMBLY RECOMMENDATIONS. A
+// Security Council decision produces a DUTY of the addressee to comply;
+// Assembly decisions under Article 18 (`important_question_adopted`,
+// `ordinary_question_adopted`, 04-general-assembly.law) produce no such duty
+// under any rule of the package — this is a CONTRAST, not a gap: within the
+// declared slice, the Assembly has no power to bind Members by decision
+// except on budgetary matters (Art. 17, outside the slice) and
+// organizational questions about itself. The absence of a rule is this
+// language's way of showing the contrast: if the power existed, there would
+// be a separate rule for it, as there is here for Article 25.
+//
+// ARTICLES 24 AND 26 ARE DECLARATIVE, SOURCE_ONLY. Art. 24 is a general
+// delegation of responsibility (the concrete powers are named by Articles
+// 41-42, carried by 06-enforcement.law); Art. 26 assigns the Council the
+// task of formulating plans for the regulation of armaments "to be
+// submitted to the Members". Neither contains a deontic addressed to a
+// party, a condition, or a quantity — checked against the text
+// (`check_source_pinning.py` rejects an unjustified boundary on these three
+// grounds); both remain SOURCE_ONLY until a case shows the norm this
+// summary actually hides.
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// --- Article 23: continuity and transfer of the seat -------------------------
+
+pub relation continuity_of(successor: State, predecessor: State) kind empirical {
+    label en official "the State continues the international legal personality of its predecessor (continuity)";
+}
+
+@source(UNC_EN_ART23)
+assert continuity_of(RussianFederation, SovietUnion);
+
+pub relation seat_transferred_by(successor: State, predecessor: State) kind empirical {
+    label en official "the seat is transferred to the successor by a General Assembly decision (resolution 2758 (XXVI), 25.10.1971)";
+}
+
+@source(UNC_EN_ART23)
+assert seat_transferred_by(PeoplesRepublicOfChina, RepublicOfChina);
+
+// A SEPARATE head, not `permanent_member`. A rule of the form
+// "permanent_member ← … ← permanent_member(predecessor)" is a predicate
+// dependency cycle through ITSELF (LDC-E4102, §110/§191): the compiler sees
+// the edge at the level of the predicate's name, not a specific argument
+// substitution, and `predecessor ≠ successor` does not lift the cycle.
+// `permanent_member_seat_held_by` is the broader notion of "who votes as a
+// permanent member in practice" (Article 27 reads IT, not the bare letter
+// of `permanent_member`), and it NEVER appears in the body of its own rule.
+pub relation permanent_member_seat_held_by(s: State) kind institutional {
+    label en unofficial "the State holds a permanent seat for voting purposes (letter of Art. 23, or continuity/seat transfer)";
+}
+
+@source(UNC_EN_ART23)
+rule LiteralPermanentMemberHoldsSeat(s: State) strict {
+    label en official "The letter of Article 23: the five named States hold a permanent seat";
+    when permanent_member(s);
+    then permanent_member_seat_held_by(s);
+}
+
+@source(UNC_EN_ART23)
+rule ContinuityPreservesPermanentSeat(successor: State, predecessor: State) strict {
+    label en official "The continuity reading: the continuing State occupies the permanent seat without an Article 108 amendment";
+    when continuity_of(successor, predecessor) and permanent_member(predecessor);
+    then permanent_member_seat_held_by(successor);
+}
+
+pub interpretation RussianContinuityReading of UNC_EN_ART23 {
+    status disputed;
+    include ContinuityPreservesPermanentSeat;
+    label en unofficial "Russia's continuity: the Russian Federation continues the USSR as a permanent member without an Article 108 amendment (accepted without objection, 1991-1992)";
+}
+
+@source(UNC_EN_ART23)
+rule SeatTransferPreservesPermanentSeat(successor: State, predecessor: State) strict {
+    label en official "The seat-transfer reading: a State to which the seat is transferred by an Assembly resolution occupies it without an Article 108 amendment";
+    when seat_transferred_by(successor, predecessor) and permanent_member(predecessor);
+    then permanent_member_seat_held_by(successor);
+}
+
+pub interpretation ChinaSeatTransferReading of UNC_EN_ART23 {
+    status disputed;
+    include SeatTransferPreservesPermanentSeat;
+    label en unofficial "The PRC seat transfer: GA resolution 2758 (XXVI) transfers the permanent seat from the Republic of China to the People's Republic of China without an Article 108 amendment";
+}
+
+// --- Article 27, paragraph 2: a procedural matter — undisputed ---------------
+
+pub relation decision_adopted(d: Decision) kind institutional {
+    label en unofficial "the Security Council decision is adopted";
+}
+
+@source(UNC_EN_ART27)
+rule ProceduralDecisionAdopted(d: Decision) strict {
+    label en official "Article 27, paragraph 2. Decisions of the Security Council on procedural matters shall be made by an affirmative vote of nine members.";
+    when procedural_matter(d)
+        and (count distinct s: State where casts_vote_for(d, s)) >= 9;
+    then decision_adopted(d);
+}
+
+// --- Article 27, paragraph 3: a non-procedural matter — THE LETTER ----------
+
+pub relation is_non_procedural_matter(d: Decision) kind empirical {
+    label en official "the decision is not on a procedural matter (Art. 27, para. 3)";
+}
+
+@source(UNC_EN_ART27)
+rule NonProceduralDecisionAdoptedLetter(d: Decision) strict {
+    label en official "Article 27, paragraph 3 (the letter). …including the concurring votes of ALL the permanent members of the Council — a permanent member's abstention is not a concurring vote.";
+    when is_non_procedural_matter(d)
+        and (count distinct s: State where casts_vote_for(d, s)) >= 9
+        and (count distinct s: State where monotone(permanent_member_seat_held_by(s))
+                                       and casts_vote_against(d, s))
+            + (count distinct s: State where monotone(permanent_member_seat_held_by(s))
+                                         and abstains(d, s)) < 1;
+    then decision_adopted(d);
+}
+
+pub relation decision_blocked_by_permanent_member(d: Decision) kind institutional {
+    label en unofficial "the decision is blocked by a permanent member — by a vote against, or (by the letter) by abstention (Art. 27, para. 3)";
+}
+
+@source(UNC_EN_ART27)
+rule NonProceduralDecisionBlockedByPermanentMemberLetter(d: Decision) strict {
+    label en official "Article 27, paragraph 3 (the letter, negative side). A permanent member that votes against or abstains does not give a concurring vote.";
+    when is_non_procedural_matter(d)
+        and (count distinct s: State where monotone(permanent_member_seat_held_by(s))
+                                       and casts_vote_against(d, s))
+            + (count distinct s: State where monotone(permanent_member_seat_held_by(s))
+                                         and abstains(d, s)) >= 1;
+    then decision_blocked_by_permanent_member(d);
+}
+
+// --- Article 27, paragraph 3: the practice reading (Namibia, 1971) ----------
+
+@source(UNC_EN_ART27)
+rule NonProceduralDecisionAdoptedDespiteAbstention(d: Decision) strict {
+    label en official "Council practice (since 1946), blessed by the International Court of Justice (Namibia advisory opinion, 1971, para. 22): a permanent member's abstention does not block the decision.";
+    when is_non_procedural_matter(d)
+        and (count distinct s: State where casts_vote_for(d, s)) >= 9
+        and (count distinct s: State where monotone(permanent_member_seat_held_by(s))
+                                       and casts_vote_against(d, s)) < 1;
+    then decision_adopted(d);
+}
+
+pub interpretation AbstentionDoesNotBlockReading of UNC_EN_ART27 {
+    status disputed;
+    include NonProceduralDecisionAdoptedDespiteAbstention;
+    label en unofficial "A permanent member's abstention is not a veto: only a vote AGAINST blocks a non-procedural decision (practice since 1946, Namibia 1971)";
+}
+
+// --- Article 27, paragraph 3, second sentence: mandatory abstention of a party to a dispute
+
+pub relation party_to_dispute_under_chapter_six(d: Decision, s: State) kind empirical {
+    label en official "the State is a party to a dispute under consideration under Chapter VI or under Article 52, paragraph 3 (Art. 27, para. 3, second sentence)";
+}
+
+@source(UNC_EN_ART27)
+rule DisputantMustAbstainDuty(d: Decision, s: State) strict {
+    label en official "Article 27, paragraph 3, second sentence. …a party to a dispute shall abstain from voting in decisions made under Chapter VI, and under paragraph 3 of Article 52.";
+    when is_non_procedural_matter(d)
+        and permanent_member_seat_held_by(s)
+        and party_to_dispute_under_chapter_six(d, s);
+    then duty AbstainAsDisputant {
+        bearer s;
+        achieve abstains(d, s) during [@0001-01-01, infinity);
+    };
+}
+
+// --- Article 27(3)/Article 52(3) bridge (stage E5, additive) ---------------
+
+pub relation security_council_decision_under_article_52_paragraph_3(d: Decision, disp: Dispute) kind empirical {
+    label en official "the Security Council decision is one taken in encouraging, or by reference under, the development of pacific settlement of the local dispute under Article 52, paragraph 3, concerning this dispute";
+}
+
+@source(UNC_EN_ART52)
+rule RegionalDisputePartyMustAbstainViaArticle52(d: Decision, s: State, disp: Dispute) strict {
+    label en official "Article 27, paragraph 3, cross-reference to paragraph 3 of Article 52. A State party to a local dispute under Article 52, paragraph 3's regional-settlement machinery is a party to a dispute for the purposes of Article 27, paragraph 3's mandatory-abstention duty.";
+    when security_council_decision_under_article_52_paragraph_3(d, disp)
+        and local_dispute(disp)
+        and party_to_dispute(disp, s);
+    then party_to_dispute_under_chapter_six(d, s);
+}
+
+// --- Article 25: binding force of Security Council decisions ----------------
+
+pub relation complied_with(d: Decision, s: State) kind empirical {
+    label en official "the Member has complied with the Security Council decision (Art. 25)";
+}
+
+@source(UNC_EN_ART25)
+rule SecurityCouncilDecisionBinding(d: Decision, s: State) strict {
+    label en official "Article 25. The Members of the United Nations agree to accept and carry out the decisions of the Security Council…";
+    when decision_adopted(d) and directed_at(d, s) and member_state(s);
+    then duty ComplyWithSecurityCouncilDecision {
+        bearer s;
+        achieve complied_with(d, s) during [@0001-01-01, infinity);
+    };
+}
+
+// --- Articles 31-32: participation without vote ------------------------------
+
+// Distinct from `Matter` (04-general-assembly.law, scoped to the General
+// Assembly's Article 10-14 recommendation power) and from `Situation`
+// (06-enforcement.law, scoped to the Article 39 determination chain):
+// Article 31's "any question brought before the Security Council" and
+// Article 32's "a dispute under consideration by the Security Council" are
+// their own textual object, tested by neither of those two chains.
+entity SecurityCouncilMatter { label en official "Question or dispute under consideration by the Security Council (Art. 31-32)"; }
+
+pub relation non_security_council_member_state(s: State) kind empirical {
+    label en official "the State is a Member of the United Nations but not a member of the Security Council (Art. 31, Art. 32, first branch) — a case fact asserted directly, not the mere absence of a Security Council membership fact";
+}
+
+pub relation non_member_state(s: State) kind empirical {
+    label en official "the State is not a Member of the United Nations (Art. 32, second branch) — a case fact asserted directly, not the mere absence of member_state";
+}
+
+pub relation question_brought_before_security_council(m: SecurityCouncilMatter) kind empirical {
+    label en official "a question has been brought before the Security Council for discussion (Art. 31)";
+}
+
+pub external judgment relation security_council_considers_interests_specially_affected(s: State, m: SecurityCouncilMatter) {
+    authority SecurityCouncil;
+    label en official "the Security Council considers that the interests of the Member are specially affected (Art. 31)";
+}
+
+pub relation participates_without_vote_in(s: State, m: SecurityCouncilMatter) kind institutional {
+    label en unofficial "the Member may participate, without vote, in the Security Council's discussion of the question (Art. 31)";
+}
+
+@source(UNC_EN_ART31)
+rule MemberParticipatesWithoutVoteWhenSpeciallyAffected(s: State, m: SecurityCouncilMatter) strict {
+    label en official "Article 31. Any Member of the United Nations which is not a member of the Security Council may participate, without vote, in the discussion of any question brought before the Security Council whenever the latter considers that the interests of that Member are specially affected.";
+    when member_state(s)
+        and non_security_council_member_state(s)
+        and question_brought_before_security_council(m)
+        and security_council_considers_interests_specially_affected(s, m);
+    then participates_without_vote_in(s, m);
+}
+
+pub relation party_to_dispute_before_security_council(s: State, m: SecurityCouncilMatter) kind empirical {
+    label en official "the State is a party to a dispute under consideration by the Security Council (Art. 32) — a factual finding the case reports, not an assessment the Council makes";
+}
+
+pub relation invited_to_participate_without_vote_in(s: State, m: SecurityCouncilMatter) kind institutional {
+    label en unofficial "the State shall be invited to participate, without vote, in the Security Council's discussion of the dispute (Art. 32)";
+}
+
+@source(UNC_EN_ART32)
+rule MemberPartyToDisputeInvitedWithoutVote(s: State, m: SecurityCouncilMatter) strict {
+    label en official "Article 32, first branch. Any Member of the United Nations which is not a member of the Security Council … if it is a party to a dispute under consideration by the Security Council, shall be invited to participate, without vote, in the discussion relating to the dispute.";
+    when member_state(s)
+        and non_security_council_member_state(s)
+        and party_to_dispute_before_security_council(s, m);
+    then invited_to_participate_without_vote_in(s, m);
+}
+
+@source(UNC_EN_ART32)
+rule NonMemberStatePartyToDisputeInvitedWithoutVote(s: State, m: SecurityCouncilMatter) strict {
+    label en official "Article 32, second branch. … or any state which is not a Member of the United Nations, if it is a party to a dispute under consideration by the Security Council, shall be invited to participate, without vote, in the discussion relating to the dispute.";
+    when non_member_state(s)
+        and party_to_dispute_before_security_council(s, m);
+    then invited_to_participate_without_vote_in(s, m);
+}
+
+// --- Articles 28-30: organization, subsidiary organs, rules of procedure ---
+
+pub relation security_council_functions_continuously(org: Organization) kind empirical {
+    label en official "the Security Council is so organized as to be able to function continuously (Art. 28, para. 1)";
+}
+
+pub relation security_council_organized_to_function_continuously(org: Organization) kind institutional {
+    label en unofficial "the Security Council meets the continuous-function requirement of Article 28, paragraph 1";
+}
+
+@source(UNC_EN_ART28)
+rule SecurityCouncilOrganizedToFunctionContinuously(org: Organization) strict {
+    label en official "Article 28, paragraph 1. The Security Council shall be so organized as to be able to function continuously. Each Member of the Security Council shall for this purpose be represented at all times at the seat of the Organization.";
+    when security_council_functions_continuously(org);
+    then security_council_organized_to_function_continuously(org);
+}
+
+pub relation security_council_establishes_subsidiary_organ(o: Organ) kind empirical {
+    label en official "the Security Council has established the subsidiary organ as it deemed necessary for the performance of its functions (Art. 29)";
+}
+
+pub relation security_council_subsidiary_organ(o: Organ) kind institutional {
+    label en unofficial "the organ is a subsidiary organ of the Security Council (Art. 29)";
+}
+
+@source(UNC_EN_ART29)
+rule SecurityCouncilEstablishesSubsidiaryOrgan(o: Organ) strict {
+    label en official "Article 29. The Security Council may establish such subsidiary organs as it deems necessary for the performance of its functions.";
+    when security_council_establishes_subsidiary_organ(o);
+    then security_council_subsidiary_organ(o);
+}
+
+pub relation security_council_adopts_rules_of_procedure(d: Decision) kind empirical {
+    label en official "the Security Council adopts its own rules of procedure, including the method of selecting its President (Art. 30)";
+}
+
+pub relation security_council_rules_of_procedure_in_force(d: Decision) kind institutional {
+    label en unofficial "the Security Council's rules of procedure are in force (Art. 30)";
+}
+
+@source(UNC_EN_ART30)
+rule SecurityCouncilAdoptsOwnRulesOfProcedure(d: Decision) strict {
+    label en official "Article 30. The Security Council shall adopt its own rules of procedure, including the method of selecting its President.";
+    when security_council_adopts_rules_of_procedure(d);
+    then security_council_rules_of_procedure_in_force(d);
+}
+
+// --- §54 constants (errata E-0032 §3): generated by verify/ci/tools/migrate_const_decls.py
+// (errata E-0032: an individual is named by a §54 declaration, its value by
+// entity_ref §36). Labels are derived from the name; the unofficial status
+// is refined by the author. ---
+
+const PeoplesRepublicOfChina: State = entity_ref("urn:un:corpus:clir:charter#PeoplesRepublicOfChina") {
+    label en unofficial "Peoples Republic Of China";
+};
+const RepublicOfChina: State = entity_ref("urn:un:corpus:clir:charter#RepublicOfChina") {
+    label en unofficial "Republic Of China";
+};
+const RussianFederation: State = entity_ref("urn:un:corpus:clir:charter#RussianFederation") {
+    label en unofficial "Russian Federation";
+};
+const SovietUnion: State = entity_ref("urn:un:corpus:clir:charter#SovietUnion") {
+    label en unofficial "Soviet Union";
+};

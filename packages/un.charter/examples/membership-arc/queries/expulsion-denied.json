@@ -1,0 +1,10 @@
+{
+  "queryId": "expulsion-denied",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#expulsion_denied",
+    "args": [{ "kind": "entity_ref", "id": "urn:law:examples:un-charter:membership-arc:state" }]
+  }
+}

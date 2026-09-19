@@ -1,0 +1,298 @@
+// Chapter X: The Economic and Social Council — Articles 61-72.
+//
+// EXECUTABLE in this module: Art. 61 (composition size, annual election of
+// eighteen, immediate re-election), Art. 63-64 (relationship agreements and
+// reports), Art. 67 (voting), Art. 68 (commissions), Art. 69 (Member of
+// particular concern), Art. 70-71 (specialized-agency participation without
+// vote; NGO consultative status), Art. 72 (rules of procedure; majority-
+// request meetings). Art. 62, 65, 66 remain declared — discretionary
+// competence grants with no addressee-conduct test. See `articles.json`.
+//
+// ARTICLE 67 REUSES THE SHARED VOTING MODEL (`Decision`,
+// `casts_vote_for`/`casts_vote_against`/`abstains`) ALREADY BUILT FOR THE
+// GENERAL ASSEMBLY (ARTICLE 18) AND THE SECURITY COUNCIL (ARTICLE 27), WITH
+// A THIRD, SIMPLER THRESHOLD. "Decisions of the Economic and Social Council
+// shall be made by a majority of the members present and voting" is exactly
+// Article 18, paragraph 3's own ordinary-question threshold ("a majority of
+// the members present and voting") — no two-thirds "important question"
+// branch exists for ECOSOC, so only ONE rule is needed, mirroring
+// `OrdinaryQuestionAdoptedBySimpleMajority` (04-general-assembly.law)
+// exactly: the same cross-multiplication idiom (no division), the same
+// "present and voting excludes abstention" reading. A separate conclusion
+// name, `ecosoc_decision_adopted`, keeps this chapter's own institutional
+// fact apart from the General Assembly's and Security Council's — the same
+// `Decision` type is shared across all three organs (per the existing
+// header comment in `package.law`), but each organ's OWN threshold produces
+// its own named conclusion, never a shared head across organs.
+//
+// ARTICLES 69-71: `EcosocMatter` FOR ARTICLE 69; ARTICLES 70-71 NOW USE
+// `SpecializedAgency` AND `NonGovernmentalOrganization`. Article 69's "any matter of particular
+// concern to that Member" is a plain, organ-less classification a case
+// reports directly — unlike Article 31's "the Security Council considers
+// that the interests… are specially affected" (05-security-council.law),
+// Article 69's text names NO organ making this assessment, so
+// `matter_of_particular_concern_to` is a `kind empirical` fact, not a
+// DECISION-0194 channel, the same reasoning already applied to Article 33's
+// "likely to endanger" threshold versus Article 34/37's organ-delegated
+// phrasing of the identical words (see DECISIONS.md, E4). The participating
+// subject of Article 69 is a Member STATE, fitting this package's existing
+// `State` type directly — a NEW entity, `EcosocMatter`, is introduced only
+// for the "matter" itself (Chapter X's own textual object, distinct from
+// Chapter IV's `Matter`, Chapter V's `SecurityCouncilMatter` and Chapter
+// VI's `Dispute`, following the established "one entity per chapter's own
+// object" convention). Articles 70 and 71 use `SpecializedAgency` and
+// `NonGovernmentalOrganization` from package.law.
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// --- Article 67: voting — majority of the members present and voting ------
+
+// A binding marker fact, the same role `is_important_question`/
+// `is_ordinary_question` play for Article 18 (04-general-assembly.law): the
+// shared `Decision` entity carries no organ of its own, so a case must
+// report directly which decisions are the Economic and Social Council's.
+pub relation is_ecosoc_decision(d: Decision) kind empirical {
+    label en official "the decision is one of the Economic and Social Council (Art. 67)";
+}
+
+pub relation ecosoc_decision_adopted(d: Decision) kind institutional {
+    label en unofficial "the decision of the Economic and Social Council is adopted by a majority of the members present and voting (Art. 67, paragraph 2)";
+}
+
+@source(UNC_EN_ART67)
+rule EcosocDecisionAdoptedByMajorityPresentAndVoting(d: Decision) strict {
+    label en official "Article 67, paragraph 2. Decisions of the Economic and Social Council shall be made by a majority of the members present and voting.";
+    when is_ecosoc_decision(d)
+        and (count distinct s: State where casts_vote_for(d, s)) * 2
+            > (count distinct s: State where casts_vote_for(d, s))
+              + (count distinct s: State where casts_vote_against(d, s));
+    then ecosoc_decision_adopted(d);
+}
+
+// --- Article 69: participation without vote of a Member of particular concern
+
+// Chapter X's own textual object — distinct from Chapter IV's `Matter`
+// (04-general-assembly.law), Chapter V's `SecurityCouncilMatter`
+// (05-security-council.law) and Chapter VI's `Dispute`
+// (08-pacific-settlement.law): none of those is scoped to ECOSOC's own
+// deliberations.
+entity EcosocMatter { label en official "Matter before the Economic and Social Council within the meaning of Article 69"; }
+
+// A plain case-reported classification, not a DECISION-0194 channel: unlike
+// Article 31's "the Security Council considers that the interests… are
+// specially affected", Article 69 names no organ assessing this fact.
+pub relation matter_of_particular_concern_to(m: EcosocMatter, s: State) kind empirical {
+    label en official "the matter before the Economic and Social Council is of particular concern to this Member of the United Nations (Art. 69)";
+}
+
+pub relation invited_to_participate_without_vote_in_ecosoc(m: EcosocMatter, s: State) kind institutional {
+    label en unofficial "the Member is invited to participate, without vote, in the Economic and Social Council's deliberations on the matter (Art. 69)";
+}
+
+@source(UNC_EN_ART69)
+rule EcosocInvitesMemberOfParticularConcern(m: EcosocMatter, s: State) strict {
+    label en official "Article 69. The Economic and Social Council shall invite any Member of the United Nations to participate, without vote, in its deliberations on any matter of particular concern to that Member.";
+    when member_state(s)
+        and matter_of_particular_concern_to(m, s);
+    then invited_to_participate_without_vote_in_ecosoc(m, s);
+}
+
+// --- Article 61: composition, term, re-election ---------------------------
+
+entity EcosocComposition { label en official "Composition of the Economic and Social Council at a point in time (Art. 61)"; }
+
+pub relation ecosoc_seat(c: EcosocComposition, s: State) kind empirical {
+    label en official "the Member holds a seat on the Economic and Social Council in this composition (Art. 61)";
+}
+
+pub relation ecosoc_composition_has_fifty_four_members(c: EcosocComposition) kind institutional {
+    label en unofficial "the composition has fifty-four Members (Art. 61, para. 1)";
+}
+
+@source(UNC_EN_ART61)
+rule EcosocCompositionHasFiftyFourMembers(c: EcosocComposition, s: State) strict {
+    label en official "Article 61, paragraph 1. The Economic and Social Council shall consist of fifty-four Members of the United Nations elected by the General Assembly.";
+    when ecosoc_seat(c, s)
+        and (count distinct t: State where ecosoc_seat(c, t)) == EcosocMembershipSize;
+    then ecosoc_composition_has_fifty_four_members(c);
+}
+
+pub relation ecosoc_elected_this_year(s: State) kind empirical {
+    label en official "the Member is among those elected this year to the Economic and Social Council (Art. 61, para. 2)";
+}
+
+pub relation ecosoc_annual_election_of_eighteen(c: EcosocComposition) kind institutional {
+    label en unofficial "eighteen Members are elected each year (Art. 61, para. 2)";
+}
+
+@source(UNC_EN_ART61)
+rule EcosocAnnualElectionOfEighteen(c: EcosocComposition, s: State) strict {
+    label en official "Article 61, paragraph 2. …eighteen Members of the Economic and Social Council shall be elected each year for a term of three years.";
+    when ecosoc_seat(c, s)
+        and ecosoc_elected_this_year(s)
+        and (count distinct t: State where ecosoc_seat(c, t) and ecosoc_elected_this_year(t))
+            == EcosocAnnualElectionSize;
+    then ecosoc_annual_election_of_eighteen(c);
+}
+
+pub relation retiring_ecosoc_member(s: State) kind empirical {
+    label en official "the Member is a retiring member of the Economic and Social Council (Art. 61, para. 2)";
+}
+
+pub relation immediately_re_elected_to_ecosoc(s: State) kind empirical {
+    label en official "the retiring member has been immediately re-elected (Art. 61, para. 2)";
+}
+
+pub relation ecosoc_immediate_reelection_permitted(s: State) kind institutional {
+    label en unofficial "the retiring member's immediate re-election is permitted (Art. 61, para. 2)";
+}
+
+@source(UNC_EN_ART61)
+rule EcosocImmediateReelectionPermitted(s: State) strict {
+    label en official "Article 61, paragraph 2. A retiring member shall be eligible for immediate re-election.";
+    when retiring_ecosoc_member(s)
+        and immediately_re_elected_to_ecosoc(s);
+    then ecosoc_immediate_reelection_permitted(s);
+}
+
+// --- Article 63: relationship agreements (consumes Art. 57's conclusion) ---
+
+@source(UNC_EN_ART63)
+rule EcosocAgreementApprovedByAssemblyBringsAgencyIntoRelationship(
+    a: SpecializedAgency, e: Decision, g: Decision
+) strict {
+    label en official "Article 63, paragraph 1. The Economic and Social Council may enter into agreements with any of the agencies referred to in Article 57, defining the terms on which the agency concerned shall be brought into relationship with the United Nations. Such agreements shall be subject to approval by the General Assembly.";
+    when ecosoc_relationship_agreement(a, e)
+        and general_assembly_approves_agency_agreement(a, g);
+    then brought_into_relationship_with_united_nations(a);
+}
+
+// --- Article 64: reports from specialized agencies -------------------------
+
+pub relation ecosoc_obtains_reports_from(a: SpecializedAgency) kind empirical {
+    label en official "the Economic and Social Council has obtained reports from the specialized agency (Art. 64, para. 1)";
+}
+
+pub relation agency_reports_obtained(a: SpecializedAgency) kind institutional {
+    label en unofficial "reports from the specialized agency have been obtained by the Economic and Social Council (Art. 64)";
+}
+
+@source(UNC_EN_ART64)
+rule EcosocObtainsReportsFromSpecializedAgency(a: SpecializedAgency) strict {
+    label en official "Article 64, paragraph 1. The Economic and Social Council may take appropriate steps to obtain regular reports from the specialized agencies.";
+    when brought_into_relationship_with_united_nations(a)
+        and ecosoc_obtains_reports_from(a);
+    then agency_reports_obtained(a);
+}
+
+// --- Article 68: commissions -----------------------------------------------
+
+pub relation ecosoc_human_rights_commission_established(org: Organization) kind empirical {
+    label en official "the Economic and Social Council has set up a commission for the promotion of human rights (Art. 68)";
+}
+
+pub relation ecosoc_economic_or_social_commission_established(org: Organization) kind empirical {
+    label en official "the Economic and Social Council has set up a commission in economic or social fields (Art. 68)";
+}
+
+pub relation ecosoc_commissions_established(org: Organization) kind institutional {
+    label en unofficial "the Economic and Social Council has set up the commissions Article 68 requires";
+}
+
+@source(UNC_EN_ART68)
+rule EcosocSetsUpRequiredCommissions(org: Organization) strict {
+    label en official "Article 68. The Economic and Social Council shall set up commissions in economic and social fields and for the promotion of human rights, and such other commissions as may be required for the performance of its functions.";
+    when ecosoc_human_rights_commission_established(org)
+        and ecosoc_economic_or_social_commission_established(org);
+    then ecosoc_commissions_established(org);
+}
+
+// --- Article 70: specialized-agency participation without vote -------------
+
+pub relation agency_invited_without_vote(a: SpecializedAgency, m: EcosocMatter) kind empirical {
+    label en official "arrangements have been made for representatives of the specialized agency to participate, without vote, in the Economic and Social Council's deliberations (Art. 70)";
+}
+
+pub relation agency_participates_without_vote(a: SpecializedAgency, m: EcosocMatter) kind institutional {
+    label en unofficial "the specialized agency participates without vote in the deliberations (Art. 70)";
+}
+
+@source(UNC_EN_ART70)
+rule SpecializedAgencyParticipatesWithoutVote(a: SpecializedAgency, m: EcosocMatter) strict {
+    label en official "Article 70. The Economic and Social Council may make arrangements for representatives of the specialized agencies to participate, without vote, in its deliberations and in those of the commissions established by it, and for its representatives to participate in the deliberations of the specialized agencies.";
+    when brought_into_relationship_with_united_nations(a)
+        and agency_invited_without_vote(a, m);
+    then agency_participates_without_vote(a, m);
+}
+
+pub relation agency_casts_vote_in_ecosoc(a: SpecializedAgency, m: EcosocMatter) kind empirical {
+    label en unofficial "the specialized agency has cast a vote in ECOSOC deliberations, contrary to Article 70";
+}
+
+pub relation agency_vote_in_ecosoc_invalid(a: SpecializedAgency, m: EcosocMatter) kind institutional {
+    label en unofficial "a vote cast by a specialized agency in ECOSOC is invalid (Art. 70: participation is without vote)";
+}
+
+@source(UNC_EN_ART70)
+rule SpecializedAgencyVoteInEcosocInvalid(a: SpecializedAgency, m: EcosocMatter) strict {
+    label en official "Article 70. …to participate, without vote, in its deliberations…";
+    when agency_participates_without_vote(a, m)
+        and agency_casts_vote_in_ecosoc(a, m);
+    then agency_vote_in_ecosoc_invalid(a, m);
+}
+
+// --- Article 71: consultative arrangements with NGOs -----------------------
+
+pub relation consultative_arrangement_made(ngo: NonGovernmentalOrganization, m: EcosocMatter) kind empirical {
+    label en official "the Economic and Social Council has made consultative arrangements with the non-governmental organization (Art. 71)";
+}
+
+pub relation ngo_consultative_status(ngo: NonGovernmentalOrganization, m: EcosocMatter) kind institutional {
+    label en unofficial "the non-governmental organization has consultative status on the matter (Art. 71)";
+}
+
+@source(UNC_EN_ART71)
+rule NgoConsultativeStatusGranted(ngo: NonGovernmentalOrganization, m: EcosocMatter) strict {
+    label en official "Article 71. The Economic and Social Council may make suitable arrangements for consultation with non-governmental organizations which are concerned with matters within its competence.";
+    when consultative_arrangement_made(ngo, m);
+    then ngo_consultative_status(ngo, m);
+}
+
+// --- Article 72: rules of procedure and convening on majority request ------
+
+pub relation ecosoc_adopts_rules_of_procedure(d: Decision) kind empirical {
+    label en official "the Economic and Social Council adopts its own rules of procedure, including the method of selecting its President (Art. 72, para. 1)";
+}
+
+pub relation ecosoc_rules_of_procedure_in_force(d: Decision) kind institutional {
+    label en unofficial "the Economic and Social Council's rules of procedure are in force (Art. 72, para. 1)";
+}
+
+@source(UNC_EN_ART72)
+rule EcosocAdoptsOwnRulesOfProcedure(d: Decision) strict {
+    label en official "Article 72, paragraph 1. The Economic and Social Council shall adopt its own rules of procedure, including the method of selecting its President.";
+    when ecosoc_adopts_rules_of_procedure(d);
+    then ecosoc_rules_of_procedure_in_force(d);
+}
+
+entity EcosocMeeting { label en official "Meeting of the Economic and Social Council (Art. 72, para. 2)"; }
+
+pub relation requests_ecosoc_meeting(meet: EcosocMeeting, s: State) kind empirical {
+    label en official "the Member of the Economic and Social Council requests convening of a meeting (Art. 72, para. 2)";
+}
+
+pub relation ecosoc_meeting_convened_on_majority_request(meet: EcosocMeeting) kind institutional {
+    label en unofficial "the meeting is convened on the request of a majority of ECOSOC members (Art. 72, para. 2)";
+}
+
+@source(UNC_EN_ART72)
+rule EcosocMeetingConvenedOnMajorityRequest(meet: EcosocMeeting, c: EcosocComposition, s: State) strict {
+    label en official "Article 72, paragraph 2. The Economic and Social Council shall meet as required in accordance with its rules, which shall include provision for the convening of meetings on the request of a majority of its members.";
+    when requests_ecosoc_meeting(meet, s)
+        and ecosoc_seat(c, s)
+        and (count distinct t: State where requests_ecosoc_meeting(meet, t) and ecosoc_seat(c, t)) * 2
+            > (count distinct t: State where ecosoc_seat(c, t));
+    then ecosoc_meeting_convened_on_majority_request(meet);
+}

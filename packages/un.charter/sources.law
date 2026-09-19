@@ -1,0 +1,1230 @@
+// Source model of the Charter of the United Nations: the pinned bytes of the
+// authentic English edition and the fragments of the articles within the
+// declared scope of this package — ALL 111 ARTICLES, Chapters I-XIX in full
+// (E9, 18.09.2026, closes the scope: Ch. XVI Art. 102, 104-105, Ch. XVII
+// Art. 106-107, Ch. XVIII Art. 109 added on top of Art. 103/108 already in
+// scope since the original slice, Ch. XIX Art. 110 added on top of Art. 111).
+//
+// GENERATED FILE. It is written by its generator only —
+// `corpus/tools/sources/sync/sync_un_charter_fragments.py`; verification
+// without writing is its own `--check` key. The text is cut from
+// `sources/charter/en.txt`, so it cannot diverge from the publication.
+//
+// PROVENANCE. The bytes are a reproducible extraction of the official un.org
+// page "Charter of the United Nations: full text"
+// (`corpus/tools/lib/extract_source_text.py --un-org-body`), English edition.
+// The depositary of the original is the Government of the United States
+// (Art. 111); the bytes of this publication are a republication by the UN
+// Secretariat on the portal, not the archival bytes of the depositary's own
+// copy, hence `materialization_status PINNED_UNOFFICIAL_COPY` (the same
+// argument as `rome-statute-1998`: authenticity of the text and pinning of
+// the bytes are independent axes).
+//
+// ONE PINNED EDITION, ENGLISH. The Charter is authentic in five languages
+// (Art. 111); this package pins and fragments only the English edition. The
+// Russian text used during earlier drafting remains on disk at
+// `sources/charter/ru.txt` as evidentiary backing for the Art. 111 fact that
+// five texts are equally authentic — it is not a second pinned publication
+// and produces no `edition`/`fragment` node here (decided 18.09.2026,
+// `docs/foundations/un-charter/DECISIONS.md`, mirroring the `unidroit.picc*`
+// single-edition collapse, commit `9d57c4d119`).
+//
+// CURRENT EDITION. The un.org page serves the Charter AS AMENDED in
+// 1965/1968/1973 (Security Council fifteen members, voting nine of fifteen,
+// ECOSOC fifty-four members): this is the CURRENT text, not the original
+// 1945 one. The original edition is pinned BELOW as a separate `edition` node
+// carrying only lifecycle dates (`UN_CHARTER_1945_ORIGINAL`,
+// `materialization_status ABSTRACT_ONLY`) — without its own bytes: proofreading
+// it is outside the declared scope, and three `revision` nodes tie it to the
+// current edition by dates taken from the publication's OWN colophon
+// ("Amendments to Articles 23, 27, 61, 109" — the last paragraph of the
+// pinned bytes, outside any `fragment` node but inside the pinned
+// publication).
+//
+// `retrieved_at` is a constant, not the moment of the build (DECISION-0005 §6).
+
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+source UN_CHARTER {
+    kind treaty;
+    jurisdiction International;
+    label en official "Charter of the United Nations";
+}
+
+edition UN_CHARTER_1945_ORIGINAL of UN_CHARTER {
+    label en unofficial "original edition (San Francisco, 1945)";
+    language mul;
+    officiality official;
+    adopted @1945-06-26;
+    in_force @1945-10-24;
+    materialization_status ABSTRACT_ONLY;
+}
+
+edition UN_CHARTER_EN of UN_CHARTER {
+    label en official "current edition (text equally authentic under Art. 111)";
+    language en;
+    officiality official;
+    adopted @1945-06-26;
+    in_force @1945-10-24;
+    materialization_status PINNED_UNOFFICIAL_COPY;
+}
+
+publication UN_CHARTER_EN_TEXT of UN_CHARTER_EN {
+    media_type "text/plain; charset=utf-8";
+    uri "https://www.un.org/en/about-us/un-charter/full-text";
+    retrieved_at @2026-08-31T00:00:00Z;
+    content_hash "sha256:486e3f32fbedcd92218bd8f3ef29d9adf0a2d03cb67bfedb827104b49b4db212";
+    local_path "sources/charter/en.txt";
+}
+
+// General Assembly, 17.12.1963: amendments to Art. 23, 27, 61 (Security Council 11→15, voting 7→9, ECOSOC 18→27)
+source GA_RESOLUTION_1963_12_17 {
+    kind resolution;
+    jurisdiction International;
+    label en unofficial "General Assembly, 17.12.1963: amendments to Art. 23, 27, 61 (Security Council 11→15, voting 7→9, ECOSOC 18→27)";
+}
+revision UN_CHARTER_AMENDMENT_1965_REVISION {
+    previous UN_CHARTER_1945_ORIGINAL;
+    next UN_CHARTER_EN;
+    caused_by GA_RESOLUTION_1963_12_17;
+    relation amends;
+    effective @1965-08-31;
+}
+
+// General Assembly, 20.12.1965: amendment to Art. 109 para. 1 (votes of the Security Council needed to convene a review conference 7→9)
+source GA_RESOLUTION_1965_12_20 {
+    kind resolution;
+    jurisdiction International;
+    label en unofficial "General Assembly, 20.12.1965: amendment to Art. 109 para. 1 (votes of the Security Council needed to convene a review conference 7→9)";
+}
+revision UN_CHARTER_AMENDMENT_1968_REVISION {
+    previous UN_CHARTER_1945_ORIGINAL;
+    next UN_CHARTER_EN;
+    caused_by GA_RESOLUTION_1965_12_20;
+    relation amends;
+    effective @1968-06-12;
+}
+
+// General Assembly, 20.12.1971: second amendment to Art. 61 (ECOSOC 27→54)
+source GA_RESOLUTION_1971_12_20 {
+    kind resolution;
+    jurisdiction International;
+    label en unofficial "General Assembly, 20.12.1971: second amendment to Art. 61 (ECOSOC 27→54)";
+}
+revision UN_CHARTER_AMENDMENT_1973_REVISION {
+    previous UN_CHARTER_1945_ORIGINAL;
+    next UN_CHARTER_EN;
+    caused_by GA_RESOLUTION_1971_12_20;
+    relation amends;
+    effective @1973-09-24;
+}
+
+// Article 1 (Ch. I, Purposes)
+fragment UNC_EN_ART1 in UN_CHARTER_EN {
+    kind article;
+    locator "article/1";
+    text en official """Article 1
+The Purposes of the United Nations are:
+To maintain international peace and security, and to that end: to take effective collective measures for the prevention and removal of threats to the peace, and for the suppression of acts of aggression or other breaches of the peace, and to bring about by peaceful means, and in conformity with the principles of justice and international law, adjustment or settlement of international disputes or situations which might lead to a breach of the peace;
+To develop friendly relations among nations based on respect for the principle of equal rights and self-determination of peoples, and to take other appropriate measures to strengthen universal peace;
+To achieve international co-operation in solving international problems of an economic, social, cultural, or humanitarian character, and in promoting and encouraging respect for human rights and for fundamental freedoms for all without distinction as to race, sex, language, or religion; and
+To be a centre for harmonizing the actions of nations in the attainment of these common ends.""";
+    content_hash "sha256:864c25774b692d5da35c4d1693b7dce8726ae4375d729ec83631538862df8f39";
+}
+
+// Article 2 (Ch. I, Principles, incl. para. 4, prohibition of force)
+fragment UNC_EN_ART2 in UN_CHARTER_EN {
+    kind article;
+    locator "article/2";
+    text en official """Article 2
+The Organization and its Members, in pursuit of the Purposes stated in Article 1, shall act in accordance with the following Principles.
+The Organization is based on the principle of the sovereign equality of all its Members.
+All Members, in order to ensure to all of them the rights and benefits resulting from membership, shall fulfill in good faith the obligations assumed by them in accordance with the present Charter.
+All Members shall settle their international disputes by peaceful means in such a manner that international peace and security, and justice, are not endangered.
+All Members shall refrain in their international relations from the threat or use of force against the territorial integrity or political independence of any state, or in any other manner inconsistent with the Purposes of the United Nations.
+All Members shall give the United Nations every assistance in any action it takes in accordance with the present Charter, and shall refrain from giving assistance to any state against which the United Nations is taking preventive or enforcement action.
+The Organization shall ensure that states which are not Members of the United Nations act in accordance with these Principles so far as may be necessary for the maintenance of international peace and security.
+Nothing contained in the present Charter shall authorize the United Nations to intervene in matters which are essentially within the domestic jurisdiction of any state or shall require the Members to submit such matters to settlement under the present Charter; but this principle shall not prejudice the application of enforcement measures under Chapter Vll.""";
+    content_hash "sha256:75abc29a2add36e4553a93e76678c17cba72ef925f4af9c66860f9d828009e3d";
+}
+
+// Article 3 (Ch. II, original Members)
+fragment UNC_EN_ART3 in UN_CHARTER_EN {
+    kind article;
+    locator "article/3";
+    text en official """Article 3
+The original Members of the United Nations shall be the states which, having participated in the United Nations Conference on International Organization at San Francisco, or having previously signed the Declaration by United Nations of 1 January 1942, sign the present Charter and ratify it in accordance with Article 110.""";
+    content_hash "sha256:3cb7fec941eb82845e40c30ca8a035442c29b01fe723721536edb66bea60ecf5";
+}
+
+// Article 4 (admission to membership)
+fragment UNC_EN_ART4 in UN_CHARTER_EN {
+    kind article;
+    locator "article/4";
+    text en official """Article 4
+Membership in the United Nations is open to all other peace-loving states which accept the obligations contained in the present Charter and, in the judgment of the Organization, are able and willing to carry out these obligations.
+The admission of any such state to membership in the United Nations will be effected by a decision of the General Assembly upon the recommendation of the Security Council.""";
+    content_hash "sha256:b036f3fd83352909222cd600233e4f90b19cc6a6c83fe71b5419fc5a0ccd9b15";
+}
+
+// Article 5 (Ch. II, suspension of rights and privileges of membership)
+fragment UNC_EN_ART5 in UN_CHARTER_EN {
+    kind article;
+    locator "article/5";
+    text en official """Article 5
+A Member of the United Nations against which preventive or enforcement action has been taken by the Security Council may be suspended from the exercise of the rights and privileges of membership by the General Assembly upon the recommendation of the Security Council. The exercise of these rights and privileges may be restored by the Security Council.""";
+    content_hash "sha256:a992f522344aecbdcf02c13cb0d3261e8d243249672447678458510344af4f00";
+}
+
+// Article 6 (Ch. II, expulsion from the Organization)
+fragment UNC_EN_ART6 in UN_CHARTER_EN {
+    kind article;
+    locator "article/6";
+    text en official """Article 6
+A Member of the United Nations which has persistently violated the Principles contained in the present Charter may be expelled from the Organization by the General Assembly upon the recommendation of the Security Council.""";
+    content_hash "sha256:6a53848f6b982b189c91c0caacb669f85d15ba172d439ecdb3b0c94090df5aa8";
+}
+
+// Article 7 (Ch. III, principal organs)
+fragment UNC_EN_ART7 in UN_CHARTER_EN {
+    kind article;
+    locator "article/7";
+    text en official """Article 7
+There are established as principal organs of the United Nations: a General Assembly, a Security Council, an Economic and Social Council, a Trusteeship Council, an International Court of Justice and a Secretariat.
+Such subsidiary organs as may be found necessary may be established in accordance with the present Charter.""";
+    content_hash "sha256:d71df271ffe0d66a01db66729c27f6fa27c49c60da6721b4ab4a841e876c83e1";
+}
+
+// Article 8 (Ch. III, equal eligibility of men and women)
+fragment UNC_EN_ART8 in UN_CHARTER_EN {
+    kind article;
+    locator "article/8";
+    text en official """Article 8
+The United Nations shall place no restrictions on the eligibility of men and women to participate in any capacity and under conditions of equality in its principal and subsidiary organs.""";
+    content_hash "sha256:393716b27356f0c8abe5c05bbfff5309bfa2ae5edcf4c25c9c86a481c0954783";
+}
+
+// Article 9 (Ch. IV, composition of the General Assembly)
+fragment UNC_EN_ART9 in UN_CHARTER_EN {
+    kind article;
+    locator "article/9";
+    text en official """Article 9
+The General Assembly shall consist of all the Members of the United Nations.
+Each Member shall have not more than five representatives in the General Assembly.""";
+    content_hash "sha256:0fe57ca3cb060ab5d700bca04ab28f7eeeec58c553fd7b81ab3bbddd6e4f2fb5";
+}
+
+// Article 10 (Ch. IV, general power to discuss and recommend)
+fragment UNC_EN_ART10 in UN_CHARTER_EN {
+    kind article;
+    locator "article/10";
+    text en official """Article 10
+The General Assembly may discuss any questions or any matters within the scope of the present Charter or relating to the powers and functions of any organs provided for in the present Charter, and, except as provided in Article 12, may make recommendations to the Members of the United Nations or to the Security Council or to both on any such questions or matters.""";
+    content_hash "sha256:316d98a1ba6337c597d715d1f39b9587c2c118e6788f1a9a6d1f482d412fc883";
+}
+
+// Article 11 (Ch. IV, general principles of co-operation in peace and security)
+fragment UNC_EN_ART11 in UN_CHARTER_EN {
+    kind article;
+    locator "article/11";
+    text en official """Article 11
+The General Assembly may consider the general principles of co-operation in the maintenance of international peace and security, including the principles governing disarmament and the regulation of armaments, and may make recommendations with regard to such principles to the Members or to the Security Council or to both.
+The General Assembly may discuss any questions relating to the maintenance of international peace and security brought before it by any Member of the United Nations, or by the Security Council, or by a state which is not a Member of the United Nations in accordance with Article 35, paragraph 2, and, except as provided in Article 12, may make recommendations with regard to any such questions to the state or states concerned or to the Security Council or to both. Any such question on which action is necessary shall be referred to the Security Council by the General Assembly either before or after discussion.
+The General Assembly may call the attention of the Security Council to situations which are likely to endanger international peace and security.
+The powers of the General Assembly set forth in this Article shall not limit the general scope of Article 10.""";
+    content_hash "sha256:a718abde36c2610e8014c01223b3fbe3ee7aaa4e51a3dc3c3b5785222af1216f";
+}
+
+// Article 12 (Ch. IV, bar on Assembly recommendation while the Security Council is seized)
+fragment UNC_EN_ART12 in UN_CHARTER_EN {
+    kind article;
+    locator "article/12";
+    text en official """Article 12
+While the Security Council is exercising in respect of any dispute or situation the functions assigned to it in the present Charter, the General Assembly shall not make any recommendation with regard to that dispute or situation unless the Security Council so requests.
+The Secretary-General, with the consent of the Security Council, shall notify the General Assembly at each session of any matters relative to the maintenance of international peace and security which are being dealt with by the Security Council and shall similarly notify the General Assembly, or the Members of the United Nations if the General Assembly is not in session, immediately the Security Council ceases to deal with such matters.""";
+    content_hash "sha256:aff0f9c91aa1321a21b05a373f4ba8f9ed2d3a934839d6e02243e706fc7de4c4";
+}
+
+// Article 13 (Ch. IV, studies and recommendations)
+fragment UNC_EN_ART13 in UN_CHARTER_EN {
+    kind article;
+    locator "article/13";
+    text en official """Article 13
+The General Assembly shall initiate studies and make recommendations for the purpose of:
+promoting international co-operation in the political field and encouraging the progressive development of international law and its codification;
+promoting international co-operation in the economic, social, cultural, educational, and health fields, and assisting in the realization of human rights and fundamental freedoms for all without distinction as to race, sex, language, or religion.
+The further responsibilities, functions and powers of the General Assembly with respect to matters mentioned in paragraph 1 (b) above are set forth in Chapters IX and X.""";
+    content_hash "sha256:1aed6ee36385df871fa5e6073b8f1143432950ff05e3d92d9887bba319558a52";
+}
+
+// Article 14 (Ch. IV, peaceful adjustment of situations)
+fragment UNC_EN_ART14 in UN_CHARTER_EN {
+    kind article;
+    locator "article/14";
+    text en official """Article 14
+Subject to the provisions of Article 12, the General Assembly may recommend measures for the peaceful adjustment of any situation, regardless of origin, which it deems likely to impair the general welfare or friendly relations among nations, including situations resulting from a violation of the provisions of the present Charter setting forth the Purposes and Principles of the United Nations.""";
+    content_hash "sha256:8157148fcaf68f3e24bd7b189b82a7203a8b39f63df4b1497135d71f2f63127a";
+}
+
+// Article 15 (Ch. IV, reports received and considered)
+fragment UNC_EN_ART15 in UN_CHARTER_EN {
+    kind article;
+    locator "article/15";
+    text en official """Article 15
+The General Assembly shall receive and consider annual and special reports from the Security Council; these reports shall include an account of the measures that the Security Council has decided upon or taken to maintain international peace and security.
+The General Assembly shall receive and consider reports from the other organs of the United Nations.""";
+    content_hash "sha256:d8aed2a78c4e22c8561dd44131fe637dbdfa992792bf38dac8a6c53e80a44bc2";
+}
+
+// Article 16 (Ch. IV, trusteeship functions)
+fragment UNC_EN_ART16 in UN_CHARTER_EN {
+    kind article;
+    locator "article/16";
+    text en official """Article 16
+The General Assembly shall perform such functions with respect to the international trusteeship system as are assigned to it under Chapters XII and XIII, including the approval of the trusteeship agreements for areas not designated as strategic.""";
+    content_hash "sha256:3886b7e9e414bc98f8d8a32d0848d04e386c1549602d5ccf555f8462c70280d8";
+}
+
+// Article 17 (Ch. IV, budget)
+fragment UNC_EN_ART17 in UN_CHARTER_EN {
+    kind article;
+    locator "article/17";
+    text en official """Article 17
+The General Assembly shall consider and approve the budget of the Organization.
+The expenses of the Organization shall be borne by the Members as apportioned by the General Assembly.
+The General Assembly shall consider and approve any financial and budgetary arrangements with specialized agencies referred to in Article 57 and shall examine the administrative budgets of such specialized agencies with a view to making recommendations to the agencies concerned.""";
+    content_hash "sha256:dc36f026a4b209f09518fd77dae9ddd49a01f0484a2018f5f2caf1681e931017";
+}
+
+// Article 18 (voting in the General Assembly)
+fragment UNC_EN_ART18 in UN_CHARTER_EN {
+    kind article;
+    locator "article/18";
+    text en official """Article 18
+Each member of the General Assembly shall have one vote.
+Decisions of the General Assembly on important questions shall be made by a two-thirds majority of the members present and voting. These questions shall include: recommendations with respect to the maintenance of international peace and security, the election of the non-permanent members of the Security Council, the election of the members of the Economic and Social Council, the election of members of the Trusteeship Council in accordance with paragraph 1 (c) of Article 86, the admission of new Members to the United Nations, the suspension of the rights and privileges of membership, the expulsion of Members, questions relating to the operation of the trusteeship system, and budgetary questions.
+Decisions on other questions, including the determination of additional categories of questions to be decided by a two-thirds majority, shall be made by a majority of the members present and voting.""";
+    content_hash "sha256:acc63e53172fd72890886b0904fea1f0bb7062b85126b3e44dfac3d8f9e917c3";
+}
+
+// Article 19 (Ch. IV, loss of vote for arrears)
+fragment UNC_EN_ART19 in UN_CHARTER_EN {
+    kind article;
+    locator "article/19";
+    text en official """Article 19
+A Member of the United Nations which is in arrears in the payment of its financial contributions to the Organization shall have no vote in the General Assembly if the amount of its arrears equals or exceeds the amount of the contributions due from it for the preceding two full years. The General Assembly may, nevertheless, permit such a Member to vote if it is satisfied that the failure to pay is due to conditions beyond the control of the Member.""";
+    content_hash "sha256:d2e803c43ada5a0d22fd661af9319fc5985724e2c2e32fb337567dcc6d3c2ad0";
+}
+
+// Article 20 (Ch. IV, regular and special sessions)
+fragment UNC_EN_ART20 in UN_CHARTER_EN {
+    kind article;
+    locator "article/20";
+    text en official """Article 20
+The General Assembly shall meet in regular annual sessions and in such special sessions as occasion may require. Special sessions shall be convoked by the Secretary-General at the request of the Security Council or of a majority of the Members of the United Nations.""";
+    content_hash "sha256:9135ca410c020c6f2a6542386999b85f7aa065cb5c1ca4394f1e471298137082";
+}
+
+// Article 21 (Ch. IV, rules of procedure, President)
+fragment UNC_EN_ART21 in UN_CHARTER_EN {
+    kind article;
+    locator "article/21";
+    text en official """Article 21
+The General Assembly shall adopt its own rules of procedure. It shall elect its President for each session.""";
+    content_hash "sha256:5dcd925bfdace0c64aef231e89f6b4a241d4e2c1a724644728e3a3deaedcefea";
+}
+
+// Article 22 (Ch. IV, subsidiary organs)
+fragment UNC_EN_ART22 in UN_CHARTER_EN {
+    kind article;
+    locator "article/22";
+    text en official """Article 22
+The General Assembly may establish such subsidiary organs as it deems necessary for the performance of its functions.""";
+    content_hash "sha256:cfdd1e07c59b14b42062ba69ecdb1f2ca2edfe64e80357c5cc793a41151d7655";
+}
+
+// Article 23 (Ch. V, composition of the Security Council)
+fragment UNC_EN_ART23 in UN_CHARTER_EN {
+    kind article;
+    locator "article/23";
+    text en official """Article 23
+The Security Council shall consist of fifteen Members of the United Nations. The Republic of China, France, the Union of Soviet Socialist Republics, the United Kingdom of Great Britain and Northern Ireland, and the United States of America shall be permanent members of the Security Council. The General Assembly shall elect ten other Members of the United Nations to be non-permanent members of the Security Council, due regard being specially paid, in the first instance to the contribution of Members of the United Nations to the maintenance of international peace and security and to the other purposes of the Organization, and also to equitable geographical distribution.
+The non-permanent members of the Security Council shall be elected for a term of two years. In the first election of the non-permanent members after the increase of the membership of the Security Council from eleven to fifteen, two of the four additional members shall be chosen for a term of one year. A retiring member shall not be eligible for immediate re-election.
+Each member of the Security Council shall have one representative.""";
+    content_hash "sha256:04634bcee8d5f914608d8ed6dce1d8bde70766de1ad6f66aded63661b6cceeb7";
+}
+
+// Article 24 (Ch. V, functions and powers)
+fragment UNC_EN_ART24 in UN_CHARTER_EN {
+    kind article;
+    locator "article/24";
+    text en official """Article 24
+In order to ensure prompt and effective action by the United Nations, its Members confer on the Security Council primary responsibility for the maintenance of international peace and security, and agree that in carrying out its duties under this responsibility the Security Council acts on their behalf.
+In discharging these duties the Security Council shall act in accordance with the Purposes and Principles of the United Nations. The specific powers granted to the Security Council for the discharge of these duties are laid down in Chapters VI, VII, VIII, and XII.
+The Security Council shall submit annual and, when necessary, special reports to the General Assembly for its consideration.""";
+    content_hash "sha256:cf0967315cef5c61a9343fb4591af7a4d5bb8ce8797a9ec20aacf7185104e69b";
+}
+
+// Article 25 (Ch. V, binding force of Security Council decisions)
+fragment UNC_EN_ART25 in UN_CHARTER_EN {
+    kind article;
+    locator "article/25";
+    text en official """Article 25
+The Members of the United Nations agree to accept and carry out the decisions of the Security Council in accordance with the present Charter.""";
+    content_hash "sha256:6b27748d8551efcf59bf3ce2b3d6aa0bb5379de18b2872c58674511e804f572b";
+}
+
+// Article 26 (Ch. V, regulation of armaments)
+fragment UNC_EN_ART26 in UN_CHARTER_EN {
+    kind article;
+    locator "article/26";
+    text en official """Article 26
+In order to promote the establishment and maintenance of international peace and security with the least diversion for armaments of the world's human and economic resources, the Security Council shall be responsible for formulating, with the assistance of the Military Staff Committee referred to in Article 47, plans to be submitted to the Members of the United Nations for the establishment of a system for the regulation of armaments.""";
+    content_hash "sha256:ea128e1f49d23c33bbf2d32b40c245ebd7d9584bbc0e7c7a415c71d9a44fb9e4";
+}
+
+// Article 27 (Ch. V, voting in the Security Council)
+fragment UNC_EN_ART27 in UN_CHARTER_EN {
+    kind article;
+    locator "article/27";
+    text en official """Article 27
+Each member of the Security Council shall have one vote.
+Decisions of the Security Council on procedural matters shall be made by an affirmative vote of nine members.
+Decisions of the Security Council on all other matters shall be made by an affirmative vote of nine members including the concurring votes of the permanent members; provided that, in decisions under Chapter VI, and under paragraph 3 of Article 52, a party to a dispute shall abstain from voting.""";
+    content_hash "sha256:d2e1200a16b6cc23e35a408e6f305c6a42aec1ae602e3202d05006d4577ea403";
+}
+
+// Article 28 (Ch. V, continuous organization of the Security Council)
+fragment UNC_EN_ART28 in UN_CHARTER_EN {
+    kind article;
+    locator "article/28";
+    text en official """Article 28
+The Security Council shall be so organized as to be able to function continuously. Each member of the Security Council shall for this purpose be represented at all times at the seat of the Organization.
+The Security Council shall hold periodic meetings at which each of its members may, if it so desires, be represented by a member of the government or by some other specially designated representative.
+The Security Council may hold meetings at such places other than the seat of the Organization as in its judgment will best facilitate its work.""";
+    content_hash "sha256:b84d6c7bb71f56b751d5e069a61601178dfece1a77cd56c3707d0bc053bbdbac";
+}
+
+// Article 29 (Ch. V, subsidiary organs of the Security Council)
+fragment UNC_EN_ART29 in UN_CHARTER_EN {
+    kind article;
+    locator "article/29";
+    text en official """Article 29
+The Security Council may establish such subsidiary organs as it deems necessary for the performance of its functions.""";
+    content_hash "sha256:00e9875dbaecea089df91323c8061cf488d38e4e4a02605414b2f0028d4b4d24";
+}
+
+// Article 30 (Ch. V, rules of procedure, Presidency)
+fragment UNC_EN_ART30 in UN_CHARTER_EN {
+    kind article;
+    locator "article/30";
+    text en official """Article 30
+The Security Council shall adopt its own rules of procedure, including the method of selecting its President.""";
+    content_hash "sha256:39c3a8c8e0a598bc8a17179bb0d95740eaaa81707235934c3e7cc87640dfe119";
+}
+
+// Article 31 (Ch. V, participation without vote of a Member specially affected)
+fragment UNC_EN_ART31 in UN_CHARTER_EN {
+    kind article;
+    locator "article/31";
+    text en official """Article 31
+Any Member of the United Nations which is not a member of the Security Council may participate, without vote, in the discussion of any question brought before the Security Council whenever the latter considers that the interests of that Member are specially affected.""";
+    content_hash "sha256:a605bff2da01d8afb3cfb16db9b1e76924827383c1e035f0ece5434e040378ee";
+}
+
+// Article 32 (Ch. V, participation without vote of a party to a dispute)
+fragment UNC_EN_ART32 in UN_CHARTER_EN {
+    kind article;
+    locator "article/32";
+    text en official """Article 32
+Any Member of the United Nations which is not a member of the Security Council or any state which is not a Member of the United Nations, if it is a party to a dispute under consideration by the Security Council, shall be invited to participate, without vote, in the discussion relating to the dispute. The Security Council shall lay down such conditions as it deems just for the participation of a state which is not a Member of the United Nations.""";
+    content_hash "sha256:171e98ee47a8b5ac04202f8d7c7013068232e3e4e2c8c18d5b6a6e2f53e7e22e";
+}
+
+// Article 33 (Ch. VI, duty to seek a peaceful solution)
+fragment UNC_EN_ART33 in UN_CHARTER_EN {
+    kind article;
+    locator "article/33";
+    text en official """Article 33
+The parties to any dispute, the continuance of which is likely to endanger the maintenance of international peace and security, shall, first of all, seek a solution by negotiation, enquiry, mediation, conciliation, arbitration, judicial settlement, resort to regional agencies or arrangements, or other peaceful means of their own choice.
+The Security Council shall, when it deems necessary, call upon the parties to settle their dispute by such means.""";
+    content_hash "sha256:54101b3627164362c6608c08d5050982cf37cdb2d6ae9418517fa2154305a406";
+}
+
+// Article 34 (Ch. VI, Security Council investigation)
+fragment UNC_EN_ART34 in UN_CHARTER_EN {
+    kind article;
+    locator "article/34";
+    text en official """Article 34
+The Security Council may investigate any dispute, or any situation which might lead to international friction or give rise to a dispute, in order to determine whether the continuance of the dispute or situation is likely to endanger the maintenance of international peace and security.""";
+    content_hash "sha256:d82718c9e0554972299fbd4e3b34323020c63fd51fc081cb467aa11b109beb52";
+}
+
+// Article 35 (Ch. VI, bringing a dispute to the Council or Assembly)
+fragment UNC_EN_ART35 in UN_CHARTER_EN {
+    kind article;
+    locator "article/35";
+    text en official """Article 35
+Any Member of the United Nations may bring any dispute, or any situation of the nature referred to in Article 34, to the attention of the Security Council or of the General Assembly.
+A state which is not a Member of the United Nations may bring to the attention of the Security Council or of the General Assembly any dispute to which it is a party if it accepts in advance, for the purposes of the dispute, the obligations of pacific settlement provided in the present Charter.
+The proceedings of the General Assembly in respect of matters brought to its attention under this Article will be subject to the provisions of Articles 11 and 12.""";
+    content_hash "sha256:96e2541cc3804f68e920602b00f9f5312623533527f68bbf2ec1dc917b245ab3";
+}
+
+// Article 36 (Ch. VI, Security Council recommendation of procedures, incl. ICJ referral for legal disputes)
+fragment UNC_EN_ART36 in UN_CHARTER_EN {
+    kind article;
+    locator "article/36";
+    text en official """Article 36
+The Security Council may, at any stage of a dispute of the nature referred to in Article 33 or of a situation of like nature, recommend appropriate procedures or methods of adjustment.
+The Security Council should take into consideration any procedures for the settlement of the dispute which have already been adopted by the parties.
+In making recommendations under this Article the Security Council should also take into consideration that legal disputes should as a general rule be referred by the parties to the International Court of Justice in accordance with the provisions of the Statute of the Court.""";
+    content_hash "sha256:fe01d3be2c5b019d97d184c30b1bd84a5a11f547587949f5f85cec9e808d447f";
+}
+
+// Article 37 (Ch. VI, referral to the Security Council on failure to settle)
+fragment UNC_EN_ART37 in UN_CHARTER_EN {
+    kind article;
+    locator "article/37";
+    text en official """Article 37
+Should the parties to a dispute of the nature referred to in Article 33 fail to settle it by the means indicated in that Article, they shall refer it to the Security Council.
+If the Security Council deems that the continuance of the dispute is in fact likely to endanger the maintenance of international peace and security, it shall decide whether to take action under Article 36 or to recommend such terms of settlement as it may consider appropriate.""";
+    content_hash "sha256:f655e37ce7210ac9006d03b9f3f214de44d35d984d998cdc468d51f7ac77c576";
+}
+
+// Article 38 (Ch. VI, recommendations by request of all parties)
+fragment UNC_EN_ART38 in UN_CHARTER_EN {
+    kind article;
+    locator "article/38";
+    text en official """Article 38
+Without prejudice to the provisions of Articles 33 to 37, the Security Council may, if all the parties to any dispute so request, make recommendations to the parties with a view to a pacific settlement of the dispute.""";
+    content_hash "sha256:d96b607deacafc6bdd2dc20be8ae3ba2adf0ebcf562024e46fc0a891974f5dfa";
+}
+
+// Article 39 (Ch. VII, determination of a threat to the peace)
+fragment UNC_EN_ART39 in UN_CHARTER_EN {
+    kind article;
+    locator "article/39";
+    text en official """Article 39
+The Security Council shall determine the existence of any threat to the peace, breach of the peace, or act of aggression and shall make recommendations, or decide what measures shall be taken in accordance with Articles 41 and 42, to maintain or restore international peace and security.""";
+    content_hash "sha256:f6e5f08d44c8a645f2538d0fe31224cd8a88de2cf6703dd0f1c58b9f89ff860f";
+}
+
+// Article 40 (Ch. VII, provisional measures)
+fragment UNC_EN_ART40 in UN_CHARTER_EN {
+    kind article;
+    locator "article/40";
+    text en official """Article 40
+In order to prevent an aggravation of the situation, the Security Council may, before making the recommendations or deciding upon the measures provided for in Article 39, call upon the parties concerned to comply with such provisional measures as it deems necessary or desirable. Such provisional measures shall be without prejudice to the rights, claims, or position of the parties concerned. The Security Council shall duly take account of failure to comply with such provisional measures.""";
+    content_hash "sha256:ee9acf3137918840999ca3628241a3885400b0651494b23f13afedc0cef7c52d";
+}
+
+// Article 41 (Ch. VII, measures not involving armed force)
+fragment UNC_EN_ART41 in UN_CHARTER_EN {
+    kind article;
+    locator "article/41";
+    text en official """Article 41
+The Security Council may decide what measures not involving the use of armed force are to be employed to give effect to its decisions, and it may call upon the Members of the United Nations to apply such measures. These may include complete or partial interruption of economic relations and of rail, sea, air, postal, telegraphic, radio, and other means of communication, and the severance of diplomatic relations.""";
+    content_hash "sha256:dc51d74f4c4cb49f5fc5f83c911f63afd75ffe8362455078fd1efce58951a330";
+}
+
+// Article 42 (Ch. VII, action involving armed force)
+fragment UNC_EN_ART42 in UN_CHARTER_EN {
+    kind article;
+    locator "article/42";
+    text en official """Article 42
+Should the Security Council consider that measures provided for in Article 41 would be inadequate or have proved to be inadequate, it may take such action by air, sea, or land forces as may be necessary to maintain or restore international peace and security. Such action may include demonstrations, blockade, and other operations by air, sea, or land forces of Members of the United Nations.""";
+    content_hash "sha256:5f5a0dc0e2f021ce9ba412b27f25382e053d81c4006e3976ef667503194dfc21";
+}
+
+// Article 43 (Ch. VII, agreements on armed forces)
+fragment UNC_EN_ART43 in UN_CHARTER_EN {
+    kind article;
+    locator "article/43";
+    text en official """Article 43
+All Members of the United Nations, in order to contribute to the maintenance of international peace and security, undertake to make available to the Security Council, on its call and in accordance with a special agreement or agreements, armed forces, assistance, and facilities, including rights of passage, necessary for the purpose of maintaining international peace and security.
+Such agreement or agreements shall govern the numbers and types of forces, their degree of readiness and general location, and the nature of the facilities and assistance to be provided.
+The agreement or agreements shall be negotiated as soon as possible on the initiative of the Security Council. They shall be concluded between the Security Council and Members or between the Security Council and groups of Members and shall be subject to ratification by the signatory states in accordance with their respective constitutional processes.""";
+    content_hash "sha256:4d6b00e34c83961409508a14bf6a712b3c6f7cb6084e6dc36b7684edb866e853";
+}
+
+// Article 44 (Ch. VII, participation of an unrepresented member)
+fragment UNC_EN_ART44 in UN_CHARTER_EN {
+    kind article;
+    locator "article/44";
+    text en official """Article 44
+When the Security Council has decided to use force it shall, before calling upon a Member not represented on it to provide armed forces in fulfilment of the obligations assumed under Article 43, invite that Member, if the Member so desires, to participate in the decisions of the Security Council concerning the employment of contingents of that Member's armed forces.""";
+    content_hash "sha256:a2cd743fa3a837d233612476f1451ac8c78e996ca1f047a7ba7318901edc7459";
+}
+
+// Article 45 (Ch. VII, air-force contingents for immediate action)
+fragment UNC_EN_ART45 in UN_CHARTER_EN {
+    kind article;
+    locator "article/45";
+    text en official """Article 45
+In order to enable the United Nations to take urgent military measures, Members shall hold immediately available national air-force contingents for combined international enforcement action. The strength and degree of readiness of these contingents and plans for their combined action shall be determined within the limits laid down in the special agreement or agreements referred to in Article 43, by the Security Council with the assistance of the Military Staff Committee.""";
+    content_hash "sha256:7699c06bb0e2e95481347515a5b34d3abdc77ab7af89a20f653420a6f8e11834";
+}
+
+// Article 46 (Ch. VII, plans for the application of armed force)
+fragment UNC_EN_ART46 in UN_CHARTER_EN {
+    kind article;
+    locator "article/46";
+    text en official """Article 46
+Plans for the application of armed force shall be made by the Security Council with the assistance of the Military Staff Committee.""";
+    content_hash "sha256:1c452cc4cb36d0a24e7d08c760e06ad7fd17e8bb5ffa6f8ee4674a2786c099e3";
+}
+
+// Article 47 (Ch. VII, Military Staff Committee)
+fragment UNC_EN_ART47 in UN_CHARTER_EN {
+    kind article;
+    locator "article/47";
+    text en official """Article 47
+There shall be established a Military Staff Committee to advise and assist the Security Council on all questions relating to the Security Council's military requirements for the maintenance of international peace and security, the employment and command of forces placed at its disposal, the regulation of armaments, and possible disarmament.
+The Military Staff Committee shall consist of the Chiefs of Staff of the permanent members of the Security Council or their representatives. Any Member of the United Nations not permanently represented on the Committee shall be invited by the Committee to be associated with it when the efficient discharge of the Committee's responsibilities requires the participation of that Member in its work.
+The Military Staff Committee shall be responsible under the Security Council for the strategic direction of any armed forces placed at the disposal of the Security Council. Questions relating to the command of such forces shall be worked out subsequently.
+The Military Staff Committee, with the authorization of the Security Council and after consultation with appropriate regional agencies, may establish regional sub-committees.""";
+    content_hash "sha256:2c4eb6b1afe66901c5ef1cb15d69ee25a19512a31b36b8b9223032605b79196b";
+}
+
+// Article 48 (Ch. VII, carrying out Security Council decisions)
+fragment UNC_EN_ART48 in UN_CHARTER_EN {
+    kind article;
+    locator "article/48";
+    text en official """Article 48
+The action required to carry out the decisions of the Security Council for the maintenance of international peace and security shall be taken by all the Members of the United Nations or by some of them, as the Security Council may determine.
+Such decisions shall be carried out by the Members of the United Nations directly and through their action in the appropriate international agencies of which they are members.""";
+    content_hash "sha256:49c4ff8732176e2d4d505d30a578146d05fedeee42d2a4c8f2d53df08c7b551a";
+}
+
+// Article 49 (Ch. VII, mutual assistance)
+fragment UNC_EN_ART49 in UN_CHARTER_EN {
+    kind article;
+    locator "article/49";
+    text en official """Article 49
+The Members of the United Nations shall join in affording mutual assistance in carrying out the measures decided upon by the Security Council.""";
+    content_hash "sha256:ff90e12a5f2cf0feb9af5b06574dd7d6a64786bda3c0a793ec526800eca162af";
+}
+
+// Article 50 (Ch. VII, consultation on special economic problems)
+fragment UNC_EN_ART50 in UN_CHARTER_EN {
+    kind article;
+    locator "article/50";
+    text en official """Article 50
+If preventive or enforcement measures against any state are taken by the Security Council, any other state, whether a Member of the United Nations or not, which finds itself confronted with special economic problems arising from the carrying out of those measures shall have the right to consult the Security Council with regard to a solution of those problems.""";
+    content_hash "sha256:52464a3e6f74b28396b14d2e108f21075d413f007c65ea7f6bda09d30851bb6a";
+}
+
+// Article 51 (Ch. VII, self-defence)
+fragment UNC_EN_ART51 in UN_CHARTER_EN {
+    kind article;
+    locator "article/51";
+    text en official """Article 51
+Nothing in the present Charter shall impair the inherent right of individual or collective self-defence if an armed attack occurs against a Member of the United Nations, until the Security Council has taken measures necessary to maintain international peace and security. Measures taken by Members in the exercise of this right of self-defence shall be immediately reported to the Security Council and shall not in any way affect the authority and responsibility of the Security Council under the present Charter to take at any time such action as it deems necessary in order to maintain or restore international peace and security.""";
+    content_hash "sha256:f364f5637ad09d0869dd864fc0206fb06b83a99853e19fcfeeadff2e49ab1886";
+}
+
+// Article 52 (Ch. VIII, regional arrangements: consistency with Purposes and Principles, prior effort at regional settlement, Security Council encouragement)
+fragment UNC_EN_ART52 in UN_CHARTER_EN {
+    kind article;
+    locator "article/52";
+    text en official """Article 52
+Nothing in the present Charter precludes the existence of regional arrangements or agencies for dealing with such matters relating to the maintenance of international peace and security as are appropriate for regional action provided that such arrangements or agencies and their activities are consistent with the Purposes and Principles of the United Nations.
+The Members of the United Nations entering into such arrangements or constituting such agencies shall make every effort to achieve pacific settlement of local disputes through such regional arrangements or by such regional agencies before referring them to the Security Council.
+The Security Council shall encourage the development of pacific settlement of local disputes through such regional arrangements or by such regional agencies either on the initiative of the states concerned or by reference from the Security Council.
+This Article in no way impairs the application of Articles 34 and 35.""";
+    content_hash "sha256:ff9352f53a7df18d9a18b4aea224ab3f1677acd34a4dc74cbe21ee963cd06378";
+}
+
+// Article 53 (Ch. VIII, enforcement action by regional arrangements only with Security Council authorization, enemy-state exception)
+fragment UNC_EN_ART53 in UN_CHARTER_EN {
+    kind article;
+    locator "article/53";
+    text en official """Article 53
+The Security Council shall, where appropriate, utilize such regional arrangements or agencies for enforcement action under its authority. But no enforcement action shall be taken under regional arrangements or by regional agencies without the authorization of the Security Council, with the exception of measures against any enemy state, as defined in paragraph 2 of this Article, provided for pursuant to Article 107 or in regional arrangements directed against renewal of aggressive policy on the part of any such state, until such time as the Organization may, on request of the Governments concerned, be charged with the responsibility for preventing further aggression by such a state.
+The term enemy state as used in paragraph 1 of this Article applies to any state which during the Second World War has been an enemy of any signatory of the present Charter.""";
+    content_hash "sha256:ddb5d6fce758d22a3b5d9008576cb5625bf1faf82db4505d6ec90b1a62fbd028";
+}
+
+// Article 54 (Ch. VIII, keeping the Security Council informed)
+fragment UNC_EN_ART54 in UN_CHARTER_EN {
+    kind article;
+    locator "article/54";
+    text en official """Article 54
+The Security Council shall at all times be kept fully informed of activities undertaken or in contemplation under regional arrangements or by regional agencies for the maintenance of international peace and security.""";
+    content_hash "sha256:0d9454cea5f1e37cf7c82d825f085aeefc3ea391a95c60ff635ade0559e429a3";
+}
+
+// Article 55 (Ch. IX, purposes of international economic and social co-operation)
+fragment UNC_EN_ART55 in UN_CHARTER_EN {
+    kind article;
+    locator "article/55";
+    text en official """Article 55
+With a view to the creation of conditions of stability and well-being which are necessary for peaceful and friendly relations among nations based on respect for the principle of equal rights and self-determination of peoples, the United Nations shall promote:
+higher standards of living, full employment, and conditions of economic and social progress and development;
+solutions of international economic, social, health, and related problems; and international cultural and educational cooperation; and
+universal respect for, and observance of, human rights and fundamental freedoms for all without distinction as to race, sex, language, or religion.""";
+    content_hash "sha256:2fcb2881330a9832320d9c1af584ed4826cc46252031b219b70876bf2a82286d";
+}
+
+// Article 56 (Ch. IX, Members' pledge of joint and separate action)
+fragment UNC_EN_ART56 in UN_CHARTER_EN {
+    kind article;
+    locator "article/56";
+    text en official """Article 56
+All Members pledge themselves to take joint and separate action in co-operation with the Organization for the achievement of the purposes set forth in Article 55.""";
+    content_hash "sha256:2dcb8ad65730489460a805743b464d3850118ddfe4ad57f1848739f2aca60f88";
+}
+
+// Article 57 (Ch. IX, specialized agencies brought into relationship with the UN)
+fragment UNC_EN_ART57 in UN_CHARTER_EN {
+    kind article;
+    locator "article/57";
+    text en official """Article 57
+The various specialized agencies, established by intergovernmental agreement and having wide international responsibilities, as defined in their basic instruments, in economic, social, cultural, educational, health, and related fields, shall be brought into relationship with the United Nations in accordance with the provisions of Article 63.
+Such agencies thus brought into relationship with the United Nations are hereinafter referred to as specialized agencies.""";
+    content_hash "sha256:3e7c5ffe7498c8d568a05267993de7816209bf109f3be9965a62f7fd9f012974";
+}
+
+// Article 58 (Ch. IX, recommendations coordinating specialized agencies)
+fragment UNC_EN_ART58 in UN_CHARTER_EN {
+    kind article;
+    locator "article/58";
+    text en official """Article 58
+The Organization shall make recommendations for the co-ordination of the policies and activities of the specialized agencies.""";
+    content_hash "sha256:d590d127546bd2593d03d26d6013c1540ace93e68561e9efb47e1f64b6dc143c";
+}
+
+// Article 59 (Ch. IX, initiating negotiations for new specialized agencies)
+fragment UNC_EN_ART59 in UN_CHARTER_EN {
+    kind article;
+    locator "article/59";
+    text en official """Article 59
+The Organization shall, where appropriate, initiate negotiations among the states concerned for the creation of any new specialized agencies required for the accomplishment of the purposes set forth in Article 55.""";
+    content_hash "sha256:975a11d927c0e0789b7e59ef31ece5487f75141023f7bc0088fc5b91e0b06169";
+}
+
+// Article 60 (Ch. IX, responsibility vested in the General Assembly and ECOSOC)
+fragment UNC_EN_ART60 in UN_CHARTER_EN {
+    kind article;
+    locator "article/60";
+    text en official """Article 60
+Responsibility for the discharge of the functions of the Organization set forth in this Chapter shall be vested in the General Assembly and, under the authority of the General Assembly, in the Economic and Social Council, which shall have for this purpose the powers set forth in Chapter X.""";
+    content_hash "sha256:e1e03e80ba005806c004c3f11c49bc4f3328ee813e749ca16804ec1e05827021";
+}
+
+// Article 61 (Ch. X, composition of the Economic and Social Council)
+fragment UNC_EN_ART61 in UN_CHARTER_EN {
+    kind article;
+    locator "article/61";
+    text en official """Article 61
+The Economic and Social Council shall consist of fifty-four Members of the United Nations elected by the General Assembly.
+Subject to the provisions of paragraph 3, eighteen members of the Economic and Social Council shall be elected each year for a term of three years. A retiring member shall be eligible for immediate re-election.
+At the first election after the increase in the membership of the Economic and Social Council from twenty-seven to fifty-four members, in addition to the members elected in place of the nine members whose term of office expires at the end of that year, twenty-seven additional members shall be elected. Of these twenty-seven additional members, the term of office of nine members so elected shall expire at the end of one year, and of nine other members at the end of two years, in accordance with arrangements made by the General Assembly.
+Each member of the Economic and Social Council shall have one representative.""";
+    content_hash "sha256:479c33271a225536742c7819123391d81153ea17c11196d2f02bf261c16d16b1";
+}
+
+// Article 62 (Ch. X, ECOSOC studies, reports, recommendations, draft conventions, conferences)
+fragment UNC_EN_ART62 in UN_CHARTER_EN {
+    kind article;
+    locator "article/62";
+    text en official """Article 62
+The Economic and Social Council may make or initiate studies and reports with respect to international economic, social, cultural, educational, health, and related matters and may make recommendations with respect to any such matters to the General Assembly to the Members of the United Nations, and to the specialized agencies concerned.
+It may make recommendations for the purpose of promoting respect for, and observance of, human rights and fundamental freedoms for all.
+It may prepare draft conventions for submission to the General Assembly, with respect to matters falling within its competence.
+It may call, in accordance with the rules prescribed by the United Nations, international conferences on matters falling within its competence.""";
+    content_hash "sha256:d92473ab3128aa61125d330f89819f36b5da358d225074933237809cbdcea9c4";
+}
+
+// Article 63 (Ch. X, agreements bringing specialized agencies into relationship with the UN)
+fragment UNC_EN_ART63 in UN_CHARTER_EN {
+    kind article;
+    locator "article/63";
+    text en official """Article 63
+The Economic and Social Council may enter into agreements with any of the agencies referred to in Article 57, defining the terms on which the agency concerned shall be brought into relationship with the United Nations. Such agreements shall be subject to approval by the General Assembly.
+It may co-ordinate the activities of the specialized agencies through consultation with and recommendations to such agencies and through recommendations to the General Assembly and to the Members of the United Nations.""";
+    content_hash "sha256:87606fb77abac4aa9469ff87212070b39585a5134246f0c8ff0ee0b75207e19a";
+}
+
+// Article 64 (Ch. X, obtaining reports from specialized agencies)
+fragment UNC_EN_ART64 in UN_CHARTER_EN {
+    kind article;
+    locator "article/64";
+    text en official """Article 64
+The Economic and Social Council may take appropriate steps to obtain regular reports from the specialized agencies. It may make arrangements with the Members of the United Nations and with the specialized agencies to obtain reports on the steps taken to give effect to its own recommendations and to recommendations on matters falling within its competence made by the General Assembly.
+It may communicate its observations on these reports to the General Assembly.""";
+    content_hash "sha256:07d7e7bd229c78827e336405d0784f2e58e1ab052c91910911e618fabb9a310d";
+}
+
+// Article 65 (Ch. X, furnishing information to and assisting the Security Council)
+fragment UNC_EN_ART65 in UN_CHARTER_EN {
+    kind article;
+    locator "article/65";
+    text en official """Article 65
+The Economic and Social Council may furnish information to the Security Council and shall assist the Security Council upon its request.""";
+    content_hash "sha256:497e5a129ea90b2781d28d2364eab7e1b04c548a1dbedf9a913dca8bc8322195";
+}
+
+// Article 66 (Ch. X, ECOSOC functions carrying out General Assembly recommendations)
+fragment UNC_EN_ART66 in UN_CHARTER_EN {
+    kind article;
+    locator "article/66";
+    text en official """Article 66
+The Economic and Social Council shall perform such functions as fall within its competence in connection with the carrying out of the recommendations of the General Assembly.
+It may, with the approval of the General Assembly, perform services at the request of Members of the United Nations and at the request of specialized agencies.
+It shall perform such other functions as are specified elsewhere in the present Charter or as may be assigned to it by the General Assembly.""";
+    content_hash "sha256:0a3e38e10ff1b8ad14a61adce71bd5aead553e100dddd6f80b22d66e26d92b2e";
+}
+
+// Article 67 (Ch. X, voting: majority of the members present and voting)
+fragment UNC_EN_ART67 in UN_CHARTER_EN {
+    kind article;
+    locator "article/67";
+    text en official """Article 67
+Each member of the Economic and Social Council shall have one vote.
+Decisions of the Economic and Social Council shall be made by a majority of the members present and voting.""";
+    content_hash "sha256:a16cfc03eb418c0608a7af8f1e6643ea7481d16c759d28a57ebf55143eb83d0c";
+}
+
+// Article 68 (Ch. X, commissions in economic and social fields and for human rights)
+fragment UNC_EN_ART68 in UN_CHARTER_EN {
+    kind article;
+    locator "article/68";
+    text en official """Article 68
+The Economic and Social Council shall set up commissions in economic and social fields and for the promotion of human rights, and such other commissions as may be required for the performance of its functions.""";
+    content_hash "sha256:ec0b72bbc17ebfcd2dbaff33e4ad4dde6e13103a55b3d419b6e540f6507eae11";
+}
+
+// Article 69 (Ch. X, participation without vote of a Member of particular concern)
+fragment UNC_EN_ART69 in UN_CHARTER_EN {
+    kind article;
+    locator "article/69";
+    text en official """Article 69
+The Economic and Social Council shall invite any Member of the United Nations to participate, without vote, in its deliberations on any matter of particular concern to that Member.""";
+    content_hash "sha256:1a8319df00b5e0612d9f242f75c48f428f14ae53399b39a8226ad1dc00fea79b";
+}
+
+// Article 70 (Ch. X, participation of specialized-agency representatives without vote)
+fragment UNC_EN_ART70 in UN_CHARTER_EN {
+    kind article;
+    locator "article/70";
+    text en official """Article 70
+The Economic and Social Council may make arrangements for representatives of the specialized agencies to participate, without vote, in its deliberations and in those of the commissions established by it, and for its representatives to participate in the deliberations of the specialized agencies.""";
+    content_hash "sha256:48ab24bc4f85c5ee2129cd836e8d76eaf747c923f70854aef34ba41b9eb38782";
+}
+
+// Article 71 (Ch. X, consultative arrangements with non-governmental organizations)
+fragment UNC_EN_ART71 in UN_CHARTER_EN {
+    kind article;
+    locator "article/71";
+    text en official """Article 71
+The Economic and Social Council may make suitable arrangements for consultation with non-governmental organizations which are concerned with matters within its competence. Such arrangements may be made with international organizations and, where appropriate, with national organizations after consultation with the Member of the United Nations concerned.""";
+    content_hash "sha256:1faaae925e52b001ac1547ca7cfa069711b39c039bdba4c1dda6c9503a421a90";
+}
+
+// Article 72 (Ch. X, ECOSOC rules of procedure, President, meetings)
+fragment UNC_EN_ART72 in UN_CHARTER_EN {
+    kind article;
+    locator "article/72";
+    text en official """Article 72
+The Economic and Social Council shall adopt its own rules of procedure, including the method of selecting its President.
+The Economic and Social Council shall meet as required in accordance with its rules, which shall include provision for the convening of meetings on the request of a majority of its members.""";
+    content_hash "sha256:a7bfa4b006dceaa550730a414f45a43afebcc1edbc67193762487db317f714fa";
+}
+
+// Article 73 (Ch. XI, Declaration Regarding Non-Self-Governing Territories: recognition of the paramount interests of the inhabitants, sacred trust, paras. (a)-(e))
+fragment UNC_EN_ART73 in UN_CHARTER_EN {
+    kind article;
+    locator "article/73";
+    text en official """Article 73
+Members of the United Nations which have or assume responsibilities for the administration of territories whose peoples have not yet attained a full measure of self-government recognize the principle that the interests of the inhabitants of these territories are paramount, and accept as a sacred trust the obligation to promote to the utmost, within the system of international peace and security established by the present Charter, the well-being of the inhabitants of these territories, and, to this end:
+to ensure, with due respect for the culture of the peoples concerned, their political, economic, social, and educational advancement, their just treatment, and their protection against abuses;
+to develop self-government, to take due account of the political aspirations of the peoples, and to assist them in the progressive development of their free political institutions, according to the particular circumstances of each territory and its peoples and their varying stages of advancement;
+to further international peace and security;
+to promote constructive measures of development, to encourage research, and to co-operate with one another and, when and where appropriate, with specialized international bodies with a view to the practical achievement of the social, economic, and scientific purposes set forth in this Article; and
+to transmit regularly to the Secretary-General for information purposes, subject to such limitation as security and constitutional considerations may require, statistical and other information of a technical nature relating to economic, social, and educational conditions in the territories for which they are respectively responsible other than those territories to which Chapters XII and XIII apply.""";
+    content_hash "sha256:8b758fb15d6fe3dd7b97239c8429dd1be64c266e34647aecca5d444262b9815e";
+}
+
+// Article 74 (Ch. XI, policy of good-neighbourliness)
+fragment UNC_EN_ART74 in UN_CHARTER_EN {
+    kind article;
+    locator "article/74";
+    text en official """Article 74
+Members of the United Nations also agree that their policy in respect of the territories to which this Chapter applies, no less than in respect of their metropolitan areas, must be based on the general principle of good-neighbourliness, due account being taken of the interests and well-being of the rest of the world, in social, economic, and commercial matters.""";
+    content_hash "sha256:31c630c276bb8a66c5f97358974d591da0333d5451a12bdef25741fd01aff2ae";
+}
+
+// Article 75 (Ch. XII, establishment of the international trusteeship system)
+fragment UNC_EN_ART75 in UN_CHARTER_EN {
+    kind article;
+    locator "article/75";
+    text en official """Article 75
+The United Nations shall establish under its authority an international trusteeship system for the administration and supervision of such territories as may be placed thereunder by subsequent individual agreements. These territories are hereinafter referred to as trust territories.""";
+    content_hash "sha256:07c3dc1320cf5ca28d6f809c0775f6dc986308b00d619b977758cc6844849794";
+}
+
+// Article 76 (Ch. XII, basic objectives of the trusteeship system)
+fragment UNC_EN_ART76 in UN_CHARTER_EN {
+    kind article;
+    locator "article/76";
+    text en official """Article 76
+The basic objectives of the trusteeship system, in accordance with the Purposes of the United Nations laid down in Article 1 of the present Charter, shall be:
+to further international peace and security;
+to promote the political, economic, social, and educational advancement of the inhabitants of the trust territories, and their progressive development towards self-government or independence as may be appropriate to the particular circumstances of each territory and its peoples and the freely expressed wishes of the peoples concerned, and as may be provided by the terms of each trusteeship agreement;
+to encourage respect for human rights and for fundamental freedoms for all without distinction as to race, sex, language, or religion, and to encourage recognition of the interdependence of the peoples of the world; and
+to ensure equal treatment in social, economic, and commercial matters for all Members of the United Nations and their nationals, and also equal treatment for the latter in the administration of justice, without prejudice to the attainment of the foregoing objectives and subject to the provisions of Article 80.""";
+    content_hash "sha256:7e8ec4d84666df55fd8cca901836f9d23ba28d0d9286a9fbcedc42c0ca9a595b";
+}
+
+// Article 77 (Ch. XII, categories of territories placeable under trusteeship)
+fragment UNC_EN_ART77 in UN_CHARTER_EN {
+    kind article;
+    locator "article/77";
+    text en official """Article 77
+The trusteeship system shall apply to such territories in the following categories as may be placed thereunder by means of trusteeship agreements:
+territories now held under mandate;
+territories which may be detached from enemy states as a result of the Second World War; and
+territories voluntarily placed under the system by states responsible for their administration.
+It will be a matter for subsequent agreement as to which territories in the foregoing categories will be brought under the trusteeship system and upon what terms.""";
+    content_hash "sha256:34c5a5b3d1eb75ccb06c6d78553de0276c6c2756a84f3368dc0e27f89c4d2c21";
+}
+
+// Article 78 (Ch. XII, inapplicability of the trusteeship system to UN Members)
+fragment UNC_EN_ART78 in UN_CHARTER_EN {
+    kind article;
+    locator "article/78";
+    text en official """Article 78
+The trusteeship system shall not apply to territories which have become Members of the United Nations, relationship among which shall be based on respect for the principle of sovereign equality.""";
+    content_hash "sha256:0602a5c2d6badfd994e7c9efccfedbd8236716dabec6a0c311cd41e285d2e65c";
+}
+
+// Article 79 (Ch. XII, agreement on the terms of trusteeship)
+fragment UNC_EN_ART79 in UN_CHARTER_EN {
+    kind article;
+    locator "article/79";
+    text en official """Article 79
+The terms of trusteeship for each territory to be placed under the trusteeship system, including any alteration or amendment, shall be agreed upon by the states directly concerned, including the mandatory power in the case of territories held under mandate by a Member of the United Nations, and shall be approved as provided for in Articles 83 and 85.""";
+    content_hash "sha256:fdc251f07330c9885e272edfa59e8002f0bc9a22d809f185c2892a6352f06ff2";
+}
+
+// Article 80 (Ch. XII, savings clause pending conclusion of trusteeship agreements)
+fragment UNC_EN_ART80 in UN_CHARTER_EN {
+    kind article;
+    locator "article/80";
+    text en official """Article 80
+Except as may be agreed upon in individual trusteeship agreements, made under Articles 77, 79, and 81, placing each territory under the trusteeship system, and until such agreements have been concluded, nothing in this Chapter shall be construed in or of itself to alter in any manner the rights whatsoever of any states or any peoples or the terms of existing international instruments to which Members of the United Nations may respectively be parties.
+Paragraph 1 of this Article shall not be interpreted as giving grounds for delay or postponement of the negotiation and conclusion of agreements for placing mandated and other territories under the trusteeship system as provided for in Article 77.""";
+    content_hash "sha256:3d0ea4e4f90df807dbe9f32c6fb01784c3bf222b65c183997db6d014e581ef2a";
+}
+
+// Article 81 (Ch. XII, terms of the trusteeship agreement, the administering authority)
+fragment UNC_EN_ART81 in UN_CHARTER_EN {
+    kind article;
+    locator "article/81";
+    text en official """Article 81
+The trusteeship agreement shall in each case include the terms under which the trust territory will be administered and designate the authority which will exercise the administration of the trust territory. Such authority, hereinafter called the administering authority, may be one or more states or the Organization itself.""";
+    content_hash "sha256:3f1ca511497ec22517f085e5d6f0e8a0ce796961259a0e1079c4ec84444c973d";
+}
+
+// Article 82 (Ch. XII, designation of a strategic area)
+fragment UNC_EN_ART82 in UN_CHARTER_EN {
+    kind article;
+    locator "article/82";
+    text en official """Article 82
+There may be designated, in any trusteeship agreement, a strategic area or areas which may include part or all of the trust territory to which the agreement applies, without prejudice to any special agreement or agreements made under Article 43.""";
+    content_hash "sha256:1a0a19a158f97967312f26b7a62321e542ac393cc20d0350fda332340ad9c979";
+}
+
+// Article 83 (Ch. XII, strategic areas: functions exercised by the Security Council)
+fragment UNC_EN_ART83 in UN_CHARTER_EN {
+    kind article;
+    locator "article/83";
+    text en official """Article 83
+All functions of the United Nations relating to strategic areas, including the approval of the terms of the trusteeship agreements and of their alteration or amendment shall be exercised by the Security Council.
+The basic objectives set forth in Article 76 shall be applicable to the people of each strategic area.
+The Security Council shall, subject to the provisions of the trusteeship agreements and without prejudice to security considerations, avail itself of the assistance of the Trusteeship Council to perform those functions of the United Nations under the trusteeship system relating to political, economic, social, and educational matters in the strategic areas.""";
+    content_hash "sha256:6ebcb1122c7404804c9ebc8ef733f891ef3ba90d17204f9a3c81b19e3ea9dad8";
+}
+
+// Article 84 (Ch. XII, duty of the administering authority to ensure the trust territory's part in international peace and security)
+fragment UNC_EN_ART84 in UN_CHARTER_EN {
+    kind article;
+    locator "article/84";
+    text en official """Article 84
+It shall be the duty of the administering authority to ensure that the trust territory shall play its part in the maintenance of international peace and security. To this end the administering authority may make use of volunteer forces, facilities, and assistance from the trust territory in carrying out the obligations towards the Security Council undertaken in this regard by the administering authority, as well as for local defence and the maintenance of law and order within the trust territory.""";
+    content_hash "sha256:e619e3df398bcc6d8ff1090fd9837864d9eb9511738fdefd903a07ab075d7f8f";
+}
+
+// Article 85 (Ch. XII, non-strategic areas: functions exercised by the General Assembly)
+fragment UNC_EN_ART85 in UN_CHARTER_EN {
+    kind article;
+    locator "article/85";
+    text en official """Article 85
+The functions of the United Nations with regard to trusteeship agreements for all areas not designated as strategic, including the approval of the terms of the trusteeship agreements and of their alteration or amendment, shall be exercised by the General Assembly.
+The Trusteeship Council, operating under the authority of the General Assembly shall assist the General Assembly in carrying out these functions.""";
+    content_hash "sha256:917d494e9fe2f4cde9f228eb73dc9ecbef67fe989362465dc065b636f9d2af48";
+}
+
+// Article 86 (Ch. XIII, composition of the Trusteeship Council, parity of administering and non-administering Members)
+fragment UNC_EN_ART86 in UN_CHARTER_EN {
+    kind article;
+    locator "article/86";
+    text en official """Article 86
+The Trusteeship Council shall consist of the following Members of the United Nations:
+those Members administering trust territories;
+such of those Members mentioned by name in Article 23 as are not administering trust territories; and
+as many other Members elected for three-year terms by the General Assembly as may be necessary to ensure that the total number of members of the Trusteeship Council is equally divided between those Members of the United Nations which administer trust territories and those which do not.
+Each member of the Trusteeship Council shall designate one specially qualified person to represent it therein.""";
+    content_hash "sha256:f9473f6f27b88580fa30f488858cbb2bc5dc005425d17dd2335a5d37a6360c6f";
+}
+
+// Article 87 (Ch. XIII, General Assembly and Trusteeship Council powers: reports, petitions, visits)
+fragment UNC_EN_ART87 in UN_CHARTER_EN {
+    kind article;
+    locator "article/87";
+    text en official """Article 87
+The General Assembly and, under its authority, the Trusteeship Council, in carrying out their functions, may:
+consider reports submitted by the administering authority;
+accept petitions and examine them in consultation with the administering authority;
+provide for periodic visits to the respective trust territories at times agreed upon with the administering authority; and
+take these and other actions in conformity with the terms of the trusteeship agreements.""";
+    content_hash "sha256:2ae238e709c132e7204f8af5605158ea362d2454fa972687bd1133853b01df63";
+}
+
+// Article 88 (Ch. XIII, questionnaire and annual report on trust territories)
+fragment UNC_EN_ART88 in UN_CHARTER_EN {
+    kind article;
+    locator "article/88";
+    text en official """Article 88
+The Trusteeship Council shall formulate a questionnaire on the political, economic, social, and educational advancement of the inhabitants of each trust territory, and the administering authority for each trust territory within the competence of the General Assembly shall make an annual report to the General Assembly upon the basis of such questionnaire.""";
+    content_hash "sha256:ee5001c7ba64da6076b4b4b3c0bb8f0bc61fe0464374a87a8f862fc55fdcfed7";
+}
+
+// Article 89 (Ch. XIII, voting: majority of the members present and voting)
+fragment UNC_EN_ART89 in UN_CHARTER_EN {
+    kind article;
+    locator "article/89";
+    text en official """Article 89
+Each member of the Trusteeship Council shall have one vote.
+Decisions of the Trusteeship Council shall be made by a majority of the members present and voting.""";
+    content_hash "sha256:86eeda5eaf55488b2f24384996ac349bde8a1d663ef7d47a8ee83cb5d9adae79";
+}
+
+// Article 90 (Ch. XIII, Trusteeship Council rules of procedure, President, meetings)
+fragment UNC_EN_ART90 in UN_CHARTER_EN {
+    kind article;
+    locator "article/90";
+    text en official """Article 90
+The Trusteeship Council shall adopt its own rules of procedure, including the method of selecting its President.
+The Trusteeship Council shall meet as required in accordance with its rules, which shall include provision for the convening of meetings on the request of a majority of its members.""";
+    content_hash "sha256:d7652939a2bc5b365509e8c58ea441aabf2d1b4037502b290423012bd0fb27d1";
+}
+
+// Article 91 (Ch. XIII, use of the assistance of the Economic and Social Council and specialized agencies)
+fragment UNC_EN_ART91 in UN_CHARTER_EN {
+    kind article;
+    locator "article/91";
+    text en official """Article 91
+The Trusteeship Council shall, when appropriate, avail itself of the assistance of the Economic and Social Council and of the specialized agencies in regard to matters with which they are respectively concerned.""";
+    content_hash "sha256:eda3939d43ced9d6ba82739b210f13e3c8a93e0b4bda72fc50c6f2868f88e7e9";
+}
+
+// Article 92 (Ch. XIV, International Court of Justice)
+fragment UNC_EN_ART92 in UN_CHARTER_EN {
+    kind article;
+    locator "article/92";
+    text en official """Article 92
+The International Court of Justice shall be the principal judicial organ of the United Nations. It shall function in accordance with the annexed Statute, which is based upon the Statute of the Permanent Court of International Justice and forms an integral part of the present Charter.""";
+    content_hash "sha256:a4f3257204b82b5d2c4d21f8e5e90e36758daac97a71aa0eed63a454d1d25f6e";
+}
+
+// Article 93 (Ch. XIV, parties to the Statute of the International Court of Justice: Members ipso facto, non-Members on conditions determined by the General Assembly)
+fragment UNC_EN_ART93 in UN_CHARTER_EN {
+    kind article;
+    locator "article/93";
+    text en official """Article 93
+All Members of the United Nations are ipso facto parties to the Statute of the International Court of Justice.
+A state which is not a Member of the United Nations may become a party to the Statute of the International Court of Justice on conditions to be determined in each case by the General Assembly upon the recommendation of the Security Council.""";
+    content_hash "sha256:67d100cbc91384157fa1972ee3264cbe893c68ac8113392efc4dfadcd1f78fb8";
+}
+
+// Article 94 (Ch. XIV, undertaking to comply with a decision of the Court; recourse to the Security Council on non-performance of a judgment)
+fragment UNC_EN_ART94 in UN_CHARTER_EN {
+    kind article;
+    locator "article/94";
+    text en official """Article 94
+Each Member of the United Nations undertakes to comply with the decision of the International Court of Justice in any case to which it is a party.
+If any party to a case fails to perform the obligations incumbent upon it under a judgment rendered by the Court, the other party may have recourse to the Security Council, which may, if it deems necessary, make recommendations or decide upon measures to be taken to give effect to the judgment.""";
+    content_hash "sha256:63e6357188aba5b19994b5c0240c45f581db1791e80749a91a3733905df5adbe";
+}
+
+// Article 95 (Ch. XIV, other tribunals by virtue of existing or future agreements)
+fragment UNC_EN_ART95 in UN_CHARTER_EN {
+    kind article;
+    locator "article/95";
+    text en official """Article 95
+Nothing in the present Charter shall prevent Members of the United Nations from entrusting the solution of their differences to other tribunals by virtue of agreements already in existence or which may be concluded in the future.""";
+    content_hash "sha256:15eb2b5a64582ef8e063f792e503ad5086a2fa8ec9f3642d905a321bdeb56021";
+}
+
+// Article 96 (Ch. XIV, who may request an advisory opinion of the Court)
+fragment UNC_EN_ART96 in UN_CHARTER_EN {
+    kind article;
+    locator "article/96";
+    text en official """Article 96
+The General Assembly or the Security Council may request the International Court of Justice to give an advisory opinion on any legal question.
+Other organs of the United Nations and specialized agencies, which may at any time be so authorized by the General Assembly, may also request advisory opinions of the Court on legal questions arising within the scope of their activities.""";
+    content_hash "sha256:8eb0f56bfd493c6f73caed5a3694b23a15747baee8803f428b86a423e275e3bb";
+}
+
+// Article 97 (Ch. XV, the Secretariat; appointment of the Secretary-General by the General Assembly upon the recommendation of the Security Council)
+fragment UNC_EN_ART97 in UN_CHARTER_EN {
+    kind article;
+    locator "article/97";
+    text en official """Article 97
+The Secretariat shall comprise a Secretary-General and such staff as the Organization may require. The Secretary-General shall be appointed by the General Assembly upon the recommendation of the Security Council. He shall be the chief administrative officer of the Organization.""";
+    content_hash "sha256:ee80ae13b0da67dfe0cf792e21330e891b596fb9e9eb24c0ce8bc001aba2f059";
+}
+
+// Article 98 (Ch. XV, functions of the Secretary-General in the organs; annual report to the General Assembly)
+fragment UNC_EN_ART98 in UN_CHARTER_EN {
+    kind article;
+    locator "article/98";
+    text en official """Article 98
+The Secretary-General shall act in that capacity in all meetings of the General Assembly, of the Security Council, of the Economic and Social Council, and of the Trusteeship Council, and shall perform such other functions as are entrusted to him by these organs. The Secretary-General shall make an annual report to the General Assembly on the work of the Organization.""";
+    content_hash "sha256:85b5b620f43a5b152e84c2dbdb7d2ddfaa3b968bc3b2b3b29f8cdb840a850911";
+}
+
+// Article 99 (Ch. XV, the Secretary-General may bring a matter threatening peace and security to the attention of the Security Council)
+fragment UNC_EN_ART99 in UN_CHARTER_EN {
+    kind article;
+    locator "article/99";
+    text en official """Article 99
+The Secretary-General may bring to the attention of the Security Council any matter which in his opinion may threaten the maintenance of international peace and security.""";
+    content_hash "sha256:70ed3985effc88977f92fb8a8c06ef3066bad0c12c7d7f4f78bf7d6b56a952b1";
+}
+
+// Article 100 (Ch. XV, independence of the Secretary-General and the staff; the Members' own undertaking to respect it)
+fragment UNC_EN_ART100 in UN_CHARTER_EN {
+    kind article;
+    locator "article/100";
+    text en official """Article 100
+In the performance of their duties the Secretary-General and the staff shall not seek or receive instructions from any government or from any other authority external to the Organization. They shall refrain from any action which might reflect on their position as international officials responsible only to the Organization.
+Each Member of the United Nations undertakes to respect the exclusively international character of the responsibilities of the Secretary-General and the staff and not to seek to influence them in the discharge of their responsibilities.""";
+    content_hash "sha256:c87538cf67f3dfdc5764b148a24bc1e2e561102d8c50b0fed414487fb92f6d3e";
+}
+
+// Article 101 (Ch. XV, appointment of the staff under regulations established by the General Assembly; paramount consideration in employment)
+fragment UNC_EN_ART101 in UN_CHARTER_EN {
+    kind article;
+    locator "article/101";
+    text en official """Article 101
+The staff shall be appointed by the Secretary-General under regulations established by the General Assembly.
+Appropriate staffs shall be permanently assigned to the Economic and Social Council, the Trusteeship Council, and, as required, to other organs of the United Nations. These staffs shall form a part of the Secretariat.
+The paramount consideration in the employment of the staff and in the determination of the conditions of service shall be the necessity of securing the highest standards of efficiency, competence, and integrity. Due regard shall be paid to the importance of recruiting the staff on as wide a geographical basis as possible.""";
+    content_hash "sha256:d75beb9d33b777cd4876ca819fd10064e2caf8bbc604853e14c12243709b4521";
+}
+
+// Article 102 (Ch. XVI, registration of treaties with the Secretariat; bar on invoking an unregistered treaty before a UN organ)
+fragment UNC_EN_ART102 in UN_CHARTER_EN {
+    kind article;
+    locator "article/102";
+    text en official """Article 102
+Every treaty and every international agreement entered into by any Member of the United Nations after the present Charter comes into force shall as soon as possible be registered with the Secretariat and published by it.
+No party to any such treaty or international agreement which has not been registered in accordance with the provisions of paragraph 1 of this Article may invoke that treaty or agreement before any organ of the United Nations.""";
+    content_hash "sha256:a66dcd58edae2bae96dfdaa240f4305c1518b86155c7d02e9f667a4cf5b48eff";
+}
+
+// Article 103 (Ch. XVI, priority of Charter obligations)
+fragment UNC_EN_ART103 in UN_CHARTER_EN {
+    kind article;
+    locator "article/103";
+    text en official """Article 103
+In the event of a conflict between the obligations of the Members of the United Nations under the present Charter and their obligations under any other international agreement, their obligations under the present Charter shall prevail.""";
+    content_hash "sha256:3dd2c55dda07610d146f9ec845e919f784c19c315e3dc2eca85f705cfef1bee4";
+}
+
+// Article 104 (Ch. XVI, legal capacity of the Organization in the territory of each Member)
+fragment UNC_EN_ART104 in UN_CHARTER_EN {
+    kind article;
+    locator "article/104";
+    text en official """Article 104
+The Organization shall enjoy in the territory of each of its Members such legal capacity as may be necessary for the exercise of its functions and the fulfilment of its purposes.""";
+    content_hash "sha256:5324af3c45c1424b9f9a54132119d38fbaa01f83af79debaf747eb286061809c";
+}
+
+// Article 105 (Ch. XVI, privileges and immunities of the Organization, of Members' representatives and of officials)
+fragment UNC_EN_ART105 in UN_CHARTER_EN {
+    kind article;
+    locator "article/105";
+    text en official """Article 105
+The Organization shall enjoy in the territory of each of its Members such privileges and immunities as are necessary for the fulfilment of its purposes.
+Representatives of the Members of the United Nations and officials of the Organization shall similarly enjoy such privileges and immunities as are necessary for the independent exercise of their functions in connection with the Organization.
+The General Assembly may make recommendations with a view to determining the details of the application of paragraphs 1 and 2 of this Article or may propose conventions to the Members of the United Nations for this purpose.""";
+    content_hash "sha256:c244d9c98aa9e977dc0caf1be46b7da0dd3e48deb358863d547bb20200eb34ab";
+}
+
+// Article 106 (Ch. XVII, transitional consultation duty pending Article 43 special agreements)
+fragment UNC_EN_ART106 in UN_CHARTER_EN {
+    kind article;
+    locator "article/106";
+    text en official """Article 106
+Pending the coming into force of such special agreements referred to in Article 43 as in the opinion of the Security Council enable it to begin the exercise of its responsibilities under Article 42, the parties to the Four-Nation Declaration, signed at Moscow, 30 October 1943, and France, shall, in accordance with the provisions of paragraph 5 of that Declaration, consult with one another and as occasion requires with other Members of the United Nations with a view to such joint action on behalf of the Organization as may be necessary for the purpose of maintaining international peace and security.""";
+    content_hash "sha256:8e3b5b03ca8b47083c8211c7d096e2fdd659127bc52b20338790c25f23d4952c";
+}
+
+// Article 107 (Ch. XVII, enemy-state non-preclusion clause)
+fragment UNC_EN_ART107 in UN_CHARTER_EN {
+    kind article;
+    locator "article/107";
+    text en official """Article 107
+Nothing in the present Charter shall invalidate or preclude action, in relation to any state which during the Second World War has been an enemy of any signatory to the present Charter, taken or authorized as a result of that war by the Governments having responsibility for such action.""";
+    content_hash "sha256:517ec0743554c5df08a2d05e087a927b64d1b088e0a9a3bdc1192a05582429be";
+}
+
+// Article 108 (Ch. XVIII, amendment procedure)
+fragment UNC_EN_ART108 in UN_CHARTER_EN {
+    kind article;
+    locator "article/108";
+    text en official """Article 108
+Amendments to the present Charter shall come into force for all Members of the United Nations when they have been adopted by a vote of two thirds of the members of the General Assembly and ratified in accordance with their respective constitutional processes by two thirds of the Members of the United Nations, including all the permanent members of the Security Council.""";
+    content_hash "sha256:6eafed4be40a2780411810cc99a41ed0d4f2ebb162d702a69ea7cef03d3d2db7";
+}
+
+// Article 109 (Ch. XVIII, General Conference to review the Charter: convening votes, alteration ratification, the tenth-session fallback)
+fragment UNC_EN_ART109 in UN_CHARTER_EN {
+    kind article;
+    locator "article/109";
+    text en official """Article 109
+A General Conference of the Members of the United Nations for the purpose of reviewing the present Charter may be held at a date and place to be fixed by a two-thirds vote of the members of the General Assembly and by a vote of any nine members of the Security Council. Each Member of the United Nations shall have one vote in the conference.
+Any alteration of the present Charter recommended by a two-thirds vote of the conference shall take effect when ratified in accordance with their respective constitutional processes by two thirds of the Members of the United Nations including all the permanent members of the Security Council.
+If such a conference has not been held before the tenth annual session of the General Assembly following the coming into force of the present Charter, the proposal to call such a conference shall be placed on the agenda of that session of the General Assembly, and the conference shall be held if so decided by a majority vote of the members of the General Assembly and by a vote of any seven members of the Security Council.""";
+    content_hash "sha256:14a9dac33f007ddbb7ed432482fad943492bc95b9e21c93d0f28def2535bdfa8";
+}
+
+// Article 110 (Ch. XIX, ratification, deposit, coming into force, original Members ratifying after entry into force)
+fragment UNC_EN_ART110 in UN_CHARTER_EN {
+    kind article;
+    locator "article/110";
+    text en official """Article 110
+The present Charter shall be ratified by the signatory states in accordance with their respective constitutional processes.
+The ratifications shall be deposited with the Government of the United States of America, which shall notify all the signatory states of each deposit as well as the Secretary-General of the Organization when he has been appointed.
+The present Charter shall come into force upon the deposit of ratifications by the Republic of China, France, the Union of Soviet Socialist Republics, the United Kingdom of Great Britain and Northern Ireland, and the United States of America, and by a majority of the other signatory states. A protocol of the ratifications deposited shall thereupon be drawn up by the Government of the United States of America which shall communicate copies thereof to all the signatory states.
+The states signatory to the present Charter which ratify it after it has come into force will become original Members of the United Nations on the date of the deposit of their respective ratifications.""";
+    content_hash "sha256:386246dfcfc3f12c54fccc90e8d345eef0e45d68820e39be7f4b71a1c44d3879";
+}
+
+// Article 111 (Ch. XIX, authentic texts, depositary)
+fragment UNC_EN_ART111 in UN_CHARTER_EN {
+    kind article;
+    locator "article/111";
+    text en official """Article 111
+The present Charter, of which the Chinese, French, Russian, English, and Spanish texts are equally authentic, shall remain deposited in the archives of the Government of the United States of America. Duly certified copies thereof shall be transmitted by that Government to the Governments of the other signatory states.
+In Faith Whereof the representatives of the Governments of the United Nations have signed the present Charter. DONE at the city of San Francisco the twenty-sixth day of June, one thousand nine hundred and forty-five.""";
+    content_hash "sha256:296426513a6f4d11052f5263bed388861ce24ac5cdff1b02afe3f9819e6d9df0";
+}

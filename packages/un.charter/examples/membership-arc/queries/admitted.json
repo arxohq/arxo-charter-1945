@@ -1,0 +1,10 @@
+{
+  "queryId": "admitted",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#admitted_to_membership",
+    "args": [{ "kind": "entity_ref", "id": "urn:law:examples:un-charter:membership-arc:state" }]
+  }
+}

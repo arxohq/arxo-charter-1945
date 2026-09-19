@@ -1,0 +1,29 @@
+language "law.core" version "0.2";
+package examples.un.charter.pacific_settlement version "0.1.0";
+namespace "urn:law:examples:un-charter:pacific-settlement";
+
+// UNC-38B / UNC-44: both parties have sought a peaceful solution (article
+// 33's duty is SATISFIED) but failed to settle by those means — article
+// 37(1)'s duty to refer the dispute to the Security Council is now ACTIVE.
+
+case SettlementSoughtFailed {
+    context {
+        legal_time @2026-01-01;
+        knowledge_time @2026-01-01T12:00:00Z;
+        decision_time @2026-01-01T12:00:00Z;
+        timezone "UTC";
+    }
+
+    const d: un.charter::Dispute = entity_ref("urn:law:examples:un-charter:pacific-settlement:dispute");
+    const state_a: un.charter::State = entity_ref("urn:law:examples:un-charter:pacific-settlement:state-a");
+    const state_b: un.charter::State = entity_ref("urn:law:examples:un-charter:pacific-settlement:state-b");
+
+    assert "threshold": un.charter::dispute_likely_to_endanger_peace_and_security(d) { origin case_input; }
+    assert "party-a": un.charter::party_to_dispute(d, state_a) { origin case_input; }
+    assert "party-b": un.charter::party_to_dispute(d, state_b) { origin case_input; }
+    assert "sought-a": un.charter::sought_peaceful_settlement(d, state_a) { origin case_input; }
+    assert "sought-b": un.charter::sought_peaceful_settlement(d, state_b) { origin case_input; }
+    assert "not-settled": un.charter::dispute_not_settled_by_article_33_means(d) { origin case_input; }
+    assert "member-a": un.charter::member_state(state_a) { origin case_input; }
+    assert "brought": un.charter::dispute_brought_to_attention(state_a, d) { origin case_input; }
+}

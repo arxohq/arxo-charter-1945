@@ -1,0 +1,47 @@
+{
+  "dependencyEdges": [
+    {
+      "features": [],
+      "from": "examples.un.charter.army_and_authorization",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "un.charter"
+    },
+    {
+      "features": [],
+      "from": "un.charter",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "doctrine.iura_humana"
+    }
+  ],
+  "languageSemantics": "law.core/0.2.0",
+  "lockVersion": "0.1",
+  "packages": [
+    {
+      "contentHash": "sha256:4c18155b12e963f807655b27c01d53b2bbad207fa089a481d69fbe9e3f80ef00",
+      "features": [
+        "core-executable"
+      ],
+      "name": "doctrine.iura_humana",
+      "namespace": "urn:doctrine:clir:iura-humana",
+      "version": "0.1.0"
+    },
+    {
+      "contentHash": "sha256:b66b04b5243c7d5e2540f23da56440a993cec1c484821b697a09c79d3589b948",
+      "features": [
+        "core-executable"
+      ],
+      "name": "un.charter",
+      "namespace": "urn:un:corpus:clir:charter",
+      "version": "0.1.0"
+    }
+  ],
+  "resolutionHash": "sha256:9bf41d1eddfdd5212ec07749c266a45ccded752e2fa2353cc27c4e49064946c6",
+  "root": {
+    "contentHash": "sha256:14d902b6465222cbe9339c93e40397ce6efc459673afb97d1ca8e262b8719d6c",
+    "name": "examples.un.charter.army_and_authorization",
+    "namespace": "urn:law:examples:un-charter:army-and-authorization",
+    "version": "0.1.0"
+  }
+}

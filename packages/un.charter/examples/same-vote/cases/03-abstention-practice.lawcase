@@ -1,0 +1,41 @@
+language "law.core" version "0.2";
+package examples.un.charter.same_vote version "0.1.0";
+namespace "urn:law:examples:un-charter:same-vote";
+
+// UNC-14: the same facts as the letter case, with the Namibia practice
+// reading. Interpretation ADDS a path to adoption; the letter's blockade
+// remains in the theory.
+
+case AbstentionPractice {
+    context {
+        legal_time @2026-01-01;
+        knowledge_time @2026-01-01T12:00:00Z;
+        decision_time @2026-01-01T12:00:00Z;
+        timezone "UTC";
+        interpretation un.charter::AbstentionDoesNotBlockReading;
+    }
+
+    const d: un.charter::Decision = entity_ref("urn:law:examples:un-charter:same-vote:abstention");
+    const france: un.charter::State = entity_ref("urn:un:corpus:clir:charter#FranceState");
+    const uk: un.charter::State = entity_ref("urn:un:corpus:clir:charter#UnitedKingdomState");
+    const us: un.charter::State = entity_ref("urn:un:corpus:clir:charter#UnitedStatesState");
+    const soviet: un.charter::State = entity_ref("urn:un:corpus:clir:charter#SovietUnion");
+    const m0: un.charter::State = entity_ref("urn:law:examples:un-charter:same-vote:m0");
+    const m1: un.charter::State = entity_ref("urn:law:examples:un-charter:same-vote:m1");
+    const m2: un.charter::State = entity_ref("urn:law:examples:un-charter:same-vote:m2");
+    const m3: un.charter::State = entity_ref("urn:law:examples:un-charter:same-vote:m3");
+    const m4: un.charter::State = entity_ref("urn:law:examples:un-charter:same-vote:m4");
+    const m5: un.charter::State = entity_ref("urn:law:examples:un-charter:same-vote:m5");
+
+    assert "non-proc": un.charter::is_non_procedural_matter(d) { origin case_input; }
+    assert "fr": un.charter::casts_vote_for(d, france) { origin case_input; }
+    assert "uk": un.charter::casts_vote_for(d, uk) { origin case_input; }
+    assert "us": un.charter::casts_vote_for(d, us) { origin case_input; }
+    assert "m0": un.charter::casts_vote_for(d, m0) { origin case_input; }
+    assert "m1": un.charter::casts_vote_for(d, m1) { origin case_input; }
+    assert "m2": un.charter::casts_vote_for(d, m2) { origin case_input; }
+    assert "m3": un.charter::casts_vote_for(d, m3) { origin case_input; }
+    assert "m4": un.charter::casts_vote_for(d, m4) { origin case_input; }
+    assert "m5": un.charter::casts_vote_for(d, m5) { origin case_input; }
+    assert "su": un.charter::abstains(d, soviet) { origin case_input; }
+}

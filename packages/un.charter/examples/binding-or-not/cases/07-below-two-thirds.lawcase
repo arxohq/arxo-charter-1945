@@ -1,0 +1,33 @@
+language "law.core" version "0.2";
+package examples.un.charter.binding_or_not version "0.1.0";
+namespace "urn:law:examples:un-charter:binding-or-not";
+
+// UNC-22D: an important question, three votes for and three against — half,
+// below the two-thirds threshold of Article 18, paragraph 2. Same decision
+// URN as ExactlyTwoThirds, a fresh case document, so the two cases read as
+// the same vote landing on either side of the line.
+
+case BelowTwoThirds {
+    context {
+        legal_time @2026-01-01;
+        knowledge_time @2026-01-01T12:00:00Z;
+        decision_time @2026-01-01T12:00:00Z;
+        timezone "UTC";
+    }
+
+    const d: un.charter::Decision = entity_ref("urn:law:examples:un-charter:binding-or-not:important-question");
+    const m0: un.charter::State = entity_ref("urn:law:examples:un-charter:binding-or-not:m0");
+    const m1: un.charter::State = entity_ref("urn:law:examples:un-charter:binding-or-not:m1");
+    const m2: un.charter::State = entity_ref("urn:law:examples:un-charter:binding-or-not:m2");
+    const m3: un.charter::State = entity_ref("urn:law:examples:un-charter:binding-or-not:m3");
+    const m4: un.charter::State = entity_ref("urn:law:examples:un-charter:binding-or-not:m4");
+    const m5: un.charter::State = entity_ref("urn:law:examples:un-charter:binding-or-not:m5");
+
+    assert "important": un.charter::is_important_question(d) { origin case_input; }
+    assert "m0": un.charter::casts_vote_for(d, m0) { origin case_input; }
+    assert "m1": un.charter::casts_vote_for(d, m1) { origin case_input; }
+    assert "m2": un.charter::casts_vote_for(d, m2) { origin case_input; }
+    assert "m3": un.charter::casts_vote_against(d, m3) { origin case_input; }
+    assert "m4": un.charter::casts_vote_against(d, m4) { origin case_input; }
+    assert "m5": un.charter::casts_vote_against(d, m5) { origin case_input; }
+}

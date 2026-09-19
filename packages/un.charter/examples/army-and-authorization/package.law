@@ -1,0 +1,5 @@
+language "law.core" version "0.2";
+package examples.un.charter.army_and_authorization version "0.1.0";
+namespace "urn:law:examples:un-charter:army-and-authorization";
+
+import un.charter version "0.1.0";

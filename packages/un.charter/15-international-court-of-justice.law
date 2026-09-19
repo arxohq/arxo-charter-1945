@@ -1,0 +1,286 @@
+// Chapter XIV: The International Court of Justice — Articles 92-96, stage E8
+// (18.09.2026). Article 92 itself was already in the package's scope before
+// this stage and stays DECLARED (see `sources/charter/articles.json`: "shall
+// be the principal judicial organ" is a copula, not a duty); Articles 93, 94
+// and 96 are EXECUTABLE below, Article 95 is declared.
+//
+// THE STATUTE OF THE COURT IS NOT IN THIS PACKAGE, AND NOTHING HERE REACHES
+// INTO IT. Article 92 calls the annexed Statute "an integral part of the
+// present Charter", but the Statute is a separate text that this package
+// neither pins nor fragments — a DECLARED BOUNDARY, not a stub (the same
+// boundary Article 36, paragraph 3's own ICJ-referral rule already respects,
+// 08-pacific-settlement.law). Every rule below therefore terminates at the
+// INSTITUTIONAL-FACT level: who is a party to the Statute (Art. 93), that a
+// party must comply with a decision and what the other party may do if it
+// does not (Art. 94), and who may ask the Court for an advisory opinion
+// (Art. 96). None of them models the Court's own composition, jurisdiction,
+// procedure, or what the Court does with a request once made.
+//
+// ARTICLE 93 — TWO BASES, ONE HEAD, THE FIRST OF THEM A PURE DERIVATION FROM
+// `member_state`. Paragraph 1 ("All Members of the United Nations are ipso
+// facto parties to the Statute") is exactly an inference rule and nothing
+// else: "ipso facto" means no separate act, assertion or condition stands
+// between membership and Statute party status, so `member_state`
+// (package.law, already `pub`) is read DIRECTLY as the rule's sole premise —
+// never bridge-twinned, never re-asserted as a parallel case fact.
+// Paragraph 2 (a state that is NOT a Member may become a party "on
+// conditions to be determined in each case by the General Assembly upon the
+// recommendation of the Security Council") is a genuine institutional
+// approval chain of the same shape as Article 4's admission chain
+// (02-membership.law), and reuses this package's established "not a Member"
+// idiom — the positive relation `non_member_state` (05-security-council.law,
+// `pub`), never a negation or `not_known` over `member_state`.
+//
+// THE GENERAL ASSEMBLY STEP OF ARTICLE 93, PARAGRAPH 2 IS A FLAT EMPIRICAL
+// FACT, NOT A COMPUTED ARTICLE 18 THRESHOLD — AND THE TEXTUAL BASIS FOR THAT
+// WAS CHECKED, NOT ASSUMED. Article 18, paragraph 2's list of "important
+// questions" (recommendations on peace and security, elections to the
+// Councils, admission of new Members, suspension and expulsion of Members,
+// trusteeship questions, budgetary questions) does NOT include determining
+// the conditions on which a non-Member becomes a party to the Statute, so
+// nothing here supports a two-thirds threshold; under Article 18, paragraph 3
+// it would be an ordinary question decided by a simple majority. Rather than
+// unroll a vote whose threshold the text does not itself single out, this
+// module follows the package's own dominant convention — Article 4's
+// `general_assembly_decides_admission` (02-membership.law) is likewise a flat
+// empirical fact even though admission IS on Article 18, paragraph 2's list.
+// The vote-threshold machinery is reused only where an article's own text
+// turns on the threshold (Articles 5, 6, 18, 67, 89).
+//
+// ARTICLE 94 IS THIS STAGE'S FLAGGED CENTREPIECE: A DUTY PLUS A REMEDY
+// CHAIN, BUILT IN THREE STEPS. Paragraph 1 is a genuine duty on each Member
+// party to a case (`ComplyWithIcjDecision`, the same achieve-duty shape as
+// Article 25's `ComplyWithSecurityCouncilDecision`, 05-security-council.law
+// — the nearest textual sibling in the whole package: both are undertakings
+// to carry out a decision of an organ). Paragraph 2 then adds, on top of an
+// ESTABLISHED failure to perform, an institutional right of the OTHER party
+// to have recourse to the Security Council, and finally the Council's own
+// discretionary power to act. The three steps are kept as three predicates
+// because the text itself stages them that way ("If any party... fails...,
+// the other party MAY have recourse to the Security Council, WHICH MAY, IF
+// IT DEEMS NECESSARY, make recommendations or decide upon measures") — the
+// same determination-then-choice staging as Article 37, paragraph 2 and
+// Article 39/40-42.
+//
+// THE NON-PERFORMANCE FACT IS ITS OWN POSITIVE RELATION, NOT THE ABSENCE OF
+// COMPLIANCE. `fails_to_perform_icj_judgment(c, s)` is a `kind empirical`
+// fact a case must assert directly — never `not complied_with_icj_decision`
+// nor `not_known(...)` over it, following this package's standing convention
+// (Article 4's `security_council_recommendation_blocked`, Article 32's
+// `non_member_state`, Article 85's `non_strategic_area`): a state of affairs
+// no case bothered to report is not an established failure to perform, and a
+// duty position going unsatisfied in a scenario is a different statement
+// from a judgment having been defaulted on.
+//
+// "IF IT DEEMS NECESSARY" IS A DECISION-0194 CHANNEL-1 JUDGMENT, `authority
+// SecurityCouncil`. The text names the holder of the evaluative call
+// explicitly, exactly as Article 34 ("in order to determine"), Article 37,
+// paragraph 2 ("if the Security Council deems") and Article 39 do — so
+// `security_council_deems_measures_necessary` is an `external judgment
+// relation`, not a bare case fact.
+//
+// ARTICLE 96 — A COMPETENCE RULE OVER A NEW ENTITY, `RequestingBody`, WITH
+// THE TWO NAMED ORGANS ASSERTED BY NAME FROM THE LETTER. Paragraph 1 names
+// the General Assembly and the Security Council and attaches NO condition to
+// their power beyond the question being a legal one; paragraph 2 gives other
+// organs and specialized agencies the same power subject to TWO further
+// conditions (a General Assembly authorization, and the question arising
+// within the scope of that body's own activities). Both feed ONE shared
+// conclusion, `entitled_to_request_advisory_opinion` — the text's own single
+// power granted to two classes of body, the same "N bases, one head" shape as
+// Articles 10/11/14, Article 32's two subject classes, Article 35's two
+// bases and Article 77's three categories. The two named organs are `assert`ed
+// by name under `@source(UNC_EN_ART96)`, exactly as Article 23's five
+// permanent members are asserted by name in `package.law`: the Charter names
+// them, so the base holds what the Charter holds.
+//
+// WHY `RequestingBody` EXISTS HERE WHEN ARTICLES 70-71 WERE DECLARED FOR AN
+// ENTITY GAP. Articles 70 and 71 (E6) were declared because their
+// specialized-agency/non-governmental-organization subjects appeared in
+// articles that had no testable consequence of their own to begin with —
+// inventing an entity there would have bought nothing. Article 96 is the
+// opposite case: its consequence (who may put a legal question to the Court)
+// is determinate and has two genuinely different tests, one unconditional and
+// one gated on an authorization plus a scope fact, so the entity earns its
+// place by carrying a real distinction the rule below actually decides. The
+// entity covers the General Assembly, the Security Council, any other organ
+// of the United Nations, and any specialized agency — i.e. exactly the
+// bodies Article 96 itself names, and nothing else.
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// --- Article 93: parties to the Statute of the Court -----------------------
+
+pub relation party_to_icj_statute(s: State) kind institutional {
+    label en unofficial "the state is a party to the Statute of the International Court of Justice (Art. 93)";
+}
+
+@source(UNC_EN_ART93)
+rule MembersArePartiesToIcjStatuteIpsoFacto(s: State) strict {
+    label en official "Article 93, paragraph 1. All Members of the United Nations are ipso facto parties to the Statute of the International Court of Justice.";
+    when member_state(s);
+    then party_to_icj_statute(s);
+}
+
+pub relation security_council_recommends_icj_statute_conditions(s: State) kind empirical {
+    label en official "the Security Council recommends the conditions on which the non-Member state may become a party to the Statute (Art. 93, para. 2) — itself an Article 27, para. 3 decision: a single permanent member's negative vote blocks the recommendation";
+}
+
+pub relation general_assembly_determines_icj_statute_conditions(s: State) kind empirical {
+    label en official "the General Assembly determines, in this case, the conditions on which the non-Member state becomes a party to the Statute (Art. 93, para. 2)";
+}
+
+pub relation accepts_icj_statute_conditions(s: State) kind empirical {
+    label en official "the non-Member state accepts the conditions so determined (Art. 93, para. 2 — \"may become a party… on conditions\": the conditions are the state's own to meet)";
+}
+
+@source(UNC_EN_ART93)
+rule NonMemberBecomesPartyToIcjStatuteOnDeterminedConditions(s: State) strict {
+    label en official "Article 93, paragraph 2. A state which is not a Member of the United Nations may become a party to the Statute of the International Court of Justice on conditions to be determined in each case by the General Assembly upon the recommendation of the Security Council.";
+    when non_member_state(s)
+        and security_council_recommends_icj_statute_conditions(s)
+        and general_assembly_determines_icj_statute_conditions(s)
+        and accepts_icj_statute_conditions(s);
+    then party_to_icj_statute(s);
+}
+
+// --- Article 94: compliance with a decision of the Court, and the remedy ---
+
+entity IcjCase { label en official "Case before the International Court of Justice (Art. 94)"; }
+
+pub relation party_to_icj_case(c: IcjCase, s: State) kind empirical {
+    label en official "the state is a party to the case before the Court (Art. 94)";
+}
+
+pub relation icj_decision_rendered(c: IcjCase) kind empirical {
+    label en official "the International Court of Justice has rendered its decision (judgment) in the case (Art. 94)";
+}
+
+pub relation complied_with_icj_decision(c: IcjCase, s: State) kind empirical {
+    label en official "the Member has complied with the decision of the Court in the case (Art. 94, para. 1)";
+}
+
+@source(UNC_EN_ART94)
+rule DutyToComplyWithIcjDecision(c: IcjCase, s: State) strict {
+    label en official "Article 94, paragraph 1. Each Member of the United Nations undertakes to comply with the decision of the International Court of Justice in any case to which it is a party.";
+    when member_state(s)
+        and party_to_icj_case(c, s)
+        and icj_decision_rendered(c);
+    then duty ComplyWithIcjDecision {
+        bearer s;
+        achieve complied_with_icj_decision(c, s) during [@0001-01-01, infinity);
+    };
+}
+
+// A POSITIVE fact for the failure, never the absence of compliance — see the
+// header comment. Note that Article 94, paragraph 2 speaks of "ANY party to a
+// case", not only of a Member: the recourse rule below therefore does NOT
+// require `member_state` of either party, unlike paragraph 1's duty, which
+// the text addresses to "each Member".
+pub relation fails_to_perform_icj_judgment(c: IcjCase, s: State) kind empirical {
+    label en official "the party has failed to perform the obligations incumbent upon it under a judgment rendered by the Court (Art. 94, para. 2)";
+}
+
+pub relation entitled_to_recourse_to_security_council(c: IcjCase, s: State) kind institutional {
+    label en unofficial "the other party to the case may have recourse to the Security Council over the non-performance of the judgment (Art. 94, para. 2)";
+}
+
+@source(UNC_EN_ART94)
+rule OtherPartyMayHaveRecourseToSecurityCouncil(c: IcjCase, defaulting: State, other: State) strict {
+    label en official "Article 94, paragraph 2, first limb. If any party to a case fails to perform the obligations incumbent upon it under a judgment rendered by the Court, the other party may have recourse to the Security Council.";
+    when icj_decision_rendered(c)
+        and party_to_icj_case(c, defaulting)
+        and party_to_icj_case(c, other)
+        and fails_to_perform_icj_judgment(c, defaulting)
+        and other != defaulting;
+    then entitled_to_recourse_to_security_council(c, other);
+}
+
+pub relation has_recourse_to_security_council(c: IcjCase, s: State) kind empirical {
+    label en official "the other party has in fact had recourse to the Security Council over the judgment (Art. 94, para. 2)";
+}
+
+pub external judgment relation security_council_deems_measures_necessary(c: IcjCase) {
+    authority SecurityCouncil;
+    label en official "the Security Council deems it necessary to act to give effect to the judgment (Art. 94, para. 2 — \"if it deems necessary\")";
+}
+
+pub relation security_council_may_give_effect_to_judgment(c: IcjCase) kind institutional {
+    label en unofficial "the Security Council may make recommendations or decide upon measures to be taken to give effect to the judgment (Art. 94, para. 2, second limb)";
+}
+
+@source(UNC_EN_ART94)
+rule SecurityCouncilMayGiveEffectToIcjJudgment(c: IcjCase, s: State) strict {
+    label en official "Article 94, paragraph 2, second limb. …the other party may have recourse to the Security Council, which may, if it deems necessary, make recommendations or decide upon measures to be taken to give effect to the judgment.";
+    when entitled_to_recourse_to_security_council(c, s)
+        and has_recourse_to_security_council(c, s)
+        and security_council_deems_measures_necessary(c);
+    then security_council_may_give_effect_to_judgment(c);
+}
+
+// --- Article 96: who may request an advisory opinion ----------------------
+
+entity RequestingBody { label en official "Body entitled to request an advisory opinion of the Court: an organ of the United Nations or a specialized agency (Art. 96)"; }
+
+entity LegalQuestion { label en official "Legal question on which an advisory opinion of the Court may be requested (Art. 96)"; }
+
+pub relation is_legal_question(q: LegalQuestion) kind empirical {
+    label en official "the question put to the Court is a legal question (Art. 96, paras. 1-2)";
+}
+
+// The two organs Article 96, paragraph 1 names BY NAME — asserted from the
+// letter, exactly as Article 23's five permanent members are asserted in
+// `package.law`.
+pub relation named_by_article_96_paragraph_1(b: RequestingBody) kind institutional {
+    label en official "the body is the General Assembly or the Security Council, named by Article 96, paragraph 1";
+}
+
+@source(UNC_EN_ART96)
+assert named_by_article_96_paragraph_1(GeneralAssemblyBody);
+@source(UNC_EN_ART96)
+assert named_by_article_96_paragraph_1(SecurityCouncilBody);
+
+pub relation other_organ_or_specialized_agency(b: RequestingBody) kind empirical {
+    label en official "the body is another organ of the United Nations or a specialized agency (Art. 96, para. 2)";
+}
+
+pub relation authorized_by_general_assembly_to_request_advisory_opinion(b: RequestingBody) kind empirical {
+    label en official "the body has been authorized by the General Assembly to request advisory opinions of the Court (Art. 96, para. 2)";
+}
+
+pub relation question_within_scope_of_activities(q: LegalQuestion, b: RequestingBody) kind empirical {
+    label en official "the legal question arises within the scope of the body's activities (Art. 96, para. 2)";
+}
+
+pub relation entitled_to_request_advisory_opinion(b: RequestingBody, q: LegalQuestion) kind institutional {
+    label en unofficial "the body may request the International Court of Justice to give an advisory opinion on the question (Art. 96)";
+}
+
+@source(UNC_EN_ART96)
+rule AdvisoryOpinionRequestByNamedOrgan(b: RequestingBody, q: LegalQuestion) strict {
+    label en official "Article 96, paragraph 1. The General Assembly or the Security Council may request the International Court of Justice to give an advisory opinion on any legal question.";
+    when named_by_article_96_paragraph_1(b)
+        and is_legal_question(q);
+    then entitled_to_request_advisory_opinion(b, q);
+}
+
+@source(UNC_EN_ART96)
+rule AdvisoryOpinionRequestByAuthorizedBody(b: RequestingBody, q: LegalQuestion) strict {
+    label en official "Article 96, paragraph 2. Other organs of the United Nations and specialized agencies, which may at any time be so authorized by the General Assembly, may also request advisory opinions of the Court on legal questions arising within the scope of their activities.";
+    when other_organ_or_specialized_agency(b)
+        and is_legal_question(q)
+        and authorized_by_general_assembly_to_request_advisory_opinion(b)
+        and question_within_scope_of_activities(q, b);
+    then entitled_to_request_advisory_opinion(b, q);
+}
+
+// --- §54 constants: the two bodies Article 96, paragraph 1 names ----------
+
+const GeneralAssemblyBody: RequestingBody = entity_ref("urn:un:corpus:clir:charter#GeneralAssemblyBody") {
+    label en official "the General Assembly (Art. 96, para. 1)";
+};
+const SecurityCouncilBody: RequestingBody = entity_ref("urn:un:corpus:clir:charter#SecurityCouncilBody") {
+    label en official "the Security Council (Art. 96, para. 1)";
+};

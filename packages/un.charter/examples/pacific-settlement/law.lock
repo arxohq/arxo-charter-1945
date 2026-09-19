@@ -1,0 +1,47 @@
+{
+  "dependencyEdges": [
+    {
+      "features": [],
+      "from": "examples.un.charter.pacific_settlement",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "un.charter"
+    },
+    {
+      "features": [],
+      "from": "un.charter",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "doctrine.iura_humana"
+    }
+  ],
+  "languageSemantics": "law.core/0.2.0",
+  "lockVersion": "0.1",
+  "packages": [
+    {
+      "contentHash": "sha256:4c18155b12e963f807655b27c01d53b2bbad207fa089a481d69fbe9e3f80ef00",
+      "features": [
+        "core-executable"
+      ],
+      "name": "doctrine.iura_humana",
+      "namespace": "urn:doctrine:clir:iura-humana",
+      "version": "0.1.0"
+    },
+    {
+      "contentHash": "sha256:b66b04b5243c7d5e2540f23da56440a993cec1c484821b697a09c79d3589b948",
+      "features": [
+        "core-executable"
+      ],
+      "name": "un.charter",
+      "namespace": "urn:un:corpus:clir:charter",
+      "version": "0.1.0"
+    }
+  ],
+  "resolutionHash": "sha256:748b2087de8f8a72f82e74107cf4deb08a4a676e7085abb51387f53482102883",
+  "root": {
+    "contentHash": "sha256:bd92103e865603282546d973bf4bbaa776895591df4546b5f258bbe466611cec",
+    "name": "examples.un.charter.pacific_settlement",
+    "namespace": "urn:law:examples:un-charter:pacific-settlement",
+    "version": "0.1.0"
+  }
+}

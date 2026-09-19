@@ -1,0 +1,292 @@
+// Article 4: admission to membership of the Organization.
+//
+// A "PEACE-LOVING" STATE — THE §47.3 JUDGMENT CHANNEL, A CONSTRUCTION, NOT A
+// GAP. The text itself names the holder of the judgment ("in the judgment of
+// the Organization") and the very process by which the Organization
+// expresses it: a Security Council recommendation plus an Assembly
+// decision. `authority GeneralAssembly` closes the channel with the organ
+// whose act materializes the judgment (the decision), not the abstract
+// "Organization" — the same simplification as `rome-statute-1998`
+// (`authority ICC`, even though it is the bench composition that decides).
+//
+// THE 1948 INTERNATIONAL COURT OF JUSTICE ADVISORY OPINION (Conditions of
+// Admission of a State to Membership in the United Nations) IS AN
+// INTERPRETATION, NOT THE BASE. The advisory opinion answered whether a
+// State may condition its vote for admission on ADDITIONAL conditions
+// beyond those named by Article 4 (for example, simultaneous admission of
+// another candidate State) — the Court answered in the negative (Art. 4
+// para. 1 is exhaustive). The package does not formalize the question of
+// "which conditions are admissible" as a separate rule outside the declared
+// slice (that would mean modelling the MOTIVE of individual States' votes,
+// which no case reports) — the 1948 opinion is used as a BOUNDARY
+// (README.md), not as a norm with its own head: the three elements of
+// Article 4 para. 1 below are a CLOSED list of conditions, and the package
+// gives no way to extend it.
+//
+// ADMISSION AND THE PACKAGE'S `member_state` ARE DELIBERATELY NOT LINKED BY
+// A RULE. `member_state(s)` is taken as a case fact in the other five
+// modules (every scenario except this module's own formalizes questions
+// AFTER admission — by then membership is already history, not the subject
+// of the dispute). Unrolling the full admission chain for EVERY Security
+// Council voting case would mean formalizing history for its own sake. Here
+// there is a separate conclusion, `admitted_to_membership(s)`, checked by
+// its own scenarios (including "admission of a member with a veto" —
+// 05-security-council.law supplies the veto mechanics through the Security
+// Council recommendation, itself an Article 27 decision).
+
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+pub relation accepts_charter_obligations(s: State) kind empirical {
+    label en official "the State accepts the obligations contained in the Charter (Art. 4, para. 1)";
+}
+
+pub external judgment relation peace_loving(s: State) {
+    authority GeneralAssembly;
+    label en official "the State is peace-loving and able and willing to carry out the obligations of the Charter — in the judgment of the Organization (Art. 4, para. 1)";
+}
+
+pub relation qualifies_for_membership(s: State) kind institutional {
+    label en unofficial "the State meets the conditions of Article 4, paragraph 1 (judgment-channel bridge)";
+}
+
+@source(UNC_EN_ART4)
+rule QualifiesForMembershipBridge(s: State) strict {
+    label en official "Article 4, paragraph 1. Membership in the United Nations is open to all other peace-loving states which accept the obligations contained in the present Charter and, in the judgment of the Organization, are able and willing to carry out these obligations.";
+    when accepts_charter_obligations(s) and peace_loving(s);
+    then qualifies_for_membership(s);
+}
+
+pub relation security_council_recommends_admission(s: State) kind empirical {
+    label en official "the Security Council recommends the admission of the State (Art. 4, para. 2) — itself an Article 27, para. 3 decision: a single permanent member's negative vote blocks the recommendation";
+}
+
+pub relation general_assembly_decides_admission(s: State) kind empirical {
+    label en official "the General Assembly decides on admission (Art. 4, para. 2; by the letter of Art. 18, para. 2 — an \"important question\", two-thirds)";
+}
+
+pub relation admitted_to_membership(s: State) kind institutional {
+    label en unofficial "the State is admitted to membership of the Organization (Art. 4, para. 2)";
+}
+
+@source(UNC_EN_ART4)
+rule AdmissionDecision(s: State) strict {
+    label en official "Article 4, paragraph 2. The admission of any such state to membership in the United Nations will be effected by a decision of the General Assembly upon the recommendation of the Security Council.";
+    when qualifies_for_membership(s)
+        and security_council_recommends_admission(s)
+        and general_assembly_decides_admission(s);
+    then admitted_to_membership(s);
+}
+
+// A SEPARATE fact, not `not security_council_recommends_admission(s)`:
+// negating an empirical fact in a strict body has no established negative
+// side without an explicit case fact (the same canon as `is_ordinary_question`
+// in 04-general-assembly.law) — a permanent member's veto that blocked the
+// recommendation is something the case must report explicitly.
+pub relation security_council_recommendation_blocked(s: State) kind empirical {
+    label en official "the Security Council's recommendation for admission is blocked by a permanent member (Art. 4, para. 2 — veto via Art. 27, para. 3)";
+}
+
+pub relation admission_blocked_without_recommendation(s: State) kind institutional {
+    label en unofficial "admission is impossible without a Security Council recommendation, however well the State meets Article 4, para. 1 (the negative side of the Art. 4, para. 2 procedure)";
+}
+
+@source(UNC_EN_ART4)
+rule AdmissionBlockedWithoutRecommendation(s: State) strict {
+    label en official "Article 4, paragraph 2, negative side: without a Security Council recommendation, an Assembly decision on admission is impossible, however well the State meets paragraph 1.";
+    when qualifies_for_membership(s)
+        and security_council_recommendation_blocked(s);
+    then admission_blocked_without_recommendation(s);
+}
+
+// --- Article 3: original Members ----------------------------------------------
+//
+// TWO ALTERNATIVE BRANCHES OF THE SAME TEXT, NOT `not`-NEGATED. "…having
+// participated in the … Conference … at San Francisco, OR having previously
+// signed the Declaration by United Nations of 1 January 1942…" is written as
+// two named rules sharing the same head, rather than an `or` inside one body:
+// each branch is independently sufficient and the pair reads more directly
+// against the sentence's own two clauses (the same shape §190 gives to a
+// body disjunction lowered into `Rule/alt/N`).
+//
+// `original_member` IS DELIBERATELY NOT LINKED TO `member_state` BY A RULE —
+// same reasoning as Article 4's admission chain immediately above: every
+// scenario of the slice that is not itself about admission or original
+// membership takes `member_state` as a case premise, and wiring the full
+// history (original membership OR admission) into every Security Council
+// voting case would formalize history for its own sake. `original_member`
+// is checked on its own scenarios.
+
+pub relation participated_in_san_francisco_conference(s: State) kind empirical {
+    label en official "the State participated in the United Nations Conference on International Organization at San Francisco (Art. 3)";
+}
+
+pub relation signed_declaration_by_united_nations_1942(s: State) kind empirical {
+    label en official "the State previously signed the Declaration by United Nations of 1 January 1942 (Art. 3)";
+}
+
+pub relation signs_charter(s: State) kind empirical {
+    label en official "the State signs the present Charter (Art. 3)";
+}
+
+pub relation ratifies_charter(s: State) kind empirical {
+    label en official "the State ratifies the Charter in accordance with Article 110 (Art. 3 — Article 110 itself lies outside the declared slice and is taken here as a case premise)";
+}
+
+pub relation original_member(s: State) kind institutional {
+    label en unofficial "the State is an original Member of the United Nations (Art. 3)";
+}
+
+@source(UNC_EN_ART3)
+rule OriginalMemberBySanFranciscoParticipation(s: State) strict {
+    label en official "Article 3, first branch. The original Members of the United Nations shall be the states which, having participated in the United Nations Conference on International Organization at San Francisco … sign the present Charter and ratify it in accordance with Article 110.";
+    when participated_in_san_francisco_conference(s)
+        and signs_charter(s)
+        and ratifies_charter(s);
+    then original_member(s);
+}
+
+@source(UNC_EN_ART3)
+rule OriginalMemberByDeclarationSignature(s: State) strict {
+    label en official "Article 3, second branch. …or having previously signed the Declaration by United Nations of 1 January 1942, sign the present Charter and ratify it in accordance with Article 110.";
+    when signed_declaration_by_united_nations_1942(s)
+        and signs_charter(s)
+        and ratifies_charter(s);
+    then original_member(s);
+}
+
+// --- Article 5: suspension of rights and privileges of membership ------------
+//
+// THE ASSEMBLY THRESHOLD REUSES ARTICLE 18, NOT REASSERTED HERE. Suspension
+// is listed by Article 18, paragraph 2 itself among the "important
+// questions" ("the suspension of the rights and privileges of membership"),
+// so the two-thirds vote is computed once, by `important_question_adopted`/
+// `important_question_not_adopted` (04-general-assembly.law), and tied to
+// the specific State through `directed_at` (package.law) — the same generic
+// Decision-to-State link Article 25's `SecurityCouncilDecisionBinding` uses
+// two modules over. The Security Council recommendation is modelled as a
+// simpler empirical predicate, matching Article 4's
+// `security_council_recommends_admission` immediately above — itself an
+// Article 27, paragraph 3 decision — rather than re-derived through the full
+// Council voting chain for every suspension case.
+
+pub relation preventive_or_enforcement_action_taken_against(s: State) kind empirical {
+    label en official "preventive or enforcement action has been taken against the State by the Security Council (Art. 5)";
+}
+
+pub relation security_council_recommends_suspension(s: State) kind empirical {
+    label en official "the Security Council recommends suspension of the State's rights and privileges of membership (Art. 5) — itself an Article 27, para. 3 decision: a single permanent member's negative vote blocks the recommendation";
+}
+
+pub relation membership_rights_suspended(s: State) kind institutional {
+    label en unofficial "the exercise of the State's rights and privileges of membership is suspended (Art. 5, first sentence)";
+}
+
+@source(UNC_EN_ART5)
+rule MembershipRightsSuspendedByGeneralAssembly(d: Decision, s: State) strict {
+    label en official "Article 5, first sentence. A Member of the United Nations against which preventive or enforcement action has been taken by the Security Council may be suspended from the exercise of the rights and privileges of membership by the General Assembly upon the recommendation of the Security Council.";
+    when preventive_or_enforcement_action_taken_against(s)
+        and security_council_recommends_suspension(s)
+        and important_question_adopted(d)
+        and directed_at(d, s);
+    then membership_rights_suspended(s);
+}
+
+// A SEPARATE positive predicate for the negative side, not
+// `not membership_rights_suspended(s)`: absence of a fact is not its denial
+// (the same canon Article 4's `admission_blocked_without_recommendation` and
+// Article 18's `is_ordinary_question` already apply in this package) — the
+// Assembly's vote failing to reach two thirds is itself a substantive,
+// case-reported outcome, not a silent default.
+pub relation membership_rights_suspension_denied(s: State) kind institutional {
+    label en unofficial "the Assembly's vote on suspension fails to reach the Article 18, paragraph 2 two-thirds threshold (Art. 5, negative side)";
+}
+
+@source(UNC_EN_ART5)
+rule MembershipRightsSuspensionDeniedBelowThreshold(d: Decision, s: State) strict {
+    label en official "Article 5, negative side: the Security Council has recommended suspension, but the General Assembly's decision does not reach the Article 18, paragraph 2 two-thirds majority.";
+    when preventive_or_enforcement_action_taken_against(s)
+        and security_council_recommends_suspension(s)
+        and important_question_not_adopted(d)
+        and directed_at(d, s);
+    then membership_rights_suspension_denied(s);
+}
+
+// --- Article 5, second sentence: restoration is by the Security Council ALONE
+//
+// THE TEXT NAMES ONLY THE SECURITY COUNCIL. "The exercise of these rights
+// and privileges may be restored by the Security Council" — no Assembly
+// decision or recommendation appears anywhere in this sentence, in contrast
+// with the first sentence's General-Assembly-decision/Security-Council-
+// recommendation pair immediately above. This is EXPLICIT in the letter, not
+// an inference: restoration is modelled as a Security Council act ALONE,
+// guarded by a PRIOR suspension — "these rights and privileges" has no
+// textual referent without one.
+
+pub relation security_council_restores_rights(s: State) kind empirical {
+    label en official "the Security Council restores the exercise of the State's rights and privileges of membership (Art. 5, second sentence)";
+}
+
+pub relation membership_rights_restored(s: State) kind institutional {
+    label en unofficial "the exercise of the State's rights and privileges of membership is restored by the Security Council alone (Art. 5, second sentence)";
+}
+
+@source(UNC_EN_ART5)
+rule MembershipRightsRestoredBySecurityCouncilAlone(s: State) strict {
+    label en official "Article 5, second sentence. The exercise of these rights and privileges may be restored by the Security Council.";
+    when membership_rights_suspended(s)
+        and security_council_restores_rights(s);
+    then membership_rights_restored(s);
+}
+
+// --- Article 6: expulsion ------------------------------------------------------
+//
+// "PERSISTENTLY VIOLATED" — THE §47.3 JUDGMENT CHANNEL, EVEN WITHOUT THE
+// LITERAL PHRASE. The Charter does not repeat "in the judgment of the
+// Organization" here as it does in Article 4, paragraph 1, but the
+// substance is the same species of evaluative characterization the text
+// does not itself compute (DECISION-0194 §1, channel 1: the law delegates
+// the ASSESSMENT to an organ) — decided through the very same institutional
+// process (a General Assembly decision upon a Security Council
+// recommendation) that materializes the Organization's judgment elsewhere in
+// this module. `authority GeneralAssembly` closes the channel the same way
+// `peace_loving` does above, rather than leaving "persistently violated" a
+// bare case fact with no producer.
+
+pub external judgment relation persistently_violated_charter_principles(s: State) {
+    authority GeneralAssembly;
+    label en official "the State has persistently violated the Principles contained in the present Charter — in the judgment of the Organization (Art. 6)";
+}
+
+pub relation security_council_recommends_expulsion(s: State) kind empirical {
+    label en official "the Security Council recommends expulsion of the State (Art. 6) — itself an Article 27, para. 3 decision: a single permanent member's negative vote blocks the recommendation";
+}
+
+pub relation expelled_from_organization(s: State) kind institutional {
+    label en unofficial "the State is expelled from the Organization (Art. 6)";
+}
+
+@source(UNC_EN_ART6)
+rule ExpelledByGeneralAssembly(d: Decision, s: State) strict {
+    label en official "Article 6. A Member of the United Nations which has persistently violated the Principles contained in the present Charter may be expelled from the Organization by the General Assembly upon the recommendation of the Security Council.";
+    when persistently_violated_charter_principles(s)
+        and security_council_recommends_expulsion(s)
+        and important_question_adopted(d)
+        and directed_at(d, s);
+    then expelled_from_organization(s);
+}
+
+pub relation expulsion_denied(s: State) kind institutional {
+    label en unofficial "the Assembly's vote on expulsion fails to reach the Article 18, paragraph 2 two-thirds threshold (Art. 6, negative side)";
+}
+
+@source(UNC_EN_ART6)
+rule ExpulsionDeniedBelowThreshold(d: Decision, s: State) strict {
+    label en official "Article 6, negative side: the Security Council has recommended expulsion, but the General Assembly's decision does not reach the Article 18, paragraph 2 two-thirds majority.";
+    when persistently_violated_charter_principles(s)
+        and security_council_recommends_expulsion(s)
+        and important_question_not_adopted(d)
+        and directed_at(d, s);
+    then expulsion_denied(s);
+}

@@ -1,0 +1,10 @@
+{
+  "queryId": "expelled",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#expelled_from_organization",
+    "args": [{ "kind": "entity_ref", "id": "urn:law:examples:un-charter:membership-arc:state" }]
+  }
+}

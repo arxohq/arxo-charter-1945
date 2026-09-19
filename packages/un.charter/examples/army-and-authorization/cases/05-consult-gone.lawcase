@@ -1,0 +1,20 @@
+language "law.core" version "0.2";
+package examples.un.charter.army_and_authorization version "0.1.0";
+namespace "urn:law:examples:un-charter:army-and-authorization";
+
+// UNC-77C: any article 43 agreement ends the transitional duty.
+
+case ConsultGone {
+    context {
+        legal_time @2026-01-01;
+        knowledge_time @2026-01-01T12:00:00Z;
+        decision_time @2026-01-01T12:00:00Z;
+        timezone "UTC";
+    }
+
+    const sit: un.charter::Situation = entity_ref("urn:law:examples:un-charter:army:art106");
+    const agreed: un.charter::State = entity_ref("urn:law:examples:un-charter:army:art43-agreed");
+
+    assert "needed": un.charter::joint_action_on_behalf_of_organization_necessary(sit) { origin case_input; }
+    assert "agreed": un.charter::special_agreement_concluded(agreed) { origin case_input; }
+}

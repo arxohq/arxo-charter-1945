@@ -1,0 +1,32 @@
+language "law.core" version "0.2";
+package examples.un.charter.pacific_settlement version "0.1.0";
+namespace "urn:law:examples:un-charter:pacific-settlement";
+
+// UNC-47 / UNC-48: the same dispute qualifies as a "local dispute" (article
+// 52), and both parties have entered a regional arrangement. Article
+// 52(2)'s duty to try the regional route first is ACTIVE (no effort made
+// yet); article 52(3)'s encouragement by the Security Council is its own,
+// separate act. Article 34's and article 37(2)'s findings are still
+// unsupplied, so those two conclusions still sit at REQUIRES_JUDGMENT.
+
+case RegionalRoute {
+    context {
+        legal_time @2026-01-01;
+        knowledge_time @2026-01-01T12:00:00Z;
+        decision_time @2026-01-01T12:00:00Z;
+        timezone "UTC";
+    }
+
+    const d: un.charter::Dispute = entity_ref("urn:law:examples:un-charter:pacific-settlement:dispute");
+    const state_a: un.charter::State = entity_ref("urn:law:examples:un-charter:pacific-settlement:state-a");
+    const state_b: un.charter::State = entity_ref("urn:law:examples:un-charter:pacific-settlement:state-b");
+
+    assert "local": un.charter::local_dispute(d) { origin case_input; }
+    assert "party-a": un.charter::party_to_dispute(d, state_a) { origin case_input; }
+    assert "party-b": un.charter::party_to_dispute(d, state_b) { origin case_input; }
+    assert "regional-a": un.charter::member_of_regional_arrangement(state_a) { origin case_input; }
+    assert "regional-b": un.charter::member_of_regional_arrangement(state_b) { origin case_input; }
+    assert "encouraged": un.charter::security_council_encourages_regional_settlement(d) { origin case_input; }
+    assert "member-a": un.charter::member_state(state_a) { origin case_input; }
+    assert "brought": un.charter::dispute_brought_to_attention(state_a, d) { origin case_input; }
+}

@@ -1,0 +1,16 @@
+# NOTICE
+
+This repository carries THIRD-PARTY pinned texts. The code licence does not
+extend to them: every publisher sets its own terms of reproduction.
+
+## doctrine.iura_humana — Iura humana: bridge vocabulary of a claimed right, its permissible limitation, the remedy and the referral to an organ
+
+Terms: Apache-2.0 (see LICENSE).
+
+## un.charter — Charter of the United Nations (San Francisco, 26.06.1945, current edition as amended 1965/1968/1973), all 111 articles, Ch. I-XIX
+
+Terms: The model, the scenarios and the case collections are Apache-2.0 (see LICENSE). THE PINNED TEXT OF THE CHARTER is the English text as republished by the United Nations Secretariat on un.org; it is reproduced with acknowledgement of the source, and the United Nations terms of use apply to it. The repository is not affiliated with the United Nations and uses no emblem of the Organization.
+
+| Publication | URI | content_hash | Retrieved |
+|---|---|---|---|
+| `UN_CHARTER_EN_TEXT` | https://www.un.org/en/about-us/un-charter/full-text | `sha256:486e3f32fbedcd92…` | @2026-08-31T00:00:00Z |

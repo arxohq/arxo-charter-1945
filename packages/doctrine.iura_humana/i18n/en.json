@@ -1,0 +1,50 @@
+{
+  "$comment": "English overlay DECISION-0070: unofficial model labels for the English MCP slice `charter` (the Charter imports this bridge vocabulary). Not compiled into CLIR.",
+  "formatVersion": "law.i18n/0.1",
+  "package": "doctrine.iura_humana",
+  "language": "en",
+  "labels": {
+    "Homo": [
+      {
+        "status": "unofficial",
+        "text": "a human being as the holder of a claimed right"
+      }
+    ],
+    "Actus": [
+      {
+        "status": "unofficial",
+        "text": "the contested act of a State, group or person"
+      }
+    ],
+    "Civitas": [
+      {
+        "status": "unofficial",
+        "text": "a State or other political community"
+      }
+    ],
+    "ius_declaratum": [
+      {
+        "status": "unofficial",
+        "text": "a human right concerning this act is declared by the instrument"
+      }
+    ],
+    "limitatio_admissa": [
+      {
+        "status": "unofficial",
+        "text": "a limitation of the human right concerning the act is permitted by the instrument"
+      }
+    ],
+    "remedium_patet": [
+      {
+        "status": "unofficial",
+        "text": "a remedy concerning the act is available to the person"
+      }
+    ],
+    "quaestio_organo_tradita": [
+      {
+        "status": "unofficial",
+        "text": "the question of the act is referred to an organ named by the instrument"
+      }
+    ]
+  }
+}

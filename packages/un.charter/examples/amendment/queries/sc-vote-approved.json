@@ -1,0 +1,12 @@
+{
+  "queryId": "sc-vote-approved",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#general_conference_convening_approved_by_security_council",
+    "args": [
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:amendment:conf-convene-sc" }
+    ]
+  }
+}

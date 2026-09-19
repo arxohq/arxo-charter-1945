@@ -1,0 +1,45 @@
+# Worked cases over the pinned Charter: why Articles 108-109 are so hard to
+# clear — the two-thirds thresholds and the named lock that binds all five
+# permanent members regardless of which route an amendment takes.
+[package]
+name = "examples.un.charter.amendment"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:law:examples:un-charter:amendment"
+
+[dependencies]
+"un.charter" = "0.1.0"
+
+[[cases]]
+name = "InForce"
+path = "cases/01-in-force.lawcase"
+
+[[cases]]
+name = "OnePermanentMemberMissing"
+path = "cases/02-one-permanent-member-missing.lawcase"
+
+[[cases]]
+name = "BelowTwoThirdsRatification"
+path = "cases/03-below-two-thirds-ratification.lawcase"
+
+[[cases]]
+name = "NotAdoptedByAssembly"
+path = "cases/04-not-adopted-by-assembly.lawcase"
+
+[[cases]]
+name = "ConferenceConvenedNoVeto"
+path = "cases/05-conference-convened-no-veto.lawcase"
+
+[[cases]]
+name = "ConferenceNotConvenedEightVotes"
+path = "cases/06-conference-not-convened-eight-votes.lawcase"
+
+[[cases]]
+name = "AlterationBlockedSameLock"
+path = "cases/07-alteration-blocked-same-lock.lawcase"
+
+[metadata]
+act = "un-charter-examples-amendment"
+title = "Worked cases: why the Charter is so hard to amend (Articles 108-109)"
+jurisdiction = "International"
+instrument = "case-collection"

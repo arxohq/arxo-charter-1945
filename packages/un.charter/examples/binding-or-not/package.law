@@ -1,0 +1,5 @@
+language "law.core" version "0.2";
+package examples.un.charter.binding_or_not version "0.1.0";
+namespace "urn:law:examples:un-charter:binding-or-not";
+
+import un.charter version "0.1.0";

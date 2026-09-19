@@ -1,0 +1,24 @@
+language "law.core" version "0.2";
+package examples.un.charter.binding_or_not version "0.1.0";
+namespace "urn:law:examples:un-charter:binding-or-not";
+
+// UNC-30: a matter within the scope of the Charter gives the General
+// Assembly a recommendation power under Article 10. The contrast with
+// CouncilDecisionBinds is the point: Article 25's header comment
+// (05-security-council.law) reads the absence of any rule granting the
+// Assembly a power to bind Members as the language's own way of marking
+// the difference — no Security Council decision was ever taken here, so
+// no Article 25 duty arises for anybody.
+
+case AssemblyRecommendation {
+    context {
+        legal_time @2026-01-01;
+        knowledge_time @2026-01-01T12:00:00Z;
+        decision_time @2026-01-01T12:00:00Z;
+        timezone "UTC";
+    }
+
+    const m: un.charter::Matter = entity_ref("urn:law:examples:un-charter:binding-or-not:ga-matter");
+
+    assert "scope": un.charter::matter_within_charter_scope(m) { origin case_input; }
+}

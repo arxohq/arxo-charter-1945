@@ -1,0 +1,12 @@
+{
+  "queryId": "decision-blocked-abstention",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#decision_blocked_by_permanent_member",
+    "args": [
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:binding-or-not:abstention-decision" }
+    ]
+  }
+}

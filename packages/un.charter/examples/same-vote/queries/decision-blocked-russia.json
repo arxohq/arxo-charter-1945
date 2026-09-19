@@ -1,0 +1,12 @@
+{
+  "queryId": "decision-blocked-russia",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#decision_blocked_by_permanent_member",
+    "args": [
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:same-vote:russia-veto" }
+    ]
+  }
+}

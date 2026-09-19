@@ -1,0 +1,12 @@
+{
+  "queryId": "decision-adopted-procedural",
+  "kind": "truth",
+  "literal": {
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:un:corpus:clir:charter#decision_adopted",
+    "args": [
+      { "kind": "entity_ref", "id": "urn:law:examples:un-charter:same-vote:procedural" }
+    ]
+  }
+}

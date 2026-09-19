@@ -1,0 +1,61 @@
+# Manifest §10 — package root marker (DECISION-0033). The §22 headers in the
+# .law files themselves are normative; the manifest must match them
+# (LDC-E1109, lawc check).
+[package]
+name = "un.charter"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:un:corpus:clir:charter"
+
+# Catalog metadata §10 `[metadata]` (DECISION-0051; docs/PACKAGE-METADATA.ru.md).
+# NOT semantics: it does not lower into CLIR and is not part of the §209
+# semantic hash. Derived fields (jurisdiction ← source jurisdiction,
+# instrument ← kind, sourceFidelity ← materialization_status) are checked
+# against the source declarations by the ci/check_package_metadata.py gate.
+[metadata]
+act = "un-charter"
+title = "Charter of the United Nations (San Francisco, 26.06.1945, current edition as amended 1965/1968/1973), all 111 articles, Ch. I-XIX"
+
+# primarySource drives the DERIVED fields.
+primarySource = "UN_CHARTER"
+
+# Derived. Consistency with sources.law is enforced by the gates, not by these lines.
+jurisdiction = "International"
+instrument = "treaty"
+sourceFidelity = "pinned_unofficial_copy"
+
+# Not derived.
+# issuer: a multilateral constitutive treaty has no single issuer — there
+# are the signatory States and a depositary. The depositary is named because
+# it is the depositary, not States in general, to whom Article 111
+# prescribes specific acts (custody of the original, certified copies) — the
+# same reasoning as `rome-statute-1998`.
+issuer = "depositary: Government of the United States of America (Art. 111); signed in San Francisco 26.06.1945"
+# legalStatus: `in_force`. The Charter is in force; the 15/54-member
+# composition of the Security Council/ECOSOC in the pinned text already
+# reflects the 1965/1968/1973 amendments (see sources.law, edition
+# UN_CHARTER_EN).
+legalStatus = "in_force"
+# verifiedAgainstSource: what is pinned is an extraction from the un.org page
+# ("Charter of the United Nations: full text"), a republication by the
+# Secretariat, NOT the bytes of the depositary's (the US Government's) own
+# archival original — `true` would mean a completed check against the
+# depositary's copy, which has not been done.
+verifiedAgainstSource = false
+
+[dependencies]
+"doctrine.iura_humana" = "0.1.0"
+
+# Hand-written package scenarios: run by the shared runner, not counted
+# towards regression coverage.
+[[tests]]
+family = "un.charter#authored"
+regression = false
+suites = ["tests/01-use-of-force-violates-article-2-4.lawtest", "tests/02-self-defence-defeats-article-2-4.lawtest", "tests/03-kuwait-1991-force-authorised.lawtest", "tests/04-article-103-lockerbie-motif.lawtest", "tests/05-article-108-amendment-in-force.lawtest"]
+world = ["un.charter", "doctrine.iura_humana"]
+
+# Package scenarios: the sole source of facts, questions, and expectations.
+[[tests]]
+family = "un_charter"
+suites = ["tests/un-charter.lawtest"]
+world = ["un.charter", "doctrine.iura_humana"]

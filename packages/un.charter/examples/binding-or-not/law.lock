@@ -1,0 +1,47 @@
+{
+  "dependencyEdges": [
+    {
+      "features": [],
+      "from": "examples.un.charter.binding_or_not",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "un.charter"
+    },
+    {
+      "features": [],
+      "from": "un.charter",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "doctrine.iura_humana"
+    }
+  ],
+  "languageSemantics": "law.core/0.2.0",
+  "lockVersion": "0.1",
+  "packages": [
+    {
+      "contentHash": "sha256:4c18155b12e963f807655b27c01d53b2bbad207fa089a481d69fbe9e3f80ef00",
+      "features": [
+        "core-executable"
+      ],
+      "name": "doctrine.iura_humana",
+      "namespace": "urn:doctrine:clir:iura-humana",
+      "version": "0.1.0"
+    },
+    {
+      "contentHash": "sha256:b66b04b5243c7d5e2540f23da56440a993cec1c484821b697a09c79d3589b948",
+      "features": [
+        "core-executable"
+      ],
+      "name": "un.charter",
+      "namespace": "urn:un:corpus:clir:charter",
+      "version": "0.1.0"
+    }
+  ],
+  "resolutionHash": "sha256:4f2ab2cb4cc18b051faa15be7b8c22573fe02426e432b34d427f9df2b5b856ed",
+  "root": {
+    "contentHash": "sha256:44d94258bc40ab5e089ad8726ca6cb159b1a399b3e64de81e3a305d8b0849011",
+    "name": "examples.un.charter.binding_or_not",
+    "namespace": "urn:law:examples:un-charter:binding-or-not",
+    "version": "0.1.0"
+  }
+}

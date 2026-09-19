@@ -1,0 +1,40 @@
+language "law.core" version "0.1";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+// Article 2(4) against Article 51: a grave attack victim -> attacker
+// (grave_armed_attack arguments: attacker, victim swapped), the counter-force
+// attacker -> victim is lawful — the violation presumption is defeated.
+test "urn:query:unc-lt-02-self-defence-defeats-2-4" {
+    given {
+        context {
+            decision_time @2026-01-01T12:00:00Z;
+            knowledge_time @2026-01-01T12:00:00Z;
+            legal_time @2026-01-01;
+            timezone "UTC";
+        }
+
+        assert "member-a": member_state(entity_ref("urn:un:corpus:case:state:attacker")) {
+            origin case_input;
+        }
+        assert "member-v": member_state(entity_ref("urn:un:corpus:case:state:victim")) {
+            origin case_input;
+        }
+        assert "force": use_of_force(entity_ref("urn:un:corpus:case:state:attacker"),
+                            entity_ref("urn:un:corpus:case:state:victim")) {
+            origin case_input;
+        }
+        assert "grave-attack": grave_armed_attack(entity_ref("urn:un:corpus:case:state:victim"),
+                                  entity_ref("urn:un:corpus:case:state:attacker")) {
+            origin case_input;
+        }
+    }
+
+    evaluate truth(violates_article_2_paragraph_4(
+        entity_ref("urn:un:corpus:case:state:attacker"),
+        entity_ref("urn:un:corpus:case:state:victim")));
+
+    expect result_kind == PROPOSITION;
+    expect truth_status == FALSE_ONLY;
+    expect evaluation_status == COMPUTED;
+}

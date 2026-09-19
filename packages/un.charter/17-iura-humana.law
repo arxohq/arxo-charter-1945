@@ -1,0 +1,28 @@
+// Article 10 of the Charter translated into the iura humana vocabulary: a
+// question within the scope of the Charter is referred to the General
+// Assembly (DECISION-0326).
+language "law.core" version "0.2";
+package un.charter version "0.1.0";
+namespace "urn:un:corpus:clir:charter";
+
+import doctrine.iura_humana version "0.1.0";
+
+type Civitas = doctrine.iura_humana::Civitas;
+type Actus = doctrine.iura_humana::Actus;
+
+pub relation state_is(s: State, c: Civitas) kind empirical {
+    label en unofficial "Charter State is this polity of the comparative case";
+}
+pub relation matter_is(m: Matter, a: Actus) kind empirical {
+    label en unofficial "Assembly matter is this act of the comparative case";
+}
+
+@source(UNC_EN_ART10)
+rule BridgeQuestionToAssembly(m: Matter, s: State, a: Actus, c: Civitas) strict {
+    label en unofficial "Article 10 recommendation power hands the question to an organ";
+    when general_assembly_recommendation_power(m)
+        and member_state(s)
+        and matter_is(m, a)
+        and state_is(s, c);
+    then doctrine.iura_humana::quaestio_organo_tradita(a, c);
+}

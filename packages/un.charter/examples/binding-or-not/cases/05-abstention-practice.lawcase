@@ -1,0 +1,46 @@
+language "law.core" version "0.2";
+package examples.un.charter.binding_or_not version "0.1.0";
+namespace "urn:law:examples:un-charter:binding-or-not";
+
+// The same facts as AbstentionLetter, read under the Namibia (1971) practice
+// reading. `AbstentionDoesNotBlockReading` ADDS a path to
+// `decision_adopted` (05-security-council.law) without erasing the letter's
+// own `decision_blocked_by_permanent_member` — once the decision is adopted,
+// Article 25 has something to bind the addressee to.
+
+case AbstentionPractice {
+    context {
+        legal_time @2026-01-01;
+        knowledge_time @2026-01-01T12:00:00Z;
+        decision_time @2026-01-01T12:00:00Z;
+        timezone "UTC";
+        interpretation un.charter::AbstentionDoesNotBlockReading;
+    }
+
+    const d: un.charter::Decision = entity_ref("urn:law:examples:un-charter:binding-or-not:abstention-decision");
+    const third: un.charter::State = entity_ref("urn:law:examples:un-charter:binding-or-not:member-bound");
+    const roc: un.charter::State = entity_ref("urn:un:corpus:clir:charter#RepublicOfChina");
+    const france: un.charter::State = entity_ref("urn:un:corpus:clir:charter#FranceState");
+    const uk: un.charter::State = entity_ref("urn:un:corpus:clir:charter#UnitedKingdomState");
+    const us: un.charter::State = entity_ref("urn:un:corpus:clir:charter#UnitedStatesState");
+    const soviet: un.charter::State = entity_ref("urn:un:corpus:clir:charter#SovietUnion");
+    const m0: un.charter::State = entity_ref("urn:law:examples:un-charter:binding-or-not:m0");
+    const m1: un.charter::State = entity_ref("urn:law:examples:un-charter:binding-or-not:m1");
+    const m2: un.charter::State = entity_ref("urn:law:examples:un-charter:binding-or-not:m2");
+    const m3: un.charter::State = entity_ref("urn:law:examples:un-charter:binding-or-not:m3");
+    const m4: un.charter::State = entity_ref("urn:law:examples:un-charter:binding-or-not:m4");
+
+    assert "non-proc": un.charter::is_non_procedural_matter(d) { origin case_input; }
+    assert "roc": un.charter::casts_vote_for(d, roc) { origin case_input; }
+    assert "fr": un.charter::casts_vote_for(d, france) { origin case_input; }
+    assert "uk": un.charter::casts_vote_for(d, uk) { origin case_input; }
+    assert "us": un.charter::casts_vote_for(d, us) { origin case_input; }
+    assert "m0": un.charter::casts_vote_for(d, m0) { origin case_input; }
+    assert "m1": un.charter::casts_vote_for(d, m1) { origin case_input; }
+    assert "m2": un.charter::casts_vote_for(d, m2) { origin case_input; }
+    assert "m3": un.charter::casts_vote_for(d, m3) { origin case_input; }
+    assert "m4": un.charter::casts_vote_for(d, m4) { origin case_input; }
+    assert "su": un.charter::abstains(d, soviet) { origin case_input; }
+    assert "directed": un.charter::directed_at(d, third) { origin case_input; }
+    assert "member": un.charter::member_state(third) { origin case_input; }
+}

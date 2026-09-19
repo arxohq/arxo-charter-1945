@@ -1,0 +1,208 @@
+// Shared types and organizational facts of the Charter of the United
+// Nations — ALL 111 ARTICLES, Chapters I-XIX in full, closed at stage E9
+// (18.09.2026): Ch. I (Art. 1-2), Ch. II Art. 3-6 (original Members,
+// admission, suspension, expulsion), Ch. III Art. 7-8 (organs, equal
+// eligibility), Ch. IV Art. 9-22 (General Assembly: composition, functions
+// and powers, voting, procedure), Ch. V in full (Art. 23-32, Security
+// Council: composition, functions and powers, voting, procedure), Ch. VI in
+// full (Art. 33-38, pacific settlement of disputes), Ch. VII in full
+// (Art. 39-51), Ch. VIII in full (Art. 52-54, regional arrangements), Ch. IX
+// in full (Art. 55-60, international economic and social co-operation),
+// Ch. X in full (Art. 61-72, the Economic and Social Council: composition,
+// functions and powers, voting, procedure), Ch. XI in full (Art. 73-74,
+// declaration regarding non-self-governing territories), Ch. XII in full
+// (Art. 75-85, the international trusteeship system), Ch. XIII in full
+// (Art. 86-91, the Trusteeship Council), Ch. XIV in full (Art. 92-96, the
+// International Court of Justice), Ch. XV in full (Art. 97-101, the
+// Secretariat), Ch. XVI in full (Art. 102, 104-105, on top of Art. 103
+// already in scope — miscellaneous provisions), Ch. XVII in full (Art.
+// 106-107, transitional security arrangements), Ch. XVIII in full (Art. 109,
+// on top of Art. 108 already in scope — amendments and General Conference),
+// Ch. XIX in full (Art. 110, on top of Art. 111 already in scope —
+// ratification and signature). No chapter or article remains
+// pinned-but-unfragmented (see `sources/charter/articles.json`).
+//
+// THE MODULE SPLIT MIRRORS THE CHARTER'S OWN CHAPTERS: 01 — Ch. I (purposes
+// and the prohibition of force), 02 — Ch. II (Art. 3-6: original Members,
+// admission, suspension, expulsion), 03 — Ch. III (Art. 7-8: organs, equal
+// eligibility), 04 — General Assembly (Ch. IV, Art. 9-22, added in full at
+// stage E2; only Art. 18 was in scope before), 05 — Security Council (Ch.
+// V, Art. 23-32, PROCEDURE Art. 28-32 added in full at stage E3; only
+// Art. 23-27 was in scope before), 06 — enforcement measures (Ch. VII,
+// Art. 39-51), 07 — final provisions (Art. 92, 102-110, 111 — Art. 102,
+// 104-107, 109-110 added at stage E9), 08 — pacific
+// settlement of disputes (Ch. VI, Art. 33-38, added at stage E4), 09 —
+// regional arrangements (Ch. VIII, Art. 52-54, added at stage E5, including
+// a second producer path for Article 27(3)'s abstention duty, wired in
+// 05-security-council.law), 10 — international economic and social
+// co-operation (Ch. IX, Art. 55-60, added at stage E6), 11 — the Economic
+// and Social Council (Ch. X, Art. 61-72, added at stage E6, including a new
+// `EcosocMatter` entity for Article 69), 12 — non-self-governing
+// territories (Ch. XI, Art. 73-74, added at stage E7, new entity
+// `NonSelfGoverningTerritory`), 13 — the international trusteeship system
+// (Ch. XII, Art. 75-85, added at stage E7, new entity `TrustTerritory`),
+// 14 — the Trusteeship Council (Ch. XIII, Art. 86-91, added at stage E7,
+// new entity `TrusteeshipCouncilComposition`), 15 — the International Court
+// of Justice (Ch. XIV, Art. 93-96 added at stage E8 on top of the already
+// declared Art. 92, new entities `IcjCase`, `RequestingBody`,
+// `LegalQuestion`), 16 — the Secretariat (Ch. XV, Art. 97-101, added at
+// stage E8, new entity `SecretariatOfficial` — the package's first officer
+// entity, and the point at which Article 8/9's E1 entity-gap boundary is
+// deliberately not extended, see that module's own header comment).
+// (Files 04-07 were renumbered from 03-06 at stage E1 to make room for the
+// new Ch. II/III modules 02-03; no content of the renumbered files changed,
+// only their filenames. Modules 08-11 were placed after 07 rather than
+// renumbered into chapter order, since Chapters VI, VIII, IX and X are
+// formalized AFTER Chapter VII in this package's own history — inserting
+// them as `03a`/`03b`/… or renumbering 04-07 again for later modules would
+// break more references than it fixes; the header comment, not the
+// filename, is authoritative about chapter order.)
+//
+// THE FIVE PERMANENT MEMBERS — LITERALLY, AS IN ARTICLE 23. The Charter
+// names them BY NAME ("the Republic of China, France, the Union of Soviet
+// Socialist Republics, the United Kingdom … and the United States of
+// America") and the text HAS NOT BEEN AMENDED: Russia's continuity (as
+// successor to the USSR, 1991) and the transfer of China's seat from Taipei
+// to Beijing (GA resolution 2758, 1971) are political practice ON TOP OF the
+// letter, not an amendment under Article 108. Hence the base holds entities
+// NAMED AFTER ARTICLE 23 ITSELF, and the successors (`RussianFederation`,
+// `PeoplesRepublicOfChina`) appear only through `interpretation` in
+// 05-security-council.law: without a selected reading, the seat held by a
+// successor does not yield `permanent_member` — this is a FINDING of the
+// package, not a gap.
+entity State { label en official "State"; }
+
+pub relation member_state(s: State) kind institutional {
+    label en unofficial "the State is a Member of the Organization (Art. 3-6, taken here as a case premise)";
+}
+
+// The five permanent members are a BASE fact flowing from the letter of
+// Article 23. Continuity/seat transfer add permanent_member to OTHER
+// entities through interpretation, but these five asserts are not
+// overridden — interpretation can only ADD (§152).
+pub relation permanent_member(s: State) kind institutional {
+    label en official "permanent member of the Security Council (Art. 23, para. 1)";
+}
+
+@source(UNC_EN_ART23)
+assert permanent_member(RepublicOfChina);
+@source(UNC_EN_ART23)
+assert permanent_member(FranceState);
+@source(UNC_EN_ART23)
+assert permanent_member(SovietUnion);
+@source(UNC_EN_ART23)
+assert permanent_member(UnitedKingdomState);
+@source(UNC_EN_ART23)
+assert permanent_member(UnitedStatesState);
+
+// --- Security Council decisions (Art. 25, 27) --------------------------------
+
+entity Decision { label en official "Decision (of the Security Council or the General Assembly)"; }
+
+pub relation procedural_matter(d: Decision) kind empirical {
+    label en official "the decision is on a procedural matter (Art. 27, para. 2)";
+}
+
+pub relation directed_at(d: Decision, s: State) kind empirical {
+    label en unofficial "the decision is addressed to this Member of the Organization (Art. 25)";
+}
+
+// Voting — a shared model for the General Assembly (Art. 18) and the
+// Security Council (Art. 27): the decision (`Decision`) is one and the same
+// concept in both organs, only the thresholds differ. `abstains` is a
+// SEPARATE fact from `casts_vote_against`: the whole divergence between
+// letter and practice under Article 27 rests on this distinction (a vote
+// against blocks under any reading, an abstention only under the literal
+// one).
+pub relation casts_vote_for(d: Decision, s: State) kind empirical {
+    label en official "the State casts a vote in favour (Art. 18, Art. 27)";
+}
+pub relation casts_vote_against(d: Decision, s: State) kind empirical {
+    label en official "the State casts a vote against (Art. 18, Art. 27)";
+}
+pub relation abstains(d: Decision, s: State) kind empirical {
+    label en official "the State abstains (Art. 27, para. 3)";
+}
+
+// --- Chapter VII situation (Art. 39-42) --------------------------------------
+
+entity Situation { label en official "Situation within the meaning of Article 39"; }
+
+// Non-State subject of an armed attack (Art. 51, reading after UN Security
+// Council resolutions 1368/1373, 2001) — a deliberate distinct type from
+// State: Article 51 speaks of an attack "against a Member", the subject of
+// the attack is not named by the text at all, and this is a CLOSED question
+// under a literal reading (State) — see 06-enforcement.law.
+entity NonStateActor { label en official "Non-State armed group"; }
+
+// --- Obligations under other international agreements (Art. 103) -----------
+
+entity TreatyObligation { label en official "Obligation under another international agreement (Art. 103)"; }
+
+// --- Deepening: natural persons, organs, agencies, budget years -------------
+//
+// Stage E1/E6/E8 left Articles 8, 9, 57, 63, 70, 71, 105 declared for an
+// ENTITY GAP: the package modelled States, not individuals, specialized
+// agencies or NGOs. Those types are introduced here so later modules can
+// close the gap without bridge-twins.
+
+entity Person { label en official "Natural person eligible to participate in an organ, represent a Member, or serve the Organization (Art. 8, 9, 105)"; }
+
+enum Sex {
+    label en official "men and women (Art. 8)";
+    Male;
+    Female;
+}
+
+entity Organ { label en official "Principal or subsidiary organ of the United Nations (Art. 7, 8)"; }
+
+entity Organization { label en official "The Organization (the United Nations) as addressee of Charter duties (Art. 8, 104, 105)"; }
+
+entity SpecializedAgency { label en official "Specialized agency brought into relationship with the United Nations (Art. 57, 63)"; }
+
+entity NonGovernmentalOrganization { label en official "Non-governmental organization (Art. 71)"; }
+
+entity BudgetYear { label en official "Financial year of the Organization (Art. 17, 19)"; }
+
+pub relation person_sex(p: Person, x: Sex) kind empirical {
+    label en unofficial "the person's sex (Art. 8: men and women)";
+}
+
+pub relation is_united_nations_organ(o: Organ) kind empirical {
+    label en unofficial "the organ is a principal or subsidiary organ of the United Nations (Art. 7, 8)";
+}
+
+const UnitedNations: Organization = entity_ref("urn:un:corpus:clir:charter#UnitedNations") {
+    label en official "the United Nations";
+};
+
+const ArticleNineDelegationCap: Integer = 5 {
+    label en official "five representatives (Art. 9, para. 2)";
+};
+
+const EcosocMembershipSize: Integer = 54 {
+    label en official "fifty-four Members of the Economic and Social Council (Art. 61, para. 1)";
+};
+
+const EcosocAnnualElectionSize: Integer = 18 {
+    label en official "eighteen Members elected each year (Art. 61, para. 2)";
+};
+
+const EcosocTermYears: Integer = 3 {
+    label en official "three-year term (Art. 61, para. 2)";
+};
+
+// --- §54 constants (errata E-0032 §3): generated by verify/ci/tools/migrate_const_decls.py
+// (errata E-0032: an individual is named by a §54 declaration, its value by
+// entity_ref §36). Labels are derived from the name; the unofficial status
+// is refined by the author. ---
+
+const FranceState: State = entity_ref("urn:un:corpus:clir:charter#FranceState") {
+    label en unofficial "France State";
+};
+const UnitedKingdomState: State = entity_ref("urn:un:corpus:clir:charter#UnitedKingdomState") {
+    label en unofficial "United Kingdom State";
+};
+const UnitedStatesState: State = entity_ref("urn:un:corpus:clir:charter#UnitedStatesState") {
+    label en unofficial "United States State";
+};
