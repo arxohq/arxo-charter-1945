@@ -1,5 +1,7 @@
 # arxo-charter-1945
 
+[![Smithery](https://smithery.ai/badge/arxohq/charter)](https://smithery.ai/servers/arxohq/charter)
+
 Pinned canon, executable as it stands: source text with provenance, the
 model built over it and the scenarios that check its answers. The norms
 here are data — they are executed by `law`; this repository carries no
