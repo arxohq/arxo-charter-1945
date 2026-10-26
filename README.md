@@ -1,6 +1,6 @@
 # arxo-charter-1945
 
-[![Smithery](https://smithery.ai/badge/arxohq/charter)](https://smithery.ai/servers/arxohq/charter)
+[![LightNow capabilities](https://lightnow.ai/badge/io.arxo/charter)](https://lightnow.ai/servers/io.arxo/charter)
 
 Pinned canon, executable as it stands: source text with provenance, the
 model built over it and the scenarios that check its answers. The norms
